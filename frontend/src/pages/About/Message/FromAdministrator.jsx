@@ -1,5 +1,5 @@
-import React from 'react'
-import administratorImage from "../../../assets/director(admin).jpg";
+import React from "react";
+import administratorImage from "../../../assets/directoradmin.jpg";
 const FromAdministrator = () => {
   return (
     <div className="bg-white shadow-xl rounded-lg overflow-hidden">
@@ -31,7 +31,9 @@ const FromAdministrator = () => {
                 <p className="font-semibold text-lg text-[#0d173b]">
                   Rajesh Deshmuk
                 </p>
-                <p className="text-sm text-gray-600">Director[Administrator], CSIT</p>
+                <p className="text-sm text-gray-600">
+                  Director[Administrator], CSIT
+                </p>
               </div>
             </div>
           </div>
@@ -39,16 +41,41 @@ const FromAdministrator = () => {
           {/* Message Content */}
           <div className="w-full md:w-2/3 text-justify text-gray-800 text-[15px] leading-relaxed space-y-4">
             <p>
-            CSGI is a valued milestone of academic excellence in the state of Chhattisgarh. Its contribution has been well recognised by the various sectors. It has enriched the society by producing exceptional students laced with sound knowledge and immense potential to serve the nation in the best possible way. CSGI has been dedicated in creating a breed of qualified youths who can stand tall to all the challenges, and harness every opportunity that comes across their career-trajectory.
+              CSGI is a valued milestone of academic excellence in the state of
+              Chhattisgarh. Its contribution has been well recognised by the
+              various sectors. It has enriched the society by producing
+              exceptional students laced with sound knowledge and immense
+              potential to serve the nation in the best possible way. CSGI has
+              been dedicated in creating a breed of qualified youths who can
+              stand tall to all the challenges, and harness every opportunity
+              that comes across their career-trajectory.
             </p>
             <p>
-            We provide an ideal academic environment where students gain not only knowledge but also skills to perform brilliantly. A strong pool of faculty members, state-of-the-art laboratories, a large library hosting more than fifty thousand books are some of the unique features of CSGI that appeal to various scholars and academicians. The scenic campus spread over 33 acres of land, remains unaffected from the nuisances of the city, yet easily available conveyances and proximity with the city together make CSGI easily approachable.
+              We provide an ideal academic environment where students gain not
+              only knowledge but also skills to perform brilliantly. A strong
+              pool of faculty members, state-of-the-art laboratories, a large
+              library hosting more than fifty thousand books are some of the
+              unique features of CSGI that appeal to various scholars and
+              academicians. The scenic campus spread over 33 acres of land,
+              remains unaffected from the nuisances of the city, yet easily
+              available conveyances and proximity with the city together make
+              CSGI easily approachable.
             </p>
             <p>
-            We are dedicated to nurturing those strong group of youths who can cater to the emerging demands of the globalised world through various activities. This is done also through CSGI a lot of co-curricular activities - each of which aims to help students know the world beyond the books. Most of these activities are managed by students so that their managerial skills get honed naturally. CSGI has a safe social and physical environment that helps all our students learn and succeed. And this is my firm conviction that every CSGIian carries the rich values and traditions that are imbibed in their collegiate years.
+              We are dedicated to nurturing those strong group of youths who can
+              cater to the emerging demands of the globalised world through
+              various activities. This is done also through CSGI a lot of
+              co-curricular activities - each of which aims to help students
+              know the world beyond the books. Most of these activities are
+              managed by students so that their managerial skills get honed
+              naturally. CSGI has a safe social and physical environment that
+              helps all our students learn and succeed. And this is my firm
+              conviction that every CSGIian carries the rich values and
+              traditions that are imbibed in their collegiate years.
             </p>
             <p>
-            This brochure provides a glimpse of CSGIs efforts and treasures. I hope it shall be helpful every reader in various ways.
+              This brochure provides a glimpse of CSGIs efforts and treasures. I
+              hope it shall be helpful every reader in various ways.
             </p>
             <p className="font-semibold text-[#0d173b]">
               I extend my Heartiest Welcome to all at CSIT.
@@ -57,7 +84,7 @@ const FromAdministrator = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FromAdministrator
+export default FromAdministrator;
