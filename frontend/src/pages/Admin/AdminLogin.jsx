@@ -5,6 +5,7 @@ import { Eye, EyeOff, LogIn, User, Lock } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../../services/api";
+import axios from "axios";
 
 function AdminLogin() {
   const scrollToTop = () => {
@@ -26,21 +27,24 @@ function AdminLogin() {
     e.preventDefault();
     setLoading(true);
     setError("");
+
     try {
+      // const response = await axios.post("http://localhost:5000/api/auth/admin-login", {
+      //   username,
+      //   password,
+      // });
+
       const response = await api.post("/auth/admin-login", {
         username,
         password,
       });
 
-      if (response.data && response.data.token) {
-        localStorage.setItem("adminToken", response.data.token);
-        localStorage.setItem("adminUsername", username);
-        localStorage.setItem("lastLoginTime", new Date().toLocaleString());
-        alert("Login successful");
-        router("/admin/dashboard");
-      } else {
-        setError("Invalid response from server");
-      }
+      localStorage.setItem("adminToken", response.data.token);
+      localStorage.setItem("adminUsername", username);
+
+      // Redirect to admin dashboard
+      alert("Login successful");
+      router("/admin/dashboard");
     } catch (err) {
       console.error("Login error:", err);
       setError(
@@ -52,6 +56,9 @@ function AdminLogin() {
     }
   };
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0d173b] to-[hsl(220,13%,95%)] flex items-center justify-center p-4">
       <div className="w-full max-w-md">
