@@ -1,168 +1,133 @@
 require("dotenv").config();
 const express = require("express");
-const connectDB = require("./config/db");
 const cors = require("cors");
-const errorHandler = require("./middleware/errorHandler");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
+const errorHandler = require("./middleware/errorHandler");
+const { authMiddleware } = require("./middleware/auth");
 require("colors");
 
 const app = express();
-
-// Environment configuration
-const isProduction = process.env.NODE_ENV === "production";
-const mongoURI = isProduction
-  ? process.env.MONGO_ATLAS_URI
-  : process.env.MONGO_LOCAL_URI;
-
-// CORS Configuration
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
-
-// Connect to MongoDB with enhanced error handling
-mongoose
-  .connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000,
-    socketTimeoutMS: 45000,
-  })
-  .then(() => {
-    console.log(
-      `Successfully connected to MongoDB (${process.env.NODE_ENV})`
-        .brightMagenta.bold.italic
-    );
-    console.log(`MongoDB URI:`.blue + ` ${mongoURI}`.brightMagenta.bold.italic);
-  })
-  .catch((err) => {
-    console.error("Failed to connect to MongoDB".red, err);
-    process.exit(1);
-  });
 
 // Middleware
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-// Enhanced Authentication middleware
-app.use((req, res, next) => {
-  if (req.path.includes("/api/auth/admin-login")) {
-    console.log("Admin login attempt detected".yellow);
-    console.log("Request body:", JSON.stringify(req.body, null, 2).cyan);
+// CORS - use only cors() middleware; no need for manual headers duplication
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: [
+      "Origin",
+      "X-Requested-With",
+      "Content-Type",
+      "Accept",
+      "Authorization",
+    ],
+    exposedHeaders: ["set-cookie"],
+  })
+);
 
-    // Validate request body
-    if (!req.body || !req.body.username || !req.body.password) {
+// Admin login route (env-based hardcoded)
+app.post("/api/auth/admin-login", (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
       return res.status(400).json({
         success: false,
-        message: "Missing username or password",
+        message: "Username and password are required",
         code: "AUTH_400",
       });
     }
 
-    // Compare credentials
-    const isValidUsername =
-      req.body.username.trim() === process.env.ADMIN_USERNAME.trim();
-    const isValidPassword =
-      req.body.password.trim() === process.env.ADMIN_PASSWORD.trim();
+    if (
+      username === process.env.ADMIN_USERNAME &&
+      password === process.env.ADMIN_PASSWORD
+    ) {
+      const token = jwt.sign({ role: "admin" }, process.env.JWT_SECRET, {
+        expiresIn: "1d",
+      });
 
-    console.log("Credentials Check:".cyan);
-    console.log("Username provided:", req.body.username.green);
-    console.log("Username stored:", process.env.ADMIN_USERNAME.green);
-    console.log("Username match:", isValidUsername);
-    console.log("Password match:", isValidPassword);
-
-    if (!isValidUsername || !isValidPassword) {
-      return res.status(401).json({
-        success: false,
-        message: "Invalid credentials",
-        code: "AUTH_401",
+      return res.status(200).json({
+        success: true,
+        token,
+        message: "Login successful",
+        code: "AUTH_200",
       });
     }
 
-    // If we reach here, authentication is successful
-    const token = jwt.sign(
-      { username: req.body.username },
-      process.env.JWT_SECRET,
-      { expiresIn: process.env.JWT_EXPIRES_IN }
-    );
-
-    return res.status(200).json({
-      success: true,
-      message: "Authentication successful",
-      token,
-      code: "AUTH_200",
-    });
-  }
-  next();
-});
-
-// Enhanced Gallery Upload middleware
-app.use((req, res, next) => {
-  if (req.path.includes("/api/gallery/upload")) {
-    console.log("Gallery upload attempt detected".yellow);
-    console.log("Request body:", JSON.stringify(req.body, null, 2).cyan);
-    console.log(
-      "Files:",
-      req.files ? Object.keys(req.files).length : 0,
-      "files received".green
-    );
-
-    // Validate request body and files
-    if (!req.body || !req.files) {
-      return res.status(400).json({
-        success: false,
-        message: "Missing image data or files",
-      });
-    }
-
-    // Log upload details
-    console.log("Upload details:".cyan);
-    console.log("Content type:", req.get("Content-Type").green);
-    console.log(
-      "File size:",
-      req.get("Content-Length")
-        ? `${(req.get("Content-Length") / 1024 / 1024).toFixed(2)} MB`.green
-        : "Unknown size".yellow
-    );
-  }
-  next();
-});
-
-// Routes
-app.use("/api/auth", require("./routes/AuthRoutes"));
-app.use("/api/gallery", require("./routes/galleryRoutes"));
-
-// Enhanced Error Handling
-app.use((err, req, res, next) => {
-  console.error("Error occurred:".red, err);
-
-  if (err.name === "UnauthorizedError") {
     return res.status(401).json({
       success: false,
-      error: "Invalid credentials",
-      message: "Please check your username and password",
-      code: "AUTH_001",
+      message: "Invalid credentials",
+      code: "AUTH_401",
     });
-  }
-
-  if (err.name === "MulterError") {
-    return res.status(400).json({
+  } catch (error) {
+    console.error("Login error:", error);
+    return res.status(500).json({
       success: false,
-      error: "File upload error",
-      message: err.message,
-      code: "UPLOAD_001",
+      message: "Internal server error during login",
+      code: "AUTH_500",
     });
   }
-
-  next(err);
 });
 
+// Protected routes
+app.use("/api/gallery", authMiddleware, require("./routes/galleryRoutes"));
+// add other protected routes similarly
+
+// 404 fallback
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+    code: "NOT_FOUND",
+  });
+});
+
+// Global error handler
 app.use(errorHandler);
 
+// MongoDB connection & server start
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}...`.green));
+const mongoURI =
+  process.env.NODE_ENV === "production"
+    ? process.env.MONGO_ATLAS_URI
+    : process.env.MONGO_LOCAL_URI;
+
+const mongooseOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000,
+  socketTimeoutMS: 45000,
+  family: 4,
+  retryWrites: true,
+  w: "majority",
+};
+
+const connectWithRetry = async (retryCount = 5) => {
+  try {
+    console.log("Connecting to MongoDB...".yellow);
+    await mongoose.connect(mongoURI, mongooseOptions);
+    console.log("MongoDB connected".green.bold);
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}...`.green);
+    });
+  } catch (err) {
+    console.error("MongoDB connection error:".red, err);
+    if (retryCount > 0) {
+      console.log(
+        `Retrying MongoDB connection... (${retryCount} retries left)`.yellow
+      );
+      setTimeout(() => connectWithRetry(retryCount - 1), 5000);
+    } else {
+      console.error("MongoDB connection failed after multiple attempts".red);
+      process.exit(1);
+    }
+  }
+};
+
+connectWithRetry();

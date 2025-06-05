@@ -1,14 +1,17 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import csitBanner from "../../assets/csitbanner.png";
+import csitBanner from "../../assets/csitbanner.jpg";
+import csitBanner2 from "../../assets/csitbanner2.jpg";
+import csitBanner3 from "../../assets/csitbanner3.jpg";
+import csitBanner4 from "../../assets/csitbanner.jpg";
 
-// Import Swiper styles
+// Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// Custom CSS for enhancing the arrow buttons
+// Custom CSS for arrows and mobile responsiveness
 const customStyles = `
   .hero-swiper .swiper-button-next,
   .hero-swiper .swiper-button-prev {
@@ -19,41 +22,42 @@ const customStyles = `
     color: #0d173b;
     font-weight: bold;
   }
-  
+
   .hero-swiper .swiper-button-next:hover,
   .hero-swiper .swiper-button-prev:hover {
     background-color: rgba(255, 255, 255, 0.9);
   }
-  
+
   .hero-swiper .swiper-button-next:after,
   .hero-swiper .swiper-button-prev:after {
     font-size: 18px;
   }
-  
+
   .hero-swiper .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
   }
-  
+
   .hero-swiper .swiper-pagination-bullet-active {
     background-color: #0d173b;
+  }
+
+  /* Responsive handling */
+  @media (max-width: 768px) {
+    .hero-swiper img {
+      object-fit: contain !important;
+      height: 100vh !important;
+      width: 100% !important;
+    }
   }
 `;
 
 const Hero = () => {
   const slides = [
-    {
-      image: csitBanner,
-      alt: "College Campus"
-    },
-    {
-      image: csitBanner,
-      alt: "College Facilities"
-    },
-    {
-      image: csitBanner,
-      alt: "Student Activities"
-    }
+    { image: csitBanner, alt: "College Campus Banner 1" },
+    { image: csitBanner2, alt: "College Campus Banner 2" },
+    { image: csitBanner3, alt: "College Campus Banner 3" },
+    { image: csitBanner4, alt: "College Campus Banner 4" },
   ];
 
   return (
@@ -66,22 +70,19 @@ const Hero = () => {
           delay: 4000,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
+        pagination={{ clickable: true }}
+        navigation
         modules={[Autoplay, Pagination, Navigation]}
         className="hero-swiper"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="flex items-center justify-center">
             <div className="w-full max-w-[1920px] mx-auto">
-            <img
-              src={slide.image}
-              alt={slide.alt}
-                className="w-full h-auto object-contain"
-                style={{ maxHeight: "80vh" }}
-            />
+              <img
+                src={slide.image}
+                alt={slide.alt}
+                className="w-full h-auto object-contain md:max-h-[80vh]"
+              />
             </div>
           </SwiperSlide>
         ))}

@@ -1,37 +1,26 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { protect, isAdmin } = require('../middleware/auth');
-const { singleUploadMiddleware, multipleUploadMiddleware } = require('../middleware/upload');
+const multer = require("multer");
 const {
+  uploadImages,
   getAllImages,
-  getImageById,
-  uploadImage,
-  uploadMultipleImages,
-  deleteImage
-} = require('../controllers/galleryController');
+  deleteImage,
+} = require("../controllers/galleryController");
+const { authMiddleware } = require("../middleware/auth");
 
-// Public routes
-router.get('/', getAllImages);
-router.get('/:id', getImageById);
+// Configure multer for image uploads
+const storage = multer.memoryStorage();
+const upload = multer({
+  storage,
+  limits: {
+    fileSize: 5 * 1024 * 1024, // 5MB limit
+    files: 10, // Max 10 files at once
+  },
+});
 
-// Admin routes - Single image upload
-router.post(
-  '/',
-  protect,
-  isAdmin,
-  singleUploadMiddleware,
-  uploadImage
-);
-
-// Admin routes - Multiple image upload
-router.post(
-  '/multiple',
-  protect,
-  isAdmin,
-  multipleUploadMiddleware,
-  uploadMultipleImages
-);
-
-router.delete('/:id', protect, isAdmin, deleteImage);
+// Gallery routes
+router.get("/", getAllImages);
+router.post("/multiple", authMiddleware, upload.array("images"), uploadImages);
+router.delete("/:id", deleteImage);
 
 module.exports = router;
