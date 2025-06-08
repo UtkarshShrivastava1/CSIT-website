@@ -193,6 +193,12 @@ export default function Navbar() {
                     >
                       Leaflet
                     </Link>
+                    <Link
+                      to="/admission/admission-form"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      Admission Form
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -672,6 +678,13 @@ export default function Navbar() {
                   >
                     Leaflet
                   </Link>
+                  <Link
+                    to="/admission/admission-form"
+                    className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Admission Form
+                  </Link>
                 </div>
               )}
             </div>
@@ -693,14 +706,14 @@ export default function Navbar() {
               {activeDropdownMobile === 4 && (
                 <div className="pl-4 space-y-1 mt-1">
                   <Link
-                    to="/facilities"
+                    to="/campus/facilities"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Facilities
                   </Link>
                   <Link
-                    to="/initiatives"
+                    to="/campus/initiatives"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -917,56 +930,56 @@ export default function Navbar() {
               {activeDropdownMobile === 9 && (
                 <div className="pl-4 space-y-1 mt-1">
                   <Link
-                    to="/student-affairs"
+                    to="/more/student-affairs"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Student Affairs
                   </Link>
                   <Link
-                    to="/r-and-d"
+                    to="/more/research-and-development"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     R&D
                   </Link>
                   <Link
-                    to="/calendar"
+                    to="/more/calendar"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Calendar
                   </Link>
                   <Link
-                    to="/feedback"
+                    to="/more/feedback"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Feedback
                   </Link>
                   <Link
-                    to="/gallery"
+                    to="/more/gallery"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Gallery
                   </Link>
                   <Link
-                    to="/grievances"
+                    to="/more/grievances"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Grievances
                   </Link>
                   <Link
-                    to="/iqac"
+                    to="/more/iqac"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     IQAC
                   </Link>
                   <Link
-                    to="/rti"
+                    to="/more/rti"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >

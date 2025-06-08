@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { User } from "lucide-react";
+import { Link } from "react-router-dom"; // Add this import
 import Logo from "../assets/csitlogo.png";
 import Image1 from "../assets/Aicte-logo.png";
 import Image2 from "../assets/Institutions innovation council.png";
@@ -25,7 +26,7 @@ const Header = () => {
 
   return (
     <div className="w-full">
-      {/* Top Navbar - Burgundy Background */}
+      {/* Top Navbar */}
       <div className="bg-gray-200 text-white py-4 px-4 md:px-8">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
@@ -46,9 +47,9 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Right Side Menu */}
+            {/* Right Side Menu - Modified for better mobile display */}
             <div className="mt-4 md:mt-0 flex items-center space-x-4">
-              {/* Quick Access Icons - Desktop */}
+              {/* Desktop View */}
               <div className="hidden md:flex items-center gap-17 space-x-15">
                 {/* Additional Photos */}
                 <div className="flex space-x-3">
@@ -78,31 +79,28 @@ const Header = () => {
                     className="h-13 w-13 rounded-md"
                   />
                 </div>
-                {/* Directory Icon */}
-                <div
-                  className="flex flex-col items-center cursor-pointer"
-                  onMouseEnter={() => handleDropdownHover("directory")}
-                  onMouseLeave={handleDropdownLeave}
-                >
-                  <User className="h-5 w-5 text-black" />
-                  <span className="text-xs text-black mt-1">ADMISSION</span>
-                </div>
               </div>
+
+              {/* Updated Admission Button */}
+              <Link
+                to="/admission-form"
+                className="flex flex-col items-center px-4 py-2 text-[#0d173b] hover:text-[#1a2d5e] transition-colors"
+                onMouseEnter={() => handleDropdownHover("directory")}
+                onMouseLeave={handleDropdownLeave}
+              >
+                <User className="h-5 w-5" />
+                <span className="text-xs font-semibold mt-1">ADMISSION</span>
+              </Link>
             </div>
           </div>
         </div>
       </div>
-      {/* Mobile Menu */}
+
+      {/* Remove the mobile menu since admission button is now always visible */}
       {isOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="container mx-auto px-4 py-2">
-            {/* Icons with labels */}
-            <div className="flex justify-around py-4 border-b">
-              <div className="flex flex-col items-center">
-                <User size={20} className="text-red-900" />
-                <span className="text-xs mt-1">ADMISSION</span>
-              </div>
-            </div>
+            {/* Other mobile menu items if needed */}
           </div>
         </div>
       )}

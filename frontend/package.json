@@ -19,6 +19,7 @@
     "axios": "^1.8.4",
     "framer-motion": "^12.6.3",
     "frontend": "file:",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.485.0",
     "photoswipe": "^5.4.4",
     "react": "^19.0.0",

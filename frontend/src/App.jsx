@@ -14,6 +14,7 @@ import AdminLogin from "./pages/Admin/AdminLogin";
 import GalleryDashboard from "./pages/Admin/GalleryDashboard";
 import GalleryForm from "./pages/Admin/GalleryForm";
 import AdmissionPage from "./pages/Admission/AdmissionIndex";
+import AdmissionForm from "./pages/Admission/AdmissionForm";
 import AlumniPage from "./pages/Alumni/AlumniIndex";
 import FacilitiesIndex from "./pages/Campus/Facilities/Facilitiesindex";
 import InitiativesIndex from "./pages/Campus/Initiatives/InitiativesIndex";
@@ -54,6 +55,7 @@ function App() {
 
             {/* Admission page and its nested routes */}
             <Route path="/admission/*" element={<AdmissionPage />} />
+            <Route path="/admission-form" element={<AdmissionForm />} />
 
             {/* Alumni page and its nested routes */}
             <Route path="/alumni/*" element={<AlumniPage />} />
