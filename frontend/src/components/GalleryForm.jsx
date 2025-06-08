@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from "../../../services/api"; // ✅ use your Axios wrapper
 
 const GalleryForm = () => {
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -30,32 +30,25 @@ const GalleryForm = () => {
       formData.append("images", file);
     });
 
-    const token = localStorage.getItem("adminToken"); // ✅ grab token here
-
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/gallery/multiple`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`, // ✅ critical part!
-          },
-          withCredentials: true,
-        }
-      );
+      const response = await api.post("/gallery/multiple", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       if (response.data.success) {
         setSuccess(true);
         setSelectedFiles([]);
-        e.target.reset();
+        document.getElementById("images").value = null; // ✅ clear input
       }
     } catch (error) {
-      console.error("Full error:", error);
-      setError(
-        error.response?.data?.message ||
-          `Error (${error.response?.status}): ${error.message}`
-      );
+      const msg =
+        error?.response?.data?.message ||
+        error?.response?.data?.error ||
+        `Error (${error?.response?.status || 500}): ${error?.message}`;
+      setError(msg);
+      console.error("Upload error:", error);
     } finally {
       setLoading(false);
     }

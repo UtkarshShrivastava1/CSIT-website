@@ -42,12 +42,26 @@ const customStyles = `
     background-color: #0d173b;
   }
 
-  /* Responsive handling */
+  /* Updated mobile styles */
   @media (max-width: 768px) {
+    .hero-swiper {
+      height: auto !important;
+      max-height: 50vh;
+    }
+    
+    .hero-swiper .swiper-slide {
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .hero-swiper img {
       object-fit: contain !important;
-      height: 100vh !important;
       width: 100% !important;
+      max-height: 50vh !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
   }
 `;
@@ -76,12 +90,12 @@ const Hero = () => {
         className="hero-swiper"
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index} className="flex items-center justify-center">
-            <div className="w-full max-w-[1920px] mx-auto">
+          <SwiperSlide key={index}>
+            <div className="w-full">
               <img
                 src={slide.image}
                 alt={slide.alt}
-                className="w-full h-auto object-contain md:max-h-[80vh]"
+                className="w-full object-contain md:object-cover md:max-h-[80vh]"
               />
             </div>
           </SwiperSlide>

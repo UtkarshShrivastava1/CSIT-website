@@ -75,7 +75,7 @@ app.post("/api/auth/admin-login", (req, res) => {
 });
 
 // Protected routes
-app.use("/api/gallery", authMiddleware, require("./routes/galleryRoutes"));
+app.use("/api/gallery", require("./routes/galleryRoutes"));
 // add other protected routes similarly
 
 // 404 fallback

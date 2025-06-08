@@ -4,24 +4,25 @@ const { Readable } = require("stream");
 // Get all images
 const getAllImages = async (req, res) => {
   try {
-    const { resources } = await cloudinary.search
-      .expression("folder:gallery")
-      .sort_by("created_at", "desc")
-      .max_results(30)
-      .execute();
+    const result = await cloudinary.api.resources({
+      type: "upload",
+      prefix: "gallery/", // your folder name on Cloudinary
+      max_results: 100,
+    });
 
-    res.status(200).json({
-      success: true,
-      images: resources,
-      message: "Images fetched successfully",
-    });
+    const images = result.resources.map((img) => ({
+      public_id: img.public_id,
+      url: img.secure_url,
+      width: img.width,
+      height: img.height,
+      format: img.format,
+      created_at: img.created_at,
+    }));
+
+    res.status(200).json({ success: true, images });
   } catch (error) {
-    console.error("Error fetching images:", error);
-    res.status(500).json({
-      success: false,
-      message: "Error fetching images",
-      error: error.message,
-    });
+    console.error("Error fetching images from Cloudinary:", error);
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 

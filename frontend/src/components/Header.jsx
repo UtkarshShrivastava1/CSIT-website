@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { User } from 'lucide-react';
-import Logo from '../assets/csitlogo.png';
-import Image1 from '../assets/Aicte-logo.png';
-import Image2 from '../assets/Institutions innovation council.png';
-import Image3 from '../assets/ISO_logo.png';
-import Image4 from '../assets/CSVTU.png';
-import Image5 from '../assets/dataquest.png';
+import React, { useState } from "react";
+import { User } from "lucide-react";
+import Logo from "../assets/csitlogo.png";
+import Image1 from "../assets/Aicte-logo.png";
+import Image2 from "../assets/Institutions innovation council.png";
+import Image3 from "../assets/ISO_logo.png";
+import Image4 from "../assets/CSVTU.png";
+import Image5 from "../assets/dataquest.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,10 +31,18 @@ const Header = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             {/* Logo and Title */}
             <div className="flex items-center space-x-4 md:space-x-6">
-              <img src={Logo} alt="CSIT Logo" className="w-24 md:w-40 h-auto rounded-full" />
+              <img
+                src={Logo}
+                alt="CSIT Logo"
+                className="w-24 md:w-40 h-auto rounded-full"
+              />
               <div className="text-left">
-                <h1 className="text-xl md:text-4xl text-black font-serif">Chhatrapati Shivaji Institute of Technology</h1>
-                <p className="text-xs md:text-sm text-black">Shivaji Nagar, Baload Road Durg, Chhattisgarh 491001</p>
+                <h1 className="text-xl md:text-4xl text-black font-serif">
+                  Chhatrapati Shivaji Institute of Technology
+                </h1>
+                <p className="text-xs md:text-sm text-black">
+                  Shivaji Nagar, Baload Road Durg, Chhattisgarh 491001
+                </p>
               </div>
             </div>
 
@@ -44,16 +52,36 @@ const Header = () => {
               <div className="hidden md:flex items-center gap-17 space-x-15">
                 {/* Additional Photos */}
                 <div className="flex space-x-3">
-                  <img src={Image1} alt="Sample 1" className="h-13 w-13 rounded-md" />
-                  <img src={Image2} alt="Sample 2" className="h-13 w-13 rounded-md" />
-                  <img src={Image3} alt="Sample 3" className="h-13 w-13 rounded-md" />
-                  <img src={Image4} alt="Sample 4" className="h-13 w-13 rounded-md" />
-                  <img src={Image5} alt="Sample 5" className="h-13 w-13 rounded-md" />
+                  <img
+                    src={Image1}
+                    alt="Sample 1"
+                    className="h-13 w-13 rounded-md"
+                  />
+                  <img
+                    src={Image2}
+                    alt="Sample 2"
+                    className="h-13 w-13 rounded-md"
+                  />
+                  <img
+                    src={Image3}
+                    alt="Sample 3"
+                    className="h-13 w-13 rounded-md"
+                  />
+                  <img
+                    src={Image4}
+                    alt="Sample 4"
+                    className="h-13 w-13 rounded-md"
+                  />
+                  <img
+                    src={Image5}
+                    alt="Sample 5"
+                    className="h-13 w-13 rounded-md"
+                  />
                 </div>
                 {/* Directory Icon */}
-                <div 
+                <div
                   className="flex flex-col items-center cursor-pointer"
-                  onMouseEnter={() => handleDropdownHover('directory')}
+                  onMouseEnter={() => handleDropdownHover("directory")}
                   onMouseLeave={handleDropdownLeave}
                 >
                   <User className="h-5 w-5 text-black" />

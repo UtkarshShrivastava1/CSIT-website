@@ -12,13 +12,15 @@ import CompaniesVisited from "../components/HomeComponents/CompaniesVisited";
 import PlacementStats from "../components/HomeComponents/PlacementStats";
 import Testimonials from "../components/HomeComponents/Testimonials";
 
-
 const Home = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-white overflow-x-hidden m-0 p-0">
+      {" "}
       <Header />
       <Navbar /> {/* Keep Navbar here, right after Header */}
-      <Hero />
+      <section className="p-0 m-0 overflow-hidden">
+        <Hero />
+      </section>
       <NewsTicker />
       <AboutSection />
       <GallerySection />

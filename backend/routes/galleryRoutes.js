@@ -20,7 +20,7 @@ const upload = multer({
 
 // Gallery routes
 router.get("/", getAllImages);
-router.post("/multiple", authMiddleware, upload.array("images"), uploadImages);
+router.post("/multiple", upload.array("images"), uploadImages);
 router.delete("/:id", deleteImage);
 
 module.exports = router;
