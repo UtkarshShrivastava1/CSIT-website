@@ -1,10 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Multiple favicon sizes -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" sizes="32x16" />
+    <link rel="apple-touch-icon" href="/vite.svg" />
+
+    <!-- For IE/Windows -->
+    <meta name="msapplication-config" content="none" />
+    <meta name="msapplication-TileImage" content="/vite.svg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>CSIT Durg</title>
+    <style>
+      /* Add custom styles for the favicon */
+      link[rel="icon"] {
+        aspect-ratio: 2/1; /* Makes the icon horizontally oval */
+        width: 32px; /* Standard favicon width */
+        height: 16px; /* Half the width for oval shape */
+      }
+
+      /* Ensure proper scaling for different devices */
+      @media (min-resolution: 192dpi) {
+        link[rel="icon"] {
+          width: 64px;
+          height: 32px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
