@@ -6,14 +6,14 @@ const jwt = require("jsonwebtoken");
 const errorHandler = require("./middleware/errorHandler");
 const { authMiddleware } = require("./middleware/auth");
 require("colors");
-
+const admissionRoutes = require("./routes/admissionRoutes");
 const app = express();
 
 // Middleware
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-// CORS - use only cors() middleware; no need for manual headers duplication
+// CORS Setup
 app.use(
   cors({
     origin: "*",
@@ -30,7 +30,9 @@ app.use(
   })
 );
 
-// Admin login route (env-based hardcoded)
+// Routes
+app.use("/api/admission", admissionRoutes);
+// Admin Login Route
 app.post("/api/auth/admin-login", (req, res) => {
   try {
     const { username, password } = req.body;
@@ -74,9 +76,8 @@ app.post("/api/auth/admin-login", (req, res) => {
   }
 });
 
-// Protected routes
-app.use("/api/gallery", require("./routes/galleryRoutes"));
-// add other protected routes similarly
+// Protected routes (example)
+// app.use("/api/gallery", require("./routes/galleryRoutes"));
 
 // 404 fallback
 app.use((req, res) => {
@@ -90,7 +91,7 @@ app.use((req, res) => {
 // Global error handler
 app.use(errorHandler);
 
-// MongoDB connection & server start
+// MongoDB Connection & Server Start
 const PORT = process.env.PORT || 5000;
 const mongoURI =
   process.env.NODE_ENV === "production"

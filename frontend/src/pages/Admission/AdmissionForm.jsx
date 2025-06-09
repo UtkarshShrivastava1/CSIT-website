@@ -66,18 +66,23 @@ function AdmissionForm() {
 
     try {
       const response = await api.post("/admission/submit", formData);
-      console.log("Form submitted:", response.data);
-      setSuccessMessage("Your admission form has been submitted successfully!");
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        city: "",
-      });
+
+      if (response.data) {
+        setSuccessMessage(
+          "Your admission form has been submitted successfully!"
+        );
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          city: "",
+        });
+      }
     } catch (error) {
       console.error("Error submitting admission form:", error);
       setErrorMessage(
-        error.response?.data?.message || "An error occurred. Please try again."
+        error.response?.data?.message ||
+          "Unable to submit form. Please try again later or contact support."
       );
     } finally {
       setLoading(false);
