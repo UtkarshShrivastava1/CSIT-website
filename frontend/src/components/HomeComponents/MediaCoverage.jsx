@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectCreative } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 // Import Swiper styles
 import "swiper/css";
@@ -156,39 +157,41 @@ const MediaCoverage = () => {
               ))}
             </Swiper>
 
-            <div className="absolute top-1/2 left-0 right-0 z-10 flex justify-between items-center px-2 sm:px-4 -translate-y-1/2">
+            <div className="absolute top-1/2 left-0 right-0 z-10 flex justify-between items-center px-4 -translate-y-1/2">
               <button
                 onClick={handlePrevClick}
-                className="bg-white shadow-md w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center hover:scale-110 transition-all"
+                className="p-2 text-white/70 hover:text-white/90 transition-colors"
+                aria-label="Previous slide"
               >
                 <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6 text-[#0d173b]"
+                  className="w-8 h-8 sm:w-10 sm:h-10"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth="2.5"
                   viewBox="0 0 24 24"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
                     d="M15 19l-7-7 7-7"
                   />
                 </svg>
               </button>
               <button
                 onClick={handleNextClick}
-                className="bg-white shadow-md w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center hover:scale-110 transition-all"
+                className="p-2 text-white/70 hover:text-white/90 transition-colors"
+                aria-label="Next slide"
               >
                 <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6 text-[#0d173b]"
+                  className="w-8 h-8 sm:w-10 sm:h-10"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth="2.5"
                   viewBox="0 0 24 24"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
@@ -272,6 +275,29 @@ const MediaCoverage = () => {
               </div>
             </div>
           </div>
+        </div>
+        {/* Add View More Button */}
+        <div className="mt-12 sm:mt-16 text-center">
+          <Link
+            to="/more/gallery"
+            className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-[#0d173b] text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-[#162654] transition-all duration-300 group shadow-lg hover:shadow-xl"
+          >
+            <span className="mr-2">View More</span>
+            <svg
+              className="w-4 h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

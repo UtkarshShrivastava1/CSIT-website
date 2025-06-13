@@ -24,9 +24,9 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#0d173b] text-white">
-      {/* Desktop Menu - Keep existing desktop menu code */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        {/* Decreased height for mobile */}
+        <div className="flex items-center justify-between h-10 md:h-16">
           {/* Desktop Menu */}
           <div className="hidden md:flex w-full justify-between">
             {/* Home */}
@@ -442,21 +442,22 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Menu Button - Only visible in header */}
+          {/* Mobile Menu Button - Further decreased size */}
           <div className="md:hidden w-full flex justify-end relative z-50">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-[#1a2d5e] focus:outline-none ${
+              className={`inline-flex items-center justify-center p-1 rounded-md text-white hover:bg-[#1a2d5e] focus:outline-none ${
                 mobileMenuOpen ? "invisible" : "visible"
               }`}
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-4 w-4" />{" "}
+              {/* Decreased from h-5 w-5 to h-4 w-4 */}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Sidebar */}
+      {/* Mobile Sidebar - Update padding */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300 ${
           mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -469,22 +470,23 @@ export default function Navbar() {
           }`}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close Button */}
-          <div className="sticky top-0 right-0 p-4 flex justify-end bg-[#0d173b] z-50">
+          {/* Close Button - Decreased padding */}
+          <div className="sticky top-0 right-0 p-1.5 flex justify-end bg-[#0d173b] z-50">
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="rounded-full p-1 hover:bg-[#1a2d5e] transition-colors duration-200"
             >
-              <X className="h-6 w-6 text-white" />
+              <X className="h-4 w-4 text-white" />{" "}
+              {/* Decreased from h-5 w-5 to h-4 w-4 */}
             </button>
           </div>
 
-          {/* Menu Items */}
-          <div className="px-2 pt-2 pb-3 space-y-1">
+          {/* Menu Items - Decreased padding and spacing */}
+          <div className="px-2 pt-1 pb-2 space-y-0.5">
             {/* Home */}
             <Link
               to="/"
-              className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
+              className="block px-3 py-1 rounded-md text-sm font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home

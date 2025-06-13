@@ -7,10 +7,11 @@ const errorHandler = require("./middleware/errorHandler");
 const { authMiddleware } = require("./middleware/auth");
 require("colors");
 const admissionRoutes = require("./routes/admissionRoutes");
+const { testCloudinaryConfig } = require("./config/cloudinary");
 const app = express();
 
 // Middleware
-app.use(express.json({ limit: "10mb" }));
+app.use(express.json({ limit: "30mb" }));
 app.use(express.urlencoded({ extended: true }));
 
 // CORS Setup
@@ -32,6 +33,7 @@ app.use(
 
 // Routes
 app.use("/api/admission", admissionRoutes);
+app.use("/api/gallery", require("./routes/galleryRoutes"));
 // Admin Login Route
 app.post("/api/auth/admin-login", (req, res) => {
   try {
@@ -114,9 +116,26 @@ const connectWithRetry = async (retryCount = 5) => {
     await mongoose.connect(mongoURI, mongooseOptions);
     console.log("MongoDB connected".green.bold);
 
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}...`.green);
-    });
+    // Initialize other services like Cloudinary here if needed
+    const initializeServices = async () => {
+      try {
+        // Test Cloudinary configuration
+        const cloudinaryStatus = await testCloudinaryConfig();
+        if (!cloudinaryStatus) {
+          console.error("Cloudinary configuration failed".red);
+        }
+
+        // Start server only after all services are initialized
+        app.listen(PORT, () => {
+          console.log(`Server running on port ${PORT}...`.green);
+        });
+      } catch (error) {
+        console.error("Service initialization failed:".red, error);
+        process.exit(1);
+      }
+    };
+
+    initializeServices();
   } catch (err) {
     console.error("MongoDB connection error:".red, err);
     if (retryCount > 0) {

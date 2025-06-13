@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom"; // Add this import
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Autoplay,
@@ -118,17 +119,17 @@ const GallerySection = () => {
             ))}
           </Swiper>
 
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons - Updated without background */}
           <button
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 ml-2 sm:ml-4 hover:bg-gray-100"
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 p-2 ml-2 sm:ml-4 hover:opacity-80 transition-opacity"
             onClick={() => swiperRef.current?.slidePrev()}
             aria-label="Previous Slide"
           >
             <svg
-              className="w-6 h-6 text-gray-700"
+              className="w-8 h-8 text-white/70"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
               viewBox="0 0 24 24"
             >
               <path
@@ -140,15 +141,15 @@ const GallerySection = () => {
           </button>
 
           <button
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 mr-2 sm:mr-4 hover:bg-gray-100"
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10 p-2 mr-2 sm:mr-4 hover:opacity-80 transition-opacity"
             onClick={() => swiperRef.current?.slideNext()}
             aria-label="Next Slide"
           >
             <svg
-              className="w-6 h-6 text-gray-700"
+              className="w-8 h-8 text-white/70"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
               viewBox="0 0 24 24"
             >
               <path
@@ -158,6 +159,30 @@ const GallerySection = () => {
               />
             </svg>
           </button>
+        </div>
+
+        {/* Add View More Button with improved responsiveness */}
+        <div className="mt-8 md:mt-12 text-center px-4">
+          <Link
+            to="/more/gallery"
+            className="inline-flex items-center justify-center w-full md:w-auto px-4 md:px-6 py-2.5 md:py-3 bg-[#0d173b] text-white text-sm md:text-base font-semibold rounded-lg hover:bg-[#162654] transition-all duration-300 group shadow-lg hover:shadow-xl"
+          >
+            <span className="mr-2">View More</span>
+            <svg
+              className="w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </Link>
         </div>
       </div>
 

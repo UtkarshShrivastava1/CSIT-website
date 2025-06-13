@@ -1,56 +1,27 @@
-const cloudinary = require("../config/cloudinary");
-const { Readable } = require("stream");
+const { cloudinary } = require("../config/cloudinary");
 
-// Get all images
 const getAllImages = async (req, res) => {
   try {
-    const result = await cloudinary.api.resources({
-      type: "upload",
-      prefix: "gallery/", // your folder name on Cloudinary
-      max_results: 100,
-    });
+    console.log("Fetching gallery images...".yellow);
 
-    const images = result.resources.map((img) => ({
-      public_id: img.public_id,
-      url: img.secure_url,
-      width: img.width,
-      height: img.height,
-      format: img.format,
-      created_at: img.created_at,
-    }));
+    const result = await cloudinary.search
+      .expression("folder:gallery")
+      .sort_by("created_at", "desc")
+      .max_results(30)
+      .execute();
 
-    res.status(200).json({ success: true, images });
-  } catch (error) {
-    console.error("Error fetching images from Cloudinary:", error);
-    res.status(500).json({ success: false, message: error.message });
-  }
-};
+    console.log(`Found ${result.resources.length} images`.green);
 
-// Upload image
-const uploadImage = async (req, res) => {
-  try {
-    if (!req.file) {
-      return res.status(400).json({
-        success: false,
-        message: "No image file provided",
-      });
-    }
-
-    const result = await cloudinary.uploader.upload(req.file.path, {
-      folder: "gallery",
-      resource_type: "auto",
-    });
-
-    res.status(201).json({
+    return res.status(200).json({
       success: true,
-      image: result,
-      message: "Image uploaded successfully",
+      images: result.resources,
+      message: "Gallery images fetched successfully",
     });
   } catch (error) {
-    console.error("Error uploading image:", error);
-    res.status(500).json({
+    console.error("Error fetching gallery images:".red, error);
+    return res.status(500).json({
       success: false,
-      message: "Error uploading image",
+      message: "Error fetching gallery images",
       error: error.message,
     });
   }
@@ -66,28 +37,26 @@ const uploadImages = async (req, res) => {
       });
     }
 
-    const uploadPromises = req.files.map((file) => {
-      return new Promise((resolve, reject) => {
-        const stream = cloudinary.uploader.upload_stream(
-          {
-            folder: "gallery",
-            resource_type: "auto",
-          },
-          (error, result) => {
-            if (error) reject(error);
-            else resolve(result);
-          }
-        );
+    console.log(`Attempting to upload ${req.files.length} images...`.yellow);
 
-        // Convert buffer to stream
-        const bufferStream = new Readable();
-        bufferStream.push(file.buffer);
-        bufferStream.push(null);
-        bufferStream.pipe(stream);
-      });
+    const uploadPromises = req.files.map(async (file) => {
+      try {
+        // Convert buffer to base64
+        const base64 = `data:${file.mimetype};base64,${file.buffer.toString(
+          "base64"
+        )}`;
+        return await uploadWithRetry(base64, {
+          folder: "gallery",
+          resource_type: "auto",
+        });
+      } catch (error) {
+        console.error("Error uploading file:".red, error);
+        throw error;
+      }
     });
 
     const results = await Promise.all(uploadPromises);
+    console.log(`Successfully uploaded ${results.length} images`.green);
 
     res.status(201).json({
       success: true,
@@ -95,7 +64,7 @@ const uploadImages = async (req, res) => {
       message: `Successfully uploaded ${results.length} images`,
     });
   } catch (error) {
-    console.error("Error uploading images:", error);
+    console.error("Error uploading images:".red, error);
     res.status(500).json({
       success: false,
       message: "Error uploading images",
@@ -126,7 +95,6 @@ const deleteImage = async (req, res) => {
 
 module.exports = {
   getAllImages,
-  uploadImage,
   uploadImages,
   deleteImage,
 };

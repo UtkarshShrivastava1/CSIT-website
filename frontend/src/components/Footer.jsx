@@ -9,6 +9,8 @@ import {
 import { HiLocationMarker, HiMail, HiPhone } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import Logo from "../assets/csitlogo.png";
+import MandatoryDisclosure from "../assets/MandatoryDisclosure.pdf";
+
 // import AboutPage from '../pages/About/Introduction';
 
 const SchoolFooter = () => {
@@ -213,12 +215,15 @@ const SchoolFooter = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/more/mandatory-disclosure"
+                <a
+                  href={MandatoryDisclosure}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
                 >
                   Mandatory Disclosure
-                </Link>
+                </a>
+                2
               </li>
               <li>
                 <Link

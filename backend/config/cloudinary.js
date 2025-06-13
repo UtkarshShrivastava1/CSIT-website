@@ -1,69 +1,73 @@
-const cloudinary = require('cloudinary').v2;
+const cloudinary = require("cloudinary").v2;
+require("colors");
 
-// Configure Cloudinary with timeout handling
+// Configure Cloudinary
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
-  timeout: 60000 // 60 seconds timeout for operations
+  timeout: 60000,
 });
 
-// Test the configuration and provide detailed error reporting
+// Test Cloudinary Configuration
 const testCloudinaryConfig = async () => {
   try {
+    console.log("Testing Cloudinary configuration...".yellow);
+    console.log("Config values:".cyan, {
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: process.env.CLOUDINARY_API_KEY ? "****" : "missing",
+      api_secret: process.env.CLOUDINARY_API_SECRET ? "****" : "missing",
+    });
+
     const result = await cloudinary.api.ping();
-    console.log('✅ Cloudinary configuration is valid:', result);
+    console.log("✅ Cloudinary configuration is valid:".green, result);
+    return true;
   } catch (error) {
-    console.error('❌ Cloudinary configuration error:', error.message);
-    
-    // Check for common configuration issues
-    if (error.message.includes('api_key')) {
-      console.error('API Key issue detected. Please check your CLOUDINARY_API_KEY environment variable.');
-    } else if (error.message.includes('cloud_name')) {
-      console.error('Cloud Name issue detected. Please check your CLOUDINARY_CLOUD_NAME environment variable.');
-    } else if (error.message.includes('signature')) {
-      console.error('API Secret issue detected. Please check your CLOUDINARY_API_SECRET environment variable.');
+    console.error("❌ Cloudinary configuration error:".red, error.message);
+    if (error.message.includes("api_key")) {
+      console.error("API Key issue detected - Check CLOUDINARY_API_KEY".red);
+    } else if (error.message.includes("cloud_name")) {
+      console.error(
+        "Cloud Name issue detected - Check CLOUDINARY_CLOUD_NAME".red
+      );
+    } else if (error.message.includes("api_secret")) {
+      console.error(
+        "API Secret issue detected - Check CLOUDINARY_API_SECRET".red
+      );
     }
-    
-    // Log config without exposing secrets
-    console.log('Current Cloudinary Config:', {
-      cloud_name: process.env.CLOUDINARY_CLOUD_NAME || 'not set',
-      api_key: process.env.CLOUDINARY_API_KEY ? '****' : 'not set',
-      api_secret: process.env.CLOUDINARY_API_SECRET ? '****' : 'not set'
-    });
+    return false;
   }
 };
 
-// Run the test when this module is imported
-testCloudinaryConfig();
-
-// Helper function for safer uploads with error handling
-const safeUpload = async (fileData, options = {}) => {
-  try {
-    return await cloudinary.uploader.upload(fileData, {
-      timeout: 30000, // 30 seconds timeout
-      ...options
-    });
-  } catch (error) {
-    console.error('Cloudinary upload error:', error.message);
-    throw new Error(`Cloudinary upload failed: ${error.message}`);
+// Enhanced upload function with retries
+const uploadWithRetry = async (file, options = {}, maxRetries = 3) => {
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      console.log(`Upload attempt ${attempt}/${maxRetries}...`.yellow);
+      const result = await cloudinary.uploader.upload(file, {
+        timeout: 30000,
+        ...options,
+      });
+      console.log("Upload successful".green);
+      return result;
+    } catch (error) {
+      console.error(`Upload attempt ${attempt} failed:`.red, error.message);
+      if (attempt === maxRetries) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Wait 2s between retries
+    }
   }
 };
 
-// Helper function for safer deletion with error handling
-const safeDestroy = async (publicId) => {
-  try {
-    if (!publicId) return { result: 'no id provided' };
-    return await cloudinary.uploader.destroy(publicId);
-  } catch (error) {
-    console.error('Cloudinary delete error:', error.message);
-    throw new Error(`Cloudinary deletion failed: ${error.message}`);
+// Initialize Cloudinary
+(async () => {
+  const isValid = await testCloudinaryConfig();
+  if (!isValid) {
+    console.error("Cloudinary initialization failed".red);
   }
-};
+})();
 
-// Export the configured instance and helper functions
 module.exports = {
-  ...cloudinary,
-  safeUpload,
-  safeDestroy
+  cloudinary,
+  uploadWithRetry,
+  testCloudinaryConfig,
 };

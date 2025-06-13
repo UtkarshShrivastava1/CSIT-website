@@ -13,13 +13,16 @@ const storage = multer.memoryStorage();
 const upload = multer({
   storage,
   limits: {
-    fileSize: 5 * 1024 * 1024, // 5MB limit
-    files: 10, // Max 10 files at once
+    fileSize: 5 * 1024 * 1024,
+    files: 10,
   },
 });
 
-// Gallery routes
+// Public route - no auth required
 router.get("/", getAllImages);
+
+// Protected routes - require auth
+router.use(authMiddleware);
 router.post("/multiple", upload.array("images"), uploadImages);
 router.delete("/:id", deleteImage);
 
