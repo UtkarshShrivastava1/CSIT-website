@@ -6,7 +6,8 @@ import api from "../../../services/api";
 
 function GalleryForm() {
   const [formData, setFormData] = useState({
-    images: []
+    images: [],
+    category:""
   });
   const [previewUrls, setPreviewUrls] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -72,6 +73,7 @@ function GalleryForm() {
       formData.images.forEach(image => {
         postData.append("images", image);
       });
+      postData.append("category", formData.category);
 
       // const response = await fetch("http://localhost:5000/api/gallery/multiple", {
       //   method: "POST",
@@ -137,6 +139,22 @@ function GalleryForm() {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
+        <div>
+  <label htmlFor="category" className="block text-sm font-medium text-gray-700">
+    Category <span className="text-red-500">*</span>
+  </label>
+  <input
+    id="category"
+    name="category"
+    type="text"
+    value={formData.category}
+    onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+    required
+    className="mt-1 block w-full rounded-md border-gray-900 shadow-md focus:border-[#0d173b] focus:ring-[#0d173b] sm:text-sm !p-4 text-black"
+    placeholder="Enter Category"
+  />
+</div>
+
           <div
             {...getRootProps()}
             className={`border-3 border-dashed rounded-xl p-10 text-center cursor-pointer transition-all duration-300 group

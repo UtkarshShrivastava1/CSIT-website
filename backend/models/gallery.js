@@ -6,6 +6,10 @@ const gallerySchema = new mongoose.Schema({
     public_id: String,
     url: String
   },
+  category:{
+    type:String,
+    required:true,
+  },
   createdAt: {
     type: Date,
     default: Date.now
