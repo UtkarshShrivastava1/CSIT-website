@@ -28,6 +28,59 @@ return res.status(200).json({
   }
 };
 
+
+// const getImageByCategory= async(req,res)=>{
+//   try {
+//     const {category} = await req.body;
+//     const response = await gallery.find({category});
+
+//     res.status(200).json({
+//       response
+//     })
+//   } catch (error) {
+//     console.log(error.message)
+//     res.status(500).json({
+//       message:"Please choose the correct category"
+//     })
+//   }
+// }
+
+const getImageByCategory = async (req, res) => {
+  try {
+    const { category } = req.query; // Use query instead of body
+
+    if (!category) {
+      return res.status(400).json({
+        success: false,
+        message: "Category is required",
+      });
+    }
+
+    const response = await gallery.find({ category });
+
+    if (response.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "No images found for this category",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      response,
+      message: `Found ${response.length} images in '${category}'`,
+    });
+  } catch (error) {
+    console.error("Error fetching category images:", error.message);
+    res.status(500).json({
+      success: false,
+      message: "Error fetching category images",
+      error: error.message,
+    });
+  }
+};
+
+
 // Upload multiple images
 // const uploadImages = async (req, res) => {
 //   try {
@@ -165,4 +218,5 @@ module.exports = {
   getAllImages,
   uploadImages,
   deleteImage,
+  getImageByCategory
 };

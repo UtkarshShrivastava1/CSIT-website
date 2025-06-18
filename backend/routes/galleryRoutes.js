@@ -5,6 +5,7 @@ const {
   uploadImages,
   getAllImages,
   deleteImage,
+  getImageByCategory
 } = require("../controllers/galleryController");
 const { authMiddleware } = require("../middleware/auth");
 
@@ -20,6 +21,7 @@ const upload = multer({
 
 // Public route - no auth required
 router.get("/", getAllImages);
+router.get("/category",getImageByCategory)
 
 // Protected routes - require auth
 router.use(authMiddleware);
