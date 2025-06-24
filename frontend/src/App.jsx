@@ -24,6 +24,7 @@ import Home from "./pages/Home";
 import MorePage from "./pages/More/MoreIndex";
 import NaacPage from "./pages/NAAC Cycle/NAACIndex";
 import PlacementPage from "./pages/Placement/PlacementIndex";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -37,6 +38,7 @@ const ProtectedRoute = ({ children }) => {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <div className="flex-grow">
           <Routes>
