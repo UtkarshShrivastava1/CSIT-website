@@ -67,17 +67,17 @@ export default function Navbar() {
                     >
                       Aspiration
                     </Link>
-                    <Link
+                    {/* <Link
                       to="/about/achievement"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
                       Achievement
-                    </Link>
+                    </Link> */}
                     <Link
-                      to="/about/professional-bodies"
+                      to="/about/governing-body"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
-                      Professional Bodies
+                      Governing Body
                     </Link>
                     <Link
                       to="/about/message"
@@ -86,17 +86,17 @@ export default function Navbar() {
                       Message
                     </Link>
                     <Link
-                      to="/about/governing-body"
+                      to="/about/professional-bodies"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
-                      Governing Body
+                      Professional Bodies
                     </Link>
-                    <Link
+                    {/* <Link
                       to="/about/celebration"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
                       Celebration
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default function Navbar() {
                       to="/academics/mechatronics"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
-                      Mechatronics
+                      Mechatronics Engineering
                     </Link>
                   </div>
                 </div>
@@ -182,10 +182,10 @@ export default function Navbar() {
                       Admission Process
                     </Link>
                     <Link
-                      to="/admission/help-desk"
+                      to="/admission/admission-form"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
-                      Help Desk
+                      Admission Form
                     </Link>
                     <Link
                       to="/admission/leaflet"
@@ -194,10 +194,10 @@ export default function Navbar() {
                       Leaflet
                     </Link>
                     <Link
-                      to="/admission/admission-form"
+                      to="/admission/help-desk"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
-                      Admission Form
+                      Help Desk
                     </Link>
                   </div>
                 </div>

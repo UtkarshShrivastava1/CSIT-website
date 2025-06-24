@@ -11,15 +11,15 @@ export default function MessageIndex() {
   // Content data for tabs
   const tabContent = {
     forchairman: {
-      title: "From Chairman",
+      title: "Chairman",
       content: <FromChairman />,
     },
     foracademic: {
-      title: "From Academic",
+      title: "Academic",
       content: <FromAcademic />,
     },
     foradministrator: {
-      title: "From Administrator",
+      title: "Administrator",
       content: <FromAdministrator />,
     },
   };
