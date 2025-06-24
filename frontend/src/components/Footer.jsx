@@ -116,20 +116,44 @@ const SchoolFooter = () => {
               </li>
               <li>
                 <Link
+                  to="/admission/courses-offered"
+                  className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
+                >
+                  Courses Offered
+                </Link>
+              </li>
+               <li>
+                <Link
+                  to="/more/anti-ragging"
+                  className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
+                >
+                  Anti-Ragging
+                </Link>
+              </li>
+               <li>
+                <Link
+                  to="/more/iqac"
+                  className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
+                >
+                  IQAC
+                </Link>
+              </li>
+              {/* <li>
+                <Link
                   to="/more/student-affairs?tab=associations"
                   className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
                 >
                   Students Associations
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   to="/more/student-affairs?tab=industry"
                   className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
                 >
                   Industrial Visit
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/campus/initiatives?tab=swar"
@@ -140,12 +164,20 @@ const SchoolFooter = () => {
               </li>
               <li>
                 <Link
+                  to="/campus/initiatives?tab=nss"
+                  className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
+                >
+                  NSS
+                </Link>
+              </li>
+              {/* <li>
+                <Link
                   to="/more/newsletter"
                   className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
                 >
                   News Letter
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -163,14 +195,7 @@ const SchoolFooter = () => {
                   Academic Calendar
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/admission/courses-offered"
-                  className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
-                >
-                  Courses Offered
-                </Link>
-              </li>
+              
               <li>
                 <Link
                   to="/admission/admission-process"
@@ -206,14 +231,7 @@ const SchoolFooter = () => {
               </span>
             </h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/more/anti-ragging"
-                  className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
-                >
-                  Anti-Ragging
-                </Link>
-              </li>
+             
               <li>
                 <a
                   href={MandatoryDisclosure}
@@ -235,10 +253,10 @@ const SchoolFooter = () => {
               </li>
               <li>
                 <Link
-                  to="/campus/initiatives?tab=nss"
+                  to="/more/grievances"
                   className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
                 >
-                  NSS
+                  Grievances 
                 </Link>
               </li>
               <li>
