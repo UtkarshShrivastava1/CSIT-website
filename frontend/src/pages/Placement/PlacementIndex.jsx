@@ -13,14 +13,14 @@ import PlacementStatistics from './PlacementStatistics';
 import TrainingProgramme from './TrainingProgramme';
 
 const sidebarLinks = [
-  { name: 'About TNP Cell', path: 'about-tnp-cell' },
-  { name: 'Internship', path: 'internship' },
-  { name: 'MOUs', path: 'mous' },
-  { name: 'Our Recruiters', path: 'our-recruiters' },
-  { name: 'Placement Policies', path: 'placement-policies' },
-  { name: 'Team Members', path: 'team-members' },
-  { name: 'Placement Statistics', path: 'placement-statistics' },
+  { name: 'About Cell', path: 'about-tnp-cell' },
+  { name: 'VT & Internship', path: 'internship' },
   { name: 'Training Programme', path: 'training-programme' },
+  { name: 'Placement Statistics', path: 'placement-statistics' },
+  { name: 'Our Recruiters', path: 'our-recruiters' },
+  { name: 'MOUs', path: 'mous' },
+  { name: 'Team Members', path: 'team-members' },
+  { name: 'Placement Policies', path: 'placement-policies' },
 ];
 
 export default function PlacementPage() {

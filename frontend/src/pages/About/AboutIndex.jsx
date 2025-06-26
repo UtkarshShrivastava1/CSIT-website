@@ -3,9 +3,9 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';
 import Sidebar from '../../components/Sidebar';
-import AchievementPage from './Achievement';
+import AchievementPage from '../More/Achievement';
 import AspirationPage from './Aspiration';
-import CelebrationPage from './Celebration';
+import CelebrationPage from '../More/Celebration';
 import GoverningBodyPage from './GoverningBody';
 import IntroductionPage from './Introduction';
 import MessagePage from './Message/MessageIndex';
@@ -17,11 +17,10 @@ const sidebarLinks = [
   { name: 'Introduction', path: 'introduction' },
   { name: 'Society', path: 'society' },
   { name: 'Aspiration', path: 'aspiration' },
-  { name: 'Achievement', path: 'achievement' },
+  // { name: 'Achievement', path: 'achievement' },
   { name: 'Professional Bodies', path: 'professional-bodies' },
   { name: 'Messages', path: 'message' },
   { name: 'Governing Body', path: 'governing-body' },
-  { name: 'Celebration', path: 'celebration' },
  
 ];
 

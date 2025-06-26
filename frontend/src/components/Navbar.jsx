@@ -159,6 +159,27 @@ export default function Navbar() {
               </div>
             </div>
 
+            {/* R&D Cells */}
+            <div className="group relative">
+              <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
+                R&D Cells
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              <div className="hidden group-hover:block absolute z-20 top-full pt-2 w-56">
+                <div className="absolute h-2 -top-2 inset-x-0"></div>
+                <div className="rounded-md shadow-lg bg-white">
+                  <div className="py-1">
+                    <Link
+                      to="/more/research-and-development"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      R&D Cells
+                    </Link>
+                      </div>
+                      </div>
+              </div>
+            </div>
+
             {/* Admission */}
             <div className="group relative">
               <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
@@ -214,12 +235,7 @@ export default function Navbar() {
                 <div className="absolute h-2 -top-2 inset-x-0"></div>
                 <div className="rounded-md shadow-lg bg-white">
                   <div className="py-1">
-                    <Link
-                      to="/campus/facilities"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Facilities
-                    </Link>
+                    
                     <Link
                       to="/campus/initiatives"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
@@ -244,7 +260,7 @@ export default function Navbar() {
             {/* Placement */}
             <div className="group relative">
               <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
-                Placement
+                T&P Cell
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               <div className="hidden group-hover:block absolute z-20 top-full pt-2 w-56">
@@ -255,37 +271,19 @@ export default function Navbar() {
                       to="/placement/about-tnp-cell"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
-                      About TNP Cell
+                      About Cell
                     </Link>
                     <Link
                       to="/placement/internship"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
-                      Internship
+                      VT & Internship
                     </Link>
                     <Link
-                      to="/placement/mous"
+                      to="/placement/training-programme"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
-                      MOUs
-                    </Link>
-                    <Link
-                      to="/placement/our-recruiters"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Our Recruiters
-                    </Link>
-                    <Link
-                      to="/placement/placement-policies"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Placement Policies
-                    </Link>
-                    <Link
-                      to="/placement/team-members"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Team Members
+                      Training Programme
                     </Link>
                     <Link
                       to="/placement/placement-statistics"
@@ -294,11 +292,31 @@ export default function Navbar() {
                       Placement Statistics
                     </Link>
                     <Link
-                      to="/placement/training-programme"
+                      to="/placement/our-recruiters"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
-                      Training Programme
+                      Our Recruiters
                     </Link>
+                    <Link
+                      to="/placement/mous"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      MOUs
+                    </Link>
+                    <Link
+                      to="/placement/team-members"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      Team Members
+                    </Link>
+                    <Link
+                      to="/placement/placement-policies"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      Placement Policies
+                    </Link>
+                    
+                    
                   </div>
                 </div>
               </div>
@@ -435,6 +453,24 @@ export default function Navbar() {
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
                       RTI
+                    </Link>
+                    <Link
+                      to="/campus/facilities"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      Facilities
+                    </Link>
+                    <Link
+                      to="/about/celebration"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      Celebration
+                    </Link>
+                    <Link
+                      to="/more/achievement"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      Achievement
                     </Link>
                   </div>
                 </div>
@@ -636,6 +672,21 @@ export default function Navbar() {
               )}
             </div>
 
+            {/* R&D Cells  */}
+            <div>
+              <button
+                onClick={() => toggleMobileDropdown(2)}
+                className="flex items-center justify-between w-full px-3 py-2 rounded-md textbase font-medium text-white hover:bg-[#1a2d5e]"
+              >
+                R&D Cells 
+                <ChevronDown
+                  className={`ml-1 h-4 w-4 transition-transform ${
+                    activeDropdownMobile === 2 ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              </div>
+
             {/* Admission */}
             <div>
               <button
@@ -742,7 +793,7 @@ export default function Navbar() {
                 onClick={() => toggleMobileDropdown(6)}
                 className="flex items-center justify-between w-full px-3 py-2 rounded-md textbase font-medium text-white hover:bg-[#1a2d5e]"
               >
-                Placement
+                T&P Cell
                 <ChevronDown
                   className={`ml-1 h-4 w-4 transition-transform ${
                     activeDropdownMobile === 6 ? "rotate-180" : ""
@@ -757,14 +808,14 @@ export default function Navbar() {
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    About TNP Cell
+                    About Cell
                   </Link>
                   <Link
                     to="/internship"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Internship
+                    VT &  Internship
                   </Link>
                   <Link
                     to="/mous"
