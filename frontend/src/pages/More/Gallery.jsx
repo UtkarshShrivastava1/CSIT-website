@@ -89,19 +89,46 @@ const Gallery = () => {
   return (
     <>
       {/* Category Header */}
-      <div className="h-[15vh] w-full bg-gradient-to-r from-[#0d173b] to-[#1e305f] text-white flex items-center justify-around px-4 overflow-x-auto">
-        {categories.map((category) => (
-          <span
-            key={category}
-            className={`text-md font-medium whitespace-nowrap cursor-pointer transition-all duration-300 ease-in-out hover:underline underline-offset-4 decoration-2 ${
-              selectedCategory === category ? "underline text-yellow-300" : ""
-            }`}
-            onClick={() => fetchImagesByCategory(category)}
-          >
-            {category}
-          </span>
-        ))}
-      </div>
+<div className="w-full bg-gradient-to-r from-[#0d173b] to-[#1e305f] text-white p-4 h-[15vh] flex items-center justify-around">
+  {/* Dropdown for mobile and tablet screens */}
+  <div className="block lg:hidden w-full">
+    <select
+  className="w-full p-3 rounded-md bg-[#1e305f] text-white border border-yellow-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-500 transition-all"
+  onChange={(e) => fetchImagesByCategory(e.target.value)}
+  value={selectedCategory || ""}
+>
+  <option value="" disabled className="text-gray-300">
+    Select a category
+  </option>
+  {categories.map((category) => (
+    <option
+      key={category}
+      value={category}
+      className="text-black bg-white"
+    >
+      {category}
+    </option>
+  ))}
+</select>
+
+  </div>
+
+  {/* Horizontal category list for laptop and desktop screens */}
+  <div className="hidden lg:flex overflow-x-auto gap-4 justify-center items-center">
+    {categories.map((category) => (
+      <span
+        key={category}
+        className={`text-md font-medium whitespace-nowrap cursor-pointer transition-all duration-300 ease-in-out hover:underline underline-offset-4 decoration-2 ${
+          selectedCategory === category ? "underline text-yellow-300" : ""
+        }`}
+        onClick={() => fetchImagesByCategory(category)}
+      >
+        {category}
+      </span>
+    ))}
+  </div>
+</div>
+
 
       {/* Loading/Error */}
       {loading && <div className="text-center py-4">Loading gallery...</div>}
