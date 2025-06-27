@@ -11,6 +11,8 @@ import IQAC from './IQAC';
 import Calendar from './Calendar';
 import StudentAffairsIndex from './Student affairs/StudentAffairsIndex';
 import RnD from './RnD';
+import Achievement from './Achievement';
+import Celebration from './Celebration';
 
 const sidebarLinks = [
   { name: 'Student Affairs', path: 'student-affairs' },
@@ -21,6 +23,9 @@ const sidebarLinks = [
   { name: 'Grievances', path: 'grievances' },
   { name: 'IQAC', path: 'iqac' },
   { name: 'RTI', path: 'rti' },
+  { name: 'Achievement', path: 'achievement' },
+    { name: 'Celebration', path: 'celebration' },
+    // { name: 'Facillities', path: '/campus/facilities' },
 ];
 
 export default function MorePage() {
@@ -32,7 +37,7 @@ export default function MorePage() {
     const activeLink = sidebarLinks.find(link => link.path === path);
     return activeLink ? activeLink.name : 'Student Affairs';
   };
-
+  
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -78,6 +83,8 @@ export default function MorePage() {
                 <Route path="grievances" element={<Grievances />} />
                 <Route path="iqac" element={<IQAC />} />
                 <Route path="rti" element={<RTI />} />
+                <Route path="achievement" element={<Achievement />} />
+                <Route path="celebration" element={<Celebration />} />
                 <Route index element={<Navigate to="student-affairs" replace />} />
                 <Route path="*" element={<Navigate to="student-affairs" replace />} />
               </Routes>
