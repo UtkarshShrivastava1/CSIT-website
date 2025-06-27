@@ -25,7 +25,7 @@ import MorePage from "./pages/More/MoreIndex";
 import NaacPage from "./pages/NAAC Cycle/NAACIndex";
 import PlacementPage from "./pages/Placement/PlacementIndex";
 import ScrollToTop from "./components/ScrollToTop";
-import RandDCellsPage from "./pages/R&D Cells/R&DCells";
+// import RandDCellsPage from "./pages/R&D Cells/R&DCells";
 
 
 
@@ -76,7 +76,7 @@ function App() {
 
 
             {/* R&D Cells page and its nested routes */}
-            <Route path="/R&D cells/*" element={<RandDCellsPage />} />
+            {/* <Route path="/R&D cells/*" element={<RandDCellsPage />} /> */}
 
             {/* Funds page and its nested routes */}
             <Route path="/funds/*" element={<FundsPage />} />
