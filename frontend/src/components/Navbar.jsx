@@ -461,7 +461,7 @@ export default function Navbar() {
                       Facilities
                     </Link>
                     <Link
-                      to="/about/celebration"
+                      to="/more/celebration"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
                       Celebration
