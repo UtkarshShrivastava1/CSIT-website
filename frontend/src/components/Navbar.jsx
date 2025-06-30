@@ -28,7 +28,7 @@ export default function Navbar() {
         {/* Decreased height for mobile */}
         <div className="flex items-center justify-between h-10 md:h-16">
           {/* Desktop Menu */}
-          <div className="hidden md:flex w-full justify-between">
+          <div className="hidden lg:flex w-full justify-between">
             {/* Home */}
             <div className="group relative">
               <Link
@@ -479,7 +479,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button - Further decreased size */}
-          <div className="md:hidden w-full flex justify-end relative z-50">
+          <div className="lg:hidden w-full flex justify-end relative z-50">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`inline-flex items-center justify-center p-1 rounded-md text-white hover:bg-[#1a2d5e] focus:outline-none ${
@@ -495,7 +495,7 @@ export default function Navbar() {
 
       {/* Mobile Sidebar - Update padding */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden transition-opacity duration-300 ${
           mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setMobileMenuOpen(false)}
@@ -675,33 +675,44 @@ export default function Navbar() {
             {/* R&D Cells  */}
             <div>
               <button
-                onClick={() => toggleMobileDropdown(2)}
-                className="flex items-center justify-between w-full px-3 py-2 rounded-md textbase font-medium text-white hover:bg-[#1a2d5e]"
-              >
-                R&D Cells 
-                <ChevronDown
-                  className={`ml-1 h-4 w-4 transition-transform ${
-                    activeDropdownMobile === 2 ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              </div>
-
-            {/* Admission */}
-            <div>
-              <button
                 onClick={() => toggleMobileDropdown(3)}
                 className="flex items-center justify-between w-full px-3 py-2 rounded-md textbase font-medium text-white hover:bg-[#1a2d5e]"
               >
-                Admission
+                R&D Cells 
                 <ChevronDown
                   className={`ml-1 h-4 w-4 transition-transform ${
                     activeDropdownMobile === 3 ? "rotate-180" : ""
                   }`}
                 />
               </button>
-
               {activeDropdownMobile === 3 && (
+  <div className="pl-4 space-y-1 mt-1">
+    <Link
+      to="/more/research-and-development"
+      className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
+      onClick={() => setMobileMenuOpen(false)}
+    >
+      R&D Cells
+    </Link>
+  </div>
+)}
+              </div>
+
+            {/* Admission */}
+            <div>
+              <button
+                onClick={() => toggleMobileDropdown(4)}
+                className="flex items-center justify-between w-full px-3 py-2 rounded-md textbase font-medium text-white hover:bg-[#1a2d5e]"
+              >
+                Admission
+                <ChevronDown
+                  className={`ml-1 h-4 w-4 transition-transform ${
+                    activeDropdownMobile === 4 ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {activeDropdownMobile === 4 && (
                 <div className="pl-4 space-y-1 mt-1">
                   <Link
                     to="/courses-offered"
@@ -745,18 +756,18 @@ export default function Navbar() {
             {/* Campus */}
             <div>
               <button
-                onClick={() => toggleMobileDropdown(4)}
+                onClick={() => toggleMobileDropdown(5)}
                 className="flex items-center justify-between w-full px-3 py-2 rounded-md textbase font-medium text-white hover:bg-[#1a2d5e]"
               >
                 Campus
                 <ChevronDown
                   className={`ml-1 h-4 w-4 transition-transform ${
-                    activeDropdownMobile === 4 ? "rotate-180" : ""
+                    activeDropdownMobile === 5 ? "rotate-180" : ""
                   }`}
                 />
               </button>
 
-              {activeDropdownMobile === 4 && (
+              {activeDropdownMobile === 5 && (
                 <div className="pl-4 space-y-1 mt-1">
                   <Link
                     to="/campus/facilities"
