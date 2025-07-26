@@ -173,10 +173,34 @@ export default function Navbar() {
                       to="/more/research-and-development"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
-                      R&D Cells
+                      IPR FILLED{" "}
                     </Link>
-                      </div>
-                      </div>
+                    <Link
+                      to="/more/research-and-development"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      PAPER PUBLICATION CIVIL{" "}
+                    </Link>{" "}
+                    <Link
+                      to="/more/research-and-development"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      PAPER PUBLICATION EEE{" "}
+                    </Link>{" "}
+                    <Link
+                      to="/more/research-and-development"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      PAPER PUBLICATION ME{" "}
+                    </Link>{" "}
+                    <Link
+                      to="/more/research-and-development"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      PROJECT GRANTS{" "}
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -235,7 +259,6 @@ export default function Navbar() {
                 <div className="absolute h-2 -top-2 inset-x-0"></div>
                 <div className="rounded-md shadow-lg bg-white">
                   <div className="py-1">
-                    
                     <Link
                       to="/campus/initiatives"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
@@ -315,8 +338,6 @@ export default function Navbar() {
                     >
                       Placement Policies
                     </Link>
-                    
-                    
                   </div>
                 </div>
               </div>
@@ -678,7 +699,7 @@ export default function Navbar() {
                 onClick={() => toggleMobileDropdown(3)}
                 className="flex items-center justify-between w-full px-3 py-2 rounded-md textbase font-medium text-white hover:bg-[#1a2d5e]"
               >
-                R&D Cells 
+                R&D Cells
                 <ChevronDown
                   className={`ml-1 h-4 w-4 transition-transform ${
                     activeDropdownMobile === 3 ? "rotate-180" : ""
@@ -686,17 +707,17 @@ export default function Navbar() {
                 />
               </button>
               {activeDropdownMobile === 3 && (
-  <div className="pl-4 space-y-1 mt-1">
-    <Link
-      to="/more/research-and-development"
-      className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
-      onClick={() => setMobileMenuOpen(false)}
-    >
-      R&D Cells
-    </Link>
-  </div>
-)}
-              </div>
+                <div className="pl-4 space-y-1 mt-1">
+                  <Link
+                    to="/more/research-and-development"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    R&D Cells
+                  </Link>
+                </div>
+              )}
+            </div>
 
             {/* Admission */}
             <div>
@@ -826,7 +847,7 @@ export default function Navbar() {
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    VT &  Internship
+                    VT & Internship
                   </Link>
                   <Link
                     to="/mous"
