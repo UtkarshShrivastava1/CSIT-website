@@ -404,6 +404,12 @@ export default function Navbar() {
                     >
                       NAAC Cycle 1
                     </Link>
+                    <Link
+                      to="/naac-cycle/naac-cycle-1"
+                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                    >
+                      NAAC Cycle 2
+                    </Link>
                     {/* <Link to="/naac-cycle/naac-cycle-2" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">NAAC Cycle 2</Link> */}
                     {/* <Link to="/naac-cycle/naac-cycle-3" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">NAAC Cycle 3</Link> */}
                     <Link
@@ -710,10 +716,38 @@ export default function Navbar() {
                 <div className="pl-4 space-y-1 mt-1">
                   <Link
                     to="/more/research-and-development"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
+                    className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    R&D Cells
+                    IPR FILLED
+                  </Link>
+                  <Link
+                    to="/more/research-and-development"
+                    className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    PAPER PUBLICATION CIVIL
+                  </Link>
+                  <Link
+                    to="/more/research-and-development"
+                    className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    PAPER PUBLICATION EEE
+                  </Link>
+                  <Link
+                    to="/more/research-and-development"
+                    className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    PAPER PUBLICATION ME
+                  </Link>
+                  <Link
+                    to="/more/research-and-development"
+                    className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    PROJECT GRANTS
                   </Link>
                 </div>
               )}
