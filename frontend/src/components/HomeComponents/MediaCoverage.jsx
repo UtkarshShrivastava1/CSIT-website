@@ -137,7 +137,7 @@ const MediaCoverage = () => {
                       className="absolute inset-0 bg-cover bg-center transition-all duration-700 group-hover:scale-105"
                       style={{ backgroundImage: `url('${item.image}')` }}
                     ></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0d173b] via-[#0d173b]/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#3f3f41] via-[#0d173b]/20 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8 text-white">
                       <div className="flex items-center gap-2 sm:gap-4 text-sm sm:text-base mb-2 sm:mb-4">
                         <span className="px-2 sm:px-3 py-1 bg-white/20 rounded-full uppercase font-medium tracking-wide">

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 const NaacCycle2 = () => {
   const [expandedSections, setExpandedSections] = useState({});
   const [expandedSubSections, setExpandedSubSections] = useState({});
@@ -17,101 +19,150 @@ const NaacCycle2 = () => {
     }));
   };
 
+  // Updated function to handle both PDFs and links
+  const handleItemClick = (item) => {
+    try {
+      if (item.pdf) {
+        // Handle PDF files
+        if (typeof item.pdf === "string") {
+          window.open(item.pdf, "_blank", "noopener,noreferrer");
+        } else {
+          window.open(item.pdf, "_blank", "noopener,noreferrer");
+        }
+      } else if (item.link) {
+        // Handle page navigation
+        // Convert relative link to absolute URL
+        const baseUrl = window.location.origin;
+        const fullUrl = item.link.startsWith("/")
+          ? `${baseUrl}${item.link}`
+          : `${baseUrl}/${item.link}`;
+
+        // Open in same tab (you can change to "_blank" if you want new tab)
+        window.location.href = fullUrl;
+        // Alternative: window.open(fullUrl, "_blank", "noopener,noreferrer");
+      }
+    } catch (error) {
+      console.error("Error handling item:", error);
+      alert("Unable to open the requested item. Please try again.");
+    }
+  };
+
+  // Keep the old function for backward compatibility with existing PDF calls
   const handleViewPdf = (pdfPath) => {
     try {
-      // Convert relative path to absolute path
-      const basePath = "/src/assets/Naac Cycle/";
-      const absolutePath = pdfPath.startsWith(basePath)
-        ? pdfPath
-        : basePath + pdfPath;
-
-      // Create the full URL using the current origin
-      const fullUrl = window.location.origin + absolutePath;
-
-      // Open in a new tab
-      window.open(fullUrl, "_blank", "noopener,noreferrer");
+      if (typeof pdfPath === "string") {
+        window.open(pdfPath, "_blank", "noopener,noreferrer");
+      } else {
+        window.open(pdfPath, "_blank", "noopener,noreferrer");
+      }
     } catch (error) {
       console.error("Error handling PDF:", error);
       alert("Unable to open PDF. Please try again.");
     }
   };
 
+  // Add a helper function to check if a section is Criteria 1
+  const isCriteria1 = (title) => {
+    return title.startsWith("1.") || title.includes("Curriculum");
+  };
+
   // Update the paths in criteriaData to use absolute paths
   const criteriaData = [
-    {
-      title: "EXTENDED PROFILE",
-      items: [
-        {
-          title:
-            "Extended 1.1 - Number of students year wise during the last five years",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/Extended profile/EP 1.1 Summary.pdf",
-        },
-        {
-          title:
-            "Extended 2.1 - Number of Full time teachers during the last five years",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/Extended profile/EP 2.1 Faculty List without Repeat Count (1).pdf",
-        },
-        {
-          title:
-            "Extended 2.2 - Number of full time teachers year wise during the last five years",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/Extended profile/EP 2.2 Summary.pdf",
-        },
-        {
-          title:
-            "Extended 3.1 - Expenditure Excluding salary component year wise during the last five years",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/Extended profile/EP 3.1 Summary.pdf",
-        },
-      ],
-    },
     {
       title: "Criteria 1 - Curricular Aspects",
       items: [
         {
           title: "1.1 – Curriculum Design and Developments",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 1/1.1.1.pdf",
+          pdf: "/NAAC2/Criteria 1/1.1/1.1.1.pdf",
           subItems: [
             {
               title:
-                "1.1.1 The Institution ensures effective curriculum planning and delivery through a well-planned and documented process...",
-              pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 1/1.1.1.pdf",
+                "1.1.1 The Institution ensures effective curriculum planning and delivery...",
+              pdf: "/NAAC2/Criteria 1/1.1/1.1.1.pdf",
             },
           ],
         },
         {
           title: "1.2 - Academic Flexibility",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 1/1.2.1 Summary.pdf",
+          pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.1/1.2.1 Summary.pdf",
           subItems: [
             {
               title:
-                "1.2.1 Number of Add on/Certificate/Value added programs offered during the last five years",
-              pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 1/1.2.1 Summary.pdf",
+                "1.2.1 Number of Add on/Certificate/Value added programs...",
+              pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.1/1.2.1 Summary.pdf",
+              yearWiseData: [
+                {
+                  year: "2018-19",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.1/1.2.1 2018-19_signed-compressed.pdf",
+                },
+                {
+                  year: "2019-20",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.1/1.2.1 2019-20_signed-compressed.pdf",
+                },
+                {
+                  year: "2020-21",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.1/1.2.1 2020-21_signed_compressed.pdf",
+                },
+                {
+                  year: "2021-22",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.1/1.2.1 2021-22_signed_compressed.pdf",
+                },
+                {
+                  year: "2022-23",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.1/1.2.1 2022-23_signed_compressed.pdf",
+                },
+                {
+                  title: "Certificate",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.1/1.2.1 certificate of HOI-compressed.pdf",
+                },
+              ],
             },
             {
               title:
-                "1.2.2 Percentage of students enrolled in Certificate/Add-on/Value added programs...",
-              pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 1/1.2.2 Summary.pdf",
+                "1.2.2 Percentage of students enrolled in Certificate/Add-on programs...",
+              pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.2/1.2.2 Summary.pdf",
+              yearWiseData: [
+                {
+                  year: "2018-19",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.2/1.2.2_2018-19_signed_compressed.pdf",
+                },
+                {
+                  year: "2019-20",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.2/1.2.2_2019-20_signed-compressed.pdf",
+                },
+                {
+                  year: "2020-21",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.2/1.2.2_2020-21_signed_compressed.pdf",
+                },
+                {
+                  year: "2021-22",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.2/1.2.2_2021-22_signed_compressed.pdf",
+                },
+                {
+                  year: "2022-23",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.2/1.2.2_2022-23_signed_compressed.pdf",
+                },
+                {
+                  title: "Certificate",
+                  pdf: "/NAAC2/Criteria 1/1.2-Academic Flexibility/1.2.2/1.2.2 CERTIFICATE_signed.pdf",
+                },
+              ],
             },
           ],
         },
         {
           title: "1.3 – Curriculum Enrichment",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 1/1.3.1.pdf",
+          pdf: "/public/NAAC2/Criteria 1/1.3-Curriculum Enrichment/1.3.1.pdf",
           subItems: [
             {
-              title:
-                "1.3.1 Institution integrates crosscutting issues relevant to Professional Ethics...",
-              pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 1/1.3.1.pdf",
+              title: "1.3.1 Institution integrates crosscutting issues...",
+              pdf: "/public/NAAC2/Criteria 1/1.3-Curriculum Enrichment/1.3.1.pdf",
             },
             {
-              title:
-                "1.3.2 Percentage of students undertaking project work/field work/internships",
-              pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 1/1.3.2.pdf",
+              title: "1.3.2 Percentage of students undertaking project work...",
+              pdf: "/public/NAAC2/Criteria 1/1.3-Curriculum Enrichment/1.3.2.pdf",
             },
           ],
-        },
-        {
-          title: "1.4 – Feedback System",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 1/1.4.pdf",
         },
       ],
     },
@@ -120,47 +171,47 @@ const NaacCycle2 = () => {
       items: [
         {
           title: "2.1.1 Enrolment percentage",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 2/2.1.1 Summary.pdf",
+          pdf: "/NAAC2/Criteria 2/2.1.1/2.1.1 Summary.pdf",
         },
         {
           title:
             "2.1.2 Percentage of seats filled against seats reserved for various categories...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 2/2.1.2 Summary.pdf",
+          pdf: "/NAAC2/Criteria 2/2.1.2/2.1.2 Summary.pdf",
         },
         {
           title: "2.2.1 Student–Full time Teacher Ratio",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 2/2.2.1 Summary.pdf",
+          pdf: "/NAAC2/Criteria 2/2.2.1/2.2.1 Summary.pdf",
         },
         {
           title:
             "2.3.1 Student centric methods, such as experiential learning...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 2/2.3.1.pdf",
+          pdf: "/NAAC2/Criteria 2/2.3.1/2.3.1.pdf",
         },
         {
           title:
             "2.4.1 Percentage of full-time teachers against sanctioned posts...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 2/2.4.1 Summary.pdf",
+          pdf: "/NAAC2/Criteria 2/2.4.1/2.4.1 Summary.pdf",
         },
         {
           title:
             "2.4.2 Percentage of full time teachers with NET/SET/SLET/Ph.D...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 2/2.4.2 Summary.pdf",
+          pdf: "/NAAC2/Criteria 2/2.4.2/2.4.2 Summary.pdf",
         },
         {
           title: "2.5.1 Mechanism of internal/external assessment...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 2/2.5.1.pdf",
+          pdf: "/NAAC2/Criteria 2/2.5.1/2.5.1.pdf",
         },
         {
           title: "2.6.1 Programme Outcomes (POs) and Course Outcomes (COs)...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 2/2.6.1.pdf",
+          pdf: "/NAAC2/Criteria 2/2.6.1/2.6.1.pdf",
         },
         {
           title: "2.6.2 Attainment of POs and COs are evaluated",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 2/2.6.2.pdf",
+          pdf: "/NAAC2/Criteria 2/2.6.2/2.6.2.pdf",
         },
         {
           title: "2.6.3 Pass percentage of Students during last five years",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 2/2.6.3 Summary.pdf",
+          pdf: "/NAAC2/Criteria 2/2.6.3/2.6.3 Summary.pdf",
         },
       ],
     },
@@ -170,43 +221,43 @@ const NaacCycle2 = () => {
         {
           title:
             "3.1.1 Grants received from Government and non-governmental agencies...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 3/3.1.1 Summary.pdf",
+          pdf: "/NAAC2/Criteria 3/3.1.1/3.1.1 Summary.pdf",
         },
         {
           title:
             "3.2.1 Institution has created an ecosystem for innovations...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 3/3.2.1.pdf",
+          pdf: "/NAAC2/Criteria 3/3.2.1/3.2.1.pdf",
         },
         {
           title: "3.2.2 Number of workshops/seminars/conferences...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 3/3.2.2_Summary.pdf",
+          pdf: "/NAAC2/Criteria 3/3.2.2/3.2.2_Summary.pdf",
         },
         {
           title: "3.3.1 Number of research papers published per teacher...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 3/3.3.1 Summary.pdf",
+          pdf: "/NAAC2/Criteria 3/3.3.1/3.3.1 Summary.pdf",
         },
         {
           title:
             "3.3.2 Number of books and chapters in edited volumes/books...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 3/3.3.2 Summary.pdf",
+          pdf: "/NAAC2/Criteria 3/3.3.2/3.3.2 Summary.pdf",
         },
         {
           title:
             "3.4.1 Extension activities are carried out in the neighborhood community...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 3/3.4.1.pdf",
+          pdf: "/NAAC2/Criteria 3/3.4.1/3.4.1.pdf",
         },
         {
           title:
             "3.4.2 Awards and recognitions received for extension activities...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 3/3.4.2.pdf",
+          pdf: "/NAAC2/Criteria 3/3.4.2/3.4.2.pdf",
         },
         {
           title: "3.4.3 Number of extension and outreach programs...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 3/3.4.3 Summary.pdf",
+          pdf: "/NAAC2/Criteria 3/3.4.3/3.4.3 Summary.pdf",
         },
         {
           title: "3.5.1 Number of MoUs, collaborations/linkages...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 3/3.5.1_Summary.pdf",
+          pdf: "/NAAC2/Criteria 3/3.5.1/3.5.1_Summary.pdf",
         },
       ],
     },
@@ -219,12 +270,12 @@ const NaacCycle2 = () => {
             {
               title:
                 "4.1.1 Availability of adequate infrastructure and physical facilities...",
-              pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 4/4.1.1.pdf",
+              pdf: "/NAAC2/Criteria 4/4.1.1/4.1.1.pdf",
             },
             {
               title:
                 "4.1.2 Percentage of expenditure, excluding salary for infrastructure...",
-              pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 4/4.1.2 Summary.pdf",
+              pdf: "/NAAC2/Criteria 4/4.1.2/4.1.2 Summary.pdf",
             },
           ],
         },
@@ -234,7 +285,7 @@ const NaacCycle2 = () => {
             {
               title:
                 "4.2.1 Library is automated using Integrated Library Management System...",
-              pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 4/4.2.1.pdf",
+              pdf: "/NAAC2/Criteria 4/4.2/4.2.1.pdf",
             },
           ],
         },
@@ -244,11 +295,11 @@ const NaacCycle2 = () => {
             {
               title:
                 "4.3.1 Institution frequently updates its IT facilities...",
-              pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 4/4.3.1.pdf",
+              pdf: "/NAAC2/Criteria 4/4.3/4.3.1.pdf",
             },
             {
               title: "4.3.2 Student–Computer ratio",
-              pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 4/4.3.2 Summary.pdf",
+              pdf: "/NAAC2/Criteria 4/4.3/4.3.2/4.3.2 Summary.pdf",
             },
           ],
         },
@@ -258,7 +309,7 @@ const NaacCycle2 = () => {
             {
               title:
                 "4.4.1 Percentage of expenditure incurred on maintenance of infrastructure...",
-              pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 4/4.4.1 Summary.pdf",
+              pdf: "/NAAC2/Criteria 4/4.4/4.4.1 Summary.pdf",
             },
           ],
         },
@@ -269,40 +320,40 @@ const NaacCycle2 = () => {
       items: [
         {
           title: "5.1.1 Percentage of students benefited by scholarships...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 5/5.1.1_Summary.pdf",
+          pdf: "/NAAC2/Criteria 5/5.1.1/5.1.1_Summary.pdf",
         },
         {
           title:
             "5.1.2 Capacity building and skills enhancement initiatives...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 5/5.1.2_Summary.pdf",
+          pdf: "/NAAC2/Criteria 5/5.1.2/5.1.2_Summary.pdf",
         },
         {
           title: "5.1.3 Percentage of students benefitted by guidance...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 5/5.1.3_Summary sheet.pdf",
+          pdf: "/NAAC2/Criteria 5/5.1.3/5.1.3_Summary sheet.pdf",
         },
         {
           title: "5.1.4 The Institution has a transparent mechanism...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 5/5.1.4_Summary.pdf",
+          pdf: "/NAAC2/Criteria 5/5.1.4/5.1.4_Summary.pdf",
         },
         {
           title: "5.2.1 Percentage of placement of outgoing students...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 5/5.2.1_Summary.pdf",
+          pdf: "/NAAC2/Criteria 5/5.2.1/5.2.1_Summary.pdf",
         },
         {
           title: "5.2.2 Percentage of students qualifying in state/national...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 5/5.2.2_Summary.pdf",
+          pdf: "/NAAC2/Criteria 5/5.2.2/5.2.2_Summary.pdf",
         },
         {
           title: "5.3.1 Number of awards/medals for outstanding performance...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 5/5.3.1_summary.pdf",
+          pdf: "/NAAC2/Criteria 5/5.3.1/5.3.1_summary.pdf",
         },
         {
           title: "5.3.2 Average number of sports and cultural programs...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 5/5.3.2_summary final.pdf",
+          pdf: "/NAAC2/Criteria 5/5.3.2/5.3.2_summary final.pdf",
         },
         {
           title: "5.4.1 There is a registered Alumni Association...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 5/5.4.1.pdf",
+          pdf: "/NAAC2/Criteria 5/5.4.1/5.4.1.pdf",
         },
       ],
     },
@@ -312,42 +363,42 @@ const NaacCycle2 = () => {
         {
           title:
             "6.1.1 The governance and leadership is in accordance with vision...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 6/6.1.1.pdf",
+          pdf: "/NAAC2/Criteria 6/6.1.1.pdf",
         },
         {
           title:
             "6.2.1 The functioning of the institutional bodies is effective...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 6/6.2.1.pdf",
+          pdf: "/NAAC2/Criteria 6/6.2.1.pdf",
         },
         {
           title: "6.2.2 Implementation of e-governance in areas of operation",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 6/6.2.2_Summary.pdf",
+          pdf: "/NAAC2/Criteria 6/6.2.2/6.2.2_Summary.pdf",
         },
         {
           title: "6.3.1 The institution has effective welfare measures...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 6/6.3.1.pdf",
+          pdf: "/NAAC2/Criteria 6/6.3.1.pdf",
         },
         {
           title:
             "6.3.2 Percentage of teachers provided with financial support...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 6/6.3.2_Summary.pdf",
+          pdf: "/NAAC2/Criteria 6/6.3.2/6.3.2_Summary.pdf",
         },
         {
           title:
             "6.3.3 Percentage of teaching and non-teaching staff participating...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 6/Summary-6.3.3.pdf",
+          pdf: "/NAAC2/Criteria 6/6.3.3/Summary-6.3.3.pdf",
         },
         {
           title: "6.4.1 Institution has strategies for mobilization...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 6/6.4.1.pdf",
+          pdf: "/NAAC2/Criteria 6/6.4.1.pdf",
         },
         {
           title: "6.5.1 Internal Quality Assurance Cell (IQAC)...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 6/6.5.1.pdf",
+          link: "more/iqac/",
         },
         {
           title: "6.5.2 Quality assurance initiatives of the institution",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 6/6.5.2_Summary.pdf",
+          pdf: "/NAAC2/Criteria 6/6.5.2/6.5.2_Summary.pdf",
         },
       ],
     },
@@ -357,39 +408,39 @@ const NaacCycle2 = () => {
         {
           title:
             "7.1.1 Measures initiated by the Institution for the promotion of gender equity...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 7/7.1.1.pdf",
+          pdf: "/NAAC2/Criteria 7/7.1.1.pdf",
         },
         {
           title: "7.1.2 The Institution has facilities and initiatives for...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 7/7.1.2 Summary.pdf",
+          pdf: "/NAAC2/Criteria 7/7.1.2/7.1.2 Summary.pdf",
         },
         {
           title: "7.1.3 Quality audits on environment and energy...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 7/7.1.3 Summary.pdf",
+          pdf: "/NAAC2/Criteria 7/7.1.3/7.1.3 Summary.pdf",
         },
         {
           title: "7.1.4 Describe the Institutional efforts/initiatives...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 7/7.1.4.pdf",
+          pdf: "/NAAC2/Criteria 7/7.1.4.pdf",
         },
         {
           title:
             "7.2.1 Describe two best practices successfully implemented...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 7/7.2.1.pdf",
+          pdf: "/NAAC2/Criteria 7/7.2.1.pdf",
         },
         {
           title: "7.3.1 Portray the performance of the Institution...",
-          pdf: "/src/assets/Naac Cycle/Naac Cycle2/criteria 7/7.3.1.pdf",
+          pdf: "/NAAC2/Criteria 7/7.3.1.pdf",
         },
       ],
     },
     {
       title: "SSR (Self Study Report)",
-      pdf: "/src/assets/Naac Cycle/Naac Cycle2/SSR/CGCOGN21243.pdf",
+      pdf: "/NAAC2/SSR/CGCOGN21243.pdf",
       directLink: true,
     },
     {
       title: "DVV Clarification",
-      pdf: "/src/assets/Naac Cycle/Naac Cycle2/DVV Clarifiation/DVV Clarification.pdf",
+      pdf: "/NAAC2/DVVClarifiation/DVVClarification.pdf",
       directLink: true,
     },
   ];
@@ -491,10 +542,11 @@ const NaacCycle2 = () => {
                       <div key={itemIndex}>
                         <div className="flex flex-col">
                           <button
-                            onClick={() =>
-                              item.subItems
-                                ? toggleSubSection(sectionIndex, itemIndex)
-                                : handleViewPdf(item.pdf)
+                            onClick={
+                              () =>
+                                item.subItems
+                                  ? toggleSubSection(sectionIndex, itemIndex)
+                                  : handleItemClick(item) // Changed from handleViewPdf to handleItemClick
                             }
                             className="w-full text-left p-4 hover:bg-blue-50 transition-colors flex justify-between items-center cursor-pointer group"
                           >
@@ -598,29 +650,6 @@ const NaacCycle2 = () => {
             )}
           </div>
         ))}
-      </div>
-
-      {/* Floating Action Button for mobile */}
-      <div className="md:hidden fixed bottom-6 right-6">
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="p-3 bg-[#0d173b] text-white rounded-full shadow-lg hover:bg-[#1e305f] transition-colors cursor-pointer"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 10l7-7m0 0l7 7m-7-7v18"
-            />
-          </svg>
-        </button>
       </div>
     </div>
   );
