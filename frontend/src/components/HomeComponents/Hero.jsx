@@ -7,9 +7,9 @@ import csitBanner3 from "../../assets/Banners/PC/csitbanner3.jpg";
 import csitBanner4 from "../../assets/Banners/PC/csitbanner4.jpg";
 import csitBanner5 from "../../assets/Banners/PC/csitbanner5.jpg";
 
-import BannerPhone from "../assets/Banners/Phone/BannerPhone.jpg";
-import BannerPhone2 from "../assets/Banners/Phone/BannerPhone2.jpg";
-import BannerPhone3 from "../assets/Banners/Phone/BannerPhone3.jpg";
+import BannerPhone from "../../assets/Banners/Phone/BannerPhone.jpg";
+import BannerPhone2 from "../../assets/Banners/Phone/BannerPhone2.jpg";
+import BannerPhone3 from "../../assets/Banners/Phone/BannerPhone3.jpg";
 // Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -106,7 +106,7 @@ const customStyles = `
 
 const Hero = () => {
   const desktopSlides = [
-    { image: csitBanner, alt: "College Campus Banner 1" },
+    { image: csitBanner4, alt: "College Campus Banner 1" },
     { image: csitBanner2, alt: "College Campus Banner 2" },
     { image: csitBanner3, alt: "College Campus Banner 3" },
     { image: csitBanner4, alt: "College Campus Banner 4" },
