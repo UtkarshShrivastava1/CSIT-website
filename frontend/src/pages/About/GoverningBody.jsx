@@ -41,16 +41,16 @@ const GoverningBody = () => {
                 ["2", "Mrs. Satrupa Deshmukh", "Member"],
                 ["3", "Mrs. Nandini Verma", "Member"],
                 ["4", "Mr. Rajesh Deshmukh", "Member"],
-                [
-                  "5",
-                  "Dr. Santosh Kumar Sharma , Principal, CSIT",
-                  "Member- Secretary (Ex-Officio)",
-                ],
+                ["5", "Dr. Ravi Mishra , Principal, CSIT", "Member"],
                 ["6", "Mrs. Shakuntala Verma", "Member"],
                 ["7", "Nominee of DTE, Raipur", "Member"],
                 ["8", "Nominee of the CSVTU, Bhilai", "Member"],
                 ["9", "Nominee of the AICTE", "Member"],
-                ["10", "Prof. H. R. Chandrakar, Dean (Admission)", "Member"],
+                [
+                  "10",
+                  "Dr. Santosh Kumar Sharma, Dean (Research, Development and IIPC)",
+                  "Member",
+                ],
               ].map(([no, name, role], idx) => (
                 <tr
                   key={idx}

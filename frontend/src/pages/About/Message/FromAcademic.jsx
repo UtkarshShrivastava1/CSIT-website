@@ -1,5 +1,5 @@
-import React from 'react'
-import academicImage from "../../../assets/director(academic).jpg";
+import React from "react";
+import academicImage from "../../../assets/principal(academic).jpg";
 const FromAcademic = () => {
   return (
     <div className="bg-white shadow-xl rounded-lg overflow-hidden">
@@ -12,7 +12,7 @@ const FromAcademic = () => {
           </div>
         </div>
         <h1 className="text-3xl font-bold text-white z-10 text-center">
-          Message From Director[Academic]
+          Message From Principal[Academic]
         </h1>
       </div>
 
@@ -29,9 +29,11 @@ const FromAcademic = () => {
               />
               <div className="text-center mt-4">
                 <p className="font-semibold text-lg text-[#0d173b]">
-                Dr. Santosh Kumar Sharma
+                  Dr. Ravi Mishra{" "}
                 </p>
-                <p className="text-sm text-gray-600">Director, CSIT</p>
+                <p className="text-sm text-gray-600">
+                  Principalprincipal(academic).jpg, CSIT
+                </p>
               </div>
             </div>
           </div>
@@ -39,13 +41,30 @@ const FromAcademic = () => {
           {/* Message Content */}
           <div className="w-full md:w-2/3 text-justify text-gray-800 text-[15px] leading-relaxed space-y-4">
             <p>
-            It is always gratifying to put on record that Chhatrapati Shivaji Institute of Technology, Durg, has been excellently facilitating engineering education since its inception. The institute is very renowned in Central India due to its academic and co-curricular ventures, which solely aim for the overall development of its students. The Institute  is spread over Forty acres of land, the green environment, the academic facilities and the consortium of learned faculty members together constitute the valuable unique academic environment which is very much required in engineering education.
+              It is always gratifying to put on record that Chhatrapati Shivaji
+              Institute of Technology, Durg, has been excellently facilitating
+              engineering education since its inception. The institute is very
+              renowned in Central India due to its academic and co-curricular
+              ventures, which solely aim for the overall development of its
+              students. The Institute is spread over Forty acres of land, the
+              green environment, the academic facilities and the consortium of
+              learned faculty members together constitute the valuable unique
+              academic environment which is very much required in engineering
+              education.
             </p>
             <p>
-            Keeping in view the importance of placement of our students, we have organized not only record number of Campus Drives of companies but also organized training programs, finishing classes and seminars for grooming the students to suit the purpose. 
+              Keeping in view the importance of placement of our students, we
+              have organized not only record number of Campus Drives of
+              companies but also organized training programs, finishing classes
+              and seminars for grooming the students to suit the purpose.
             </p>
             <p>
-            Our visionary management, teaching fraternity and academic support staff is the backbone of our success. Counting students success as our sole priority, we dedicate our fullest energy to provide a brilliant academic environment. Thus, Learning at CSIT is a exceptional experience. I welcome you to CSIT to experience the excellence.
+              Our visionary management, teaching fraternity and academic support
+              staff is the backbone of our success. Counting students success as
+              our sole priority, we dedicate our fullest energy to provide a
+              brilliant academic environment. Thus, Learning at CSIT is a
+              exceptional experience. I welcome you to CSIT to experience the
+              excellence.
             </p>
             <p className="font-semibold text-[#0d173b]">
               I extend my Heartiest Welcome to all at CSIT.
@@ -54,7 +73,7 @@ const FromAcademic = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FromAcademic
+export default FromAcademic;
