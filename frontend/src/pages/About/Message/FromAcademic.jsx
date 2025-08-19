@@ -32,7 +32,7 @@ const FromAcademic = () => {
                   Dr. Ravi Mishra{" "}
                 </p>
                 <p className="text-sm text-gray-600">
-                  Principalprincipal(academic).jpg, CSIT
+                  Principal[Academic], CSIT
                 </p>
               </div>
             </div>

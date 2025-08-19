@@ -8,6 +8,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-creative";
 
+// Import media coverage images
+import MediaCoverage1 from "../../assets/MediaCoverage/MediaCoverage1.jpeg";
+import MediaCoverage2 from "../../assets/MediaCoverage/MediaCoverage2.jpeg";
+
 const customStyles = `
   .swiper-pagination-bullet {
     width: 8px;
@@ -32,8 +36,7 @@ const MediaCoverage = () => {
   const mediaItems = [
     {
       id: 1,
-      image:
-        "https://csitdurg.in/admin/uploads/gallery/f6ff4a7b9d0f1d9235efe753a6339eea.jpg",
+      image: MediaCoverage1,
       category: "Featured Story",
       title: "Making Headlines",
       description:
@@ -42,7 +45,7 @@ const MediaCoverage = () => {
     },
     {
       id: 2,
-      image: "https://csitdurg.in/admin/uploads/gallery/26.jpeg",
+      image: MediaCoverage2,
       category: "Academic News",
       title: "Excellence in Education",
       description:

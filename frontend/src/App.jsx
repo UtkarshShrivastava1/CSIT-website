@@ -20,14 +20,14 @@ import FacilitiesIndex from "./pages/Campus/Facilities/Facilitiesindex";
 import InitiativesIndex from "./pages/Campus/Initiatives/InitiativesIndex";
 import FundsPage from "./pages/Funds/FundsIndex";
 import Home from "./pages/Home";
-
+import DvvDetails from "./pages/NAAC Cycle/NAAC_Cycle2_DVV";
 import MorePage from "./pages/More/MoreIndex";
 import NaacPage from "./pages/NAAC Cycle/NAACIndex";
 import PlacementPage from "./pages/Placement/PlacementIndex";
 import ScrollToTop from "./components/ScrollToTop";
+import Navbar from "./components/Navbar"; // Add this import
+import Header from "./components/Header";
 // import RandDCellsPage from "./pages/R&D Cells/R&DCells";
-
-
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -73,7 +73,6 @@ function App() {
 
             {/* Academic page and its nested routes */}
             <Route path="/academics/*" element={<AcademicPage />} />
-
 
             {/* R&D Cells page and its nested routes */}
             {/* <Route path="/R&D cells/*" element={<RandDCellsPage />} /> */}
@@ -207,7 +206,6 @@ function App() {
               path="/R&D Cells"
               element={<Navigate to="/R&D cells/R&D Cells" replace />}
             />
-
 
             {/* Redirects for Admission section */}
             <Route
@@ -353,6 +351,8 @@ function App() {
               element={<Navigate to="/more/iqac" replace />}
             />
             <Route path="/rti" element={<Navigate to="/more/rti" replace />} />
+
+            <Route path="/naac-cycle/dvv-details" element={<DvvDetails />} />
 
             {/* Catch all route - redirect to home */}
             <Route path="*" element={<Navigate to="/" replace />} />

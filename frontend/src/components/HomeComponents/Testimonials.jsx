@@ -3,6 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import { Quote, Star, GraduationCap } from "lucide-react";
 
+// Import testimonial images
+import Testimonials1 from "../../assets/Testimonials/CSIT/ID-1.jpeg";
+import Testimonials2 from "../../assets/Testimonials/CSIT/ID-2.jpeg";
+import Testimonials3 from "../../assets/Testimonials/CSIT/ID-3.jpeg";
+import Testimonials4 from "../../assets/Testimonials/CSIT/ID-4.jpeg";
+import Testimonials5 from "../../assets/Testimonials/CSIT/ID-5.jpeg";
+
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/autoplay";
@@ -11,53 +18,54 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      quote: "The best decision I made was joining this college!",
+      quote: "Empowered by Knowledge and Faculty Support",
       description:
-        "With top-notch faculty and state-of-the-art infrastructure, my learning journey has been phenomenal.",
-      name: "Student A",
-      program: "Computer Science",
+        "I had a good time, learning and enhancing my skills, with the faculty as our upper hand for the moral and support.",
+      name: "SAKSHI VERMA",
+      program: "Computer Science and Engineering",
       rating: 5,
-      image: "https://pngimg.com/uploads/student/student_PNG100.png",
+      image: Testimonials1,
     },
     {
       id: 2,
-      quote: "Excellent faculty and amazing infrastructure.",
+      quote: "Four Years of Learning, Growth, and Joy at CSIT",
       description:
-        "The practical exposure and industry visits have equipped me with the skills I need for my career.",
-      name: "Student B",
+        "CSIT is one of the best institutions where we spent four wonderful years enjoying both learning and fun on campus.",
+      name: "GOVIND KUMAR SAHU",
       program: "Mechanical Engineering",
       rating: 5,
-      image: "https://pngimg.com/uploads/student/student_PNG8.png",
+      image: Testimonials2,
     },
     {
       id: 3,
-      quote: "A vibrant campus life with endless opportunities.",
+      quote: "From Mechanical Engineering to IT Excellence at TCS",
       description:
-        "Participating in various clubs and events has enhanced my leadership and networking skills.",
-      name: "Student C",
-      program: "Business Administration",
+        "With a strong Mechanical Engineering foundation, I seamlessly transitioned into IT and now excel as a System Engineer at TCS.",
+      name: "SAURABH RAHANGDALE",
+      program: "Mechanical Engineering",
       rating: 5,
-      image: "https://pngimg.com/uploads/student/student_PNG30.png",
+      image: Testimonials3,
     },
     {
       id: 4,
-      quote: "The support from faculty has been incredible.",
+      quote:
+        "Growing with CSE Foundation to Senior Developer at Kinematic Food Tech",
       description:
-        "I always felt motivated and guided at every step of my academic journey.",
-      name: "Student D",
-      program: "Electrical Engineering",
+        "A strong CSE foundation and continuous learning helped me grow into a Senior Software Developer at Kinematic Food Tech Pvt. Ltd.",
+      name: "DURLABHA DESHMUKH",
+      program: "Computer Science and Engineering",
       rating: 5,
-      image: "https://pngimg.com/uploads/student/student_PNG17.png",
+      image: Testimonials4,
     },
     {
       id: 5,
-      quote: "The college helped me discover my true potential.",
+      quote: "From Campus Life to Clarity: My Path to an MBA with Distinction",
       description:
-        "From academics to extracurriculars, I grew in all areas.",
-      name: "Student E",
-      program: "Civil Engineering",
+        "My journey at this institute shaped me with resilience, inspired my passion for HR, and guided me to earn an MBA with distinction.",
+      name: "UTPALA GHOSH",
+      program: "Computer Science and Engineering",
       rating: 5,
-      image: "https://pngimg.com/uploads/student/student_PNG47.png",
+      image: Testimonials5,
     },
   ];
 
@@ -87,7 +95,8 @@ const Testimonials = () => {
             <div className="w-16 h-1 bg-[#0d173b]"></div>
           </div>
           <p className="mt-4 max-w-2xl mx-auto text-gray-600">
-            Discover what our students say about their transformative journey at our institution
+            Discover what our students say about their transformative journey at
+            our institution
           </p>
         </div>
 
@@ -113,7 +122,10 @@ const Testimonials = () => {
           className="mySwiper"
         >
           {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id} style={{ width: '70%', maxWidth: '800px' }}>
+            <SwiperSlide
+              key={testimonial.id}
+              style={{ width: "70%", maxWidth: "800px" }}
+            >
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
                 <div className="flex flex-col md:flex-row">
                   <div className="md:w-2/5 bg-gradient-to-br from-[#0d173b] to-blue-900 p-6 relative flex flex-col items-center justify-center text-center">
@@ -124,7 +136,9 @@ const Testimonials = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-white text-lg font-bold mb-1">{testimonial.name}</h3>
+                    <h3 className="text-white text-lg font-bold mb-1">
+                      {testimonial.name}
+                    </h3>
                     <div className="flex items-center justify-center gap-2 text-blue-200 mb-2">
                       <GraduationCap size={14} className="opacity-70" />
                       <p className="text-sm">{testimonial.program}</p>

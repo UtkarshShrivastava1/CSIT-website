@@ -11,6 +11,7 @@ import VideoGallery from "../components/HomeComponents/VideoGallery";
 import CompaniesVisited from "../components/HomeComponents/CompaniesVisited";
 import PlacementStats from "../components/HomeComponents/PlacementStats";
 import Testimonials from "../components/HomeComponents/Testimonials";
+import Infrastructure from "../components/HomeComponents/InfrastructureSection";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       </section>
       <NewsTicker />
       <AboutSection />
+      <Infrastructure />
       <GallerySection />
       <MediaCoverage />
       <VideoGallery />
