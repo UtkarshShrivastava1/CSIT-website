@@ -9,22 +9,22 @@ const dvvData = [
       {
         title:
           "Extended 1.1 - Number of students year wise during the last five years",
-        pdf: "/csit-accrediation/DVV/EP_1.1.pdf",
+        pdf: "/csit-accrediation/DVV/EP 1.1.pdf",
       },
       {
         title:
           "Extended 2.1 - Number of Full time teachers during the last five years",
-        pdf: "/csit-accrediation/DVV/EP_2.1.pdf",
+        pdf: "/csit-accrediation/DVV/EP 2.1.pdf",
       },
       {
         title:
           "Extended 2.2 - Number of full time teachers year wise during the last five years",
-        pdf: "/csit-accrediation/DVV/EP_2.2.pdf",
+        pdf: "/csit-accrediation/DVV/EP 2.2.pdf",
       },
       {
         title:
           "Extended 3.1 - Expenditure Excluding salary component year wise during the last five years",
-        pdf: "/csit-accrediation/DVV/EP_3.1.pdf",
+        pdf: "/csit-accrediation/DVV/EP 3.1.pdf",
       },
     ],
   },
