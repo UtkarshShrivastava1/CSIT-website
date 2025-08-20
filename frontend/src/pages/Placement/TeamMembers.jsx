@@ -1,17 +1,14 @@
-import React from 'react'
+import React from "react";
+
+// Dynamically import all team member images using Vite's import.meta.glob
+const images = import.meta.glob(
+  "../../assets/team member/*.{png,jpg,jpeg,svg}",
+  { eager: true }
+);
+
+const teamMembers = Object.values(images);
 
 const TeamMembers = () => {
-  // Array of team member images
-  const teamMembers = [
-    {
-      image: '236b90ec61b8cc28a5b25f1d60caea44 (1).png'
-    },
-    {
-      image: 'eb1982d65352b46c09fdf0b62a4a08f1.png'
-    }
-    
-  ];
-
   return (
     <div className="bg-white shadow-md rounded-md overflow-hidden">
       {/* Header */}
@@ -35,25 +32,30 @@ const TeamMembers = () => {
         </div>
       </div>
 
+      {/* Content */}
       <div className="p-4 sm:p-6">
         <div className="prose max-w-none text-gray-700">
           {/* Introduction */}
           <div className="mb-6 sm:mb-8">
             <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
-              Our Training & Placement team consists of experienced professionals dedicated to ensuring excellent career opportunities for our students. They work tirelessly to bridge the gap between industry and academia, facilitating successful placements and internships.
+              Our Training & Placement team consists of experienced
+              professionals dedicated to ensuring excellent career opportunities
+              for our students. They work tirelessly to bridge the gap between
+              industry and academia, facilitating successful placements and
+              internships.
             </p>
           </div>
 
           {/* Team Members Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {teamMembers.map((member, index) => (
-              <div 
+            {teamMembers.map((image, index) => (
+              <div
                 key={index}
                 className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
               >
                 <div className="aspect-w-3 aspect-h-4 relative">
-                  <img 
-                    src={`/src/assets/team member/${member.image}`}
+                  <img
+                    src={image.default}
                     alt={`Team Member ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
@@ -64,9 +66,15 @@ const TeamMembers = () => {
 
           {/* Additional Information */}
           <div className="mt-8 p-4 bg-blue-50 border border-blue-100 rounded-md">
-            <h3 className="text-base sm:text-lg font-medium text-[#0d173b] mb-2">Our Commitment</h3>
+            <h3 className="text-base sm:text-lg font-medium text-[#0d173b] mb-2">
+              Our Commitment
+            </h3>
             <p className="text-sm sm:text-base text-gray-700 mb-4">
-              The Training & Placement team is committed to providing comprehensive support to students throughout their academic journey and beyond. We organize regular training sessions, workshops, and industry interactions to prepare students for successful careers.
+              The Training & Placement team is committed to providing
+              comprehensive support to students throughout their academic
+              journey and beyond. We organize regular training sessions,
+              workshops, and industry interactions to prepare students for
+              successful careers.
             </p>
             <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-gray-700">
               <li>Regular industry visits and guest lectures</li>
@@ -79,7 +87,7 @@ const TeamMembers = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TeamMembers
+export default TeamMembers;

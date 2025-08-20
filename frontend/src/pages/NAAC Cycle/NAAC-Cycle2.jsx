@@ -58,6 +58,31 @@ const NaacCycle2 = () => {
   // Update the paths in criteriaData to use absolute paths
   const criteriaData = [
     {
+      title: "Extended Profile",
+      items: [
+        {
+          title:
+            "Extended 1.1 - Number of students year wise during the last five years",
+          pdf: "/csit-accrediation/EP 1.1 Summary.pdf",
+        },
+        {
+          title:
+            "Extended 2.1 - Number of Full time teachers during the last five years",
+          pdf: "/csit-accrediation/EP 2.1 Faculty List without Repeat Count.pdf",
+        },
+        {
+          title:
+            "Extended 2.2 NUMBER OF TEACHING STAFF / FULL TIME TEACHERS YEAR WISE DURING THE LAST FIVE YEARS",
+          pdf: "/csit-accrediation/EP 2.2 Summary.pdf",
+        },
+        {
+          title:
+            "Extended 3.1 EXPENDITURE EXCLUDING SALARY COMPONENT YEAR WISE DURING THE LAST FIVE YEARS",
+          pdf: "/csit-accrediation/EP 3.1 Summary.pdf",
+        },
+      ],
+    },
+    {
       title: "Criteria 1 - Curricular Aspects",
       items: [
         {
