@@ -32,32 +32,55 @@ const dvvData = [
     title: "Criteria 1 - Curricular Aspects",
     items: [
       {
-        title:
-          "1.1.1 The Institution ensures effective curriculum planning and delivery...",
-        // Empty folder -> present as disabled sub-item to avoid loop
-        subItems: [{ title: "No files available (folder empty)", pdf: "" }],
+        title: "1.1 – Curriculum Design and Developments",
+        subItems: [
+          {
+            title:
+              "1.1.1 The Institution ensures effective curriculum planning and delivery through a well-planned and documented process including Academic calendar and conduct of continuous internal Assessment",
+            description: "Write description in a maximum of 500 words",
+            subItems: [{ title: "No files available (folder empty)", pdf: "" }],
+          },
+        ],
       },
       {
-        title: "1.2.1 Number of Add on/Certificate/Value added programs...",
-        pdf: "/csit-accrediation/DVV/1.2.1.pdf",
+        title: "1.2 - Academic Flexibility",
+        subItems: [
+          {
+            title:
+              "1.2.1 Number of Add on/Certificate/Value added programs offered during the last five years",
+            pdf: "/csit-accrediation/DVV/1.2.1.pdf",
+          },
+          {
+            title:
+              "1.2.2 Percentage of students enrolled in Certificate/Add-on/Value added programs as against the total number of students during the last five years",
+            pdf: "/csit-accrediation/DVV/1.2.2.pdf",
+          },
+        ],
       },
       {
-        title:
-          "1.2.2 Percentage of students enrolled in Certificate/Add-on programs...",
-        pdf: "/csit-accrediation/DVV/1.2.2.pdf",
+        title: "1.3 – Curriculum Enrichment",
+        subItems: [
+          {
+            title:
+              "1.3.1 Institution integrates crosscutting issues relevant to Professional Ethics, Gender, Human values, Environment and Sustainability into the Curriculum",
+            subItems: [{ title: "No files available (folder empty)", pdf: "" }],
+          },
+          {
+            title:
+              "1.3.2 Percentage of students undertaking project work/field work/internships (Data for the latest completed academic year)",
+            pdf: "/csit-accrediation/DVV/1.3.2.pdf",
+          },
+        ],
       },
       {
-        title: "1.3.1 Institution integrates crosscutting issues...",
-        subItems: [{ title: "No files available (folder empty)", pdf: "" }],
-      },
-      {
-        title: "1.3.2 Percentage of students undertaking project work...",
-        pdf: "/csit-accrediation/DVV/1.3.2.pdf",
-      },
-      {
-        title:
-          "1.4.1 Institution obtains feedback... and action taken report...",
-        pdf: "/csit-accrediation/DVV/1.4.1.pdf",
+        title: "1.4 – Feedback System",
+        subItems: [
+          {
+            title:
+              "1.4.1 Institution obtains feedback on the academic performance and ambience of the institution from various stakeholders, such as Students, Teachers, Employers, Alumni etc. and action taken report on the feedback is made available on institutional website",
+            pdf: "/csit-accrediation/DVV/1.4.1.pdf",
+          },
+        ],
       },
     ],
   },
@@ -155,32 +178,54 @@ const dvvData = [
     title: "Criteria 4 - Infrastructure and Learning Resources",
     items: [
       {
-        title:
-          "4.1.1 Availability of adequate infrastructure and physical facilities...",
-        subItems: [{ title: "No files available (folder empty)", pdf: "" }],
+        title: "4.1 Physical Facilities",
+        subItems: [
+          {
+            title:
+              "4.1.1 Availability of adequate infrastructure and physical facilities viz., classrooms, laboratories, ICT facilities, cultural activities, gymnasium, yoga centre etc. in the institution",
+            subItems: [{ title: "No files available (folder empty)", pdf: "" }],
+          },
+          {
+            title:
+              "4.1.2 Percentage of expenditure, excluding salary for infrastructure augmentation during last five years (INR in Lakhs)",
+            pdf: "/csit-accrediation/DVV/4.1.2.pdf",
+          },
+        ],
       },
       {
-        title:
-          "4.4.1 Percentage of expenditure incurred on maintenance of infrastructure...",
-        pdf: "/csit-accrediation/DVV/4.4.1.pdf",
+        title: "4.2 Library as a learning Resource",
+        subItems: [
+          {
+            title:
+              "4.2.1 Library is automated using Integrated Library Management System (ILMS), subscription to e-resources, amount spent on purchase of books, journals and per day usage of library",
+            subItems: [{ title: "No files available (folder empty)", pdf: "" }],
+          },
+        ],
       },
       {
-        title:
-          "4.1.2 Percentage of expenditure, excluding salary for infrastructure...",
-        pdf: "/csit-accrediation/DVV/4.1.2.pdf",
+        title: "4.3 IT Infrastructure",
+        subItems: [
+          {
+            title:
+              "4.3.1 Institution frequently updates its IT facilities and provides sufficient bandwidth for internet connection",
+            subItems: [{ title: "No files available (folder empty)", pdf: "" }],
+          },
+          {
+            title:
+              "4.3.2 Student–Computer ratio (Data for the latest completed academic year)",
+            pdf: "/csit-accrediation/DVV/4.3.2.pdf",
+          },
+        ],
       },
       {
-        title:
-          "4.2.1 Library is automated using Integrated Library Management System...",
-        subItems: [{ title: "No files available (folder empty)", pdf: "" }],
-      },
-      {
-        title: "4.3.1 Institution frequently updates its IT facilities...",
-        subItems: [{ title: "No files available (folder empty)", pdf: "" }],
-      },
-      {
-        title: "4.3.2 Student–Computer ratio",
-        pdf: "/csit-accrediation/DVV/4.3.2.pdf",
+        title: "4.4 Maintenance of Campus Infrastructure",
+        subItems: [
+          {
+            title:
+              "4.4.1 Percentage of expenditure incurred on maintenance of infrastructure (physical and academic support facilities) excluding salary component",
+            pdf: "/csit-accrediation/DVV/4.4.1.pdf",
+          },
+        ],
       },
     ],
   },
@@ -364,9 +409,10 @@ const NaacCycle2DVV = () => {
                 onClick={() => toggleSection(sectionIndex)}
                 className="w-full text-left p-4 bg-gray-50 border-b flex justify-between items-center cursor-pointer hover:bg-gray-100 group"
               >
-                <h3 className="font-semibold text-gray-800 truncate pr-2">
+                <h3 className="font-semibold text-gray-800 pr-2 whitespace-normal break-words min-w-0">
                   {section.title}
                 </h3>
+
                 <svg
                   className={`w-5 h-5 transform transition-transform ${
                     expandedSections[sectionIndex] ? "rotate-180" : ""

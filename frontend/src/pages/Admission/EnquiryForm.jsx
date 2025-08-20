@@ -11,7 +11,7 @@ import Navbar from "../../components/Navbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function AdmissionForm() {
+function EnquiryForm() {
   const leftColumnRef = useRef(null);
   const rightColumnRef = useRef(null);
   const containerRef = useRef(null);
@@ -65,7 +65,7 @@ function AdmissionForm() {
     setErrorMessage("");
 
     try {
-      const response = await api.post("/admission/submit", formData);
+      const response = await api.post("/enquiry/submit", formData);
 
       if (response.data) {
         setSuccessMessage(
@@ -230,4 +230,4 @@ function AdmissionForm() {
   );
 }
 
-export default AdmissionForm;
+export default EnquiryForm;

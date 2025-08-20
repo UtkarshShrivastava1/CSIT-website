@@ -54,7 +54,7 @@ const Header = () => {
 
               {/* Mobile Form Icon */}
               <Link
-                to="/admission-form"
+                to="/enquiry-form"
                 className="flex flex-col items-center px-2 py-1 text-[#0d173b] hover:text-[#1a2d5e] transition-colors flex-shrink-0 ml-2"
                 onMouseEnter={() => handleDropdownHover("directory")}
                 onMouseLeave={handleDropdownLeave}
@@ -154,7 +154,7 @@ const Header = () => {
 
                 {/* Form Icon */}
                 <Link
-                  to="/admission-form"
+                  to="/enquiry-form"
                   className="flex flex-col items-center px-3 py-2 text-[#0d173b] hover:text-[#1a2d5e] transition-colors"
                   onMouseEnter={() => handleDropdownHover("directory")}
                   onMouseLeave={handleDropdownLeave}
@@ -224,7 +224,7 @@ const Header = () => {
 
                 {/* Form Icon */}
                 <Link
-                  to="/admission-form"
+                  to="/enquiry-form"
                   className="flex flex-col items-center px-4 py-2 text-[#0d173b] hover:text-[#1a2d5e] transition-colors border-l border-gray-300 ml-4"
                   onMouseEnter={() => handleDropdownHover("directory")}
                   onMouseLeave={handleDropdownLeave}

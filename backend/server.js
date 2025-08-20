@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const errorHandler = require("./middleware/errorHandler");
 const { authMiddleware } = require("./middleware/auth");
 require("colors");
-const admissionRoutes = require("./routes/admissionRoutes");
+const enquiry = require("./routes/enquiryFormRoutes");
 const { testCloudinaryConfig } = require("./config/cloudinary");
 const app = express();
 
@@ -32,7 +32,7 @@ app.use(
 );
 
 // Routes
-app.use("/api/admission", admissionRoutes);
+app.use("/api/enquiry", enquiry);
 app.use("/api/gallery", require("./routes/galleryRoutes"));
 // Admin Login Route
 app.post("/api/auth/admin-login", (req, res) => {

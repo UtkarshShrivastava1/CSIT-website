@@ -95,10 +95,10 @@ const createContact = async (req, res) => {
   }
 };
 
-// Enhanced admission form submission handler
-const submitAdmissionForm = async (req, res) => {
+// Enhanced enquiry form submission handler
+const submitEnquiryForm = async (req, res) => {
   try {
-    console.log("Received admission form submission:".yellow, req.body);
+    console.log("Received enquiry form submission:".yellow, req.body);
 
     const { fullName, email, phone, city } = req.body;
 
@@ -113,7 +113,7 @@ const submitAdmissionForm = async (req, res) => {
 
     // Create email content
     const htmlContent = `
-      <h2>New Admission Form Submission</h2>
+      <h2>New Enquiry Form Submission</h2>
       <p><strong>Full Name:</strong> ${fullName}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
@@ -126,7 +126,7 @@ const submitAdmissionForm = async (req, res) => {
     const mailOptions = {
       from: process.env.EMAIL_ADMIN_ID,
       to: process.env.EMAIL_RECEIVER_1,
-      subject: "New Admission Form Submission - CSIT",
+      subject: "New Enquiry Form Submission - CSIT",
       html: htmlContent,
     };
 
@@ -136,13 +136,13 @@ const submitAdmissionForm = async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      message: "Admission form submitted successfully",
+      message: "Enquiry form submitted successfully",
     });
   } catch (error) {
-    console.error("Error in admission form submission:".red, error);
+    console.error("Error in enquiry form submission:".red, error);
     return res.status(500).json({
       success: false,
-      message: "Error submitting admission form",
+      message: "Error submitting enquiry form",
       error: error.message,
     });
   }
@@ -150,5 +150,5 @@ const submitAdmissionForm = async (req, res) => {
 
 module.exports = {
   createContact,
-  submitAdmissionForm,
+  submitEnquiryForm,
 };

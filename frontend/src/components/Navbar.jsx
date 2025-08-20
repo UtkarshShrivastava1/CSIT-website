@@ -227,7 +227,7 @@ export default function Navbar() {
                       Admission Process
                     </Link>
                     <Link
-                      to="/admission/admission-form"
+                      to="/admission/enquiry-form"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                     >
                       Admission Form
@@ -792,7 +792,7 @@ export default function Navbar() {
                     Leaflet
                   </Link>
                   <Link
-                    to="/admission/admission-form"
+                    to="/admission/enquiry-form"
                     className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >

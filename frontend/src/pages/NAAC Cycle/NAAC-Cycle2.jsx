@@ -503,9 +503,10 @@ const NaacCycle2 = () => {
                   className="w-full text-left p-4 text-white transition-colors flex justify-between items-center cursor-pointer hover:opacity-90"
                   style={styles.specialSection}
                 >
-                  <span className="font-medium truncate pr-2">
+                  <span className="font-medium pr-2" title={section.title}>
                     {section.title}
                   </span>
+
                   <svg
                     className="w-5 h-5 flex-shrink-0"
                     fill="none"
@@ -536,10 +537,11 @@ const NaacCycle2 = () => {
                       isCriteria1(section.title)
                         ? "text-white"
                         : "text-gray-800"
-                    } truncate pr-2`}
+                    } pr-2 whitespace-normal break-words min-w-0`}
                   >
                     {section.title}
                   </h3>
+
                   <svg
                     className={`w-5 h-5 transform transition-transform ${
                       expandedSections[sectionIndex] ? "rotate-180" : ""
@@ -577,12 +579,10 @@ const NaacCycle2 = () => {
                             className="w-full text-left p-4 hover:bg-blue-50 transition-colors flex justify-between items-center cursor-pointer group"
                           >
                             <div className="flex items-center space-x-2 relative group">
-                              <span
-                                className="text-gray-700"
-                                style={styles.truncate}
-                              >
+                              <span className="text-gray-700 whitespace-normal break-words">
                                 {item.title}
                               </span>
+
                               <div className="invisible group-hover:visible absolute left-0 -top-2 transform -translate-y-full z-50 p-2 bg-gray-800 text-white text-sm rounded whitespace-normal max-w-[500px] pointer-events-none shadow-lg">
                                 {item.title}
                               </div>
@@ -638,12 +638,10 @@ const NaacCycle2 = () => {
                                       className="w-full text-left p-3 pl-8 hover:bg-blue-100 transition-colors flex justify-between items-center cursor-pointer group"
                                     >
                                       <div className="flex items-center space-x-2 relative group">
-                                        <span
-                                          className="text-gray-600"
-                                          style={styles.truncate}
-                                        >
+                                        <span className="text-gray-600 whitespace-normal break-words">
                                           {subItem.title}
                                         </span>
+
                                         <div className="invisible group-hover:visible absolute left-0 -top-2 transform -translate-y-full z-50 p-2 bg-gray-800 text-white text-sm rounded whitespace-normal max-w-[500px] pointer-events-none shadow-lg">
                                           {subItem.title}
                                         </div>
