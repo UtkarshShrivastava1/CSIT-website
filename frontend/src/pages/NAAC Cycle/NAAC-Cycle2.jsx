@@ -153,6 +153,17 @@ const NaacCycle2 = () => {
             },
           ],
         },
+        {
+          title: "1.4 – Feedback System",
+          pdf: "",
+          subItems: [
+            {
+              title:
+                "1.4.1 Institution obtains feedback on the academic performance...",
+              pdf: "",
+            },
+          ],
+        },
       ],
     },
     {
@@ -201,6 +212,11 @@ const NaacCycle2 = () => {
         {
           title: "2.6.3 Pass percentage of Students during last five years",
           pdf: "/csit-accrediation/2.6.3 Summary.pdf",
+        },
+        {
+          title:
+            "2.7.1 Online student satisfaction survey regarding to teaching learning process. (Online survey to be conducted)",
+          link: "/naac-cycle/naac-cycle-2", // Add leading slash, remove trailing slash
         },
       ],
     },
