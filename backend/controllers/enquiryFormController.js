@@ -20,7 +20,7 @@ const createTransporter = () => {
     host: "smtp.gmail.com",
     port: 587,
     user: process.env.EMAIL_ADMIN_ID,
-    receiverEmail: process.env.EMAIL_RECEIVER_1,
+    receiverEmail: process.env.EMAIL_RECEIVER_1 || "utkarshzager@gmail.com", // Sender email,
   });
 
   return nodemailer.createTransport({
