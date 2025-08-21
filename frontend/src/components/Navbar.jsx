@@ -226,12 +226,7 @@ export default function Navbar() {
                     >
                       Admission Process
                     </Link>
-                    <Link
-                      to="/admission/enquiry-form"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Admission Form
-                    </Link>
+
                     <Link
                       to="/admission/leaflet"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"

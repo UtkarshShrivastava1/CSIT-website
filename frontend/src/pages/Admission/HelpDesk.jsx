@@ -47,11 +47,7 @@ const HelpDesk = () => {
                   contact: "9826937473",
                   email: "registrar@csitdurg.in",
                 },
-                {
-                  name: "Prof. H. R. Chandrakar",
-                  contact: "8966000059",
-                  email: "hrchandrakar@csitdurg.in",
-                },
+
                 {
                   name: "Mr. Rajeev Nair",
                   contact: "7697477777",
