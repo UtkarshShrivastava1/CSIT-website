@@ -18,6 +18,9 @@ import EnquiryForm from "./pages/Admission/EnquiryForm";
 import AlumniPage from "./pages/Alumni/AlumniIndex";
 import FacilitiesIndex from "./pages/Campus/Facilities/Facilitiesindex";
 import InitiativesIndex from "./pages/Campus/Initiatives/InitiativesIndex";
+import NPTEL from "./pages/Campus/Initiatives/NPTEL";
+import NIRF24 from "./pages/Campus/Initiatives/NIRF24";
+
 import FundsPage from "./pages/Funds/FundsIndex";
 import Home from "./pages/Home";
 import DvvDetails from "./pages/NAAC Cycle/NAAC_Cycle2_DVV";
@@ -47,43 +50,35 @@ function App() {
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Home />} />
-
             {/* External Redirect Routes */}
             <Route path="/external/:type" element={<ExternalRedirect />} />
             <Route
               path="/external/:type/:param"
               element={<ExternalRedirect />}
             />
-
             {/* About page and its nested routes */}
             <Route path="/about/*" element={<AboutPage />} />
-
             {/* Admission page and its nested routes */}
             <Route path="/admission/*" element={<AdmissionPage />} />
             <Route path="/enquiry-form" element={<EnquiryForm />} />
-
             {/* Alumni page and its nested routes */}
             <Route path="/alumni/*" element={<AlumniPage />} />
-
             {/* Naac page and its nested routes */}
             <Route path="/naac-cycle/*" element={<NaacPage />} />
-
             {/* Placement page and its nested routes */}
             <Route path="/placement/*" element={<PlacementPage />} />
-
             {/* Academic page and its nested routes */}
             <Route path="/academics/*" element={<AcademicPage />} />
-
             {/* R&D Cells page and its nested routes */}
             {/* <Route path="/R&D cells/*" element={<RandDCellsPage />} /> */}
-
             {/* Funds page and its nested routes */}
             <Route path="/funds/*" element={<FundsPage />} />
-
             {/* Campus routes */}
             <Route path="/campus/facilities" element={<FacilitiesIndex />} />
             <Route path="/campus/initiatives" element={<InitiativesIndex />} />
+            <Route path="/campus/NPTEL" element={<NPTEL />} />
 
+            <Route path="/campus/NIRF24" element={<NIRF24 />} />
             {/* Admin Routes */}
             <Route path="/admin-login" element={<AdminLogin />} />
             <Route
@@ -110,7 +105,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
             {/* Redirects for About section */}
             <Route
               path="/introduction"
@@ -148,7 +142,6 @@ function App() {
               path="/celebration"
               element={<Navigate to="/about/celebration" replace />}
             />
-
             {/* Redirects for Academics section */}
             <Route
               path="/computer-science-and-engineering"
@@ -200,13 +193,11 @@ function App() {
                 />
               }
             />
-
             {/* Redirects for R&D Cells section */}
             <Route
               path="/R&D Cells"
               element={<Navigate to="/R&D cells/R&D Cells" replace />}
             />
-
             {/* Redirects for Admission section */}
             <Route
               path="/courses-offered"
@@ -224,7 +215,6 @@ function App() {
               path="/help-desk"
               element={<Navigate to="/admission/help-desk" replace />}
             />
-
             {/* Redirects for NAAC Cycle section */}
             <Route
               path="/naac-cycle-1"
@@ -236,7 +226,6 @@ function App() {
               path="/AQAR"
               element={<Navigate to="/naac-cycle/AQAR" replace />}
             />
-
             {/* Redirects for Alumni section */}
             <Route
               path="/about-association"
@@ -258,7 +247,6 @@ function App() {
               path="/registered-association"
               element={<Navigate to="/alumni/registered-association" replace />}
             />
-
             {/* Redirects for Funds section */}
             <Route
               path="/patents"
@@ -280,7 +268,6 @@ function App() {
               path="/funds-grants"
               element={<Navigate to="/funds/funds-grants" replace />}
             />
-
             {/* Redirects for Placement section */}
             <Route
               path="/about-tnp-cell"
@@ -316,15 +303,12 @@ function App() {
               path="/training-programme"
               element={<Navigate to="/placement/training-programme" replace />}
             />
-
             {/* Gallery routes - update to use the More section Gallery component */}
             <Route path="/gallery/*" element={<MorePage />} />
             <Route path="/gallery/upload" element={<GalleryForm />} />
             <Route path="/gallery/manage" element={<GalleryDashboard />} />
-
             {/* More page and its nested routes */}
             <Route path="/more/*" element={<MorePage />} />
-
             {/* Redirects for More section */}
             <Route
               path="/student-affairs"
@@ -351,9 +335,7 @@ function App() {
               element={<Navigate to="/more/iqac" replace />}
             />
             <Route path="/rti" element={<Navigate to="/more/rti" replace />} />
-
             <Route path="/naac-cycle/dvv-details" element={<DvvDetails />} />
-
             {/* Catch all route - redirect to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

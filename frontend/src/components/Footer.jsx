@@ -122,7 +122,7 @@ const SchoolFooter = () => {
                   Courses Offered
                 </Link>
               </li>
-               <li>
+              <li>
                 <Link
                   to="/more/anti-ragging"
                   className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
@@ -130,7 +130,7 @@ const SchoolFooter = () => {
                   Anti-Ragging
                 </Link>
               </li>
-               <li>
+              <li>
                 <Link
                   to="/more/iqac"
                   className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
@@ -195,7 +195,7 @@ const SchoolFooter = () => {
                   Academic Calendar
                 </Link>
               </li>
-              
+
               <li>
                 <Link
                   to="/admission/admission-process"
@@ -206,7 +206,7 @@ const SchoolFooter = () => {
               </li>
               <li>
                 <Link
-                  to="/academics/nptel"
+                  to="/campus/NPTEL"
                   className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
                 >
                   NPTEL
@@ -214,7 +214,7 @@ const SchoolFooter = () => {
               </li>
               <li>
                 <Link
-                  to="/academics/nirf"
+                  to="/campus/NIRF24"
                   className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
                 >
                   NIRF 2024
@@ -231,7 +231,6 @@ const SchoolFooter = () => {
               </span>
             </h3>
             <ul className="space-y-2">
-             
               <li>
                 <a
                   href={MandatoryDisclosure}
@@ -241,7 +240,6 @@ const SchoolFooter = () => {
                 >
                   Mandatory Disclosure
                 </a>
-                2
               </li>
               <li>
                 <Link
@@ -256,7 +254,7 @@ const SchoolFooter = () => {
                   to="/more/grievances"
                   className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
                 >
-                  Grievances 
+                  Grievances
                 </Link>
               </li>
               <li>
