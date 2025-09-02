@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdownMobile, setActiveDropdownMobile] = useState(null);
-
+  const [activeDropdownDesktop, setActiveDropdownDesktop] = useState(null);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -18,8 +19,35 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
+  // Track screen size
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Toggle for mobile dropdowns
   const toggleMobileDropdown = (index) => {
     setActiveDropdownMobile(activeDropdownMobile === index ? null : index);
+  };
+
+  // Toggle for desktop dropdowns
+  const toggleDesktopDropdown = (index) => {
+    if (!isDesktop) {
+      setActiveDropdownDesktop(activeDropdownDesktop === index ? null : index);
+    }
+  };
+
+  const openDesktopDropdown = (index) => {
+    if (isDesktop) {
+      setActiveDropdownDesktop(index);
+    }
+  };
+
+  const closeDesktopDropdown = () => {
+    if (isDesktop) {
+      setActiveDropdownDesktop(null);
+    }
   };
 
   return (
@@ -40,229 +68,268 @@ export default function Navbar() {
             </div>
 
             {/* About */}
-            <div className="group relative">
-              <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
+            <div className="group relative" onMouseLeave={closeDesktopDropdown}>
+              <button
+                onClick={() => toggleDesktopDropdown(1)}
+                onMouseEnter={() => openDesktopDropdown(1)}
+                className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer"
+              >
                 About
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="hidden group-hover:block absolute z-20 top-full pt-2 w-56">
-                <div className="absolute h-2 -top-2 inset-x-0"></div>
-                <div className="rounded-md shadow-lg bg-white">
-                  <div className="py-1">
-                    <Link
-                      to="/about/introduction"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Introduction
-                    </Link>
-                    <Link
-                      to="/about/society"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Society
-                    </Link>
-                    <Link
-                      to="/about/aspiration"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Aspiration
-                    </Link>
-                    {/* <Link
-                      to="/about/achievement"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Achievement
-                    </Link> */}
-                    <Link
-                      to="/about/governing-body"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Governing Body
-                    </Link>
-                    <Link
-                      to="/about/message"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Message
-                    </Link>
-                    <Link
-                      to="/about/professional-bodies"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Professional Bodies
-                    </Link>
-                    {/* <Link
-                      to="/about/celebration"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Celebration
-                    </Link> */}
+
+              {/* Dropdown */}
+              {activeDropdownDesktop === 1 && (
+                <div className="absolute z-20 top-full pt-2 w-56">
+                  <div className="absolute h-2 -top-2 inset-x-0"></div>
+                  <div className="rounded-md shadow-lg bg-white">
+                    <div className="py-1">
+                      <Link
+                        to="/about/introduction"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Introduction
+                      </Link>
+                      <Link
+                        to="/about/society"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Society
+                      </Link>
+                      <Link
+                        to="/about/aspiration"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Aspiration
+                      </Link>
+                      <Link
+                        to="/about/governing-body"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Governing Body
+                      </Link>
+                      <Link
+                        to="/about/message"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Message
+                      </Link>
+                      <Link
+                        to="/about/professional-bodies"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Professional Bodies
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Academics */}
-            <div className="group relative">
-              <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
+            <div
+              className="group relative"
+              onMouseLeave={closeDesktopDropdown} // closes on hover-out (desktop only)
+            >
+              <button
+                onClick={() => toggleDesktopDropdown(2)} // click toggle on mobile/tablet
+                onMouseEnter={() => openDesktopDropdown(2)} // hover open on desktop
+                className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer"
+              >
                 Academics
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="hidden group-hover:block absolute z-20 top-full pt-2 w-56">
-                <div className="absolute h-2 -top-2 inset-x-0"></div>
-                <div className="rounded-md shadow-lg bg-white">
-                  <div className="py-1">
-                    <Link
-                      to="/academics/computer-science-and-engineering"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Computer Science and Engineering
-                    </Link>
-                    <Link
-                      to="/academics/electrical-and-electronics-engineering"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Electrical and Electronics Engineering
-                    </Link>
-                    <Link
-                      to="/academics/mechanical-engineering"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Mechanical Engineering
-                    </Link>
-                    <Link
-                      to="/academics/information-technology-engineering"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Information Technology Engineering
-                    </Link>
-                    <Link
-                      to="/academics/civil-engineering"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Civil Engineering
-                    </Link>
-                    <Link
-                      to="/academics/artificial-intelligence-and-data-science-engineering"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Artificial Intelligence & Data Science Engineering
-                    </Link>
-                    <Link
-                      to="/academics/mechatronics"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Mechatronics Engineering
-                    </Link>
+
+              {/* Dropdown */}
+              {activeDropdownDesktop === 2 && (
+                <div className="absolute z-20 top-full pt-2 w-56">
+                  <div className="absolute h-2 -top-2 inset-x-0"></div>
+                  <div className="rounded-md shadow-lg bg-white">
+                    <div className="py-1">
+                      <Link
+                        to="/academics/computer-science-and-engineering"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Computer Science and Engineering
+                      </Link>
+                      <Link
+                        to="/academics/electrical-and-electronics-engineering"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Electrical and Electronics Engineering
+                      </Link>
+                      <Link
+                        to="/academics/mechanical-engineering"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Mechanical Engineering
+                      </Link>
+                      <Link
+                        to="/academics/information-technology-engineering"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Information Technology Engineering
+                      </Link>
+                      <Link
+                        to="/academics/civil-engineering"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Civil Engineering
+                      </Link>
+                      <Link
+                        to="/academics/artificial-intelligence-and-data-science-engineering"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Artificial Intelligence & Data Science Engineering
+                      </Link>
+                      <Link
+                        to="/academics/mechatronics"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Mechatronics Engineering
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* R&D Cells */}
-            <div className="group relative">
-              <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
+            <div
+              className="group relative"
+              onMouseLeave={closeDesktopDropdown} // closes on hover-out (desktop only)
+            >
+              <button
+                onClick={() => toggleDesktopDropdown(3)} // click toggle on mobile/tablet
+                onMouseEnter={() => openDesktopDropdown(3)} // hover open on desktop
+                className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer"
+              >
                 R&D Cells
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="hidden group-hover:block absolute z-20 top-full pt-2 w-56">
-                <div className="absolute h-2 -top-2 inset-x-0"></div>
-                <div className="rounded-md shadow-lg bg-white">
-                  <div className="py-1">
-                    <Link
-                      to="/more/research-and-development"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      IPR FILLED{" "}
-                    </Link>
-                    <Link
-                      to="/more/research-and-development"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      PAPER PUBLICATION CIVIL{" "}
-                    </Link>{" "}
-                    <Link
-                      to="/more/research-and-development"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      PAPER PUBLICATION EEE{" "}
-                    </Link>{" "}
-                    <Link
-                      to="/more/research-and-development"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      PAPER PUBLICATION ME{" "}
-                    </Link>{" "}
-                    <Link
-                      to="/more/research-and-development"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      PROJECT GRANTS{" "}
-                    </Link>
+
+              {/* Dropdown */}
+              {activeDropdownDesktop === 3 && (
+                <div className="absolute z-20 top-full pt-2 w-56">
+                  <div className="absolute h-2 -top-2 inset-x-0"></div>
+                  <div className="rounded-md shadow-lg bg-white">
+                    <div className="py-1">
+                      <Link
+                        to="/more/research-and-development"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        IPR FILLED
+                      </Link>
+                      <Link
+                        to="/more/research-and-development"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        PAPER PUBLICATION CIVIL
+                      </Link>
+                      <Link
+                        to="/more/research-and-development"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        PAPER PUBLICATION EEE
+                      </Link>
+                      <Link
+                        to="/more/research-and-development"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        PAPER PUBLICATION ME
+                      </Link>
+                      <Link
+                        to="/more/research-and-development"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        PROJECT GRANTS
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Admission */}
-            <div className="group relative">
-              <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
+            <div
+              className="group relative"
+              onMouseLeave={closeDesktopDropdown} // closes on hover-out (desktop only)
+            >
+              <button
+                onClick={() => toggleDesktopDropdown(4)} // click toggle on mobile/tablet
+                onMouseEnter={() => openDesktopDropdown(4)} // hover open on desktop
+                className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer"
+              >
                 Admission
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="hidden group-hover:block absolute z-20 top-full pt-2 w-56">
-                <div className="absolute h-2 -top-2 inset-x-0"></div>
-                <div className="rounded-md shadow-lg bg-white">
-                  <div className="py-1">
-                    <Link
-                      to="/admission/courses-offered"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Courses Offered
-                    </Link>
-                    <Link
-                      to="/admission/admission-process"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Admission Process
-                    </Link>
 
-                    <Link
-                      to="/admission/leaflet"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Leaflet
-                    </Link>
-                    <Link
-                      to="/admission/help-desk"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Help Desk
-                    </Link>
+              {/* Dropdown */}
+              {activeDropdownDesktop === 4 && (
+                <div className="absolute z-20 top-full pt-2 w-56">
+                  <div className="absolute h-2 -top-2 inset-x-0"></div>
+                  <div className="rounded-md shadow-lg bg-white">
+                    <div className="py-1">
+                      <Link
+                        to="/admission/courses-offered"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Courses Offered
+                      </Link>
+                      <Link
+                        to="/admission/admission-process"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Admission Process
+                      </Link>
+                      <Link
+                        to="/admission/leaflet"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Leaflet
+                      </Link>
+                      <Link
+                        to="/admission/help-desk"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Help Desk
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Campus */}
-            <div className="group relative">
-              <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
+            <div
+              className="group relative"
+              onMouseLeave={closeDesktopDropdown} // closes on hover-out (desktop only)
+            >
+              <button
+                onClick={() => toggleDesktopDropdown(5)} // click toggle on mobile/tablet
+                onMouseEnter={() => openDesktopDropdown(5)} // hover open on desktop
+                className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer"
+              >
                 Campus
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="hidden group-hover:block absolute z-20 top-full pt-2 w-56">
-                <div className="absolute h-2 -top-2 inset-x-0"></div>
-                <div className="rounded-md shadow-lg bg-white">
-                  <div className="py-1">
-                    <Link
-                      to="/campus/initiatives"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Initiatives
-                    </Link>
+
+              {/* Dropdown */}
+              {activeDropdownDesktop === 5 && (
+                <div className="absolute z-20 top-full pt-2 w-56">
+                  <div className="absolute h-2 -top-2 inset-x-0"></div>
+                  <div className="rounded-md shadow-lg bg-white">
+                    <div className="py-1">
+                      <Link
+                        to="/campus/initiatives"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Initiatives
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Connect */}
@@ -275,222 +342,252 @@ export default function Navbar() {
               </Link>
             </div> */}
 
-            {/* Placement */}
-            <div className="group relative">
-              <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
+            {/* Placement / T&P Cell */}
+            <div
+              className="group relative"
+              onMouseLeave={closeDesktopDropdown} // closes on hover-out (desktop only)
+            >
+              <button
+                onClick={() => toggleDesktopDropdown(6)} // click toggle on mobile/tablet
+                onMouseEnter={() => openDesktopDropdown(6)} // hover open on desktop
+                className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer"
+              >
                 T&P Cell
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="hidden group-hover:block absolute z-20 top-full pt-2 w-56">
-                <div className="absolute h-2 -top-2 inset-x-0"></div>
-                <div className="rounded-md shadow-lg bg-white">
-                  <div className="py-1">
-                    <Link
-                      to="/placement/about-tnp-cell"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      About Cell
-                    </Link>
-                    <Link
-                      to="/placement/internship"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      VT & Internship
-                    </Link>
-                    <Link
-                      to="/placement/training-programme"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Training Programme
-                    </Link>
-                    <Link
-                      to="/placement/placement-statistics"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Placement Statistics
-                    </Link>
-                    <Link
-                      to="/placement/our-recruiters"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Our Recruiters
-                    </Link>
-                    <Link
-                      to="/placement/mous"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      MOUs
-                    </Link>
-                    <Link
-                      to="/placement/team-members"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Team Members
-                    </Link>
-                    <Link
-                      to="/placement/placement-policies"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Placement Policies
-                    </Link>
+
+              {/* Dropdown */}
+              {activeDropdownDesktop === 6 && (
+                <div className="absolute z-20 top-full pt-2 w-56">
+                  <div className="absolute h-2 -top-2 inset-x-0"></div>
+                  <div className="rounded-md shadow-lg bg-white">
+                    <div className="py-1">
+                      <Link
+                        to="/placement/about-tnp-cell"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        About Cell
+                      </Link>
+                      <Link
+                        to="/placement/internship"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        VT & Internship
+                      </Link>
+                      <Link
+                        to="/placement/training-programme"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Training Programme
+                      </Link>
+                      <Link
+                        to="/placement/placement-statistics"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Placement Statistics
+                      </Link>
+                      <Link
+                        to="/placement/our-recruiters"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Our Recruiters
+                      </Link>
+                      <Link
+                        to="/placement/mous"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        MOUs
+                      </Link>
+                      <Link
+                        to="/placement/team-members"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Team Members
+                      </Link>
+                      <Link
+                        to="/placement/placement-policies"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Placement Policies
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Alumni */}
-            <div className="group relative">
-              <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
+            <div className="group relative" onMouseLeave={closeDesktopDropdown}>
+              <button
+                onClick={() => toggleDesktopDropdown(7)} // mobile/tablet toggle
+                onMouseEnter={() => openDesktopDropdown(7)} // desktop hover open
+                className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer"
+              >
                 Alumni
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="hidden group-hover:block absolute z-20 top-full pt-2 w-56">
-                <div className="absolute h-2 -top-2 inset-x-0"></div>
-                <div className="rounded-md shadow-lg bg-white">
-                  <div className="py-1">
-                    <Link
-                      to="/alumni/about-association"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      About Association
-                    </Link>
-                    <Link
-                      to="/alumni/activities"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Activities
-                    </Link>
-                    <Link
-                      to="/alumni/presence"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Presence
-                    </Link>
-                    <Link
-                      to="/alumni/team-members"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Team Members
-                    </Link>
-                    <Link
-                      to="/alumni/registered-association"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Registered Association
-                    </Link>
+
+              {activeDropdownDesktop === 7 && (
+                <div className="absolute z-20 top-full pt-2 w-56">
+                  <div className="absolute h-2 -top-2 inset-x-0"></div>
+                  <div className="rounded-md shadow-lg bg-white">
+                    <div className="py-1">
+                      <Link
+                        to="/alumni/about-association"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        About Association
+                      </Link>
+                      <Link
+                        to="/alumni/activities"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Activities
+                      </Link>
+                      <Link
+                        to="/alumni/presence"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Presence
+                      </Link>
+                      <Link
+                        to="/alumni/team-members"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Team Members
+                      </Link>
+                      <Link
+                        to="/alumni/registered-association"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Registered Association
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* NAAC Cycle */}
-            <div className="group relative">
-              <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
+            <div className="group relative" onMouseLeave={closeDesktopDropdown}>
+              <button
+                onClick={() => toggleDesktopDropdown(8)}
+                onMouseEnter={() => openDesktopDropdown(8)}
+                className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer"
+              >
                 NAAC Cycle
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="hidden group-hover:block absolute z-20 top-full pt-2 w-56">
-                <div className="absolute h-2 -top-2 inset-x-0"></div>
-                <div className="rounded-md shadow-lg bg-white">
-                  <div className="py-1">
-                    <Link
-                      to="/naac-cycle/naac-cycle-1"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      NAAC Cycle 1
-                    </Link>
-                    <Link
-                      to="/naac-cycle/naac-cycle-2" // <-- FIXED: now points to naac-cycle-2
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      NAAC Cycle 2
-                    </Link>
-                    {/* <Link to="/naac-cycle/naac-cycle-3" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">NAAC Cycle 3</Link> */}
-                    <Link
-                      to="/naac-cycle/AQAR"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      AQAR
-                    </Link>
+
+              {activeDropdownDesktop === 8 && (
+                <div className="absolute z-20 top-full pt-2 w-56">
+                  <div className="absolute h-2 -top-2 inset-x-0"></div>
+                  <div className="rounded-md shadow-lg bg-white">
+                    <div className="py-1">
+                      <Link
+                        to="/naac-cycle/naac-cycle-1"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        NAAC Cycle 1
+                      </Link>
+                      <Link
+                        to="/naac-cycle/naac-cycle-2"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        NAAC Cycle 2
+                      </Link>
+                      <Link
+                        to="/naac-cycle/AQAR"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        AQAR
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* More */}
-            <div className="group relative">
-              <button className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer">
+            <div className="group relative" onMouseLeave={closeDesktopDropdown}>
+              <button
+                onClick={() => toggleDesktopDropdown(9)}
+                onMouseEnter={() => openDesktopDropdown(9)}
+                className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer"
+              >
                 More
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="hidden group-hover:block absolute z-20 top-full pt-2 w-56">
-                <div className="absolute h-2 -top-2 inset-x-0"></div>
-                <div className="rounded-md shadow-lg bg-white">
-                  <div className="py-1">
-                    <Link
-                      to="/more/student-affairs"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Student Affairs
-                    </Link>
 
-                    <Link
-                      to="/more/calendar"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Calendar
-                    </Link>
-                    <Link
-                      to="/more/feedback"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Feedback
-                    </Link>
-                    <Link
-                      to="/more/gallery"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Gallery
-                    </Link>
-                    <Link
-                      to="/more/grievances"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Grievances
-                    </Link>
-                    <Link
-                      to="/more/iqac"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      IQAC
-                    </Link>
-                    <Link
-                      to="/more/rti"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      RTI
-                    </Link>
-                    <Link
-                      to="/campus/facilities"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Facilities
-                    </Link>
-                    <Link
-                      to="/more/celebration"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Celebration
-                    </Link>
-                    <Link
-                      to="/more/achievement"
-                      className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    >
-                      Achievement
-                    </Link>
+              {activeDropdownDesktop === 9 && (
+                <div className="absolute z-20 top-full pt-2 w-56">
+                  <div className="absolute h-2 -top-2 inset-x-0"></div>
+                  <div className="rounded-md shadow-lg bg-white">
+                    <div className="py-1">
+                      <Link
+                        to="/more/student-affairs"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Student Affairs
+                      </Link>
+                      <Link
+                        to="/more/calendar"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Calendar
+                      </Link>
+                      <Link
+                        to="/more/feedback"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Feedback
+                      </Link>
+                      <Link
+                        to="/more/gallery"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Gallery
+                      </Link>
+                      <Link
+                        to="/more/grievances"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Grievances
+                      </Link>
+                      <Link
+                        to="/more/iqac"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        IQAC
+                      </Link>
+                      <Link
+                        to="/more/rti"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        RTI
+                      </Link>
+                      <Link
+                        to="/campus/facilities"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Facilities
+                      </Link>
+                      <Link
+                        to="/more/celebration"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Celebration
+                      </Link>
+                      <Link
+                        to="/more/achievement"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Achievement
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
 
