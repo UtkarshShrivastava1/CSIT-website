@@ -33,9 +33,9 @@ export default function Navbar() {
 
   // Toggle for desktop dropdowns
   const toggleDesktopDropdown = (index) => {
-    if (!isDesktop) {
+    // if (!isDesktop) {
       setActiveDropdownDesktop(activeDropdownDesktop === index ? null : index);
-    }
+    // }
   };
 
   const openDesktopDropdown = (index) => {
