@@ -11,13 +11,13 @@ const getAllImages = async (req, res) => {
       .max_results(30)
       .execute();
 
-console.log(`Found ${result.resources.length} images`.green);
+    console.log(`Found ${result.resources.length} images`.green);
 
-return res.status(200).json({
-  success: true,
-  images: result.resources,
-  message: "Gallery images fetched successfully",
-});
+    return res.status(200).json({
+      success: true,
+      images: result.resources,
+      message: "Gallery images fetched successfully",
+    });
   } catch (error) {
     console.error("Error fetching gallery images:".red, error);
     return res.status(500).json({
@@ -27,23 +27,6 @@ return res.status(200).json({
     });
   }
 };
-
-
-// const getImageByCategory= async(req,res)=>{
-//   try {
-//     const {category} = await req.body;
-//     const response = await gallery.find({category});
-
-//     res.status(200).json({
-//       response
-//     })
-//   } catch (error) {
-//     console.log(error.message)
-//     res.status(500).json({
-//       message:"Please choose the correct category"
-//     })
-//   }
-// }
 
 const getImageByCategory = async (req, res) => {
   try {
@@ -80,63 +63,6 @@ const getImageByCategory = async (req, res) => {
   }
 };
 
-
-// Upload multiple images
-// const uploadImages = async (req, res) => {
-//   try {
-//     const {category} = req.body;
-//     if (!category) {
-//   return res.status(400).json({
-//     success: false,
-//     message: "Category is required for all uploads",
-//   });
-// }
-
-//     // console.log(category);
-//     if (!req.files || req.files.length === 0) {
-//       return res.status(400).json({
-//         success: false,
-//         message: "No images provided",
-//       });
-//     }
-
-//     console.log(`Attempting to upload ${req.files.length} images...`.yellow);
-
-//     const uploadPromises = req.files.map(async (file) => {
-//       try {
-//         // Convert buffer to base64
-//         const base64 = `data:${file.mimetype};base64,${file.buffer.toString(
-//           "base64"
-//         )}`;
-//         return await uploadWithRetry(base64, {
-//           folder: "gallery",
-//           resource_type: "auto",
-//         });
-//       } catch (error) {
-//         console.error("Error uploading file:".red, error);
-//         throw error;
-//       }
-//     });
-
-//     const results = await Promise.all(uploadPromises);
-//     console.log(`Successfully uploaded ${results.length} images`.green);
-
-//     res.status(201).json({
-//       success: true,
-//       images: results,
-//       message: `Successfully uploaded ${results.length} images`,
-//     });
-//   } catch (error) {
-//     console.error("Error uploading images:".red, error);
-//     res.status(500).json({
-//       success: false,
-//       message: "Error uploading images",
-//       error: error.message,
-//     });
-//   }
-// };
-
-
 const uploadImages = async (req, res) => {
   try {
     const { category } = req.body;
@@ -158,7 +84,9 @@ const uploadImages = async (req, res) => {
     console.log(`Uploading ${req.files.length} images to Cloudinary...`);
 
     const uploadPromises = req.files.map(async (file) => {
-      const base64 = `data:${file.mimetype};base64,${file.buffer.toString("base64")}`;
+      const base64 = `data:${file.mimetype};base64,${file.buffer.toString(
+        "base64"
+      )}`;
       const uploaded = await uploadWithRetry(base64, {
         folder: "gallery",
         resource_type: "auto",
@@ -193,20 +121,53 @@ const uploadImages = async (req, res) => {
   }
 };
 
-
 // Delete image
+// Delete image (fixed)
 const deleteImage = async (req, res) => {
   try {
     const { id } = req.params;
-    await cloudinary.uploader.destroy(id);
 
-    res.status(200).json({
+    // Find gallery doc in DB
+    const doc = await Gallery.findById(id);
+    if (!doc) {
+      return res.status(404).json({
+        success: false,
+        message: "Image not found",
+      });
+    }
+
+    // Make sure we have a public_id saved when uploading (recommended)
+    const publicId =
+      doc.image &&
+      (doc.image.public_id || doc.image.publicId || doc.image.publicId);
+    // Fallback: if url saved but no public_id, attempt to parse public_id from URL (optional)
+    // const derivedPublicId = parsePublicIdFromUrl(doc.image.url);
+
+    if (publicId) {
+      // Destroy from Cloudinary
+      const destroyResult = await cloudinary.uploader.destroy(publicId, {
+        resource_type: "image", // or 'auto' depending on upload
+      });
+
+      // Optionally check destroyResult.result === 'ok' or 'not found'
+      // console.log('destroyResult', destroyResult);
+    } else {
+      console.warn(
+        "No public_id found for image, skipping Cloudinary destroy for id:",
+        id
+      );
+    }
+
+    // Remove document from MongoDB
+    await Gallery.findByIdAndDelete(id);
+
+    return res.status(200).json({
       success: true,
       message: "Image deleted successfully",
     });
   } catch (error) {
     console.error("Error deleting image:", error);
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: "Error deleting image",
       error: error.message,
@@ -218,5 +179,5 @@ module.exports = {
   getAllImages,
   uploadImages,
   deleteImage,
-  getImageByCategory
+  getImageByCategory,
 };
