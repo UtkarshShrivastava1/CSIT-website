@@ -1,6 +1,10 @@
+// controllers/galleryController.js
 const { cloudinary, uploadWithRetry } = require("../config/cloudinary");
-const gallery = require("../models/gallery");
-
+const Gallery = require("../models/gallery"); // ensure this is correct// If your model file exports differently, adapt (e.g. module.exports = mongoose.model('gallery', schema))
+const mongoose = require("mongoose"); // <-- required for Types.ObjectId checks
+/**
+ * Fetch latest images from Cloudinary (or however you prefer)
+ */
 const getAllImages = async (req, res) => {
   try {
     console.log("Fetching gallery images...".yellow);
@@ -39,7 +43,7 @@ const getImageByCategory = async (req, res) => {
       });
     }
 
-    const response = await gallery.find({ category });
+    const response = await Gallery.find({ category });
 
     if (response.length === 0) {
       return res.status(404).json({
@@ -92,8 +96,8 @@ const uploadImages = async (req, res) => {
         resource_type: "auto",
       });
 
-      // Save to MongoDB
-      await gallery.create({
+      // Save to MongoDB (store public_id and secure_url)
+      const doc = await Gallery.create({
         image: {
           public_id: uploaded.public_id,
           url: uploaded.secure_url,
@@ -101,7 +105,10 @@ const uploadImages = async (req, res) => {
         category,
       });
 
-      return uploaded;
+      return {
+        uploaded,
+        dbDoc: doc,
+      };
     });
 
     const uploadedImages = await Promise.all(uploadPromises);
@@ -121,56 +128,88 @@ const uploadImages = async (req, res) => {
   }
 };
 
-// Delete image
 // Delete image (fixed)
+
 const deleteImage = async (req, res) => {
   try {
     const { id } = req.params;
 
-    // Find gallery doc in DB
-    const doc = await Gallery.findById(id);
+    if (!id) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Missing id param" });
+    }
+
+    // If id looks like a Mongo ObjectId, try findById first
+    let doc = null;
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      try {
+        doc = await Gallery.findById(id);
+      } catch (dbErr) {
+        console.error("Error in findById:", dbErr);
+        // Continue — we'll try other lookup below
+      }
+    }
+
+    // If not found by _id, try to find by image.public_id (in case client passed public_id)
+    if (!doc) {
+      try {
+        doc = await Gallery.findOne({ "image.public_id": id });
+      } catch (dbErr) {
+        console.error("Error in findOne by public_id:", dbErr);
+      }
+    }
+
+    // If still not found, return 404
     if (!doc) {
       return res.status(404).json({
         success: false,
-        message: "Image not found",
+        message: "Image not found (no matching DB doc)",
       });
     }
 
-    // Make sure we have a public_id saved when uploading (recommended)
-    const publicId =
-      doc.image &&
-      (doc.image.public_id || doc.image.publicId || doc.image.publicId);
-    // Fallback: if url saved but no public_id, attempt to parse public_id from URL (optional)
-    // const derivedPublicId = parsePublicIdFromUrl(doc.image.url);
+    // get public_id if available
+    const publicId = doc?.image?.public_id || doc?.image?.publicId || null;
 
     if (publicId) {
-      // Destroy from Cloudinary
-      const destroyResult = await cloudinary.uploader.destroy(publicId, {
-        resource_type: "image", // or 'auto' depending on upload
-      });
-
-      // Optionally check destroyResult.result === 'ok' or 'not found'
-      // console.log('destroyResult', destroyResult);
+      try {
+        // Use 'auto' if you uploaded with resource_type: 'auto'
+        const destroyResult = await cloudinary.uploader.destroy(publicId, {
+          resource_type: "auto",
+        });
+        console.log(
+          "Cloudinary destroy result for",
+          publicId,
+          "->",
+          destroyResult
+        );
+      } catch (cloudErr) {
+        // Log but don't fail the whole request; still attempt DB deletion
+        console.warn(
+          "Cloudinary destroy error (will continue to delete DB doc):",
+          cloudErr
+        );
+      }
     } else {
       console.warn(
-        "No public_id found for image, skipping Cloudinary destroy for id:",
-        id
+        "No public_id present on DB doc, skipping Cloudinary destroy. Doc id:",
+        doc._id
       );
     }
 
-    // Remove document from MongoDB
-    await Gallery.findByIdAndDelete(id);
+    // Delete DB doc
+    await Gallery.findByIdAndDelete(doc._id);
 
-    return res.status(200).json({
-      success: true,
-      message: "Image deleted successfully",
-    });
-  } catch (error) {
-    console.error("Error deleting image:", error);
+    return res
+      .status(200)
+      .json({ success: true, message: "Image deleted successfully" });
+  } catch (err) {
+    // Log full stack for debugging
+    console.error("Unhandled error in deleteImage:", err);
     return res.status(500).json({
       success: false,
       message: "Error deleting image",
-      error: error.message,
+      error: err?.message || "Internal Server Error",
     });
   }
 };

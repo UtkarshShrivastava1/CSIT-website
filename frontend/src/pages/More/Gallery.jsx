@@ -7,7 +7,7 @@ const Gallery = () => {
   const [error, setError] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("Institute"); // ✅ default "Institute"
 
   const categories = [
     "Institute",
@@ -20,26 +20,6 @@ const Gallery = () => {
     "Alumni",
     "Media Coverage",
   ];
-
-  // Fetch all images
-  const fetchImages = async () => {
-    setLoading(true);
-    setError(null);
-    setSelectedCategory(null);
-    try {
-      const response = await apiPublic.get("/gallery");
-      if (response.data.success && response.data.images) {
-        setImages(response.data.images);
-      } else {
-        setError("Failed to fetch images.");
-        setImages([]);
-      }
-    } catch (err) {
-      setError(err.response?.data?.message || "Something went wrong.");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   // Fetch images by category
   const fetchImagesByCategory = async (category) => {
@@ -70,7 +50,8 @@ const Gallery = () => {
   };
 
   useEffect(() => {
-    fetchImages();
+    // ✅ On first load, show Institute images
+    fetchImagesByCategory("Institute");
   }, []);
 
   const openModal = (index) => {
@@ -89,46 +70,44 @@ const Gallery = () => {
   return (
     <>
       {/* Category Header */}
-<div className="w-full bg-gradient-to-r from-[#0d173b] to-[#1e305f] text-white p-4 h-[15vh] flex items-center justify-around">
-  {/* Dropdown for mobile and tablet screens */}
-  <div className="block lg:hidden w-full">
-    <select
-  className="w-full p-3 rounded-md bg-[#1e305f] text-white border border-yellow-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-500 transition-all"
-  onChange={(e) => fetchImagesByCategory(e.target.value)}
-  value={selectedCategory || ""}
->
-  <option value="" disabled className="text-gray-300">
-    Select a category
-  </option>
-  {categories.map((category) => (
-    <option
-      key={category}
-      value={category}
-      className="text-black bg-white"
-    >
-      {category}
-    </option>
-  ))}
-</select>
+      <div className="w-full bg-gradient-to-r from-[#0d173b] to-[#1e305f] text-white p-4 h-[15vh] flex items-center justify-around">
+        {/* Dropdown for mobile */}
+        <div className="block lg:hidden w-full">
+          <select
+            className="w-full p-3 rounded-md bg-[#1e305f] text-white border border-yellow-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-500 transition-all"
+            onChange={(e) => fetchImagesByCategory(e.target.value)}
+            value={selectedCategory || ""}
+          >
+            <option value="" disabled className="text-gray-300">
+              Select a category
+            </option>
+            {categories.map((category) => (
+              <option
+                key={category}
+                value={category}
+                className="text-black bg-white"
+              >
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
 
-  </div>
-
-  {/* Horizontal category list for laptop and desktop screens */}
-  <div className="hidden lg:flex overflow-x-auto gap-4 justify-center items-center">
-    {categories.map((category) => (
-      <span
-        key={category}
-        className={`text-md font-medium whitespace-nowrap cursor-pointer transition-all duration-300 ease-in-out hover:underline underline-offset-4 decoration-2 ${
-          selectedCategory === category ? "underline text-yellow-300" : ""
-        }`}
-        onClick={() => fetchImagesByCategory(category)}
-      >
-        {category}
-      </span>
-    ))}
-  </div>
-</div>
-
+        {/* Horizontal category list for desktop */}
+        <div className="hidden lg:flex overflow-x-auto gap-4 justify-center items-center">
+          {categories.map((category) => (
+            <span
+              key={category}
+              className={`text-md font-medium whitespace-nowrap cursor-pointer transition-all duration-300 ease-in-out hover:underline underline-offset-4 decoration-2 ${
+                selectedCategory === category ? "underline text-yellow-300" : ""
+              }`}
+              onClick={() => fetchImagesByCategory(category)}
+            >
+              {category}
+            </span>
+          ))}
+        </div>
+      </div>
 
       {/* Loading/Error */}
       {loading && <div className="text-center py-4">Loading gallery...</div>}
