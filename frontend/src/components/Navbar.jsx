@@ -1,5 +1,5 @@
 import { ChevronDown, Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
@@ -34,7 +34,7 @@ export default function Navbar() {
   // Toggle for desktop dropdowns
   const toggleDesktopDropdown = (index) => {
     // if (!isDesktop) {
-      setActiveDropdownDesktop(activeDropdownDesktop === index ? null : index);
+    setActiveDropdownDesktop(activeDropdownDesktop === index ? null : index);
     // }
   };
 
@@ -584,6 +584,14 @@ export default function Navbar() {
                       >
                         Achievement
                       </Link>
+                      <a
+                        href="https://drive.google.com/drive/folders/17bERsF79PR7RLIc8k69I1wXJGbEJXyOL?usp=drive_link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      >
+                        Syllabus and Exam Papers
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1177,6 +1185,15 @@ export default function Navbar() {
                   >
                     RTI
                   </Link>
+                  <a
+                    href="https://drive.google.com/drive/folders/17bERsF79PR7RLIc8k69I1wXJGbEJXyOL?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-3 py-2 rounded-md textbase font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Syllabus and Exam Papers
+                  </a>
                 </div>
               )}
             </div>
