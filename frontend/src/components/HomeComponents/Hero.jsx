@@ -1,11 +1,14 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import csitBanner from "../../assets/Banners/PC/csitbannerA.jpg";
-// import csitBanner2 from "../../assets/Banners/PC/csitbannerB.jpg";
-import csitBanner3 from "../../assets/Banners/PC/csitbannerC.jpg";
-import csitBanner4 from "../../assets/Banners/PC/csitbannerD.jpg";
-import csitBanner5 from "../../assets/Banners/PC/csitbannerE.jpg";
+import csitBanner from "../../assets/Banners/PC/A.jpg";
+import csitBanner2 from "../../assets/Banners/PC/B.jpg";
+import csitBanner3 from "../../assets/Banners/PC/C.jpg";
+import csitBanner4 from "../../assets/Banners/PC/D.jpg";
+import csitBanner5 from "../../assets/Banners/PC/E.jpg";
+import csitBanner6 from "../../assets/Banners/PC/F.jpg";
+import csitBanner7 from "../../assets/Banners/PC/G.jpg";
+import csitBanner8 from "../../assets/Banners/PC/H.jpg";
 
 import BannerPhone from "../../assets/Banners/Phone/BannerPhone.jpg";
 // import BannerPhone2 from "../../assets/Banners/Phone/BannerPhone2.jpg";
@@ -107,9 +110,13 @@ const customStyles = `
 const Hero = () => {
   const desktopSlides = [
     { image: csitBanner, alt: "College Campus Banner 1" },
+    { image: csitBanner2, alt: "College Campus Banner 2" },
     { image: csitBanner3, alt: "College Campus Banner 3" },
     { image: csitBanner4, alt: "College Campus Banner 4" },
     { image: csitBanner5, alt: "College Campus Banner 5" },
+    { image: csitBanner6, alt: "College Campus Banner 6" },
+    { image: csitBanner7, alt: "College Campus Banner 7" },
+    { image: csitBanner8, alt: "College Campus Banner 8" },
   ];
 
   const mobileSlides = [

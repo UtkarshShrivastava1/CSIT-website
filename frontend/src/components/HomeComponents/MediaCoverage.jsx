@@ -11,6 +11,13 @@ import "swiper/css/effect-creative";
 // Import media coverage images
 import MediaCoverage1 from "../../assets/MediaCoverage/MediaCoverage1.jpeg";
 import MediaCoverage2 from "../../assets/MediaCoverage/MediaCoverage2.jpeg";
+import MediaCoverage3 from "../../assets/MediaCoverage/A.jpg";
+import MediaCoverage4 from "../../assets/MediaCoverage/B.jpg";
+import MediaCoverage5 from "../../assets/MediaCoverage/c.jpg";
+import MediaCoverage6 from "../../assets/MediaCoverage/D.jpg";
+import MediaCoverage7 from "../../assets/MediaCoverage/E.jpg";
+import MediaCoverage8 from "../../assets/MediaCoverage/F.jpg";
+import MediaCoverage9 from "../../assets/MediaCoverage/G.jpg";
 
 const customStyles = `
   .swiper-pagination-bullet {
@@ -51,6 +58,71 @@ const MediaCoverage = () => {
       description:
         "Our students' remarkable achievements making national headlines",
       date: "March 10, 2024",
+    },
+    {
+      id: 3,
+      image: MediaCoverage3,
+      category: "Research Spotlight",
+      title: "Innovative Research",
+      description:
+        "Groundbreaking research projects gaining recognition in scientific journals",
+      date: "March 5, 2024",
+    },
+    {
+      id: 4,
+      image: MediaCoverage4,
+      category: "Community Impact",
+      title: "Making a Difference",
+      description:
+
+        "Our institution's community initiatives featured in local news outlets",
+      date: "February 28, 2024",
+    },
+    {
+      id: 5,
+      image: MediaCoverage5,
+      category: "Alumni Success",
+      title: "Alumni Achievements",
+      description:
+        "Our alumni's remarkable accomplishments highlighted in industry publications",
+      date: "February 20, 2024",
+    },
+    {
+      id: 6,
+      image: MediaCoverage6,
+      category: "Event Coverage",
+      title: "Campus Events",
+      description:
+        "Our institution's vibrant campus events featured in local media coverage",
+      date: "February 15, 2024",
+    },
+    {
+      id: 7,
+      image: MediaCoverage
+        ,category: "Sports Highlights",
+      title: "Athletic Excellence",
+      description:
+        "Our sports teams' victories and achievements making headlines in sports media",
+      date: "February 10, 2024",
+    },
+
+    {
+      id: 8,
+      image: MediaCoverage8
+        ,category: "Faculty Recognition",
+      title: "Faculty Achievements",
+      description:  
+        "Our faculty members' outstanding contributions to their fields gaining recognition in academic publications",
+      date: "February 5, 2024",
+    },
+    {
+      id: 9,
+      image: MediaCoverage9
+        ,category: "Innovation Spotlight",
+      title: "Innovative Initiatives",
+      description:
+        "Our institution's innovative initiatives and projects featured in technology and innovation media outlets",
+      date: "January 30, 2024",
     },
   ];
 
@@ -216,7 +288,7 @@ const MediaCoverage = () => {
                 </div>
               </div>
               <div className="space-y-4 sm:space-y-6">
-                {mediaItems.map((item, index) => (
+                {mediaItems.slice(0, 2).map((item, index) => (
                   <div
                     key={item.id}
                     className={`p-4 rounded-xl transition-all duration-300 cursor-pointer ${
@@ -253,15 +325,15 @@ const MediaCoverage = () => {
                             {item.date}
                           </span>
                         </div>
-                        <h4
-                          className={`font-semibold text-sm sm:text-base line-clamp-2 ${
+                        <h6
+                          className={`font-semibold text-xs sm:text-base line-clamp-2 ${
                             activeSlide === index
                               ? "text-white"
                               : "text-[#0d173b]"
                           }`}
                         >
                           {item.title}
-                        </h4>
+                        </h6>
                         <span
                           className={`text-xs ${
                             activeSlide === index
