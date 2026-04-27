@@ -13,7 +13,7 @@ import MediaCoverage1 from "../../assets/MediaCoverage/MediaCoverage1.jpeg";
 import MediaCoverage2 from "../../assets/MediaCoverage/MediaCoverage2.jpeg";
 import MediaCoverage3 from "../../assets/MediaCoverage/A.jpg";
 import MediaCoverage4 from "../../assets/MediaCoverage/B.jpg";
-import MediaCoverage5 from "../../assets/MediaCoverage/c.jpg";
+import MediaCoverage5 from "../../assets/MediaCoverage/C.jpg";
 import MediaCoverage6 from "../../assets/MediaCoverage/D.jpg";
 import MediaCoverage7 from "../../assets/MediaCoverage/E.jpg";
 import MediaCoverage8 from "../../assets/MediaCoverage/F.jpg";
@@ -98,8 +98,8 @@ const MediaCoverage = () => {
     },
     {
       id: 7,
-      image: MediaCoverage
-        ,category: "Sports Highlights",
+      image: MediaCoverage7,
+      category: "Sports Highlights",
       title: "Athletic Excellence",
       description:
         "Our sports teams' victories and achievements making headlines in sports media",
@@ -108,17 +108,17 @@ const MediaCoverage = () => {
 
     {
       id: 8,
-      image: MediaCoverage8
-        ,category: "Faculty Recognition",
+      image: MediaCoverage8,
+      category: "Faculty Recognition",
       title: "Faculty Achievements",
-      description:  
+      description:
         "Our faculty members' outstanding contributions to their fields gaining recognition in academic publications",
       date: "February 5, 2024",
     },
     {
       id: 9,
-      image: MediaCoverage9
-        ,category: "Innovation Spotlight",
+      image: MediaCoverage9,
+      category: "Innovation Spotlight",
       title: "Innovative Initiatives",
       description:
         "Our institution's innovative initiatives and projects featured in technology and innovation media outlets",
