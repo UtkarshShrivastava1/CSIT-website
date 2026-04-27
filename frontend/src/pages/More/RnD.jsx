@@ -1,5 +1,5 @@
 import React from "react";
-import IPRFilled from "../../assets/R&D/IPR.pdf";
+import IPRFilled from "../../assets/R&D/IPR_final.pdf";
 import PaperCivil from "../../assets/R&D/PAPER PUBLICATION CIVIL.pdf";
 import PaperEEE from "../../assets/R&D/PAPER PUBLICATION EEE.pdf";
 import PaperME from "../../assets/R&D/PAPER PUBLICATION ME.pdf";
