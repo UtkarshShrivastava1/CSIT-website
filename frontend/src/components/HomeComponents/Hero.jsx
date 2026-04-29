@@ -131,8 +131,6 @@ const Hero = () => {
   ];
 
   const mobileSlides = [
-    { image: BannerPhone, alt: "College Campus Mobile Banner 1" },
-    { image: BannerPhone3, alt: "College Campus Mobile Banner 4" },
     { image: BannerPhone_A, alt: "College Campus Mobile Banner A" },
     { image: BannerPhone_B, alt: "College Campus Mobile Banner B" },
     { image: BannerPhone_C, alt: "College Campus Mobile Banner C" },
