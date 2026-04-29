@@ -13,9 +13,7 @@ import csitBanner7 from "../../assets/Banners/PC/G.jpg";
 import csitBanner8 from "../../assets/Banners/PC/H.jpg";
 
 //mobile Banner Images
-import BannerPhone from "../../assets/Banners/Phone/BannerPhone.jpg";
-// import BannerPhone2 from "../../assets/Banners/Phone/BannerPhone2.jpg";
-import BannerPhone3 from "../../assets/Banners/Phone/BannerPhone3.jpg";
+
 import BannerPhone_A from "../../assets/Banners/Phone/BannerPhone_A.jpg"
 import BannerPhone_B from "../../assets/Banners/Phone/BannerPhone_B.jpg"
 import BannerPhone_C from "../../assets/Banners/Phone/BannerPhone_C.jpg"
