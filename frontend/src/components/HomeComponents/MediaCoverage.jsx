@@ -214,7 +214,7 @@ const MediaCoverage = () => {
                     ></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-[#3f3f41] via-[#0d173b]/20 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8 text-white">
-                      <div className="flex items-center gap-2 sm:gap-4 text-sm sm:text-base mb-2 sm:mb-4">
+                      <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-base mb-2 sm:mb-4">
                         <span className="px-2 sm:px-3 py-1 bg-white/20 rounded-full uppercase font-medium tracking-wide">
                           {item.category}
                         </span>
@@ -305,9 +305,9 @@ const MediaCoverage = () => {
                         className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover"
                       />
                       <div>
-                        <div className="flex items-center gap-2 text-xs sm:text-sm mb-1">
+                        <div className="flex items-center gap-2 text-[2px]  sm:text-sm mb-1">
                           <span
-                            className={`px-2 py-1 rounded-full ${
+                            className={`px-2 py-1 rounded-full text-[5px] sm:text-base  ${
                               activeSlide === index
                                 ? "bg-white/20 text-white"
                                 : "bg-[#0d173b]/10 text-[#0d173b]"

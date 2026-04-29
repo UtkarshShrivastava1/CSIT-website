@@ -38,7 +38,7 @@ const customStyles = `
 
 const NewsTicker = () => {
   const newsItems = [
-    "Admissions Open for Session 2025-26",
+    "Admissions Open for Session 2026-27",
     "We are now accepting applications for our distinguished Engineering and Pharmacy programs",
     "Join an institution renowned for academic excellence, cutting-edge research, and state-of-the-art facilities",
   ];

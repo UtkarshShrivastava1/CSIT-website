@@ -9,7 +9,7 @@ import {
 import { HiLocationMarker, HiMail, HiPhone } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import Logo from "../assets/csitlogo.png";
-import MandatoryDisclosure from "../assets/MandatoryDisclosure.pdf";
+import MandatoryDisclosure from "../assets/MandatoryDisclosures_2026-27.pdf";
 
 // import AboutPage from '../pages/About/Introduction';
 
@@ -217,7 +217,7 @@ const SchoolFooter = () => {
                   to="/campus/NIRF24"
                   className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1"
                 >
-                  NIRF 2024
+                  NIRF 2026
                 </Link>
               </li>
             </ul>
