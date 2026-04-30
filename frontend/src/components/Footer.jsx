@@ -9,7 +9,7 @@ import {
 import { HiLocationMarker, HiMail, HiPhone } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import Logo from "../assets/csitlogo.png";
-import MandatoryDisclosure from "../assets/MandatoryDisclosures_2026-27.pdf";
+import MandatoryDisclosure from "../assets/Mandatory_Disclosures_2026-27.pdf";
 
 // import AboutPage from '../pages/About/Introduction';
 

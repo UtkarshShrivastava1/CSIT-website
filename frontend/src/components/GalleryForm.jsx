@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import api from "../../../services/api"; // ✅ use your Axios wrapper
+import api from "../../services/api"; // ✅ use your Axios wrapper
 
 const GalleryForm = () => {
   const [selectedFiles, setSelectedFiles] = useState([]);
