@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../../services/api";
 import axios from "axios";
+import { trackCompleteRegistration } from "../../utils/fbPixel";
 
 function AdminLogin() {
   const scrollToTop = () => {
@@ -42,6 +43,10 @@ function AdminLogin() {
       localStorage.setItem("adminToken", response.data.token);
       localStorage.setItem("adminUsername", username);
 
+      trackCompleteRegistration({
+        content_name: "Admin Dashboard Access",
+        status: "success",
+      });
       // Redirect to admin dashboard
       alert("Login successful");
       router("/admin/dashboard");

@@ -8,6 +8,7 @@ import api from "../../../services/api";
 import FormImage from "../../assets/FormImage.png";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
+import { trackLead } from "../../utils/fbPixel";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,6 +69,10 @@ function EnquiryForm() {
       const response = await api.post("/enquiry/submit", formData);
 
       if (response.data) {
+        trackLead({
+          content_name: "Admission Enquiry",
+          status: "submitted"
+        });
         setSuccessMessage(
           "Your admission form has been submitted successfully!"
         );

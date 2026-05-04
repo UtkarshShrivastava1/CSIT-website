@@ -31,6 +31,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar"; // Add this import
 import Header from "./components/Header";
 // import RandDCellsPage from "./pages/R&D Cells/R&DCells";
+import PixelTracker from "./components/PixelTracker"
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -45,6 +46,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+       <PixelTracker />
       <div className="flex flex-col min-h-screen">
         <div className="flex-grow">
           <Routes>
