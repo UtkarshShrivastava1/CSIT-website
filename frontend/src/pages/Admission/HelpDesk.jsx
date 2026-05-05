@@ -1,4 +1,5 @@
 import React from "react";
+import { trackLead } from "../../utils/fbPixel";
 
 const HelpDesk = () => {
   return (
@@ -87,10 +88,14 @@ const HelpDesk = () => {
                     {item.name}
                   </td>
                   <td className="px-6 py-4 border-b border-gray-100">
-                    {item.contact}
+                <a href={`tel:${item.contact}`} onClick={() => trackLead({ content_name: "HelpDesk Call", contact: item.name })}>
+                  {item.contact}
+                </a>
                   </td>
                   <td className="px-6 py-4 border-b border-gray-100 text-blue-700 underline">
-                    <a href={`mailto:${item.email}`}>{item.email}</a>
+                <a href={`mailto:${item.email}`} onClick={() => trackLead({ content_name: "HelpDesk Email", contact: item.name })}>
+                  {item.email}
+                </a>
                   </td>
                 </tr>
               ))}

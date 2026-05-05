@@ -1,8 +1,10 @@
-const PIXEL_ID = '849793067190793';
+const PIXEL_ID = import.meta.env.VITE_FB_PIXEL_ID || '849793067190793';
 
 export const initFacebookPixel = () => {
   // Prevent duplicate initialization
   if (window.fbq) return;
+  
+  console.log('✅ Facebook Pixel Initializing...');
   
   // Facebook Pixel Base Code
   /* eslint-disable */
@@ -17,10 +19,12 @@ export const initFacebookPixel = () => {
   /* eslint-enable */
 
   window.fbq('init', PIXEL_ID);
+  console.log(`✅ Facebook Pixel Initialized with ID: ${PIXEL_ID}`);
 };
 
 export const trackPageView = () => {
   if (window.fbq) {
+    console.log('📈 Tracking Event: PageView');
     window.fbq('track', 'PageView');
   }
 };

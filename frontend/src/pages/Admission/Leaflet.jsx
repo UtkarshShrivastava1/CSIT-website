@@ -1,4 +1,5 @@
 import React from "react";
+import { trackLead } from "../../utils/fbPixel";
 
 const Leaflet = () => {
   return (
@@ -22,6 +23,7 @@ const Leaflet = () => {
       <a
         href="/leaflet/CSGI_LEAFLET_2024-25.pdf"
         download="CSGI_LEAFLET_2024-25.pdf"
+        onClick={() => trackLead({ content_name: "Leaflet Download" })}
         className="mt-6 mb-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out"
       >
         Download Leaflet
