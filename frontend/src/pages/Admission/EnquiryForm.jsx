@@ -66,7 +66,9 @@ function EnquiryForm() {
     setErrorMessage("");
 
     try {
+      console.log(formData)
       const response = await api.post("/enquiry/submit", formData);
+      console.log(response)
 
       if (response.data) {
         trackLead({

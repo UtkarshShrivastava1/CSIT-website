@@ -10,8 +10,10 @@ const recipientEmails = [
 // Email sender credentials (career.zager@gmail.com)
 const senderEmail = {
   user: process.env.EMAIL_ADMIN_ID || "utkarshzager@gmail.com", // Sender email
-  pass: process.env.EMAIL_ADMIN_PASS || "lfrbywlulnvpzree ", // Sender app password
+  pass: process.env.EMAIL_ADMIN_PASS || "lfrbywlulnvpzree", // Sender app password
 };
+
+console.log(senderEmail)
 
 // Enhanced email configuration with logging
 const createTransporter = () => {
@@ -19,7 +21,7 @@ const createTransporter = () => {
   console.log("Email Config:".cyan, {
     host: "smtp.gmail.com",
     port: 587,
-    user: process.env.EMAIL_ADMIN_ID,
+    user: senderEmail.user,
     receiverEmail: process.env.EMAIL_RECEIVER_1 || "utkarshzager@gmail.com", // Sender email,
   });
 
@@ -29,8 +31,8 @@ const createTransporter = () => {
     port: 587,
     secure: false,
     auth: {
-      user: process.env.EMAIL_ADMIN_ID,
-      pass: process.env.EMAIL_ADMIN_PASS,
+      user: senderEmail.user,
+      pass: senderEmail.pass,
     },
     tls: {
       rejectUnauthorized: false,
@@ -124,8 +126,8 @@ const submitEnquiryForm = async (req, res) => {
     const transporter = createTransporter();
 
     const mailOptions = {
-      from: process.env.EMAIL_ADMIN_ID,
-      to: process.env.EMAIL_RECEIVER_1,
+      from: senderEmail.user,
+      to: process.env.EMAIL_RECEIVER_1 || "utkarshzager@gmail.com",
       subject: "New Enquiry Form Submission - CSIT",
       html: htmlContent,
     };
