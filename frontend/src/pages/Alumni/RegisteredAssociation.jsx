@@ -1,5 +1,5 @@
 import React from "react";
-import registeredAssociation from "../../assets/registered_association.jpg";
+import registeredAssociation from "../../assets/registered_association.webp";
 const RegisteredAssociation = () => {
   return (
     <div className="bg-white shadow-md rounded-md overflow-hidden">

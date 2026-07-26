@@ -3,13 +3,16 @@ import React from "react";
 const LaboratoriesContent = () => {
   const labs = [
     { id: 1, name: "Problem Solving & Logic Building Lab" },
-    { id: 2, name: "Artificial Intelligence Lab" },
+    { id: 2, name: "Artificial Intelligence & Machine Learning Lab" },
     { id: 3, name: "DBMS Lab" },
     { id: 4, name: "Computer Network Lab" },
     { id: 5, name: "Data Structures and Algorithm Analysis Lab" },
     { id: 6, name: "Network Security Lab" },
     { id: 7, name: "Software Engineering and Programming Lab" },
-    { id: 8, name: "Simulation Lab" },
+    { id: 8, name: "Hadoop Lab" },
+    { id: 9, name: "Cloud Computing Lab" },
+    {id:10 , name:"Mobile Application Development (Android) Lab"},
+    {id:11 , name:"R Programming Lab"}
   ];
 
   return (

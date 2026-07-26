@@ -18,7 +18,7 @@ const PlacementStats = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <StatCard
             title="Highest Package"
-            end={10}
+            end={15}
             suffix=" LPA"
             icon={<PackageIcon />}
             description="Top-performing students"
@@ -26,7 +26,7 @@ const PlacementStats = () => {
           />
           <StatCard
             title="Average Package"
-            end={5.2}
+            end={4.8}
             suffix=" LPA"
             decimals={1}
             icon={<ChartIcon />}

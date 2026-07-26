@@ -1,5 +1,5 @@
 import React from 'react'
-import teamMembers from "../../assets/team-members.png"
+import teamMembers from "../../assets/team-members.webp"
 const TeamMembers = () => {
   return (
     <div className="bg-white shadow-md rounded-md overflow-hidden">

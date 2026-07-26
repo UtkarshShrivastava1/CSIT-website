@@ -1,13 +1,14 @@
 import React from 'react';
 import { FileText } from 'lucide-react';
 // Import all calendar PDF files
-import calendar2018_19 from '../../assets/calendar/2018-19.pdf';
-import calendar2019_20 from '../../assets/calendar/2019-20.pdf';
-import calendar2020_21 from '../../assets/calendar/2020-21.pdf';
-import calendar2021_22 from '../../assets/calendar/2021-22.pdf';
-import calendar2022_23 from '../../assets/calendar/2022-23.pdf';
-import calendar2023_24 from '../../assets/calendar/2023-24.pdf';
-import calendar2024_25 from '../../assets/calendar/2024-25.pdf';
+const calendar2018_19 = 'https://drive.google.com/file/d/1z95oOosqfbtj4-pY7JBcQcnQTIlceYs5/view?usp=sharing';
+const calendar2019_20 = 'https://drive.google.com/file/d/1IiWYEhvr_K0RcAUuFweL31n_Y3FCaY3V/view?usp=sharing';
+const calendar2020_21 = 'https://drive.google.com/file/d/1oQ3MKLkw6TuMHPwsNQresrxYvhpJ91ns/view?usp=sharing';
+const calendar2021_22 = 'https://drive.google.com/file/d/146N8Yxfe5cFvDrnt24qjjP4BR25_29TQ/view?usp=sharing';
+const calendar2022_23 = 'https://drive.google.com/file/d/1-Z_kXse0WQoJhaSH8DW9Bhmbnt6yapzp/view?usp=sharing';
+const calendar2023_24 = 'https://drive.google.com/file/d/1nBtOY4ydr1ZHL5qj4lTsCPCz4xJZltFH/view?usp=sharing';
+const calendar2024_25 = 'https://drive.google.com/file/d/1OPL5xVijt5ncdgWK9Y2gEozQ5o6m1-Hr/view?usp=sharing';
+
 
 const Calendar = () => {
   // Data for the academic calendar table with actual PDF links

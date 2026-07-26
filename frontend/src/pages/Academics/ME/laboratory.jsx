@@ -2,26 +2,17 @@ import React from "react";
 
 const LaboratoriesContent = () => {
   const labs = [
-    { id: 1, name: "Automobile Engineering Lab" },
-    { id: 2, name: "CAD/CAM Lab" },
-    { id: 3, name: "Dynamics of Machines Lab" },
-    { id: 4, name: "Engineering Thermodynamics Lab" },
-    { id: 5, name: "Finite Element Methods Lab" },
-    { id: 6, name: "Fluid Machinery Lab" },
-    { id: 7, name: "Fluid Mechanics Lab" },
-    { id: 8, name: "Heat and Mass Transfer Lab" },
-    { id: 9, name: "Internal Combustion Engine Lab" },
-    { id: 10, name: "Industrial Engineering & Management Lab" },
-    { id: 11, name: "Kinematics of Machines Lab" },
-    { id: 12, name: "Machine Design Lab" },
-    { id: 13, name: "Machine Drawing Lab" },
-    { id: 14, name: "Material Testing Lab" },
-    { id: 15, name: "Production Management Lab" },
-    { id: 16, name: "	Mechanical Measurement and Metrology Lab" },
-    { id: 17, name: "Refrigeration & Air-conditioning Lab" },
-    { id: 18, name: "Robotics Lab" },
-    { id: 19, name: "Central Workshop" },
-    { id: 20, name: "Manufacturing Science Lab" },
+    { id: 1, name: "Material Testing Lab." },
+    { id: 2, name: "Kinematics of Machines and Dynamics of Machine Lab" },
+    { id: 3, name: "Metrology and Instrumentation Lab." },
+    { id: 4, name: "Fluid Mechanics and Machine Lab." },
+    { id: 5, name: "Automobile Lab." },
+    { id: 6, name: "Refrigeration and Air-conditioning Lab." },
+    { id: 7, name: "Heat and Mass Transfer Lab." },
+    { id: 8, name: "Robotics Lab." },
+    { id: 9, name: "Internal combustion Engine Lab." },
+    { id: 10, name: "Computer Numerical Control Lab" },
+    { id: 11, name: "Central Workshop" },
   ];
 
   return (

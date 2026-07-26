@@ -25,7 +25,7 @@ const TeamMembers = () => {
               Training & Placement Team
             </h2>
             <p className="text-gray-200 text-xs sm:text-sm mt-1 sm:mt-2">
-              CSIT | Dedicated Professionals
+              Dedicated Professionals Driving Student Success and Career Growth.
             </p>
             <div className="h-0.5 w-8 sm:w-12 bg-white mt-2 sm:mt-3"></div>
           </div>
@@ -34,56 +34,91 @@ const TeamMembers = () => {
 
       {/* Content */}
       <div className="p-4 sm:p-6">
-        <div className="prose max-w-none text-gray-700">
-          {/* Introduction */}
-          <div className="mb-6 sm:mb-8">
-            <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
-              Our Training & Placement team consists of experienced
-              professionals dedicated to ensuring excellent career opportunities
-              for our students. They work tirelessly to bridge the gap between
-              industry and academia, facilitating successful placements and
-              internships.
-            </p>
-          </div>
-
-          {/* Team Members Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {teamMembers.map((image, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
-              >
-                <div className="aspect-w-3 aspect-h-4 relative">
-                  <img
-                    src={image.default}
-                    alt={`Team Member ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+        {/* Team Images - First */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6">
+          {teamMembers.map((image, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
+            >
+              <div className="aspect-w-3 aspect-h-4 relative">
+                <img
+                  src={image.default}
+                  alt={`Team Member ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
 
-          {/* Additional Information */}
-          <div className="mt-8 p-4 bg-blue-50 border border-blue-100 rounded-md">
-            <h3 className="text-base sm:text-lg font-medium text-[#0d173b] mb-2">
-              Our Commitment
-            </h3>
-            <p className="text-sm sm:text-base text-gray-700 mb-4">
-              The Training & Placement team is committed to providing
-              comprehensive support to students throughout their academic
-              journey and beyond. We organize regular training sessions,
-              workshops, and industry interactions to prepare students for
-              successful careers.
-            </p>
-            <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-gray-700">
-              <li>Regular industry visits and guest lectures</li>
-              <li>Pre-placement training and workshops</li>
-              <li>Resume building and interview preparation</li>
-              <li>Career counseling and guidance</li>
-              <li>Industry-academia collaboration initiatives</li>
-            </ul>
-          </div>
+        {/* Introduction - After Images */}
+        <div className="mb-6">
+          <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+            The Training &amp; Placement team at CSIT comprises experienced and dedicated professionals committed to shaping the career paths of students. With a strong understanding of industry expectations and academic requirements, the team works consistently to create meaningful opportunities for students.
+          </p>
+        </div>
+
+        {/* Our Strength */}
+        <div className="mb-4">
+          <h3 className="text-base font-semibold text-[#0d173b] mb-2">
+            Our Strength
+          </h3>
+          <ul className="space-y-1">
+            <li className="flex items-start gap-2 text-sm text-gray-700">
+              <span className="text-[#0d173b] font-bold">•</span>
+              A team of skilled and proactive professionals
+            </li>
+            <li className="flex items-start gap-2 text-sm text-gray-700">
+              <span className="text-[#0d173b] font-bold">•</span>
+              Strong industry connections and networking
+            </li>
+            <li className="flex items-start gap-2 text-sm text-gray-700">
+              <span className="text-[#0d173b] font-bold">•</span>
+              Student-centric approach to career development
+            </li>
+          </ul>
+        </div>
+
+        {/* Our Role */}
+        <div className="mb-4">
+          <h3 className="text-base font-semibold text-[#0d173b] mb-2">
+            Our Role
+          </h3>
+          <ul className="space-y-1">
+            <li className="flex items-start gap-2 text-sm text-gray-700">
+              <span className="text-[#0d173b] font-bold">•</span>
+              Bridging the gap between academia and industry
+            </li>
+            <li className="flex items-start gap-2 text-sm text-gray-700">
+              <span className="text-[#0d173b] font-bold">•</span>
+              Facilitating internships and placement opportunities
+            </li>
+            <li className="flex items-start gap-2 text-sm text-gray-700">
+              <span className="text-[#0d173b] font-bold">•</span>
+              Coordinating recruitment drives and industry interactions
+            </li>
+            <li className="flex items-start gap-2 text-sm text-gray-700">
+              <span className="text-[#0d173b] font-bold">•</span>
+              Guiding students through every stage of their career journey
+            </li>
+          </ul>
+        </div>
+
+        {/* Our Commitment */}
+        <div>
+          <h3 className="text-base font-semibold text-[#0d173b] mb-2">
+            Our Commitment
+          </h3>
+          <p className="text-sm text-gray-600 mb-2 italic">
+            "Guiding, Training, and Empowering Students for Successful Careers."
+          </p>
+          <p className="text-sm text-gray-700">
+            The Training &amp; Placement Cell at CSIT is dedicated to providing continuous and comprehensive support to students throughout their academic journey and beyond. Our focus is on nurturing talent, enhancing employability, and preparing students to meet industry expectations with confidence and competence.
+          </p>
+          <p className="text-sm text-gray-700 mt-2">
+            Through a combination of structured training, industry interaction, and personalized guidance, we ensure that every student is well-equipped for a successful career.
+          </p>
         </div>
       </div>
     </div>

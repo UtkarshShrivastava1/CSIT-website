@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 
 const Achievement = () => {
+  const [activeTab, setActiveTab] = useState("Institute");
   const [selectedImage, setSelectedImage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Access images from public/assets/Achievement/
-  const imagePaths = Array.from(
-    { length: 24 },
-    (_, i) => `/assets/Achievement/${String(i + 1).padStart(2, "0")}.jpg`
-  );
+  const achievements = {
+    Institute: Array.from({ length: 8 }, (_, i) => `/assets/Achievement/institute_${i + 1}.webp`),
+    Faculties: Array.from({ length: 8 }, (_, i) => `/assets/Achievement/faculty_${i + 1}.webp`),
+    Students: Array.from({ length: 8 }, (_, i) => `/assets/Achievement/student_${i + 1}.webp`),
+  };
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
 
   const handleImageClick = (path) => {
     setSelectedImage(path);
@@ -21,14 +26,35 @@ const Achievement = () => {
   };
 
   return (
-    <div className="min-h-screen p-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
-          Our Achievements
-        </h1>
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full">
-            {imagePaths.map((path, index) => (
+    <div className="w-full">
+      <header className="bg-gradient-to-r from-[#0d173b] to-[#1a2b5f] text-white py-8 mb-8 rounded-lg">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Achievements</h1>
+          <p className="text-base text-gray-200 mt-2">Celebrating excellence across the institution.</p>
+          <div className="h-0.5 w-12 bg-white mt-3"></div>
+        </div>
+      </header>
+
+      <div className="container mx-auto px-4 py-6">
+        <div className="flex justify-center mb-8 border-b">
+          {Object.keys(achievements).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => handleTabClick(tab)}
+              className={`py-2 px-4 text-lg font-medium transition-colors duration-300 ${
+                activeTab === tab
+                  ? 'border-b-2 border-[#0d173b] text-[#0d173b]'
+                  : 'text-gray-500 hover:text-[#0d173b]'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        <div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {achievements[activeTab].map((path, index) => (
               <div
                 key={index}
                 className="flex items-center justify-center aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 bg-gray-100 p-2 cursor-pointer"

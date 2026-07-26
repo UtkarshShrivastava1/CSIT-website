@@ -1,15 +1,19 @@
-import { useState } from "react";
-import thred from "../../../assets/Cse/cse3rdsem.pdf";
-import fourth from "../../../assets/Cse/cse4thsem.pdf";
-import fifth from "../../../assets/Cse/cse5thsem.pdf";
-import sixth from "../../../assets/Cse/cse6thsem.pdf";
-import seventh from "../../../assets/Cse/cse7thsem.pdf";
-import eighth from "../../../assets/Cse/cse8thsem.pdf";
+
+
 
 const CSECourseOutcomes = () => {
+
+const third = "https://drive.google.com/file/d/1pY3v-hq-HmX1f5UMV-Ogje88-6-yW984/view?usp=sharing";
+const fourth = "https://drive.google.com/file/d/1Txz8ENRe6WsOMxGXyXT2am8T-pyvdbce/view?usp=sharing";
+const fifth = "https://drive.google.com/file/d/1R0ucQY7faeiJK-9Gj_IAn83EQII4Sb7W/view?usp=sharing";
+const sixth = "https://drive.google.com/file/d/1nnbe0EQ3NvhYhqraa-P8XGOdLh03QRqs/view?usp=sharing";
+const seventh = "https://drive.google.com/file/d/1s5L8taRgbuRgUKm9wnwAHZPNeLPRG5nU/view?usp=sharing";
+const eighth = "https://drive.google.com/file/d/1gGq1zZFtsRJVf4Owb-wAlApHR_9ZefSM/view?usp=sharing";
+
   // Data for semesters with syllabus paths
+
   const semesters = [
-    { id: "sem3", name: "3rd Semester", syllabus: thred },
+    { id: "sem3", name: "3rd Semester", syllabus: third },
     { id: "sem4", name: "4th Semester", syllabus: fourth },
     { id: "sem5", name: "5th Semester", syllabus: fifth },
     { id: "sem6", name: "6th Semester", syllabus: sixth },
@@ -32,9 +36,9 @@ const CSECourseOutcomes = () => {
         <div className="absolute inset-0 flex items-center px-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d173b]">
-            CourseOutcomes
+            Course Outcomes
             </h2>
-            <p className="text-gray-500 text-sm mt-2">CSIT | CSECourseOutcomes</p>
+            <p className="text-gray-500 text-sm mt-2">CSIT | CSE Course Outcomes</p>
             <div className="h-0.5 w-14 bg-[#0d173b] mt-3 rounded"></div>
           </div>
         </div>

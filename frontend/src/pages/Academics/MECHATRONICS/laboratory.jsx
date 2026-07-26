@@ -3,24 +3,15 @@ import React from "react";
 const LaboratoriesContent = () => {
   const labs = [
     { id: 1, name: "Material Testing Lab." },
-    { id: 2, name: "Electronic Devices and Digital Circuits Lab." },
+    { id: 2, name: "Electronic Devices and Digital Signal processing Lab." },
     { id: 3, name: "Metrology and Instrumentation Lab." },
-    { id: 4, name: "Software Lab. (Programming in C++)" },
-    { id: 5, name: "Kinematics of Machines Lab" },
-    { id: 6, name: "Fluid Mechanics Lab" },
-    { id: 7, name: "Microprocessor and Microcontroller Lab" },
-    { id: 8, name: "Fluid Machines and Fluidics Lab" },
-    { id: 9, name: "Dynamics of Machines Lab" },
-    { id: 10, name: "Advance Microcontroller and Embedded System Design Lab" },
-    { id: 11, name: "Machine Design Lab" },
-    { id: 12, name: "Digital Signal Processing and Applications Lab" },
-    { id: 13, name: "Hydraulic and Pneumatic Control Lab" },
-    { id: 14, name: "Robotics and Machine Vision Lab" },
-    { id: 15, name: "Autotronics Lab" },
-    { id: 16, name: "Computer Numerical Control Lab" },
-    { id: 17, name: "Mechatronics Systems Design Lab" },
-    { id: 18, name: "Simulation Lab" },
-    { id: 19, name: "Flexible Manufacturing Systems Lab" },
+    { id: 4, name: "Kinematics of Machines and Dynamics of Machine Lab" },
+    { id: 5, name: "Fluid Mechanics and Machine Lab" },
+    { id: 6, name: "Advance Microcontroller and Embedded System Design Lab" },
+    { id: 7, name: "Hydraulic and Pneumatic Control & Mechatronics Systems Design Lab" },
+    { id: 8, name: "Robotics and Machine Vision Lab" },
+    { id: 9, name: "Autotronics Lab" },
+    { id: 10, name: "Computer Numerical Control Lab" },
   ];
 
   return (

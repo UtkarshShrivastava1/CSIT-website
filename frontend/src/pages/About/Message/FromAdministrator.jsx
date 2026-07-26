@@ -1,5 +1,5 @@
 import React from "react";
-import administratorImage from "../../../assets/directoradmin.jpg";
+import administratorImage from "../../../assets/directoradmin.webp";
 const FromAdministrator = () => {
   return (
     <div className="bg-white shadow-xl rounded-lg overflow-hidden">
@@ -12,7 +12,7 @@ const FromAdministrator = () => {
           </div>
         </div>
         <h1 className="text-3xl font-bold text-white z-10 text-center">
-          Message From Director[Administrator]
+          Message From Director
         </h1>
       </div>
 
@@ -36,50 +36,25 @@ const FromAdministrator = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> 
 
           {/* Message Content */}
           <div className="w-full md:w-2/3 text-justify text-gray-800 text-[15px] leading-relaxed space-y-4">
             <p>
-              CSGI is a valued milestone of academic excellence in the state of
-              Chhattisgarh. Its contribution has been well recognised by the
-              various sectors. It has enriched the society by producing
-              exceptional students laced with sound knowledge and immense
-              potential to serve the nation in the best possible way. CSGI has
-              been dedicated in creating a breed of qualified youths who can
-              stand tall to all the challenges, and harness every opportunity
-              that comes across their career-trajectory.
+              CSGI stands as a respected centre of academic excellence in Chhattisgarh. Over the years, the institute has earned recognition across various sectors for its consistent contribution to education and society. Our students graduate with strong knowledge, confidence, and the determination to serve the nation with integrity and competence. We are committed to shaping young professionals who are ready to face challenges and make the most of every opportunity in their careers.
             </p>
             <p>
-              We provide an ideal academic environment where students gain not
-              only knowledge but also skills to perform brilliantly. A strong
-              pool of faculty members, state-of-the-art laboratories, a large
-              library hosting more than fifty thousand books are some of the
-              unique features of CSGI that appeal to various scholars and
-              academicians. The scenic campus spread over 33 acres of land,
-              remains unaffected from the nuisances of the city, yet easily
-              available conveyances and proximity with the city together make
-              CSGI easily approachable.
+             At CSGI, we offer an academic environment that encourages both learning and practical growth. Our experienced faculty, advanced laboratories, and a well-stocked library with over fifty thousand books create a strong foundation for academic success. The campus, spread across 33 acres, offers a peaceful setting away from city distractions while remaining easily accessible through convenient transportation and close proximity to the city.
             </p>
             <p>
-              We are dedicated to nurturing those strong group of youths who can
-              cater to the emerging demands of the globalised world through
-              various activities. This is done also through CSGI a lot of
-              co-curricular activities - each of which aims to help students
-              know the world beyond the books. Most of these activities are
-              managed by students so that their managerial skills get honed
-              naturally. CSGI has a safe social and physical environment that
-              helps all our students learn and succeed. And this is my firm
-              conviction that every CSGIian carries the rich values and
-              traditions that are imbibed in their collegiate years.
+              We believe education goes beyond classrooms. Through a wide range of co-curricular and student-led activities, we help students develop leadership, teamwork, and managerial skills. These experiences prepare them to meet the evolving demands of a globalized world. At the same time, we ensure a safe and supportive social and physical environment where every student can grow with confidence
             </p>
             <p>
-              This brochure provides a glimpse of CSGIs efforts and treasures. I
-              hope it shall be helpful every reader in various ways.
+             It is my firm belief that every CSGI student carries forward the values and traditions learned during their time here. This brochure offers a glimpse into our efforts, achievements, and aspirations. I hope it serves as a helpful guide and provides meaningful insight into what CSGI stands for.
             </p>
-            <p className="font-semibold text-[#0d173b]">
+            {/* <p className="font-semibold text-[#0d173b]">
               I extend my Heartiest Welcome to all at CSIT.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

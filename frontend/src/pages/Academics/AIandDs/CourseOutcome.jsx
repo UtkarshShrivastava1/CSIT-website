@@ -1,20 +1,22 @@
-import { useState } from "react";
-import thred from "../../../assets/Ai&Ds/AIDS3rdsem.pdf";
-import fourth from "../../../assets/Ai&Ds/AIDS4thsem.pdf";
-import fifth from "../../../assets/Ai&Ds/AIDS5thsem.pdf";
-import sixth from "../../../assets/Ai&Ds/AIDS6thsem.pdf";
-// import seventh from "../../../assets/";
-// import eighth from "../../../assets/";
 
 const CSECourseOutcomes = () => {
+
+
+  const third = "https://drive.google.com/file/d/14JCbR0gzvH54NP1tPobykLP3-myHiF9f/view?usp=sharing";
+const fourth = "https://drive.google.com/file/d/1-y-4BkiPbsBeASS-SGlD2xrR4duHpuW2/view?usp=sharing";
+const fifth = "https://drive.google.com/file/d/1-y-4BkiPbsBeASS-SGlD2xrR4duHpuW2/view?usp=sharing";
+const sixth = "https://drive.google.com/file/d/1vqdNbIm0fEmhiqRNOGyR3yVBLIOarN2P/view?usp=sharing";
+const seventh = "https://drive.google.com/file/d/1i5t5DarM6ljRjb2oPY1lPlUqjIYQteYU/view?usp=sharing";
+const eighth = "https://drive.google.com/file/d/17esmy1x7uYseP0Dt2HpfSdz9nevLtnYv/view?usp=sharing";
+
   // Data for semesters with syllabus paths
   const semesters = [
-    { id: "sem3", name: "3rd Semester", syllabus: thred },
+    { id: "sem3", name: "3rd Semester", syllabus: third },
     { id: "sem4", name: "4th Semester", syllabus: fourth },
     { id: "sem5", name: "5th Semester", syllabus: fifth },
     { id: "sem6", name: "6th Semester", syllabus: sixth },
-    // { id: "sem7", name: "7th Semester", syllabus: seventh },
-    // { id: "sem8", name: "8th Semester", syllabus: eighth }
+    { id: "sem7", name: "7th Semester", syllabus: seventh },
+    { id: "sem8", name: "8th Semester", syllabus: eighth }
   ];
 
   // Function to open the syllabus PDF

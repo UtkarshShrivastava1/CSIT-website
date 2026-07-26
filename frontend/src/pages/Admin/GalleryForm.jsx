@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import { Upload, Loader2, CheckCircle2, XCircle, Image, X } from "lucide-react";
 import { useDropzone } from "react-dropzone";
 import { useNavigate } from "react-router-dom";
-import api from "../../../services/api";
+import api from "../../services/api";
 
 function GalleryForm() {
   const [formData, setFormData] = useState({
@@ -31,7 +31,7 @@ function GalleryForm() {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      'image/*': ['.jpeg', '.jpg', '.png', '.gif', '.webp']
+      'image/*': ['.webp', '.webp', '.webp', '.gif', '.webp']
     },
     multiple: true
   });
@@ -126,14 +126,14 @@ function GalleryForm() {
       <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
           <div>
-            <h2 className="text-3xl font-serif font-bold text-[#0d173b] mb-3">Gallery Upload</h2>
-            <p className="text-gray-600 text-lg">Add multiple images to your gallery collection</p>
+            <h2 className="text-2xl font-serif font-bold text-[#0d173b] mb-3">Gallery Upload</h2>
+            <p className="text-gray-600 text-xs">Add multiple images to your gallery collection</p>
           </div>
           <button
             onClick={handleViewDashboard}
-            className="flex items-center gap-2 bg-[#0d173b] text-white px-5 py-3 rounded-lg hover:bg-[#0d173b]/90 transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-1"
+            className="flex items-center gap-2 bg-[#0d173b] text-white px-5 py-3 rounded-lg hover:bg-[#0d173b]/90 transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-1 text-xs"
           >
-            <Image className="w-5 h-5" />
+            <Image className="w-3 h-3" />
             View Gallery
           </button>
         </div>
@@ -167,13 +167,13 @@ function GalleryForm() {
     className="mt-1 block w-full rounded-md border-gray-900 shadow-md focus:border-[#0d173b] focus:ring-[#0d173b] sm:text-sm !p-4 text-black"
   >
     <option value="">Select Category</option>
-    <option value="Institute">Institute</option>
+    <option value="Infrastructure">Infrastructure</option>
     <option value="Departments">Departments</option>
     <option value="Initiatives">Initiatives</option>
     <option value="T & P Cell">T & P Cell</option>
-    <option value="Student Affairs">Student Affairs</option>
-    <option value="Library">Library</option>
+    <option value="Student Clubs">Student Clubs</option>
     <option value="Facilities">Facilities</option>
+    <option value="R&D">R&D</option>
     <option value="Alumni">Alumni</option>
     <option value="Media Coverage">Media Coverage</option>
   </select>
@@ -196,12 +196,12 @@ function GalleryForm() {
                 <Upload className={`w-10 h-10 transition-colors ${isDragActive ? 'text-[#0d173b]' : 'text-gray-400 group-hover:text-[#0d173b]'}`} />
               </div>
               <div className="space-y-2">
-                <p className="text-xl font-medium text-gray-700">
+                <p className="text-sm font-medium text-gray-700">
                   {isDragActive ? "Drop your images here" : "Drag & drop images here"}
                 </p>
                 <p className="text-base text-gray-500">or click to browse from your device</p>
-                <p className="text-sm text-gray-400 mt-3">Supported formats: JPG, PNG, GIF, WebP</p>
-                <p className="text-sm font-medium text-[#0d173b] mt-2">Upload multiple files at once!</p>
+                <p className="text-xs text-gray-400 mt-3">Supported formats: JPG, PNG, GIF, WebP</p>
+                <p className="text-xs font-medium text-[#0d173b] mt-2">Upload multiple files at once!</p>
               </div>
             </div>
           </div>
@@ -266,7 +266,7 @@ function GalleryForm() {
           <button
             type="submit"
             disabled={loading || formData.images.length === 0}
-            className="w-full flex items-center justify-center gap-2 font-medium text-lg px-6 py-4 bg-[#0d173b] text-white rounded-lg 
+            className="w-full flex items-center justify-center gap-2 font-medium text-sm px-6 py-4 bg-[#0d173b] text-white rounded-lg 
               hover:bg-[#0d173b]/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed
               shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:hover:transform-none"
           >

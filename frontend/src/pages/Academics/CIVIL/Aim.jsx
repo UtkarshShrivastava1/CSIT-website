@@ -21,13 +21,25 @@ const Aspiration = () => {
 
       <div className="p-6">
         <div className="prose max-w-none text-gray-700">
+          {/* Aim Section */}
+          <div className="mb-8">
+            <h3 className="text-xl font-medium text-[#0d173b] mb-2">
+              Our Aim
+            </h3>
+            <p>
+              The Civil Engineering Department aims to develop competent and responsible engineers equipped with strong technical knowledge, practical skills, and innovative thinking to address real-world infrastructure challenges. The department strives to foster excellence in teaching, research, and industry collaboration while promoting sustainable and cost-effective engineering solutions.
+            </p>
+            <p>
+              We are committed to nurturing students with ethical values, leadership qualities, and entrepreneurial mindset, enabling them to contribute effectively to the development of society through advancements in construction, environmental sustainability, and modern engineering practices.
+            </p>
+          </div>
           {/* Vision Section */}
           <div className="mb-8">
             <h3 className="text-xl font-medium text-[#0d173b] mb-2">
               Our Vision
             </h3>
             <p>
-            To impart knowledge and excellence in Civil Engineering technology with global perspectives to our students and to make them ethically strong engineers to build nation.
+            “To impart knowledge and excellence in Civil Engineering technology with global perspectives to our students and to make them ethically strong engineers to build nation.”
             </p>
           </div>
 
@@ -38,7 +50,7 @@ const Aspiration = () => {
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               <li>
-              To bring forth Civil Engineers of high Caliber, Technical Skills and Ethical values to serve society and the nation
+              To bring forth civil engineers of high caliber, technical skills and ethical values to serve society and the nation.
               </li>
               <li>
               To make the department a center of excellence in the field of civil engineering and allied research.

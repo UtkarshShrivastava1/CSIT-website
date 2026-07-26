@@ -10,7 +10,8 @@ import {
   Trash2,
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import api from "../../../services/api"; // your axios instance
+import api from "../../services/api"; // your axios instance
+import apiPublic from "../../services/apiPublic";
 
 const GalleryDashboard = () => {
   const [images, setImages] = useState([]);
@@ -22,8 +23,21 @@ const GalleryDashboard = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [imageToDelete, setImageToDelete] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("Infrastructure");
 
   const navigate = useNavigate();
+
+  const categories = [
+    "Infrastructure",
+    "Departments",
+    "Initiatives",
+    "T & P Cell",
+    "Student Clubs",
+    "Facilities",
+    "R&D",
+    "Alumni",
+    "Media Coverage",
+  ];
 
   // Helper to get base (safe string)
   const getApiBase = () =>
@@ -31,36 +45,14 @@ const GalleryDashboard = () => {
       ? String(api.defaults.baseURL).replace(/\/+$/, "")
       : "";
 
-  // Build path for gallery endpoints in a robust way:
-  // - If axios baseURL already contains '/gallery' -> return absolute `${base}/${id?}`
-  // - Else return relative `/gallery` or `/gallery/:id` so axios will prepend baseURL (e.g. '/api')
   const buildGalleryEndpoint = (id = "") => {
-    const base = getApiBase();
-    // detect presence of '/gallery' in base (either '/gallery' or '/api/gallery')
-    if (base && /\/gallery$/i.test(base)) {
-      const full = id ? `${base}/${id}` : `${base}/`;
-      // debug:
-      // eslint-disable-next-line no-console
-      console.debug("[Gallery] Using absolute endpoint:", full);
-      return full; // absolute - axios won't prepend baseURL
-    } else {
-      const rel = id ? `/${id}` : `/gallery`;
-      // eslint-disable-next-line no-console
-      console.debug(
-        "[Gallery] Using relative endpoint:",
-        rel,
-        "(axios.baseURL:",
-        base || "(none)",
-        ")"
-      );
-      return rel; // relative - axios will prepend baseURL if present
-    }
+    return id ? `/gallery/${id}` : `/gallery`;
   };
 
   useEffect(() => {
-    fetchGalleryImages();
+    fetchGalleryImages(selectedCategory);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [selectedCategory]);
 
   useEffect(() => {
     // basic search/filter
@@ -104,7 +96,7 @@ const GalleryDashboard = () => {
     setTimeout(() => el.remove(), 4500);
   };
 
-  const fetchGalleryImages = async () => {
+  const fetchGalleryImages = async (categoryToFetch) => {
     try {
       setLoading(true);
       const token = localStorage.getItem("adminToken");
@@ -114,20 +106,17 @@ const GalleryDashboard = () => {
         return;
       }
 
-      const endpoint = buildGalleryEndpoint(); // will be '/gallery' or absolute
-      const res = await api.get(endpoint, {
-        headers: { Authorization: `Bearer ${token}` },
+      // Fetch from public category route to avoid interceptor 404 toast triggers
+      const res = await apiPublic.get("/gallery/category", {
+        params: { category: categoryToFetch, admin: true },
       });
 
       const data = res?.data ?? null;
 
-      // Resolve array in various shapes
       let imagesData = [];
-      if (Array.isArray(data)) imagesData = data;
-      else if (Array.isArray(data.images)) imagesData = data.images;
-      else if (Array.isArray(data.data)) imagesData = data.data;
-      else if (Array.isArray(data.resources)) imagesData = data.resources;
-      else if (Array.isArray(data.gallery)) imagesData = data.gallery;
+      if (data && data.success && Array.isArray(data.response)) {
+        imagesData = data.response;
+      }
 
       // base fallback
       const base = getApiBase() || process.env.REACT_APP_API_BASE || "";
@@ -175,11 +164,18 @@ const GalleryDashboard = () => {
       setError(null);
     } catch (err) {
       console.error("Error fetching gallery images:", err);
-      setError(
-        err?.response?.data?.message || err.message || "Failed to fetch images"
-      );
-      setImages([]);
-      setFilteredImages([]);
+      if (err.response && err.response.status === 404) {
+        // Safe empty state, not a fatal auth/network error
+        setImages([]);
+        setFilteredImages([]);
+        setError(null);
+      } else {
+        setError(
+          err?.response?.data?.message || err.message || "Failed to fetch images"
+        );
+        setImages([]);
+        setFilteredImages([]);
+      }
     } finally {
       setLoading(false);
     }
@@ -200,8 +196,8 @@ const GalleryDashboard = () => {
         return;
       }
 
-      // Build endpoint safely
-      const endpoint = buildGalleryEndpoint(imageToDelete); // either '/gallery/:id' or absolute full URL
+      // Build endpoint safely (e.g. /gallery/651a...)
+      const endpoint = buildGalleryEndpoint(imageToDelete); 
       // debug
       // eslint-disable-next-line no-console
       console.debug(
@@ -270,7 +266,7 @@ const GalleryDashboard = () => {
       <div className="min-h-screen bg-gradient-to-br from-[#0d173b] to-[#1a2b5f] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <Loader2 size={40} className="text-white animate-spin" />
-          <p className="text-white text-lg">Loading gallery...</p>
+          <p className="text-white textt-sm">Loading gallery...</p>
         </div>
       </div>
     );
@@ -299,10 +295,10 @@ const GalleryDashboard = () => {
               <ImagePlus className="h-6 w-6 text-yellow-400" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif font-bold">
+              <h1 className="text-lg md:text-xl font-serif font-bold">
                 Gallery Management
               </h1>
-              <p className="text-sm text-gray-300">
+              <p className="text-xs text-gray-300">
                 Manage and organize your gallery images
               </p>
             </div>
@@ -311,13 +307,13 @@ const GalleryDashboard = () => {
           <div className="flex items-center space-x-4">
             <button
               onClick={() => navigate("/admin/dashboard")}
-              className="flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-lg hover:bg-white/20"
+              className="flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-lg hover:bg-white/20 text-xs md:text-sm transition-all"
             >
               <ArrowLeft className="w-5 h-5" /> Back to Dashboard
             </button>
             <button
               onClick={handleUpload}
-              className="flex items-center gap-2 bg-yellow-400 text-[#0d173b] px-6 py-2 rounded-lg hover:bg-yellow-500"
+              className="flex items-center gap-2 bg-yellow-400 text-[#0d173b] px-6 py-2 rounded-lg hover:bg-yellow-500 text-xs md:text-sm transition-all"
             >
               <Upload className="w-5 h-5" /> Upload New Image
             </button>
@@ -331,12 +327,12 @@ const GalleryDashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-500 text-sm uppercase tracking-wider">
-                  Total Images
+                  Category Images
                 </p>
                 <p className="text-4xl font-bold text-[#0d173b] mt-2">
                   {images.length}
                 </p>
-                <p className="text-gray-400 text-sm mt-1">in your gallery</p>
+                <p className="text-gray-400 text-sm mt-1">in {selectedCategory}</p>
               </div>
               <div className="bg-gradient-to-r from-[#0d173b]/10 to-[#1a2b5f]/10 p-4 rounded-xl">
                 <ImagePlus className="w-8 h-8 text-[#0d173b]" />
@@ -345,13 +341,30 @@ const GalleryDashboard = () => {
           </div>
         </div>
 
+        {/* Category Tabs */}
+        <div className="flex overflow-x-auto gap-2 pb-4 mb-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-5 py-2.5 rounded-xl text-xs md:text-sm font-medium whitespace-nowrap transition-all duration-300 shadow-sm border ${
+                selectedCategory === cat
+                  ? "bg-[#0d173b] text-white border-[#0d173b] shadow-md transform -translate-y-0.5"
+                  : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:text-gray-900"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         {images.length === 0 ? (
           <div className="bg-white rounded-2xl p-12 text-center shadow-lg border border-gray-100">
             <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
               <ImagePlus size={48} className="text-[#0d173b]" />
             </div>
-            <p className="text-gray-600 text-lg mb-4">
-              No images found in the gallery
+            <p className="text-gray-600 text-sm mb-4">
+              No images found in category: {selectedCategory}
             </p>
             <button
               onClick={handleUpload}

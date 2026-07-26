@@ -1,5 +1,5 @@
 import React from "react";
-import chairmanImage from "../../../assets/chairman.png";
+import chairmanImage from "../../../assets/chairman.webp";
 const FromChairman = () => {
   return (
     <div className="bg-white shadow-xl rounded-lg overflow-hidden">
@@ -38,58 +38,50 @@ const FromChairman = () => {
 
           {/* Message Content */}
           <div className="w-full md:w-2/3 text-justify text-gray-800 text-[15px] leading-relaxed space-y-4">
-            <p>
-              CSIT aims at providing a distinctive combination of academic
-              supremacy and professional relevance. Such a combination is
-              designed to provide a stable foundation for a lifetime
-              professional and Personal Development.
-            </p>
-            <p>
-              Apart from laying steady professional foundation, the institute
-              provides the right ambience to attain excellence in education
-              through appropriate infra structural facilities, combined with
-              well qualified and experienced faculty, well established Library
-              and State of the Art Laboratories.
-            </p>
-            <p>
-              To carry forward the flag of growth and prosperity of Science and
-              Technology, essentially requires skilled, brilliant and
-              technically sound Engineers. Such personalities can only be
-              groomed in an Educational Institution having appropriate standard
-              and facilities. With such a noble Vision in heart, CSIT has been
-              dedicated towards providing Quality Education in every possible
-              way.
-            </p>
-            <p>
-              We are working hard to import more expertise and innovation to
-              meet the expectations and technical needs of our students so that
-              they prosper professionally amidst ruthless competition. Our
-              institute is one of the leading institutes which has taken a leap
-              forward in Quality Technical Education.
-            </p>
-            <p>
-              CSIT has a proud history spanning over 22 glorious years and has
-              created many milestones with each passing year. It is a premier
-              Educational Institute in the region. The biggest Testimony of
-              CSIT's rapid progress is the impressive list of Entrepreneurs,
-              Civil Servants and Startups. Reputed companies choosing to
-              participate in Placement Drives year after year.
-            </p>
-            <p>
-              CSIT is well committed towards Nation building. Its vision and
-              dedication is strongly backed by dedicated faculty and staff, who
-              are continuously striving to contribute in the growth of the
-              institute and to shape up the career of Budding Technocrats.
-            </p>
-            <p>
-              CSIT is again Empowering students to become intellectually sound,
-              upright in values, virtuous and socially concerned to contribute
-              as future leaders of the Nation by fulfilling their academic
-              passions through liberal education and spiritual zeal.
-            </p>
-            <p className="font-semibold text-[#0d173b]">
+           <p>
+               At CSGI, our goal is simple and clear. We strive to blend strong academics with real-world professional relevance. This balance gives our students a solid base not only for successful careers, but also for lifelong personal growth.
+              </p>
+
+              <p>
+                Along with building technical competence, we focus on creating the right learning environment. Modern infrastructure, advanced laboratories, a well-stocked library, and experienced, dedicated faculty together ensure that our students receive the quality education they deserve.
+              </p>
+
+              <p>
+                The progress of science and technology depends on skilled and capable
+                engineers. Such professionals can only be shaped in institutions that
+                maintain high standards and provide the right facilities. With this
+                belief, CSGI has consistently worked to deliver quality technical
+                education. We continue to introduce new expertise and innovation so
+                that our students are well prepared to meet industry expectations and
+                succeed in a competitive world.
+              </p>
+
+              <p>
+                Over the past 22 years, CSGI has built a proud legacy. With each
+                passing year, we have achieved new milestones and strengthened our
+                position as one of the leading institutes in the region. Our alumni
+                have gone on to become successful entrepreneurs, civil servants, and
+                founders of promising start-ups. The continued participation of
+                reputed companies in our placement drives reflects the trust they
+                place in our students and our institution.
+              </p>
+
+              <p>
+                We remain committed to nation building. Our vision is supported by a
+                dedicated team of faculty and staff who work tirelessly to nurture
+                young minds and guide them toward meaningful careers. We aim to
+                develop not just technically sound professionals, but individuals who
+                are principled, responsible, and socially aware, ready to contribute
+                as future leaders.
+              </p>
+
+              <p className="font-semibold text-[#0d173b]">
+                I warmly welcome you to CSGI and invite you to be a part of our
+                journey toward excellence.
+              </p>
+            {/* <p className="font-semibold text-[#0d173b]">
               I extend my Heartiest Welcome to all at CSIT.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

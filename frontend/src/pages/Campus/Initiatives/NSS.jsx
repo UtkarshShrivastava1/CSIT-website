@@ -1,684 +1,783 @@
-export default function NssInitiativesList() {
-  const initiativesData = [
+import React, { useState } from "react";
+
+export default function NSS() {
+  const [activeYear, setActiveYear] = useState("2025-26");
+
+  // Updated initiatives data with new content
+  const activities = {
+    "2025-26": [
+      {
+        id: 1,
+        event: "Kargil Vijay Diwas",
+        date: "26-07-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 2,
+        event: "Vyas Pujan",
+        date: "08-08-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 3,
+        event: "Nasha Mukt Bharat Abhiyan (Pledge)",
+        date: "13-08-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 4,
+        event: "Tiranga Mahotsav",
+        date: "15-08-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 5,
+        event: "B - Certificate Distribution",
+        date: "29-08-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 6,
+        event: "National Sports Day Celebration",
+        date: "29-08-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 7,
+        event: "Pre- RDC Parade Participation",
+        date: "10-09-2025",
+        venue: "CSVTU, Bhilai",
+        remark: ""
+      },
+      {
+        id: 8,
+        event: "Blood Donation at Sector -9 Hospital",
+        date: "10-09-2025",
+        venue: "Sector -09 Hospital, Bhilai",
+        remark: "Outreach Programme"
+      },
+      {
+        id: 9,
+        event: "Engineers Day Celebration",
+        date: "15-09-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 10,
+        event: "Raktdan Amrit Mahotsav 2.0",
+        date: "17-09-2025",
+        venue: "Village - Thanoud",
+        remark: "Outreach Programme"
+      },
+      {
+        id: 11,
+        event: "NSS Day",
+        date: "24-09-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 12,
+        event: "Cyber Security Workshop",
+        date: "10-10-2025 & 11-10-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 13,
+        event: "Essay writing & Poster Making competition on Voting Awareness",
+        date: "15-10-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 14,
+        event: "Essay Writing Competition at G.H.S.S. Vinayakpur",
+        date: "16-10-2025",
+        venue: "Village - Vinayakpur",
+        remark: "One Day Camp (Outreach Programme)"
+      },
+      {
+        id: 15,
+        event: "Essay writing & Poster Making competition on HIV Awareness",
+        date: "17-10-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 16,
+        event: "Technical Session on Ekta Diwas",
+        date: "31-10-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 17,
+        event: "Education Day",
+        date: "11-11-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 18,
+        event: "Blood Donation Drive",
+        date: "16-11-2025",
+        venue: "Dist. Hospital Durg",
+        remark: "Outreach Programme"
+      },
+      {
+        id: 19,
+        event: "AIDS Day (Digital Poster making)",
+        date: "01-12-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 20,
+        event: "Aids awareness (Presentation Session)",
+        date: "04-12-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 21,
+        event: "Pollution Day (Presentation Session)",
+        date: "04-12-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 22,
+        event: "Veer Bal Diwas",
+        date: "26-12-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 23,
+        event: "Youth Day",
+        date: "10-01-2026",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 24,
+        event: "Traditional Games Day",
+        date: "01-12-2026",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 25,
+        event: "Army Day",
+        date: "14-01-2026",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 26,
+        event: "Medical Camp",
+        date: "15-01-2026",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 27,
+        event: "Basant Panchami",
+        date: "16-01-2026",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 28,
+        event: "Republic Day",
+        date: "26-01-2026",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 29,
+        event: "Pariksha Pe Charcha",
+        date: "29-01-2026",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 30,
+        event: "Yuva Samvaad",
+        date: "02-06-2026",
+        venue: "SRIU, Raipur",
+        remark: ""
+      },
+      {
+        id: 31,
+        event: "International Women's Day",
+        date: "08-03-2026",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 32,
+        event: "Run and Ride Marathon",
+        date: "03-08-2026",
+        venue: "Jayanti Stadium Bhilai",
+        remark: "Outreach Programme"
+      },
+      {
+        id: 33,
+        event: "Shaheed Diwas",
+        date: "23-03-2026",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 34,
+        event: "World Environment Day",
+        date: "05-06-2026",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 35,
+        event: "International Yoga Day",
+        date: "21-06-2026",
+        venue: "CSIT, Campus",
+        remark: ""
+      }
+    ],
+    "2024-25": [
+      {
+        id: 1,
+        event: "Plantation Drive",
+        date: "18-07-2024 to 23-07-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 2,
+        event: "Kargil Vijay Diwas",
+        date: "26-07-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 3,
+        event: "Independence Day",
+        date: "15-08-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 4,
+        event: "Teachers Day",
+        date: "05-09-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 5,
+        event: "Hindi Diwas",
+        date: "14-09-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 6,
+        event: "Engineers' Day",
+        date: "15-09-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 7,
+        event: "NSS Foundation Day",
+        date: "24-09-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 8,
+        event: "Speech & Poetry competition",
+        date: "26-09-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 9,
+        event: "Swachh Bharat Abhiyan",
+        date: "28-09-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 10,
+        event: "Gandhi Jayanti",
+        date: "02-10-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 11,
+        event: "NSS Induction Program",
+        date: "10-10-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 12,
+        event: "Word Food Day",
+        date: "16-10-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 13,
+        event: "Red Ribbon Introduction",
+        date: "24-10-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 14,
+        event: "Chhattisgarh Foundation Day Celebration",
+        date: "01-11-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 15,
+        event: "Children's Day",
+        date: "14-11-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 16,
+        event: "Blood Donation Drive",
+        date: "15-11-2024",
+        venue: "Dist Hospital Durg",
+        remark: "Outreach Programme"
+      },
+      {
+        id: 17,
+        event: "Mother's Day",
+        date: "19-11-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 18,
+        event: "Traffic Week (Helmet Awareness)",
+        date: "24-11-2024 to 30-11-2024",
+        venue: "Durg & Bhilai",
+        remark: "Outreach Programme"
+      },
+      {
+        id: 19,
+        event: "Constitution Day",
+        date: "26-11-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 20,
+        event: "Aids Day",
+        date: "01-12-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 21,
+        event: "National Pollution Control Day",
+        date: "02-12-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 22,
+        event: "Devi Ahilya Bai Holkar Program",
+        date: "04-12-2024",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 23,
+        event: "National Youth Day",
+        date: "12-01-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 24,
+        event: "NSS Day Celebration",
+        date: "15-01-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 25,
+        event: "Swachhata Abhiyan",
+        date: "19-01-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 26,
+        event: "Republic Day",
+        date: "26-01-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 27,
+        event: "Martyrs' Day",
+        date: "30-01-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 28,
+        event: "Awareness on Civil Defence Mock Drill",
+        date: "07-05-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 29,
+        event: "Poster & Rangoli Making Competition on Technology for Nation First",
+        date: "16-05-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 30,
+        event: "Environment Day",
+        date: "05-06-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 31,
+        event: "Awareness to Beat Plastic solution",
+        date: "05-06-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      },
+      {
+        id: 32,
+        event: "International Yoga Day",
+        date: "21-06-2025",
+        venue: "CSIT, Campus",
+        remark: ""
+      }
+    ]
+  };
+
+  // Special Camps Data
+  const specialCamps = [
     {
       id: 1,
-      year: 2023,
-      from: "23-Jan-2023",
-      to: "23-Jan-2023",
-      place: "Beacon Hs. School & Sarasvati Shisu Mandir, Korba",
-      activity: "Awareness Programme on Internet Of Things (IOT) for the school students of Beacon Hs. School & Sarasvati Shisu Mandir, Korba",
-      category: "Technology"
+      campTheme: "7 days Special Camp: Youth for Drug free Society",
+      date: "13-02-2026 to 19-02-2026",
+      venue: "Village- Acchoti, Dist - Durg"
     },
     {
       id: 2,
-      year: 2022,
-      from: "22-Dec-2022",
-      to: "22-Dec-2022",
-      place: "Swami Atmanand H.S English & Hindi Medium School, Risali-Bhilai",
-      activity: "One Day Yoga & Meditation Workshop for the students of Swami Atmanand H.S English & Hindi Medium School, Risali-Bhilai",
-      category: "Health"
-    },
-    {
-      id: 3,
-      year: 2022,
-      from: "20-Dec-2022",
-      to: "20-Dec-2022",
-      place: "Swami Atmanand H.S. English & Hindi Mediam School, Jamgaon",
-      activity: "Awareness Programme on Internet Of Things (IOT) for the students of Swami Atmanand H.S. English & Hindi Mediam School, Jamgaon",
-      category: "Technology"
-    },
-    {
-      id: 4,
-      year: 2022,
-      from: "16 &17-Dec-2022",
-      to: "16 &17-Dec-2022",
-      place: "1) Indus Public School & Chhatisgarh Public School, Korba 2) Govt HSS",
-      activity: "Awareness Programme on Internet Of Things (IOT) for the students Indus Public School & Chhatisgarh Public School, Korba and Govt HSS, Champa",
-      category: "Technology"
-    },
-    {
-      id: 5,
-      year: 2022,
-      from: "15-Dec-2022",
-      to: "15-Dec-2022",
-      place: "K.D Public School, Borsi Road, Durg",
-      activity: "Road Safety and Helmet Awareness Programme for the students of K.D Public School, Borsi Road, Durg",
-      category: "Safety"
-    },
-    {
-      id: 6,
-      year: 2022,
-      from: "13-Dec-2022",
-      to: "13-Dec-2022",
-      place: "St.Xavier High School, Durg",
-      activity: "Road Safety and Helmet Awareness Programme for the students of St.Xavier High School, Durg",
-      category: "Safety"
-    },
-    {
-      id: 7,
-      year: 2022,
-      from: "13-Dec-2022",
-      to: "13-Dec-2022",
-      place: "Senior Secondery School Sector 7 Bhilai",
-      activity: "One Day Workshop on Python Programming for the students of Senior Secondery School Sector-7, Bhilai",
-      category: "Technology"
-    },
-    {
-      id: 8,
-      year: 2022,
-      from: "12-Oct-2022",
-      to: "12-Oct-2022",
-      place: "Government Higher Secondary School, Bemetara",
-      activity: "One Day Career Guidance Workshop for the student of Government Higher Secondary School, Bemetara",
-      category: "Career"
-    },
-    {
-      id: 9,
-      year: 2022,
-      from: "09-Dec-2022",
-      to: "09-Dec-2022",
-      place: "Government Higher Secondary Lohara Balod",
-      activity: "Road Safety and Helmet Awareness Programme for the students of Government Higher Secondary, Lohara Balod",
-      category: "Safety"
-    },
-    {
-      id: 10,
-      year: 2022,
-      from: "09-Dec-2022",
-      to: "09-Dec-2022",
-      place: "Pragai Highar Sec. School, Dondilohara",
-      activity: "One Day Career Guidance Workshop for the students of Pragai Higher Sec. School, Dondilohara",
-      category: "Career"
-    },
-    {
-      id: 11,
-      year: 2022,
-      from: "09-Dec-2022",
-      to: "09-Dec-2022",
-      place: "S.A G.E.S , Dondilohara",
-      activity: "One Day Career Guidance Workshop for the students of S.A G.E.S . Dondilohara",
-      category: "Career"
-    },
-    {
-      id: 12,
-      year: 2022,
-      from: "09-Dec-2022",
-      to: "09-Dec-2022",
-      place: "Vishwadeep Eng Medium School, Durg",
-      activity: "Awareness Programme on Internet Of Things (IOT) for the students of Vishwadeep Eng Medium School, Durg",
-      category: "Technology"
-    },
-    {
-      id: 13,
-      year: 2022,
-      from: "08-Dec-2022",
-      to: "08-Dec-2022",
-      place: "Swami Atmanand H.S.English Mediam School, Risali",
-      activity: "Awareness Programme on Internet Of Things (IOT) for the students of Swami Atmanand H.S English Mediam School, Risali",
-      category: "Technology"
-    },
-    {
-      id: 14,
-      year: 2022,
-      from: "07-Dec-2022",
-      to: "07-Dec-2022",
-      place: "Government Higher Secondary School, (Farad Fod) Balod",
-      activity: "One Day Career Guidance Workshop for the students of Government Higher Secondary School, (Farad Fod) Balod",
-      category: "Career"
-    },
-    {
-      id: 15,
-      year: 2022,
-      from: "07-Dec-2022",
-      to: "07-Dec-2022",
-      place: "Government Higher Secondary School , Sanjari Balod",
-      activity: "One Day Career Guidance Workshop for the students of Government Higher Secondary School , Sanjari Balod",
-      category: "Career"
-    },
-    {
-      id: 16,
-      year: 2022,
-      from: "07-Dec-2022",
-      to: "07-Dec-2022",
-      place: "Government Higher Secondary School, Ranakhuji Balod",
-      activity: "One Day Career Guidance Workshop for the students of Government Higher Secondary School, Ranakhuji Balod",
-      category: "Career"
-    },
-    {
-      id: 17,
-      year: 2022,
-      from: "07-Dec-2022",
-      to: "07-Dec-2022",
-      place: "Government Higher Secondary School, Khuthabazar Balod",
-      activity: "One Day Career Guidance Workshop for the students of Government Higher Secondary School, Khuthabazar Balod",
-      category: "Career"
-    },
-    {
-      id: 18,
-      year: 2022,
-      from: "05-Dec-2022",
-      to: "05-Dec-2022",
-      place: "Government Higher Secondary School, Malighur, Bhimkanhar, Ghina Balod",
-      activity: "One Day Career Guidance Workshop for the students of Government Higher Secondary School, Malighur, Bhimkanhar, Ghina Balod",
-      category: "Career"
-    },
-    {
-      id: 19,
-      year: 2022,
-      from: "03-Dec-2022",
-      to: "03-Dec-2022",
-      place: "Govt. Adarsh Kanya H.S.S. Durg",
-      activity: "Helmet Awareness Programme for the students of Govt. Adarsh Kanya H.S.S. Durg",
-      category: "Safety"
-    },
-    {
-      id: 20,
-      year: 2022,
-      from: "02-Dec-2022",
-      to: "02-Dec-2022",
-      place: "Vivekanand Vidyapeeth, Bhilai",
-      activity: "Helmet Awareness Programme for the students of Vivekanand Vidyapeeth, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 21,
-      year: 2022,
-      from: "01-Dec-2022",
-      to: "01-Dec-2022",
-      place: "Government Higher Secondary School, Rasmada Durg",
-      activity: "One Day Career Guidance Workshop for the students of Government Higher Secondary School, Rasmada Durg",
-      category: "Career"
-    },
-    {
-      id: 22,
-      year: 2022,
-      from: "01-Dec-2022",
-      to: "01-Dec-2022",
-      place: "Government Atmanand Higher Secondary School, Bori",
-      activity: "One Day Career Guidance Workshop for the students of Government Atmanand Higher Secondary School, Bori",
-      category: "Career"
-    },
-    {
-      id: 23,
-      year: 2022,
-      from: "01-Dec-2022",
-      to: "01-Dec-2022",
-      place: "Government Higher Secondary School, Nagpura",
-      activity: "One Day Career Guidance Workshop for the students of Government Higher Secondary School, Nagpura",
-      category: "Career"
-    },
-    {
-      id: 24,
-      year: 2022,
-      from: "30-Nov-2022",
-      to: "30-Nov-2022",
-      place: "DAV, HUDCO Bhilai",
-      activity: "Helmet Awareness Programme for the students of DAV, HUDCO Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 25,
-      year: 2022,
-      from: "29-Nov-2022",
-      to: "29-Nov-2022",
-      place: "Government Hr. Sec. School Kanharpuri, Rajnandgaon",
-      activity: "Awareness Programme on Internet Of Things (IOT) for the students of Government Hr. Sec. School Kanharpuri, Rajnandgaon",
-      category: "Technology"
-    },
-    {
-      id: 26,
-      year: 2022,
-      from: "29-Nov-2022",
-      to: "29-Nov-2022",
-      place: "Sarweshweshwar Das School of Excellence, Ragnandgaon",
-      activity: "Awareness Programme on Internet Of Things (IOT) for the students of Sarweshweshwar Das School of Excellence, Ragnandgaon",
-      category: "Technology"
-    },
-    {
-      id: 27,
-      year: 2022,
-      from: "29-Nov-2022",
-      to: "29-Nov-2022",
-      place: "Maharishi Dayanand School , Sec. 6 Bhilai",
-      activity: "Helmet Awareness Programme for the students of Maharishi Dayanand School , Sec. 6 Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 28,
-      year: 2022,
-      from: "28-Nov-2022",
-      to: "28-Nov-2022",
-      place: "Govt. H.S.S Ghumka",
-      activity: "One Day Career Guidance Workshop for the students of Govt. H.S.S Ghumka",
-      category: "Career"
-    },
-    {
-      id: 29,
-      year: 2022,
-      from: "28-Nov-2022",
-      to: "28-Nov-2022",
-      place: "Govt. H.S.S. Patewa",
-      activity: "One Day Career Guidance Workshop for the students of Govt. H.S.S. Patewa",
-      category: "Career"
-    },
-    {
-      id: 30,
-      year: 2022,
-      from: "28-Nov-2022",
-      to: "28-Nov-2022",
-      place: "Govt. H.S.S. Jalbanda",
-      activity: "One Day Career Guidance Workshop for the students of Govt. H.S.S. Jalbanda",
-      category: "Career"
-    },
-    {
-      id: 31,
-      year: 2022,
-      from: "28-Nov-2022",
-      to: "28-Nov-2022",
-      place: "Weidner Memorial School, Rajnandgaon",
-      activity: "Python Programming Workshop for the students of Weidner Memorial School, Rajnandgaon",
-      category: "Technology"
-    },
-    {
-      id: 32,
-      year: 2022,
-      from: "28-Nov-2022",
-      to: "28-Nov-2022",
-      place: "JLM Gayatri Vidyapeeth, Rajnandgaon",
-      activity: "Python Programming Workshop for the students of JLM Gayatri Vidyapeeth, Rajnandgaon",
-      category: "Technology"
-    },
-    {
-      id: 33,
-      year: 2022,
-      from: "26-Nov-2022",
-      to: "26-Nov-2022",
-      place: "Vivekanand Vidyapeeth School Sec. 2 Bhilai",
-      activity: "Helmet Awareness Programme for the students of Vivekanand Vidyapeeth School Sec. 2 Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 34,
-      year: 2022,
-      from: "28-Nov-2022",
-      to: "28-Nov-2022",
-      place: "Indira Market Durg",
-      activity: "Public Awareness on Road Safety and Helmet at Indira Market, Durg",
-      category: "Safety"
-    },
-    {
-      id: 35,
-      year: 2022,
-      from: "29-Nov-2022",
-      to: "29-Nov-2022",
-      place: "Indira Market Durg",
-      activity: "Public Awareness on Road Safety and Helmet at Indira Market, Durg",
-      category: "Safety"
-    },
-    {
-      id: 36,
-      year: 2022,
-      from: "30-Nov-2022",
-      to: "30-Nov-2022",
-      place: "Jawahar Chowk Durg",
-      activity: "Public Awareness on Road Safety and Helmet at Jawahar Chowk, Durg",
-      category: "Safety"
-    },
-    {
-      id: 37,
-      year: 2022,
-      from: "01-Dec-2022",
-      to: "01-Dec-2022",
-      place: "Sector-10 B Market",
-      activity: "Public Awareness on Road Safety and Helmet at Sector-10 B Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 38,
-      year: 2022,
-      from: "02-Dec-2022",
-      to: "02-Dec-2022",
-      place: "Sector-9 Hospital",
-      activity: "Public Awareness on Road Safety and Helmet at Sector-9 Hospital, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 39,
-      year: 2022,
-      from: "05-Dec-2022",
-      to: "05-Dec-2022",
-      place: "Shri Ram Chowk, Hudco Market Bhilai",
-      activity: "Public Awareness on Road Safety and Helmet at Shri Ram Chowk, Hudco Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 40,
-      year: 2022,
-      from: "06-Dec-2022",
-      to: "06-Dec-2022",
-      place: "Milan Chowk Hudco Market Bhilai",
-      activity: "Public Awareness on Road Safety and Helmet at Milan Chowk Hudco Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 41,
-      year: 2022,
-      from: "07-Dec-2022",
-      to: "07-Dec-2022",
-      place: "Hospital Sector-9 Market",
-      activity: "Public Awareness on Road Safety and Helmet at Hospital Sector-9 Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 42,
-      year: 2022,
-      from: "08-Dec-2022",
-      to: "08-Dec-2022",
-      place: "Sector-7 Market",
-      activity: "Public Awareness on Road Safety and Helmet at Sector-7 Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 43,
-      year: 2022,
-      from: "09-Dec-2022",
-      to: "09-Dec-2022",
-      place: "Sector-10 Market",
-      activity: "Public Awareness on Road Safety and Helmet at Sector-10 Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 44,
-      year: 2022,
-      from: "12-Dec-2022",
-      to: "12-Dec-2022",
-      place: "Sector 6 A Market",
-      activity: "Public Awareness on Road Safety and Helmet at Sector 6 A Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 45,
-      year: 2022,
-      from: "13-Dec-2022",
-      to: "13-Dec-2022",
-      place: "Sector 6 C Market",
-      activity: "Public Awareness on Road Safety and Helmet at Sector 6 C Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 46,
-      year: 2022,
-      from: "14-Dec-2022",
-      to: "14-Dec-2022",
-      place: "Sector 2 Market",
-      activity: "Public Awareness on Road Safety and Helmet at Sector 2 Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 47,
-      year: 2022,
-      from: "15-Dec-2022",
-      to: "15-Dec-2022",
-      place: "Sector-6 D & E Market",
-      activity: "Public Awareness on Road Safety and Helmet at Sector-6 D & E Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 48,
-      year: 2022,
-      from: "16-Dec-2022",
-      to: "16-Dec-2022",
-      place: "Sector 5 Market",
-      activity: "Public Awareness on Road Safety and Helmet at Sector 5 Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 49,
-      year: 2022,
-      from: "19-Dec-2022",
-      to: "19-Dec-2022",
-      place: "Lakshmi Market Area 1",
-      activity: "Public Awareness on Road Safety and Helmet at Lakshmi Market Area 1, Pulgaon",
-      category: "Safety"
-    },
-    {
-      id: 50,
-      year: 2022,
-      from: "20-Dec-2022",
-      to: "20-Dec-2022",
-      place: "Lakshmi Market Area 2",
-      activity: "Public Awareness on Road Safety and Helmet at Lakshmi Market Area 2, Pulgaon",
-      category: "Safety"
-    },
-    {
-      id: 51,
-      year: 2022,
-      from: "21-Dec-2022",
-      to: "21-Dec-2022",
-      place: "Lakshmi Market Area 3",
-      activity: "Public Awareness on Road Safety and Helmet at Lakshmi Market Area 3, Pulgaon",
-      category: "Safety"
-    },
-    {
-      id: 52,
-      year: 2022,
-      from: "22-Dec-2022",
-      to: "22-Dec-2022",
-      place: "Risali Market",
-      activity: "Public Awareness on Road Safety and Helmet at Risali Market, Bhilai",
-      category: "Safety"
-    },
-    {
-      id: 53,
-      year: 2022,
-      from: "23-Dec-2022",
-      to: "23-Dec-2022",
-      place: "Jail chok",
-      activity: "Public Awareness on Road Safety and Helmet at Jail Chowk, Durg",
-      category: "Safety"
-    },
-    {
-      id: 54,
-      year: 2021,
-      from: "07-Oct-2021",
-      to: "07-Oct-2021",
-      place: "ONLINE",
-      activity: "Online COVID-19 Awareness camp",
-      category: "Health"
-    },
-    {
-      id: 55,
-      year: 2021,
-      from: "14-Sept-2021",
-      to: "14-Sept-2021",
-      place: "ONLINE",
-      activity: "online session on safety and security precautions on COVID-19",
-      category: "Health"
-    },
-    {
-      id: 56,
-      year: 2020,
-      from: "09-Nov-2020",
-      to: "09-Nov-2020",
-      place: "ONLINE",
-      activity: "Public Awareness activity 'Ballot Brilliance: Be Informed, Be Involved' under SVEEP for the Durg -Bhilai",
-      category: "Civic"
-    },
-    {
-      id: 57,
-      year: 2020,
-      from: "15-Sept-2020",
-      to: "15-Sept-2020",
-      place: "ONLINE",
-      activity: "Online Yoga and Meditation Drive",
-      category: "Health"
-    },
-    {
-      id: 58,
-      year: 2019,
-      from: "31-Oct-2019",
-      to: "31-Oct-2019",
-      place: "CSIT DURG",
-      activity: "Waste to Wow: Student Workshop on Creative Recycling",
-      category: "Environment"
-    },
-    {
-      id: 59,
-      year: 2019,
-      from: "19-Dec-2019",
-      to: "19-Dec-2019",
-      place: "CSIT DURG",
-      activity: "Blood Donation Camp at CSIT Durg",
-      category: "Health"
-    },
-    {
-      id: 60,
-      year: 2019,
-      from: "19-Jan-2019",
-      to: "19-Jan-2019",
-      place: "DURG",
-      activity: "Voters Awareness program (Rally) in Durg",
-      category: "Civic"
-    },
-    {
-      id: 61,
-      year: 2018,
-      from: "01-Oct-2018",
-      to: "01-Oct-2018",
-      place: "CSIT DURG",
-      activity: "Blood Donation Camp CSIT Durg",
-      category: "Health"
-    },
-    {
-      id: 62,
-      year: 2018,
-      from: "13-Oct-2018",
-      to: "13-Oct-2018",
-      place: "THANUD VILLAGE",
-      activity: "One day Health Checkup Camp at at Thanaud village Durg",
-      category: "Health"
-    },
-    {
-      id: 63,
-      year: 2018,
-      from: "12-Nov-2018",
-      to: "12-Nov-2018",
-      place: "ACHOTI VILLAGE DURG",
-      activity: "Yoga Harmony: Cultivating Wellness in Achoti Village Youth",
-      category: "Health"
+      campTheme: "7 days Special Camp: Youth For digital Literacy",
+      date: "03-03-2025 to 09-03-2025",
+      venue: "Village- Acchoti, Dist – Durg"
     }
   ];
 
-  // Function to get badge color based on category
-  const getBadgeColor = (category) => {
-    switch(category) {
-      case 'Technology':
-        return 'bg-indigo-100 text-indigo-800';
-      case 'Health':
-        return 'bg-green-100 text-green-800';
-      case 'Safety':
-        return 'bg-orange-100 text-orange-800';
-      case 'Career':
-        return 'bg-purple-100 text-purple-800';
-      default:
-        return 'bg-blue-100 text-blue-800';
-    }
-  };
+  // Benefits data
+  const benefits = [
+    "Additional advantage in recruitment for various Government Posts where NSS certificates and social service experience are considered during selection, interviews, or merit evaluation.",
+    "Prestigious opportunity to represent the college at the Republic Day Camp (RDC), the highest and most celebrated NSS platform at the National Level.",
+    "Exclusive chance to participate in the National Integration Camp (NIC) and connect with talented youth from diverse cultures across India.",
+    "Exciting opportunity to attend Adventure Camps, enhancing leadership, teamwork, resilience, and confidence.",
+    "Proud platform to showcase your talents and represent the college at State and National Youth Festivals.",
+    "Supports holistic student development in line with NEP 2020 objectives.",
+    "Enhances your Resume/CV and provides an edge during campus placements and job interviews.",
+    "Develops strong leadership, teamwork, and organizational skills valued by employers and government agencies.",
+    "Builds communication, public speaking, and event management skills, decision-making, problem-solving, and project management abilities through real-life community engagement.",
+    "Expands your professional and social network through interaction with students, officials, and community leaders.",
+    "Creates a sense of social responsibility and nation-building, making you a well-rounded citizen."
+  ];
+
+  const achievements = [
+    { id: 1, name: "Ms. Shanu Vaishnav", year: "2023-24", subject: "Selected For Republic Day Parade (RDC)" },
+    { id: 2, name: "Mr. Deepanshu Sahu", year: "2024-25", subject: "Selected For NIC Camp at Somani C.G" },
+    { id: 3, name: "Ms. Swati sahu", year: "2025-26", subject: "Selected For Viksit Bharat Younge Leadet Dialogue C.G. Team through My Bharat." },
+    { id: 4, name: "Mr. Nitin Chakradhari", year: "2025-26", subject: "Selected For State lavel Camp 2025-26 at Balodabazar" },
+    { id: 5, name: "Mr. Shubham Chandrakar", year: "2025-26", subject: "Selected As P.O. of CSVTU NSS Team for State Level Camp At Balodabazar" },
+    { id: 6, name: "Ms. Anjali Sahu", year: "2025-26", subject: "Selected For Top 400 Student under MY Bharat Budget Quest 2026" }
+  ];
+
+  const nssStructure = [
+    "Dr. Ravi Mishra (Principal CSIT, Durg)",
+    "Mr. Shubham Chandrakar (Programme Officer)",
+    "Mr. Narendra Suryavanshi (Asst. Programme Officer)",
+    "Student Co Ordinator",
+    "Volunteers"
+  ];
+
+  const nssSymbols = [
+    { title: "Wheel", description: "Symbolizes movement, progress, and social change." },
+    { title: "Eight Spokes", description: "Represent the 24 hours of the day, reminding volunteers to serve society at all times." },
+    { title: "Red Colour", description: "Signifies youth, energy, enthusiasm, and dedication." },
+    { title: "Navy Blue Colour", description: "Represents the vast universe and NSS's contribution to the welfare of humanity." }
+  ];
 
   return (
-    <div className="max-w-6xl mx-auto bg-gradient-to-br from-white to-blue-50 shadow-xl  overflow-hidden my-4">
-      
+    <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+      {/* Header */}
       <div className="bg-[#0d173b] text-white p-6 md:p-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold">NSS</h1>
           <p className="text-sm md:text-base mt-1">CSIT | National Service Scheme</p>
           <hr className="w-16 border-t-2 border-white mt-2 mb-0" />
         </div>
-        </div>
-      
-      <div className="px-6 py-5 bg-white bg-opacity-90">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-6">
-          <div className="p-3 bg-blue-50 rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
-            </svg>
-          </div>
-          <p className="text-gray-700 text-sm md:text-base">
-            The main theme of NSS is <span className="text-blue-700 font-semibold">Social service</span>. <span className="font-semibold">Enhancing performance and personality of students through Social activities</span> is the main Motto of NSS. Students come close to the society, study the problems prevailing in the society and find engineered solution to it.
+      </div>
+
+      <div className="p-4 md:p-6">
+        {/* About NSS */}
+        <div className="bg-blue-50 p-5 md:p-6 rounded-lg shadow-sm mb-6">
+          <h2 className="text-xl font-semibold text-[#0d173b] mb-4">About NSS</h2>
+          <p className="mb-4 text-gray-700 text-sm md:text-base">
+            The National Service Scheme (NSS) is a flagship youth development programme launched by the Government of India under the Ministry of Youth Affairs & Sports. Established in 1969, NSS aims to develop the personality and character of students through voluntary community service. Guided by its motto, "Not Me, But You," the scheme instills the values of social responsibility, leadership, discipline, teamwork, and national integration while encouraging students to actively contribute to the welfare and development of society.
           </p>
         </div>
+
+        {/* About Us */}
+        <div className="bg-gray-50 p-5 md:p-6 rounded-lg shadow-sm mb-6">
+          <h2 className="text-xl font-semibold text-[#0d173b] mb-4">About Us</h2>
+          <p className="mb-4 text-gray-700 text-sm md:text-base">
+            The National Service Scheme (NSS) Unit of CSIT Durg is dedicated to developing socially responsible, skilled, and compassionate students through community service and leadership activities. The unit actively organizes awareness campaigns, cleanliness drives, health camps, environmental initiatives, and rural development programs. NSS at CSIT provides students with opportunities to serve society, enhance their personality, and contribute to nation-building while embodying the motto "Not Me But You."
+          </p>
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
+              <p className="text-sm font-medium text-gray-600">Unit Size</p>
+              <p className="text-lg font-bold text-[#0d173b]">100 Volunteers/year</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
+              <p className="text-sm font-medium text-gray-600">Motto</p>
+              <p className="text-lg font-bold text-[#0d173b]">"Not Me But You."</p>
+            </div>
+          </div>
+        </div>
+
+        {/* NSS Symbols & Badge */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="bg-blue-50 p-5 rounded-lg shadow-sm">
+            <h3 className="text-lg font-semibold text-[#0d173b] mb-3">NSS Symbols</h3>
+            <p className="text-gray-700 text-sm mb-4">The NSS symbol is inspired by the wheel of the Konark Sun Temple and represents continuous progress, social service, and nation-building.</p>
+            <ul className="space-y-2">
+              {nssSymbols.map(symbol => (
+                <li key={symbol.title} className="flex items-start"><span className="font-bold text-[#0d173b] w-28 flex-shrink-0">{symbol.title}:</span><span className="text-sm text-gray-600">{symbol.description}</span></li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-gray-50 p-5 rounded-lg shadow-sm">
+            <h3 className="text-lg font-semibold text-[#0d173b] mb-3">NSS Badge</h3>
+            <p className="text-gray-700 text-sm">The NSS Badge symbolizes the spirit of selfless service, discipline, and social responsibility. Its design is inspired by the wheel of the Konark Sun Temple, representing continuous movement, progress, and dedication to nation-building. Wearing the NSS badge reflects a volunteer's commitment to the motto "Not Me, But You", emphasizing service to society above self-interest.</p>
+          </div>
+        </div>
       </div>
 
-      {/* Mobile view - list layout */}
-      <div className="md:hidden px-4 pb-6">
-        <ul className="space-y-4">
-          {initiativesData.map((item) => (
-            <li key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
-              <div className="p-4">
-                <div className="flex justify-between items-center mb-2">
-                  <span className={`${getBadgeColor(item.category)} text-xs font-medium px-2.5 py-0.5 rounded-full`}>
-                    {item.category}
-                  </span>
-                  <span className="bg-blue-50 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                    {item.year}
-                  </span>
-                </div>
-                <h3 className="font-semibold text-gray-900 mt-2 leading-tight">{item.activity}</h3>
-                <div className="flex items-center mt-3 text-xs text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  {item.from} {item.from !== item.to && `to ${item.to}`}
-                </div>
-                <div className="flex items-center mt-2 text-xs text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  {item.place}
-                </div>
-              </div>
-            </li>
+      {/* Objectives & Who Can Join */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 mb-6">
+        <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+          <h3 className="text-lg font-bold text-[#0d173b] mb-3">🎯 Objectives</h3>
+          <p className="text-gray-700 text-sm md:text-base italic">"Student personality development through community services."</p>
+        </div>
+        <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+          <h3 className="text-lg font-bold text-[#0d173b] mb-3">👥 Who Can Join</h3>
+          <p className="text-gray-700 text-sm md:text-base">All the Students From CSIT, Durg are eligible to join the NSS Unit.</p>
+        </div>
+      </div>
+
+      {/* Key Benefits Section */}
+      <div className="px-4 md:px-6 mb-6">
+        <h3 className="text-xl font-semibold text-[#0d173b] mb-4 flex items-center gap-2">
+          <span className="text-2xl">⭐</span> Key Benefits of Joining NSS
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {benefits.map((benefit, index) => (
+            <div key={index} className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-start gap-3 hover:shadow-md transition-shadow">
+              <span className="text-green-500 font-bold text-lg mt-0.5">✓</span>
+              <p className="text-sm text-gray-700">{benefit}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
 
-      {/* Desktop view - table layout */}
-      <div className="hidden md:block overflow-x-auto p-6">
-        <table className="min-w-full divide-y divide-gray-200 rounded-lg overflow-hidden shadow-md">
-          <thead className="bg-[#0d173b]">
-            <tr>
-              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">S.no.</th>
-              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Year</th>
-              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Date</th>
-              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Category</th>
-              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Activity</th>
-              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Place</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {initiativesData.map((item, index) => (
-              <tr key={item.id} className={index % 2 === 0 ? 'bg-white hover:bg-blue-50' : 'bg-gray-50 hover:bg-blue-50'}>
-                <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.id}</td>
-                <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{item.year}</td>
-                <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {item.from === item.to ? item.from : `${item.from} to ${item.to}`}
-                </td>
-                <td className="px-4 py-4 whitespace-nowrap">
-                  <span className={`${getBadgeColor(item.category)} text-xs font-medium px-2.5 py-0.5 rounded-full`}>
-                    {item.category}
-                  </span>
-                </td>
-                <td className="px-4 py-4 text-sm text-gray-900 max-w-xs">{item.activity}</td>
-                <td className="px-4 py-4 text-sm text-gray-900 max-w-xs">{item.place}</td>
+      {/* Achievements Section */}
+      <div className="px-4 md:px-6 mb-6">
+        <h3 className="text-xl font-semibold text-[#0d173b] mb-4 flex items-center gap-2">
+          <span className="text-2xl">🏆</span> Achievements
+        </h3>
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-white border border-blue-200 rounded-lg">
+            <thead className="bg-[#0d173b]">
+              <tr>
+                <th className="py-3 px-3 text-left text-xs font-medium text-white">S.No.</th>
+                <th className="py-3 px-3 text-left text-xs font-medium text-white">Name of the Awardee</th>
+                <th className="py-3 px-3 text-left text-xs font-medium text-white">Year</th>
+                <th className="py-3 px-3 text-left text-xs font-medium text-white">Subject</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {achievements.map((item) => (
+                <tr key={item.id} className="hover:bg-blue-50 border-b border-gray-100">
+                  <td className="py-3 px-3 text-sm text-gray-700">{item.id}</td>
+                  <td className="py-3 px-3 text-sm text-gray-700">{item.name}</td>
+                  <td className="py-3 px-3 text-sm text-gray-700">{item.year}</td>
+                  <td className="py-3 px-3 text-sm text-gray-700">{item.subject}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-      
-     
+
+      {/* Special Camps Section */}
+      <div className="px-4 md:px-6 mb-6">
+        <h3 className="text-xl font-semibold text-[#0d173b] mb-4 flex items-center gap-2">
+          <span className="text-2xl">⛺</span> 7 Days Special Camp
+        </h3>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200 rounded-lg overflow-hidden shadow-md">
+            <thead className="bg-[#0d173b]">
+              <tr>
+                <th className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">S.No.</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Camp Theme</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Date</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Venue</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {specialCamps.map((camp, index) => (
+                <tr key={camp.id} className={index % 2 === 0 ? 'bg-white hover:bg-blue-50' : 'bg-gray-50 hover:bg-blue-50'}>
+                  <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">{camp.id}</td>
+                  <td className="px-4 py-3 text-sm text-gray-900">{camp.campTheme}</td>
+                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{camp.date}</td>
+                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{camp.venue}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Year Filter Tabs */}
+      <div className="px-4 md:px-6 mb-4 flex flex-wrap gap-3">
+        <button
+          onClick={() => setActiveYear("2025-26")}
+          className={`px-6 py-2 rounded-lg font-semibold transition-all ${
+            activeYear === "2025-26" 
+              ? "bg-[#0d173b] text-white shadow-md" 
+              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+          }`}
+        >
+          Academic Year 2025-26
+        </button>
+        <button
+          onClick={() => setActiveYear("2024-25")}
+          className={`px-6 py-2 rounded-lg font-semibold transition-all ${
+            activeYear === "2024-25" 
+              ? "bg-[#0d173b] text-white shadow-md" 
+              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+          }`}
+        >
+          Academic Year 2024-25
+        </button>
+      </div>
+
+      {/* Events Table */}
+      <div className="px-4 md:px-6 pb-6">
+        <h3 className="text-xl font-semibold text-[#0d173b] mb-4 flex items-center gap-2">
+          <span className="text-2xl">📅</span> Events - {activeYear}
+        </h3>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200 rounded-lg overflow-hidden shadow-md">
+            <thead className="bg-[#0d173b]">
+              <tr>
+                <th className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">S.No.</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Events</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Date of Event</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Venue</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Remark</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {activities[activeYear].map((item, index) => (
+                <tr key={item.id} className={index % 2 === 0 ? 'bg-white hover:bg-blue-50' : 'bg-gray-50 hover:bg-blue-50'}>
+                  <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">{item.id}</td>
+                  <td className="px-4 py-3 text-sm text-gray-900">{item.event}</td>
+                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{item.date}</td>
+                  <td className="px-4 py-3 text-sm text-gray-900">{item.venue}</td>
+                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">
+                    {item.remark ? (
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        {item.remark}
+                      </span>
+                    ) : (
+                      <span className="text-gray-400">-</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* From the Programme Officer's Desk */}
+      <div className="px-4 md:px-6 pb-6">
+        <div className="bg-gray-50 p-5 md:p-6 rounded-lg shadow-sm">
+          <h3 className="text-xl font-semibold text-[#0d173b] mb-4">From the Programme Officer's Desk</h3>
+          <p className="text-gray-700 text-sm md:text-base mb-4 italic">
+            Dear Students,
+            <br /><br />
+            The National Service Scheme (NSS) is more than a volunteer programme—it is a platform for learning, leadership, and nation-building. It inspires students to step beyond academics, connect with society, and develop qualities such as responsibility, teamwork, discipline, and compassion.
+            <br /><br />
+            Through community service and social initiatives, NSS empowers young minds to become confident leaders and responsible citizens. Every activity is an opportunity to learn, serve, and create a meaningful impact.
+            <br /><br />
+            I invite every student to join this journey of service, personal growth, and social commitment. Together, let us work towards building a better society while shaping ourselves into responsible professionals and future leaders.
+          </p>
+          <p className="text-gray-800 font-semibold">Best Wishes,</p>
+          <p className="text-gray-700 font-medium">Mr. Shubham Chandrakar</p>
+          <p className="text-sm text-gray-600">Programme Officer</p>
+          <p className="text-sm text-gray-600">National Service Scheme (NSS)</p>
+          <a href="mailto:shubhamchandrakar@csitdurg.in" className="text-sm text-blue-600 hover:underline">shubhamchandrakar@csitdurg.in</a>
+        </div>
+      </div>
+
+      {/* NSS Structure Section */}
+      <div className="px-4 md:px-6 pb-6">
+        <h3 className="text-xl font-semibold text-[#0d173b] mb-4 flex items-center gap-2">
+          <span className="text-2xl">🏛️</span> NSS Structure
+        </h3>
+        <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+          <ul className="space-y-3">
+            {nssStructure.map((member, index) => (
+              <li key={index} className="flex items-center">
+                <span className="bg-blue-200 text-[#0d173b] rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-xs font-bold">
+                  {index + 1}
+                </span>
+                <span className="text-gray-700 text-sm md:text-base">{member}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

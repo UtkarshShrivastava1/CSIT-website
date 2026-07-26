@@ -17,7 +17,7 @@ const AboutAssociation = () => {
               Alumni Association
             </h2>
             <p className="text-gray-200 text-sm mt-2">
-            CSIT | Connecting past, present and future of CSIT
+              CSIT | Connecting past, present and future of CSIT
             </p>
             <div className="h-0.5 w-20 bg-white mt-3 rounded"></div>
           </div>
@@ -25,111 +25,77 @@ const AboutAssociation = () => {
       </div>
 
       <div className="p-6">
-        <div className="prose max-w-none text-gray-700">
-          {/* Introduction section */}
-          <div className="mb-8">
-            <p className="mb-4">
-              <span className="text-lg font-medium text-[#0d173b]">
-                Chhatrapati Shivaji Group of Institutions
-              </span>{" "}
-              considers Alumni as one of the important assets of the college.
-              Our alumni are the ambassadors of our college, they are the
-              testimonies to our efforts in building their career.
-            </p>
-            <p className="mb-4">
-              CSIT has an established Alumni Association, which works in
-              bringing each one of the alumni together. CSIT organizes various
-              activities like Alumni meet at different states of India to create
-              a healthy bond and a strong relationship with each other.
+        {/* Introduction */}
+        <div className="mb-6">
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Chhatrapati Shivaji Institute of Technology regards its alumni as one of the college's most treasured assets — true ambassadors of our institution and living testimonials to the values we instill and the careers we help shape. Recognizing this, CSIT has established a vibrant Alumni Association that brings our graduates together under one common thread. Through alumni meets organized across various states of India, we cultivate meaningful connections and nurture a strong, enduring bond within our extended CSIT family.
+          </p>
+        </div>
+
+        {/* Objectives */}
+        <div className="mb-6">
+          <h3 className="text-base font-semibold text-[#0d173b] mb-3">
+            Our Objectives
+          </h3>
+          <ul className="space-y-2">
+            <li className="flex items-start gap-3 text-sm text-gray-700">
+              <span className="text-[#0d173b] font-bold mt-0.5">•</span>
+              To bring our alumni together on a common forum, strengthening unity and shared pride
+            </li>
+            <li className="flex items-start gap-3 text-sm text-gray-700">
+              <span className="text-[#0d173b] font-bold mt-0.5">•</span>
+              To sustain meaningful, lasting contact between alumni and their alma mater
+            </li>
+            <li className="flex items-start gap-3 text-sm text-gray-700">
+              <span className="text-[#0d173b] font-bold mt-0.5">•</span>
+              To nurture a deep sense of tradition and heritage, carried forward through alumni engagement
+            </li>
+            <li className="flex items-start gap-3 text-sm text-gray-700">
+              <span className="text-[#0d173b] font-bold mt-0.5">•</span>
+              To draw upon alumni expertise and mentorship in fostering entrepreneurship and practical skill-building among students
+            </li>
+          </ul>
+        </div>
+
+        {/* Benefits Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <h4 className="font-semibold text-[#0d173b] text-sm mb-2">Strong Network</h4>
+            <p className="text-sm text-gray-600">
+              Be part of a thriving community of 10,000+ alumni making their mark across industries worldwide.
             </p>
           </div>
+          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <h4 className="font-semibold text-[#0d173b] text-sm mb-2">Career Support</h4>
+            <p className="text-sm text-gray-600">
+              Gain access to valuable mentorship and career opportunities guided by the insight of accomplished seniors.
+            </p>
+          </div>
+          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <h4 className="font-semibold text-[#0d173b] text-sm mb-2">Lifelong Learning</h4>
+            <p className="text-sm text-gray-600">
+              Stay engaged through exclusive alumni events, workshops, and seminars that fuel continuous growth.
+            </p>
+          </div>
+        </div>
 
-          {/* Objectives Section */}
-          <div className="my-8">
-            <h3 className="text-xl font-medium text-[#0d173b] mb-4">
-              Our Objectives
+        {/* CTA Section */}
+        <div className="mt-6 p-6 bg-gradient-to-r from-[#0d173b] to-[#1e305f] rounded-md">
+          <div className="text-center text-white">
+            <h3 className="text-xl font-medium mb-2">
+              Join Our Alumni Network
             </h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {[
-                "CSIT strongly believes in bringing its alumni into a common forum",
-                "To maintain the contacts of the alumni with the alma-mater",
-                "To promote and develop a sense of tradition & heritage with alumni support",
-                "To get alumni support for students in developing Entrepreneurship and practical know-how",
-              ].map((objective, index) => (
-                <div
-                  key={index}
-                  className="flex items-start p-3 bg-gray-50 rounded-md border border-gray-200"
-                >
-                  <div className="w-2 h-2 bg-[#0d173b] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">{objective}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Benefits Section */}
-          <div className="grid md:grid-cols-3 gap-4 my-8">
-            {[
-              {
-                title: "Strong Network",
-                description:
-                  "Connect with a growing network of 10,000+ alumni across industries",
-              },
-              {
-                title: "Career Support",
-                description:
-                  "Get access to mentorship and career opportunities from senior alumni",
-              },
-              {
-                title: "Lifelong Learning",
-                description:
-                  "Participate in alumni-exclusive events, workshops and seminars",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-md p-4 shadow-sm hover:shadow transition-shadow duration-200"
-              >
-                <div className="flex items-center mb-2">
-                  <div className="w-2 h-2 bg-[#0d173b] rounded-full mr-2"></div>
-                  <h3 className="font-medium text-[#0d173b]">{item.title}</h3>
-                </div>
-                <p className="text-gray-600 text-sm">{item.description}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Section */}
-          <div className="mt-8 p-6 bg-gradient-to-r from-[#0d173b] to-[#1e305f] rounded-md">
-            <div className="text-center text-white">
-              <h3 className="text-xl font-medium mb-2">
-                Join Our Alumni Network
-              </h3>
-              <p className="text-gray-200 mb-4">
-                Stay connected with your alma mater and fellow alumni
-              </p>
-              <a
-                href="https://forms.gle/o5Ah11uviSg2QUL8A"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-2 bg-white text-[#0d173b] rounded-md font-medium hover:bg-gray-100 transition-colors duration-200"
-              >
-                Register Now
-              </a>
-            </div>
-          </div>
-
-          {/* Testimonial Section */}
-          <div className="my-8 border-l-4 border-[#0d173b] pl-4 py-1">
-            <blockquote className="text-gray-600 italic text-base">
-              "The CSIT Alumni Association helped me connect with industry
-              leaders and provided valuable guidance during my career
-              transition. The network continues to be an invaluable resource
-              even years after graduation."
-            </blockquote>
-            <div className="text-sm text-[#0d173b] font-medium mt-2">
-              — Alumni, Class of 2015
-            </div>
+            <p className="text-gray-200 mb-4">
+              Stay connected with your alma mater and fellow alumni
+            </p>
+            <a
+              href="https://forms.gle/391ULYRAYn6MxWDb9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-2 bg-white text-[#0d173b] rounded-md font-medium hover:bg-gray-100 transition-colors duration-200"
+            >
+              Register Now
+            </a>
           </div>
         </div>
       </div>

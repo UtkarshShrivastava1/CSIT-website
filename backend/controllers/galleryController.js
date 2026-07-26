@@ -1,6 +1,7 @@
 // controllers/galleryController.js
 const { cloudinary, uploadWithRetry } = require("../config/cloudinary");
 const Gallery = require("../models/gallery"); // ensure this is correct// If your model file exports differently, adapt (e.g. module.exports = mongoose.model('gallery', schema))
+const MediaCoverage = require("../models/mediaCoverage");
 const mongoose = require("mongoose"); // <-- required for Types.ObjectId checks
 /**
  * Fetch latest images from Cloudinary (or however you prefer)
@@ -43,7 +44,24 @@ const getImageByCategory = async (req, res) => {
       });
     }
 
-    const response = await Gallery.find({ category });
+    let response;
+    if (category === "Media Coverage") {
+      const query = (req.query.admin === "true" || req.headers.authorization) ? {} : { isActive: true };
+      const articles = await MediaCoverage.find(query).sort({ createdAt: -1 });
+      response = articles.map(doc => ({
+        _id: doc._id,
+        image: {
+          public_id: doc.image.public_id,
+          url: doc.image.url
+        },
+        category: "Media Coverage",
+        title: doc.title,
+        content: doc.description,
+        createdAt: doc.createdAt
+      }));
+    } else {
+      response = await Gallery.find({ category });
+    }
 
     if (response.length === 0) {
       return res.status(404).json({
@@ -97,13 +115,28 @@ const uploadImages = async (req, res) => {
       });
 
       // Save to MongoDB (store public_id and secure_url)
-      const doc = await Gallery.create({
-        image: {
-          public_id: uploaded.public_id,
-          url: uploaded.secure_url,
-        },
-        category,
-      });
+      let doc;
+      if (category === "Media Coverage") {
+        doc = await MediaCoverage.create({
+          title: `Media Update - ${new Date().toLocaleDateString()}`,
+          category: "Media Coverage",
+          description: `Media Coverage image uploaded on ${new Date().toLocaleDateString()}`,
+          date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+          image: {
+            public_id: uploaded.public_id,
+            url: uploaded.secure_url,
+          },
+          isActive: true
+        });
+      } else {
+        doc = await Gallery.create({
+          image: {
+            public_id: uploaded.public_id,
+            url: uploaded.secure_url,
+          },
+          category,
+        });
+      }
 
       return {
         uploaded,
@@ -142,9 +175,14 @@ const deleteImage = async (req, res) => {
 
     // If id looks like a Mongo ObjectId, try findById first
     let doc = null;
+    let isMediaCoverage = false;
     if (mongoose.Types.ObjectId.isValid(id)) {
       try {
         doc = await Gallery.findById(id);
+        if (!doc) {
+          doc = await MediaCoverage.findById(id);
+          if (doc) isMediaCoverage = true;
+        }
       } catch (dbErr) {
         console.error("Error in findById:", dbErr);
         // Continue — we'll try other lookup below
@@ -155,6 +193,10 @@ const deleteImage = async (req, res) => {
     if (!doc) {
       try {
         doc = await Gallery.findOne({ "image.public_id": id });
+        if (!doc) {
+          doc = await MediaCoverage.findOne({ "image.public_id": id });
+          if (doc) isMediaCoverage = true;
+        }
       } catch (dbErr) {
         console.error("Error in findOne by public_id:", dbErr);
       }
@@ -198,7 +240,11 @@ const deleteImage = async (req, res) => {
     }
 
     // Delete DB doc
-    await Gallery.findByIdAndDelete(doc._id);
+    if (isMediaCoverage) {
+      await MediaCoverage.findByIdAndDelete(doc._id);
+    } else {
+      await Gallery.findByIdAndDelete(doc._id);
+    }
 
     return res
       .status(200)

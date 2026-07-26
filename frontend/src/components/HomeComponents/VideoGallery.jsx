@@ -7,21 +7,11 @@ import { Link } from "react-router-dom";
 const getYoutubeThumbnail = (url) => {
   const videoId = url.split("embed/")[1]?.split("?")[0];
   return videoId
-    ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+    ? `https://img.youtube.com/vi/${videoId}/maxresdefault.webp`
     : "/api/placeholder/640/360";
 };
 
 const videos = [
-  {
-    type: "youtube",
-    src: "https://www.youtube.com/embed/_tFRUefZKWo",
-    title: "Campus Tour",
-    duration: "3:24",
-    thumbnail: getYoutubeThumbnail("https://www.youtube.com/embed/_tFRUefZKWo"),
-    date: "April 15, 2025",
-    description:
-      "Explore our beautiful campus facilities and academic environment in this exclusive tour.",
-  },
   {
     type: "youtube",
     src: "https://www.youtube.com/embed/_tFRUefZKWo",
@@ -54,16 +44,6 @@ const videos = [
   },
   {
     type: "youtube",
-    src: "https://www.youtube.com/embed/aHc2rm7ZVlY",
-    title: "Annual Festival",
-    duration: "7:45",
-    thumbnail: getYoutubeThumbnail("https://www.youtube.com/embed/aHc2rm7ZVlY"),
-    date: "February 8, 2025",
-    description:
-      "Highlights from our biggest cultural festival of the year with performances and activities.",
-  },
-  {
-    type: "youtube",
     src: "https://www.youtube.com/embed/_tFRUefZKWo",
     title: "Lab Showcase",
     duration: "2:36",
@@ -76,6 +56,11 @@ const videos = [
 
 export default function VideoGallery() {
   const [activeVideo, setActiveVideo] = useState(videos[0]);
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const filteredVideos = videos.filter((video) => {
+    return activeCategory === "all" || video.type === activeCategory;
+  });
 
   const handleVideoSelect = (video) => {
     setActiveVideo(video);
@@ -89,6 +74,29 @@ export default function VideoGallery() {
             Video Gallery
           </h2>
           <div className="w-24 h-1 bg-[#0d173b] mx-auto rounded-full"></div>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <button
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              activeCategory === "all"
+                ? "bg-[#0d173b] text-white"
+                : "bg-gray-100 text-[#0d173b] hover:bg-gray-200"
+            }`}
+            onClick={() => setActiveCategory("all")}
+          >
+            All Videos
+          </button>
+          <button
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              activeCategory === "youtube"
+                ? "bg-[#0d173b] text-white"
+                : "bg-gray-100 text-[#0d173b] hover:bg-gray-200"
+            }`}
+            onClick={() => setActiveCategory("youtube")}
+          >
+            YouTube
+          </button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -123,7 +131,7 @@ export default function VideoGallery() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-900">More Videos</h3>
             <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
-              {videos.map((video, idx) => (
+              {filteredVideos.map((video, idx) => (
                 <div
                   key={idx}
                   className={`flex gap-4 p-2 rounded-lg cursor-pointer transition-all ${
@@ -148,7 +156,7 @@ export default function VideoGallery() {
                       {video.title}
                     </h4>
                     <p className="text-xs text-gray-500">
-                      YouTube Video
+                      YouTube
                     </p>
                   </div>
                 </div>

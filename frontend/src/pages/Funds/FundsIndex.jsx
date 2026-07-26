@@ -11,10 +11,10 @@ import FundsGrantsPage from './FundsAndGrants';
 
 const sidebarLinks = [
   { name: 'Patents', path: 'patents' },
-  { name: 'ConferenceWorkshop', path: 'conference-workshop' },
+  { name: 'Conference Workshop', path: 'conference-workshop' },
   { name: 'Publications', path: 'publications' },
   { name: 'Projects', path: 'projects' },
-  { name: 'FundsGrants', path: 'funds-grants' },
+  { name: 'Funds Grants', path: 'funds-grants' },
 ];
 
 export default function FundsPage() {

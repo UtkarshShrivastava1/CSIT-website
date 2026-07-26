@@ -1,95 +1,148 @@
 import React from 'react';
+import { BedDouble, DollarSign, HeartPulse, ShieldCheck, Clock, Users, ListChecks } from 'lucide-react';
 
-export default function SimpleFacilitiesTable() {
-  const facilities = [
-    {
-      id: 1,
-      title: "Gymnasium",
-      description: "As the lithe body moved in perfect coordination with the others, I marveled at this beautiful form. In a world of cars and electronic media, where hardly anyone has to move to get anything done, its important to give ourselves an excuse to move and get necessary exercise. There are negative effects that can results from lack of exercise."
-    },
-    {
-      id: 2,
-      title: "Temple",
-      description: "Along with our daily schedule, we also need positivity and blessings of the Almighty to keep ourselves pious and tranquil. To fulfil this, We also have Shri Sharada Chandramoulishwaray [LORD SHIVA] Temple inside the campus, whose blessings are always showered on each and every person here."
-    },
-    {
-      id: 3,
-      title: "Security",
-      description: "The College has a well-defined organisational security framework. The security of students and staff at campus is our top priority. A well trained fleet of Security Guards are at deployed for security services at all the required points in the campus. Security services at the hostel are very precise so as to ensure security and maintain discipline."
-    },
-    {
-      id: 4,
-      title: "Transport",
-      description: "The Institute offers bus facility to students coming from distant places in Durg City. Buses with the capacity of 50 seats pass through the different routes so as to cover major areas and colonies of Durg. These buses are also used for Industrial Visits and Short Distance Trips Students and Faculties can avail the Bus Facility by paying the requisite fees. With notable subsidized fares even in the skyrocketing prices of petrol, college provides transport facilities for students and teachers as well."
-    },
-    {
-      id: 5,
-      title: "Bank & ATM Facility",
-      description: "The college has an on-campus Bank Facility. Chhattisgarh Rajya Grahmin [CRGB] bank. For the convenience of the Students and Staff and to save their valuable time, the college provides ATM facilities. The college has State Bank of India ATM CENTRE on campus, providing services to the people from adjoining villages."
-    },
-    {
-      id: 6,
-      title: "Hostel",
-      description: "We understand that most of our students are moving away from home for the first time, so we strive to make the transition as smooth as possible by offering comfortable and safe hostels with a homely atmosphere. The college offers two separate hostels for boys and two hostels for girls with a capacity of 150 students each, with a hostel warden or manager in each hostel to supervise day-to-day management; in addition to this, round-the-clock security is provided at the hostels. All the rooms have been designed and furnished to provide adequate moving space with ample air and light.",
-      hasAmenities: true,
-      amenities: [
-        "AMENITIES AND FACILITIES",
-        "Students will get all the basic amenities like a bed, table, chair, and electrical fittings.",
-        "Spacious recreation room.",
-        "Round-the-clock electricity supply with high end generator back-up.",
-        "Several Newspapers as well as Magazines are subscribed, and TV is also provided to get them relaxed during leisure time and also to keep them updated.",
-        "The Computer Centre and Library are kept open for residents of the hostel."
-      ]
-    }
+export default function HostelAndOthers() {
+  const hostelFees = [
+    { type: 'Triple Occupancy Room', fee: 'Rs.72,000/-' },
+    { type: 'Double Occupancy Room', fee: 'Rs.84,000/-' },
+    { type: 'Air-Conditioned (AC) Room', fee: 'Rs.1,12,000/-' },
   ];
 
   return (
     <div className="min-h-screen w-full bg-gray-50 font-sans">
-      {/* Header section with more spacing */}
-      <div className="bg-[#0d173b] text-white p-8 rounded-t-lg shadow-md mb-6">
-        <h1 className="text-4xl font-bold mb-3">Hostel And Other Facilities</h1>
-        <p className="text-lg mt-4 opacity-90">CSIT | Information Dashboard</p>
-        <hr className="w-32 border-t-2 border-white mt-6 mb-2" />
+      <div className="bg-[#0d173b] text-white p-6 rounded-t-lg">
+        <h1 className="text-3xl font-bold">Hostel & Medical Facilities</h1>
+        <p className="text-sm mt-1">CSIT | Student Welfare</p>
+        <hr className="w-16 border-t-2 border-white mt-2 mb-0" />
       </div>
-     
-      <div className="overflow-x-auto bg-white rounded-b-lg shadow-inner">
-        <table className="w-full border-collapse">
-          <thead>
-            <tr className="bg-[#0d173b] text-white border-b border-blue-700">
-              <th className="py-4 px-6 text-left w-16 rounded-tl-lg">S.No</th>
-              <th className="py-4 px-6 text-left w-40">Title</th>
-              <th className="py-4 px-6 text-left rounded-tr-lg">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {facilities.map((facility, index) => (
-              <tr 
-                key={facility.id} 
-                className={index % 2 === 0 ? 'bg-blue-50 hover:bg-blue-100' : 'bg-white hover:bg-blue-50'}
-              >
-                <td className="py-5 px-6 border-t border-gray-300 font-medium">{facility.id}</td>
-                <td className="py-5 px-6 border-t border-gray-300 font-semibold text-blue-800">{facility.title}</td>
-                <td className="py-5 px-6 border-t border-gray-300 text-gray-700">
-                  <div className="leading-relaxed">{facility.description}</div>
-                  
-                  {/* Enhanced spacing for amenities section */}
-                  {facility.hasAmenities && (
-                    <div className="mt-8 mb-4 bg-blue-50 p-6 rounded-lg border-l-4 border-[#0d173b]">
-                      <p className="font-bold text-[#0d173b] text-xl mb-4">{facility.amenities[0]}</p>
-                      <ul className="list-disc pl-6 mt-4 space-y-3 text-gray-700">
-                        {facility.amenities.slice(1).map((amenity, idx) => (
-                          <li key={idx} className="py-2">{amenity}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+
+      <div className="p-6 space-y-8">
+        {/* Hostel Facilities */}
+        <section className="bg-white p-6 rounded-lg shadow-sm">
+          <h2 className="text-2xl font-bold text-[#0d173b] mb-4 flex items-center"><BedDouble className="mr-2" />Hostel Facilities</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">The Institute provides safe, comfortable, and well-maintained hostel accommodation for students. The hostel aims to create a homely environment that supports academic excellence, personal growth, and overall well-being. Separate hostel facilities are available for boys and girls with adequate security and supervision.</p>
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-lg text-gray-800 mb-2">Specific Details</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                <li>Separate hostels for Boys and Girls.</li>
+                <li>Spacious and well-ventilated rooms.</li>
+                <li>Furnished accommodation with Cots, study tables, chairs, and storage facilities.</li>
+                <li>24×7 water and electricity supply.</li>
+                <li>Hygienic dining hall and mess facility.</li>
+                <li>Common room with television and recreational facilities.</li>
+                <li>Reading room and study area.</li>
+                <li>Medical assistance and first-aid facility.</li>
+                <li>Housekeeping and sanitation services.</li>
+                <li>Power backup facility.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg text-gray-800 mb-2 flex items-center"><Clock className="mr-2" />Hostel Entry and Exit Timings</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                <li>Hostel Gate Opening Time: 6:00 A.M.</li>
+                <li>Hostel Gate Closing Time: 9:00 P.M.</li>
+                <li>Study Hours: 7:00 P.M. to 10:00 P.M.</li>
+                <li>Visitors' Timing: 4:00 P.M. to 6:00 P.M. (with prior permission)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg text-gray-800 mb-2 flex items-center"><ShieldCheck className="mr-2" />Rules & Regulations</h4>
+              <ol className="list-decimal list-inside text-gray-700 space-y-1 text-sm">
+                <li>Students must maintain discipline and decorum within the hostel premises.</li>
+                <li>Ragging in any form is strictly prohibited and punishable as per Government regulations.</li>
+                <li>Damage to hostel property will be recovered from the concerned student(s).</li>
+                <li>Consumption of alcohol, tobacco, drugs, and other prohibited substances is strictly forbidden.</li>
+                <li>Students must maintain cleanliness in their rooms and common areas.</li>
+                <li>Loud music and activities causing disturbance are not permitted.</li>
+                <li>Guests are not allowed to stay overnight without permission.</li>
+                <li>Students must adhere to mess timings and hostel schedules.</li>
+                <li>The decision of the Hostel Warden and Hostel Committee shall be final in all matters related to hostel administration.</li>
+              </ol>
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg text-gray-800 mb-2 flex items-center"><Users className="mr-2" />Hostel Team Members</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                <li>Hostel Superintendent</li>
+                <li>Boys Hostel Warden</li>
+                <li>Girls Hostel Warden</li>
+                <li>Security Personnel</li>
+                <li>Housekeeping Staff</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg text-gray-800 mb-2 flex items-center"><ListChecks className="mr-2" />Facilities Available</h4>
+              <p className="text-sm text-gray-700">Safe and secure accommodation | Nutritious mess facility | Reading and study rooms | Indoor games and recreation area | Television room | RO drinking water | Medical assistance | Power backup | 24×7 security services</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Hostel Fees & Admission */}
+        <section className="bg-white p-6 rounded-lg shadow-sm">
+          <h2 className="text-2xl font-bold text-[#0d173b] mb-4 flex items-center"><DollarSign className="mr-2" />Hostel Fees & Admission Process</h2>
+          <div className="space-y-4">
+            <div className="overflow-x-auto">
+              <table className="min-w-full border">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Accommodation Type</th>
+                    <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Annual Fee</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {hostelFees.map((item, index) => (
+                    <tr key={index} className="border-b">
+                      <td className="px-4 py-2 text-sm">{item.type}</td>
+                      <td className="px-4 py-2 text-sm font-medium">{item.fee}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-gray-600"><b>Note:</b> 1. Hostel fees are payable in advance. 2. Fees once paid are subject to the refund rules. 3. Room allocation is subject to availability.</p>
+            <div>
+              <h4 className="font-semibold text-lg text-gray-800 mt-4 mb-2">Admission Process</h4>
+              <ol className="list-decimal list-inside text-gray-700 space-y-1 text-sm">
+                <li>Students seeking hostel accommodation must submit the prescribed Hostel Admission Form.</li>
+                <li>Admission is granted on a first-come, first-served basis, subject to availability.</li>
+                <li>Required Documents: Copy of Admission Receipt, Passport Size Photographs, Photo ID Proof, Parent/Guardian Contact Details, and an Undertaking for Compliance with Hostel Rules.</li>
+                <li>Room allotment will be made by the Hostel Warden/Administration.</li>
+                <li>Students must complete all formalities before occupying the room.</li>
+                <li>The Institute reserves the right to cancel admission for rule violations.</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        {/* Medical Facilities */}
+        <section className="bg-white p-6 rounded-lg shadow-sm">
+          <h2 className="text-2xl font-bold text-[#0d173b] mb-4 flex items-center"><HeartPulse className="mr-2" />Medical Facilities</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">The Institute provides basic medical facilities to ensure the health, safety, and well-being of all students. Immediate medical assistance is available for minor illnesses, injuries, and health emergencies.</p>
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-lg text-gray-800 mb-2">Facilities</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                <li>First-aid facility available in the hostel.</li>
+                <li>Tie-up with nearby hospitals and clinics for emergency medical treatment.</li>
+                <li>Ambulance facility available in case of emergencies.</li>
+                <li>Regular health check-up camps organized periodically.</li>
+                <li>Medical consultation support through empanelled doctors.</li>
+                <li>Emergency contact numbers displayed prominently in the hostel.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg text-gray-800 mb-2">Rules & Regulations</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                <li>Students must report any serious illness or contagious disease to the Hostel Warden.</li>
+                <li>Self-medication is discouraged.</li>
+                <li>Medical expenses beyond the Institute's facilities shall be borne by the student/parent.</li>
+                <li>Students must carry their Institute ID card during medical consultations.</li>
+                <li>Misuse of medical facilities will invite disciplinary action.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-    
     </div>
   );
 }

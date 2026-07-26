@@ -2,7 +2,7 @@ import React from "react";
 
 const GoverningBody = () => {
   const members = [
-    { id: 1, name: "Mr. Kranti Kumar Jain", designation: "Head of Department" },
+    { id: 1, name: "Mr. Kranti Kumar Jain", designation: "Assistant Professor", email: "kranti773@gmail.com", qualification: "MCA, M.Tech" },
     {
       id: 2,
       name: "Mr. Shashikant Agrawal",
@@ -13,6 +13,8 @@ const GoverningBody = () => {
       id: 5,
       name: "Ms. Tanushri Chandraker",
       designation: "Assistant Professor",
+      email: "tanushri.csit@gmail.com",
+      qualification: "B.E., M.Tech"
     },
     { id: 6, name: "Ms. Ayushi Pillay", designation: "Assistant Professor" },
     {
@@ -34,7 +36,7 @@ const GoverningBody = () => {
       name: "Miss. Rashi Chandrakar",
       designation: "Assistant Professor",
     },
-    { id: 14, name: "Miss. Nalesh", designation: "Assistant Professor" },
+    { id: 14, name: "Ms.Nalesh", designation: "Assistant Professor", email: "nalesh97@gmail.com", qualification: "B.E., M.Tech" },
     { id: 15, name: "Mr. Nagarjuna E", designation: "Assistant Professor" },
     { id: 16, name: "Mr. Krishna", designation: "Assistant Professor" },
     {
@@ -82,6 +84,8 @@ const GoverningBody = () => {
               <th className="px-6 py-3">S.No</th>
               <th className="px-6 py-3">Name of Members</th>
               <th className="px-6 py-3">Designation</th>
+              <th className="px-6 py-3">Mail ID</th>
+              <th className="px-6 py-3">Qualifications and Specialization</th>
             </tr>
           </thead>
           <tbody className="text-sm text-gray-800">
@@ -95,6 +99,16 @@ const GoverningBody = () => {
                 </td>
                 <td className="px-6 py-4">{member.name}</td>
                 <td className="px-6 py-4">{member.designation}</td>
+                <td className="px-6 py-4">
+                  {member.email && (
+                    <a href={`mailto:${member.email}`} className="text-blue-600 hover:underline">
+                      {member.email}
+                    </a>
+                  )}
+                </td>
+                <td className="px-6 py-4">
+                  {member.qualification}
+                </td>
               </tr>
             ))}
           </tbody>

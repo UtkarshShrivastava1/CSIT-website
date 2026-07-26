@@ -1,0 +1,1750 @@
+[{
+  "_id": {
+    "$oid": "68528ee926bac2e681518812"
+  },
+  "image": {
+    "public_id": "gallery/qrhqeyntrbv7hblsvjhd",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750241000/gallery/qrhqeyntrbv7hblsvjhd.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2025-06-18T10:03:21.505Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68539f00b56ca9e690164848"
+  },
+  "image": {
+    "public_id": "gallery/ltqcftkwlasxbzem37tc",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750310656/gallery/ltqcftkwlasxbzem37tc.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2025-06-19T05:24:16.761Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c16a60a6af08f71e252c"
+  },
+  "image": {
+    "public_id": "gallery/zccpjss3h4kleybmbbtb",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450538/gallery/zccpjss3h4kleybmbbtb.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2025-06-20T20:15:38.942Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c16b60a6af08f71e2532"
+  },
+  "image": {
+    "public_id": "gallery/bsddk4dhpe37pm9anzon",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450538/gallery/bsddk4dhpe37pm9anzon.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2025-06-20T20:15:39.194Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c16b60a6af08f71e2534"
+  },
+  "image": {
+    "public_id": "gallery/utz1h6twiesferlae5ns",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450538/gallery/utz1h6twiesferlae5ns.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2025-06-20T20:15:39.206Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c16b60a6af08f71e2536"
+  },
+  "image": {
+    "public_id": "gallery/mprigmbe1qzxhehvmldj",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450538/gallery/mprigmbe1qzxhehvmldj.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2025-06-20T20:15:39.217Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c16b60a6af08f71e2538"
+  },
+  "image": {
+    "public_id": "gallery/tkqpgkje2uxuqspeyolv",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450538/gallery/tkqpgkje2uxuqspeyolv.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2025-06-20T20:15:39.472Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c16b60a6af08f71e253a"
+  },
+  "image": {
+    "public_id": "gallery/gvp2ukgcre98lec6tn8t",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450538/gallery/gvp2ukgcre98lec6tn8t.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2025-06-20T20:15:39.474Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c16b60a6af08f71e252e"
+  },
+  "image": {
+    "public_id": "gallery/xrbzso6tqgyzy25crld8",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450538/gallery/xrbzso6tqgyzy25crld8.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2025-06-20T20:15:39.044Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c16b60a6af08f71e2530"
+  },
+  "image": {
+    "public_id": "gallery/qvxk2rdxq7sbd8l9nzq9",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450538/gallery/qvxk2rdxq7sbd8l9nzq9.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2025-06-20T20:15:39.114Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2cc60a6af08f71e2541"
+  },
+  "image": {
+    "public_id": "gallery/morxkxouxyia49qaddtb",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450891/gallery/morxkxouxyia49qaddtb.jpg"
+  },
+  "category": "Initiatives",
+  "createdAt": {
+    "$date": "2025-06-20T20:21:32.437Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2cc60a6af08f71e2543"
+  },
+  "image": {
+    "public_id": "gallery/a3aacihbml0llaa9d8or",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450891/gallery/a3aacihbml0llaa9d8or.jpg"
+  },
+  "category": "Initiatives",
+  "createdAt": {
+    "$date": "2025-06-20T20:21:32.550Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2cc60a6af08f71e2545"
+  },
+  "image": {
+    "public_id": "gallery/ja5bbnrue2mbnjst4e5p",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450892/gallery/ja5bbnrue2mbnjst4e5p.jpg"
+  },
+  "category": "Initiatives",
+  "createdAt": {
+    "$date": "2025-06-20T20:21:32.556Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2cc60a6af08f71e254b"
+  },
+  "image": {
+    "public_id": "gallery/ugrmzemhaqejfoxi4jdi",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450892/gallery/ugrmzemhaqejfoxi4jdi.jpg"
+  },
+  "category": "Initiatives",
+  "createdAt": {
+    "$date": "2025-06-20T20:21:32.651Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2cc60a6af08f71e254d"
+  },
+  "image": {
+    "public_id": "gallery/fircsf2rgrzccuodrwju",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450892/gallery/fircsf2rgrzccuodrwju.jpg"
+  },
+  "category": "Initiatives",
+  "createdAt": {
+    "$date": "2025-06-20T20:21:32.746Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2cc60a6af08f71e254f"
+  },
+  "image": {
+    "public_id": "gallery/e0aufzykzlircujmzmdk",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450892/gallery/e0aufzykzlircujmzmdk.jpg"
+  },
+  "category": "Initiatives",
+  "createdAt": {
+    "$date": "2025-06-20T20:21:32.890Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2cc60a6af08f71e2547"
+  },
+  "image": {
+    "public_id": "gallery/qlhy9wmnqubu3345vfxy",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450891/gallery/qlhy9wmnqubu3345vfxy.jpg"
+  },
+  "category": "Initiatives",
+  "createdAt": {
+    "$date": "2025-06-20T20:21:32.646Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2cc60a6af08f71e2549"
+  },
+  "image": {
+    "public_id": "gallery/yrbypmdl60xo4rilrtvg",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450892/gallery/yrbypmdl60xo4rilrtvg.jpg"
+  },
+  "category": "Initiatives",
+  "createdAt": {
+    "$date": "2025-06-20T20:21:32.649Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2fc60a6af08f71e2555"
+  },
+  "image": {
+    "public_id": "gallery/q9itoljbslrdxmlnydnn",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450939/gallery/q9itoljbslrdxmlnydnn.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:22:20.306Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2fc60a6af08f71e2559"
+  },
+  "image": {
+    "public_id": "gallery/imlzghyzjf9lawtuugwv",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450939/gallery/imlzghyzjf9lawtuugwv.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:22:20.548Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2fc60a6af08f71e255b"
+  },
+  "image": {
+    "public_id": "gallery/cekbyinhk4ubkiijhx2s",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450939/gallery/cekbyinhk4ubkiijhx2s.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:22:20.549Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2fc60a6af08f71e255d"
+  },
+  "image": {
+    "public_id": "gallery/m6ahiewhjc36j6jv3zny",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450939/gallery/m6ahiewhjc36j6jv3zny.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:22:20.550Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c2fc60a6af08f71e255f"
+  },
+  "image": {
+    "public_id": "gallery/p8vxoik6zy5ge7aq1khg",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450939/gallery/p8vxoik6zy5ge7aq1khg.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:22:20.762Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c33660a6af08f71e2565"
+  },
+  "image": {
+    "public_id": "gallery/qi95mgtq6slzwwpltbss",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450997/gallery/qi95mgtq6slzwwpltbss.png"
+  },
+  "category": "R&D",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:18.474Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c33660a6af08f71e2567"
+  },
+  "image": {
+    "public_id": "gallery/weg5xouegfm3zqj4cfrg",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450997/gallery/weg5xouegfm3zqj4cfrg.png"
+  },
+  "category": "R&D",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:18.482Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c33660a6af08f71e2569"
+  },
+  "image": {
+    "public_id": "gallery/mv2dnmecqe38rbzz9hqm",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450998/gallery/mv2dnmecqe38rbzz9hqm.png"
+  },
+  "category": "R&D",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:18.491Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c33660a6af08f71e256b"
+  },
+  "image": {
+    "public_id": "gallery/wgxzdqoaozpwstfglf4u",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450998/gallery/wgxzdqoaozpwstfglf4u.png"
+  },
+  "category": "R&D",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:18.516Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c33660a6af08f71e256d"
+  },
+  "image": {
+    "public_id": "gallery/wzhneqhjbydyhplnb7ov",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450997/gallery/wzhneqhjbydyhplnb7ov.png"
+  },
+  "category": "R&D",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:18.533Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c33760a6af08f71e2571"
+  },
+  "image": {
+    "public_id": "gallery/reapnoj3lhzrtga0peca",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450998/gallery/reapnoj3lhzrtga0peca.png"
+  },
+  "category": "R&D",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:19.019Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c33760a6af08f71e2573"
+  },
+  "image": {
+    "public_id": "gallery/jbx2zeian6a9iyg26aau",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450998/gallery/jbx2zeian6a9iyg26aau.png"
+  },
+  "category": "R&D",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:19.155Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c33660a6af08f71e256f"
+  },
+  "image": {
+    "public_id": "gallery/k1vzzrrcmmad8u5zsxun",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750450998/gallery/k1vzzrrcmmad8u5zsxun.png"
+  },
+  "category": "R&D",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:18.660Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c35c60a6af08f71e2578"
+  },
+  "image": {
+    "public_id": "gallery/xxablwejkyrzo29oz2ca",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451036/gallery/xxablwejkyrzo29oz2ca.jpg"
+  },
+  "category": "Alumni",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:56.787Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c35c60a6af08f71e257a"
+  },
+  "image": {
+    "public_id": "gallery/bc5fehwfgzwrrhp4jbmn",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451036/gallery/bc5fehwfgzwrrhp4jbmn.jpg"
+  },
+  "category": "Alumni",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:56.797Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c35c60a6af08f71e257c"
+  },
+  "image": {
+    "public_id": "gallery/ozccxmrz37ghbrkxrwvl",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451036/gallery/ozccxmrz37ghbrkxrwvl.jpg"
+  },
+  "category": "Alumni",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:56.986Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c35d60a6af08f71e257e"
+  },
+  "image": {
+    "public_id": "gallery/rxyerficzbxo6ignkae2",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451036/gallery/rxyerficzbxo6ignkae2.jpg"
+  },
+  "category": "Alumni",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:57.061Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c35d60a6af08f71e2580"
+  },
+  "image": {
+    "public_id": "gallery/rwrtrifzfyokdj3jsdd9",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451036/gallery/rwrtrifzfyokdj3jsdd9.jpg"
+  },
+  "category": "Alumni",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:57.098Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c35d60a6af08f71e2582"
+  },
+  "image": {
+    "public_id": "gallery/cqofcnoym9fpiktbua1y",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451036/gallery/cqofcnoym9fpiktbua1y.jpg"
+  },
+  "category": "Alumni",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:57.135Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c35d60a6af08f71e2584"
+  },
+  "image": {
+    "public_id": "gallery/vdsa3blkjquphjcjfpxd",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451036/gallery/vdsa3blkjquphjcjfpxd.jpg"
+  },
+  "category": "Alumni",
+  "createdAt": {
+    "$date": "2025-06-20T20:23:57.307Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c39660a6af08f71e2587"
+  },
+  "image": {
+    "public_id": "gallery/klxvvheuq1j8cllrf45g",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451093/gallery/klxvvheuq1j8cllrf45g.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:24:54.380Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c39660a6af08f71e2589"
+  },
+  "image": {
+    "public_id": "gallery/agqbk7tucbg8295lc0xk",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451093/gallery/agqbk7tucbg8295lc0xk.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:24:54.425Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c39660a6af08f71e258b"
+  },
+  "image": {
+    "public_id": "gallery/zefyu6i8vfnrofvbmszz",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451093/gallery/zefyu6i8vfnrofvbmszz.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:24:54.436Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c39660a6af08f71e258d"
+  },
+  "image": {
+    "public_id": "gallery/viminvlbf0jexehtxpc6",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451093/gallery/viminvlbf0jexehtxpc6.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:24:54.461Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c39660a6af08f71e258f"
+  },
+  "image": {
+    "public_id": "gallery/yolbhuv6pra0e5se23au",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451093/gallery/yolbhuv6pra0e5se23au.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:24:54.504Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c39660a6af08f71e2591"
+  },
+  "image": {
+    "public_id": "gallery/bcohaupthresikshlukn",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451093/gallery/bcohaupthresikshlukn.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:24:54.594Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c39660a6af08f71e2593"
+  },
+  "image": {
+    "public_id": "gallery/zgdrrgnqjt2k5gzfcp6r",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451093/gallery/zgdrrgnqjt2k5gzfcp6r.jpg"
+  },
+  "category": "Departments",
+  "createdAt": {
+    "$date": "2025-06-20T20:24:54.847Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c3c860a6af08f71e259c"
+  },
+  "image": {
+    "public_id": "gallery/q4qas89dta1xyv9dwd5s",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451143/gallery/q4qas89dta1xyv9dwd5s.jpg"
+  },
+  "category": "T & P Cell",
+  "createdAt": {
+    "$date": "2025-06-20T20:25:44.083Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c3c860a6af08f71e259e"
+  },
+  "image": {
+    "public_id": "gallery/jo6ltmlxjasqhykxaxfm",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451143/gallery/jo6ltmlxjasqhykxaxfm.jpg"
+  },
+  "category": "T & P Cell",
+  "createdAt": {
+    "$date": "2025-06-20T20:25:44.201Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c3c860a6af08f71e25a0"
+  },
+  "image": {
+    "public_id": "gallery/wgkq0cc1r6c0fakx1oua",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451143/gallery/wgkq0cc1r6c0fakx1oua.jpg"
+  },
+  "category": "T & P Cell",
+  "createdAt": {
+    "$date": "2025-06-20T20:25:44.329Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c3c860a6af08f71e25a2"
+  },
+  "image": {
+    "public_id": "gallery/kbsp7qmpn2xicot3cebs",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451143/gallery/kbsp7qmpn2xicot3cebs.jpg"
+  },
+  "category": "T & P Cell",
+  "createdAt": {
+    "$date": "2025-06-20T20:25:44.546Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c3c860a6af08f71e25a4"
+  },
+  "image": {
+    "public_id": "gallery/kzk82qwpcidrcs5b2na3",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451143/gallery/kzk82qwpcidrcs5b2na3.png"
+  },
+  "category": "T & P Cell",
+  "createdAt": {
+    "$date": "2025-06-20T20:25:44.647Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c3c860a6af08f71e25a6"
+  },
+  "image": {
+    "public_id": "gallery/ox1ygivlh9jdnj040yrf",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451143/gallery/ox1ygivlh9jdnj040yrf.png"
+  },
+  "category": "T & P Cell",
+  "createdAt": {
+    "$date": "2025-06-20T20:25:44.756Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c3c960a6af08f71e25a8"
+  },
+  "image": {
+    "public_id": "gallery/nsoxfze75kgvfe6vplhw",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451144/gallery/nsoxfze75kgvfe6vplhw.png"
+  },
+  "category": "T & P Cell",
+  "createdAt": {
+    "$date": "2025-06-20T20:25:45.210Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c3d960a6af08f71e25aa"
+  },
+  "image": {
+    "public_id": "gallery/d8tslubpn0an8q6xp9z8",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451160/gallery/d8tslubpn0an8q6xp9z8.png"
+  },
+  "category": "T & P Cell",
+  "createdAt": {
+    "$date": "2025-06-20T20:26:01.308Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c3d960a6af08f71e25ac"
+  },
+  "image": {
+    "public_id": "gallery/ep7bditzo6r23epvmbd2",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451160/gallery/ep7bditzo6r23epvmbd2.png"
+  },
+  "category": "T & P Cell",
+  "createdAt": {
+    "$date": "2025-06-20T20:26:01.318Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c3d960a6af08f71e25ae"
+  },
+  "image": {
+    "public_id": "gallery/lbg4b5sxci2xnn5nu8gq",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451160/gallery/lbg4b5sxci2xnn5nu8gq.png"
+  },
+  "category": "T & P Cell",
+  "createdAt": {
+    "$date": "2025-06-20T20:26:01.463Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6855c3d960a6af08f71e25b0"
+  },
+  "image": {
+    "public_id": "gallery/mwdk5i5xxtimgymplm5l",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750451160/gallery/mwdk5i5xxtimgymplm5l.png"
+  },
+  "category": "T & P Cell",
+  "createdAt": {
+    "$date": "2025-06-20T20:26:01.585Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688c34b66a46e159a400c"
+  },
+  "image": {
+    "public_id": "gallery/twbapxufayunlo8khpfp",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501570/gallery/twbapxufayunlo8khpfp.jpg"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:11.385Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688c34b66a46e159a4012"
+  },
+  "image": {
+    "public_id": "gallery/o50p6bjojgpawmwnlwtn",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501571/gallery/o50p6bjojgpawmwnlwtn.jpg"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:11.719Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688c34b66a46e159a4014"
+  },
+  "image": {
+    "public_id": "gallery/aguxc4bjf1qq9z9hsa21",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501571/gallery/aguxc4bjf1qq9z9hsa21.png"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:11.802Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688c34b66a46e159a4016"
+  },
+  "image": {
+    "public_id": "gallery/se14neahfidutrirogxp",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501571/gallery/se14neahfidutrirogxp.jpg"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:11.956Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688c44b66a46e159a4018"
+  },
+  "image": {
+    "public_id": "gallery/bvpcanardippkx7uggf2",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501570/gallery/bvpcanardippkx7uggf2.jpg"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:12.004Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688c34b66a46e159a4010"
+  },
+  "image": {
+    "public_id": "gallery/qz4impzx2hwaylbqdo32",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501570/gallery/qz4impzx2hwaylbqdo32.jpg"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:11.579Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688c34b66a46e159a400e"
+  },
+  "image": {
+    "public_id": "gallery/kd6fiatd0751bvog3p6u",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501571/gallery/kd6fiatd0751bvog3p6u.jpg"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:11.544Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688c44b66a46e159a401a"
+  },
+  "image": {
+    "public_id": "gallery/sxbnhzmc56mbffooniyb",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501571/gallery/sxbnhzmc56mbffooniyb.jpg"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:12.844Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688e54b66a46e159a401c"
+  },
+  "image": {
+    "public_id": "gallery/ewfflhod6pubin3k2sue",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501604/gallery/ewfflhod6pubin3k2sue.jpg"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:45.656Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688e54b66a46e159a401e"
+  },
+  "image": {
+    "public_id": "gallery/z4pkqym9soe9xmfrbxq8",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501605/gallery/z4pkqym9soe9xmfrbxq8.png"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:45.776Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688e54b66a46e159a4020"
+  },
+  "image": {
+    "public_id": "gallery/iixo8civ2t4yglylnnwn",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501604/gallery/iixo8civ2t4yglylnnwn.jpg"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:45.777Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688e54b66a46e159a4022"
+  },
+  "image": {
+    "public_id": "gallery/f1kyuumhdoryfmuw32mn",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501604/gallery/f1kyuumhdoryfmuw32mn.jpg"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:45.779Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685688e54b66a46e159a4024"
+  },
+  "image": {
+    "public_id": "gallery/buzlnloty5bkg2izluzk",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501605/gallery/buzlnloty5bkg2izluzk.png"
+  },
+  "category": "Student Clubs",
+  "createdAt": {
+    "$date": "2025-06-21T10:26:45.782Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6856895b4b66a46e159a402b"
+  },
+  "image": {
+    "public_id": "gallery/ianebuio5sr6nmxa8jpn",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501723/gallery/ianebuio5sr6nmxa8jpn.jpg"
+  },
+  "category": "Facilities",
+  "createdAt": {
+    "$date": "2025-06-21T10:28:43.757Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6856895b4b66a46e159a402d"
+  },
+  "image": {
+    "public_id": "gallery/mwt0byelse9siz5wf2gb",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501723/gallery/mwt0byelse9siz5wf2gb.jpg"
+  },
+  "category": "Facilities",
+  "createdAt": {
+    "$date": "2025-06-21T10:28:43.794Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6856895b4b66a46e159a402f"
+  },
+  "image": {
+    "public_id": "gallery/rdnh8qacowd6tllc1vca",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501723/gallery/rdnh8qacowd6tllc1vca.jpg"
+  },
+  "category": "Facilities",
+  "createdAt": {
+    "$date": "2025-06-21T10:28:43.904Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6856895b4b66a46e159a4031"
+  },
+  "image": {
+    "public_id": "gallery/zyg9kkdkifw2asyqo590",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501723/gallery/zyg9kkdkifw2asyqo590.jpg"
+  },
+  "category": "Facilities",
+  "createdAt": {
+    "$date": "2025-06-21T10:28:43.984Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6856895c4b66a46e159a4033"
+  },
+  "image": {
+    "public_id": "gallery/q9k12t2vjnubd3pmo6a3",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501723/gallery/q9k12t2vjnubd3pmo6a3.jpg"
+  },
+  "category": "Facilities",
+  "createdAt": {
+    "$date": "2025-06-21T10:28:44.026Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6856895c4b66a46e159a4035"
+  },
+  "image": {
+    "public_id": "gallery/ufoqwiopkvj2e6kqhvyi",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501723/gallery/ufoqwiopkvj2e6kqhvyi.jpg"
+  },
+  "category": "Facilities",
+  "createdAt": {
+    "$date": "2025-06-21T10:28:44.050Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6856895c4b66a46e159a4037"
+  },
+  "image": {
+    "public_id": "gallery/rj9rcmpovrttjjr5sjub",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501723/gallery/rj9rcmpovrttjjr5sjub.jpg"
+  },
+  "category": "Facilities",
+  "createdAt": {
+    "$date": "2025-06-21T10:28:44.083Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6856895c4b66a46e159a4039"
+  },
+  "image": {
+    "public_id": "gallery/voapofvkgd4wmvextclq",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501723/gallery/voapofvkgd4wmvextclq.jpg"
+  },
+  "category": "Facilities",
+  "createdAt": {
+    "$date": "2025-06-21T10:28:44.167Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6856896e4b66a46e159a403b"
+  },
+  "image": {
+    "public_id": "gallery/zab5hsrzirwyosbz50q7",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501741/gallery/zab5hsrzirwyosbz50q7.jpg"
+  },
+  "category": "Facilities",
+  "createdAt": {
+    "$date": "2025-06-21T10:29:02.284Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6856896e4b66a46e159a403d"
+  },
+  "image": {
+    "public_id": "gallery/tuwlni5wthgpk47k7o0f",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501741/gallery/tuwlni5wthgpk47k7o0f.jpg"
+  },
+  "category": "Facilities",
+  "createdAt": {
+    "$date": "2025-06-21T10:29:02.424Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6856896e4b66a46e159a403f"
+  },
+  "image": {
+    "public_id": "gallery/vopjvln5hwgnmr3o8lxo",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501741/gallery/vopjvln5hwgnmr3o8lxo.jpg"
+  },
+  "category": "Facilities",
+  "createdAt": {
+    "$date": "2025-06-21T10:29:02.472Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685689ce4b66a46e159a404e"
+  },
+  "image": {
+    "public_id": "gallery/yj9kooqvfjwagvzmngra",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501837/gallery/yj9kooqvfjwagvzmngra.jpg"
+  },
+  "category": "Media Coverage",
+  "createdAt": {
+    "$date": "2025-06-21T10:30:38.296Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685689ce4b66a46e159a4050"
+  },
+  "image": {
+    "public_id": "gallery/uormaseq2fy1tbxisfpm",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501837/gallery/uormaseq2fy1tbxisfpm.jpg"
+  },
+  "category": "Media Coverage",
+  "createdAt": {
+    "$date": "2025-06-21T10:30:38.331Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685689ce4b66a46e159a4052"
+  },
+  "image": {
+    "public_id": "gallery/lri7s5eriz4d1lqu22ba",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501837/gallery/lri7s5eriz4d1lqu22ba.jpg"
+  },
+  "category": "Media Coverage",
+  "createdAt": {
+    "$date": "2025-06-21T10:30:38.349Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685689ce4b66a46e159a4054"
+  },
+  "image": {
+    "public_id": "gallery/f8gfncnoda0ld9xezzey",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501838/gallery/f8gfncnoda0ld9xezzey.jpg"
+  },
+  "category": "Media Coverage",
+  "createdAt": {
+    "$date": "2025-06-21T10:30:38.386Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685689ce4b66a46e159a4056"
+  },
+  "image": {
+    "public_id": "gallery/wmxec6bjzr7wggcbccdk",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501837/gallery/wmxec6bjzr7wggcbccdk.jpg"
+  },
+  "category": "Media Coverage",
+  "createdAt": {
+    "$date": "2025-06-21T10:30:38.424Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685689ce4b66a46e159a405c"
+  },
+  "image": {
+    "public_id": "gallery/l0zfdiragtklwsygrmvb",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501837/gallery/l0zfdiragtklwsygrmvb.jpg"
+  },
+  "category": "Media Coverage",
+  "createdAt": {
+    "$date": "2025-06-21T10:30:38.472Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685689ce4b66a46e159a405e"
+  },
+  "image": {
+    "public_id": "gallery/w5aglsauoneqjpzmgjz1",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501838/gallery/w5aglsauoneqjpzmgjz1.jpg"
+  },
+  "category": "Media Coverage",
+  "createdAt": {
+    "$date": "2025-06-21T10:30:38.486Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685689ce4b66a46e159a4060"
+  },
+  "image": {
+    "public_id": "gallery/yxnyznbjo5vhqjnr4zft",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501838/gallery/yxnyznbjo5vhqjnr4zft.jpg"
+  },
+  "category": "Media Coverage",
+  "createdAt": {
+    "$date": "2025-06-21T10:30:38.592Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685689ce4b66a46e159a4058"
+  },
+  "image": {
+    "public_id": "gallery/mhfthr8si4yw13qlhnvq",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501838/gallery/mhfthr8si4yw13qlhnvq.jpg"
+  },
+  "category": "Media Coverage",
+  "createdAt": {
+    "$date": "2025-06-21T10:30:38.437Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685689ce4b66a46e159a405a"
+  },
+  "image": {
+    "public_id": "gallery/rozbd1bihs5tknkqs5mb",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1750501837/gallery/rozbd1bihs5tknkqs5mb.jpg"
+  },
+  "category": "Media Coverage",
+  "createdAt": {
+    "$date": "2025-06-21T10:30:38.460Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f0871787b47993c7ca3d9b"
+  },
+  "image": {
+    "public_id": "gallery/wnmhaymxkb1etmx3mqkq",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777370903/gallery/wnmhaymxkb1etmx3mqkq.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:08:23.552Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f0871787b47993c7ca3da1"
+  },
+  "image": {
+    "public_id": "gallery/payctnogztzynryt7586",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777370903/gallery/payctnogztzynryt7586.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:08:23.572Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f0871787b47993c7ca3da3"
+  },
+  "image": {
+    "public_id": "gallery/hplwycokggnvuw5j34xu",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777370903/gallery/hplwycokggnvuw5j34xu.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:08:23.574Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f0871787b47993c7ca3da5"
+  },
+  "image": {
+    "public_id": "gallery/d8wrjwmduvozjvcfjay4",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777370903/gallery/d8wrjwmduvozjvcfjay4.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:08:23.605Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f0871787b47993c7ca3da7"
+  },
+  "image": {
+    "public_id": "gallery/xutpizddyewmdlvggjjn",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777370903/gallery/xutpizddyewmdlvggjjn.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:08:23.614Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f0871787b47993c7ca3da9"
+  },
+  "image": {
+    "public_id": "gallery/g9nvwpu5xmrwvd6swfgf",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777370903/gallery/g9nvwpu5xmrwvd6swfgf.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:08:23.669Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f0871787b47993c7ca3d9d"
+  },
+  "image": {
+    "public_id": "gallery/ejrvzudxaxhmst9vdhho",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777370903/gallery/ejrvzudxaxhmst9vdhho.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:08:23.561Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f0871787b47993c7ca3d9f"
+  },
+  "image": {
+    "public_id": "gallery/mh0nu9vshfyv4fztnv3n",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777370903/gallery/mh0nu9vshfyv4fztnv3n.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:08:23.570Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f0871787b47993c7ca3dab"
+  },
+  "image": {
+    "public_id": "gallery/kjs5r75oveimuvsglhxg",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777370903/gallery/kjs5r75oveimuvsglhxg.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:08:23.671Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08ce293bfa0e8b371b321"
+  },
+  "image": {
+    "public_id": "gallery/yzkj7ur6jrypkszet2sf",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372385/gallery/yzkj7ur6jrypkszet2sf.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:33:06.006Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08ce293bfa0e8b371b327"
+  },
+  "image": {
+    "public_id": "gallery/nc6qzq6cfxmigjuuahf6",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372385/gallery/nc6qzq6cfxmigjuuahf6.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:33:06.273Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08ce293bfa0e8b371b329"
+  },
+  "image": {
+    "public_id": "gallery/wgbtz66gxckj1kvsdyzc",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372385/gallery/wgbtz66gxckj1kvsdyzc.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:33:06.547Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08ce293bfa0e8b371b325"
+  },
+  "image": {
+    "public_id": "gallery/lqhcci2j7x8yqgqkdlnr",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372385/gallery/lqhcci2j7x8yqgqkdlnr.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:33:06.194Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08ce293bfa0e8b371b323"
+  },
+  "image": {
+    "public_id": "gallery/j6unckhveroxces69fsr",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372385/gallery/j6unckhveroxces69fsr.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:33:06.161Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08dfa93bfa0e8b371b32b"
+  },
+  "image": {
+    "public_id": "gallery/vpveivtk5xw1fsg0mq9p",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372665/gallery/vpveivtk5xw1fsg0mq9p.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:37:46.421Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08dfa93bfa0e8b371b32d"
+  },
+  "image": {
+    "public_id": "gallery/gafmvqxqcis9pno7rjb4",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372665/gallery/gafmvqxqcis9pno7rjb4.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:37:46.425Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08dfa93bfa0e8b371b32f"
+  },
+  "image": {
+    "public_id": "gallery/ajese1rg1t47zzckqkna",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372665/gallery/ajese1rg1t47zzckqkna.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:37:46.428Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08dfa93bfa0e8b371b335"
+  },
+  "image": {
+    "public_id": "gallery/caoghwxucybcx6pxuzts",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372666/gallery/caoghwxucybcx6pxuzts.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:37:46.521Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08dfa93bfa0e8b371b337"
+  },
+  "image": {
+    "public_id": "gallery/peyknzinggsu2tngvxlw",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372666/gallery/peyknzinggsu2tngvxlw.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:37:46.896Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08dfb93bfa0e8b371b339"
+  },
+  "image": {
+    "public_id": "gallery/dvv0lropiqljxlgwvzkx",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372666/gallery/dvv0lropiqljxlgwvzkx.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:37:47.014Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08dfa93bfa0e8b371b333"
+  },
+  "image": {
+    "public_id": "gallery/vl2tw78t1l9oqwxsuuep",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372666/gallery/vl2tw78t1l9oqwxsuuep.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:37:46.434Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08dfa93bfa0e8b371b331"
+  },
+  "image": {
+    "public_id": "gallery/mdk9oey83pb1tf3k8ipz",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372665/gallery/mdk9oey83pb1tf3k8ipz.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:37:46.430Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e7593bfa0e8b371b33d"
+  },
+  "image": {
+    "public_id": "gallery/ae5mksj8wgqwtw0oawv0",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372788/gallery/ae5mksj8wgqwtw0oawv0.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:39:49.408Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e7593bfa0e8b371b33b"
+  },
+  "image": {
+    "public_id": "gallery/ftc9fygiq0hsqm4zx7ez",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372789/gallery/ftc9fygiq0hsqm4zx7ez.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:39:49.406Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e7593bfa0e8b371b33f"
+  },
+  "image": {
+    "public_id": "gallery/a4y6cdokfofll4gcosqz",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372788/gallery/a4y6cdokfofll4gcosqz.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:39:49.426Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e7593bfa0e8b371b343"
+  },
+  "image": {
+    "public_id": "gallery/feoqe77fg9m8mosek2tm",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372788/gallery/feoqe77fg9m8mosek2tm.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:39:49.509Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e7593bfa0e8b371b341"
+  },
+  "image": {
+    "public_id": "gallery/ilgttcb6hpbrqhqs5uim",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372789/gallery/ilgttcb6hpbrqhqs5uim.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:39:49.507Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e8f93bfa0e8b371b345"
+  },
+  "image": {
+    "public_id": "gallery/cw92nxpqk2tfg5rjol6i",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372815/gallery/cw92nxpqk2tfg5rjol6i.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:40:15.841Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e8f93bfa0e8b371b347"
+  },
+  "image": {
+    "public_id": "gallery/og8hdp2f0wotx8gjdrtk",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372815/gallery/og8hdp2f0wotx8gjdrtk.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:40:16.018Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e9093bfa0e8b371b349"
+  },
+  "image": {
+    "public_id": "gallery/rupqsu8wznlgaidiuu7d",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372815/gallery/rupqsu8wznlgaidiuu7d.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:40:16.021Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e9093bfa0e8b371b34b"
+  },
+  "image": {
+    "public_id": "gallery/o56rvf7z7zfiyjj18zip",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372815/gallery/o56rvf7z7zfiyjj18zip.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:40:16.024Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e9093bfa0e8b371b34d"
+  },
+  "image": {
+    "public_id": "gallery/kf0m7m2ju0yhwkq1j53t",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372815/gallery/kf0m7m2ju0yhwkq1j53t.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:40:16.165Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e9093bfa0e8b371b34f"
+  },
+  "image": {
+    "public_id": "gallery/t8j9xnpxf08kx0lkji8i",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372815/gallery/t8j9xnpxf08kx0lkji8i.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:40:16.407Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e9093bfa0e8b371b351"
+  },
+  "image": {
+    "public_id": "gallery/x9ojk9y5o920pfbfjed8",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372815/gallery/x9ojk9y5o920pfbfjed8.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:40:16.500Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f08e9093bfa0e8b371b353"
+  },
+  "image": {
+    "public_id": "gallery/fw0udwykgmkveqwce7pe",
+    "url": "https://res.cloudinary.com/dypzekyt6/image/upload/v1777372816/gallery/fw0udwykgmkveqwce7pe.jpg"
+  },
+  "category": "Infrastructure",
+  "createdAt": {
+    "$date": "2026-04-28T10:40:16.991Z"
+  },
+  "__v": 0
+}]

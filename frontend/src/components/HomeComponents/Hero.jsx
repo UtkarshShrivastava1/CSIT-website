@@ -3,25 +3,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 //desktop banner Images
-import csitBanner from "../../assets/Banners/PC/A.jpg";
-import csitBanner2 from "../../assets/Banners/PC/B.jpg";
-import csitBanner3 from "../../assets/Banners/PC/C.jpg";
-import csitBanner4 from "../../assets/Banners/PC/D.jpg";
-import csitBanner5 from "../../assets/Banners/PC/E.jpg";
-import csitBanner6 from "../../assets/Banners/PC/F.jpg";
-import csitBanner7 from "../../assets/Banners/PC/G.jpg";
-import csitBanner8 from "../../assets/Banners/PC/H.jpg";
+import csitBanner from "../../assets/Banners/PC/A.webp";
+import csitBanner2 from "../../assets/Banners/PC/B.webp";
+import csitBanner3 from "../../assets/Banners/PC/C.webp";
+import csitBanner4 from "../../assets/Banners/PC/D.webp";
+import csitBanner5 from "../../assets/Banners/PC/E.webp";
+import csitBanner6 from "../../assets/Banners/PC/F.webp";
+import csitBanner7 from "../../assets/Banners/PC/G.webp";
+import csitBanner8 from "../../assets/Banners/PC/H.webp";
 
 //mobile Banner Images
 
-import BannerPhone_A from "../../assets/Banners/Phone/BannerPhone_A.jpg"
-import BannerPhone_B from "../../assets/Banners/Phone/BannerPhone_B.jpg"
-import BannerPhone_C from "../../assets/Banners/Phone/BannerPhone_C.jpg"
-import BannerPhone_D from "../../assets/Banners/Phone/BannerPhone_D.jpg"
-import BannerPhone_E from "../../assets/Banners/Phone/BannerPhone_E.jpg"
-import BannerPhone_F from "../../assets/Banners/Phone/BannerPhone_F.jpg"
-import BannerPhone_G from "../../assets/Banners/Phone/BannerPhone_G.jpg"
-import BannerPhone_H from "../../assets/Banners/Phone/BannerPhone_H.jpg"
+import BannerPhone_A from "../../assets/Banners/Phone/BannerPhone_A.webp"
+import BannerPhone_B from "../../assets/Banners/Phone/BannerPhone_B.webp"
+import BannerPhone_C from "../../assets/Banners/Phone/BannerPhone_C.webp"
+import BannerPhone_D from "../../assets/Banners/Phone/BannerPhone_D.webp"
+import BannerPhone_E from "../../assets/Banners/Phone/BannerPhone_E.webp"
+import BannerPhone_F from "../../assets/Banners/Phone/BannerPhone_F.webp"
+import BannerPhone_G from "../../assets/Banners/Phone/BannerPhone_G.webp"
+import BannerPhone_H from "../../assets/Banners/Phone/BannerPhone_H.webp"
 // Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -124,7 +124,7 @@ const Hero = () => {
     { image: csitBanner4, alt: "College Campus Banner 4" },
     { image: csitBanner5, alt: "College Campus Banner 5" },
     { image: csitBanner6, alt: "College Campus Banner 6" },
-    { image: csitBanner7, alt: "College Campus Banner 7" },
+    // { image: csitBanner7, alt: "College Campus Banner 7" },
     { image: csitBanner8, alt: "College Campus Banner 8" },
   ];
 
@@ -135,7 +135,7 @@ const Hero = () => {
     { image: BannerPhone_D, alt: "College Campus Mobile Banner D" },
     { image: BannerPhone_E, alt: "College Campus Mobile Banner E" },
     { image: BannerPhone_F, alt: "College Campus Mobile Banner F" },
-    { image: BannerPhone_G, alt: "College Campus Mobile Banner G" },
+    // { image: BannerPhone_G, alt: "College Campus Mobile Banner G" },
     { image: BannerPhone_H, alt: "College Campus Mobile Banner H" },
 
   ];

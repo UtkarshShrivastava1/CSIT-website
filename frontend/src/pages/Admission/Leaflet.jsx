@@ -12,7 +12,7 @@ const Leaflet = () => {
       {/* PDF Viewer */}
       <div className="w-full max-w-6xl h-[70vh] sm:h-[75vh] md:h-[80vh] border border-gray-300 shadow-lg rounded-lg overflow-hidden bg-white">
         <iframe
-          src="/leaflet/CSGI_LEAFLET_2024-25.pdf"
+          src="https://drive.google.com/file/d/1z3fZBnFmbwopXVyhLnxTkGpgwBuPF0z8/view?usp=sharing"
           title="CSGI Leaflet"
           className="w-full h-full"
           style={{ border: "none" }}
@@ -21,7 +21,7 @@ const Leaflet = () => {
 
       {/* Download Button */}
       <a
-        href="/leaflet/CSGI_LEAFLET_2024-25.pdf"
+        href="https://drive.google.com/file/d/1z3fZBnFmbwopXVyhLnxTkGpgwBuPF0z8/view?usp=sharing"
         download="CSGI_LEAFLET_2024-25.pdf"
         onClick={() => trackLead({ content_name: "Leaflet Download" })}
         className="mt-6 mb-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out"

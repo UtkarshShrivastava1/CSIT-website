@@ -61,8 +61,8 @@ const Aspiration = () => {
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               <li>
-                Graduates will be employable and achieve success in their chosen
-                areas of Computer Science and engineering.
+                Graduates will be employable and achieve success in their chosen areas of Information Technology
+
               </li>
               <li>
                 Graduates learn and adapt themselves to the constantly evolving
@@ -93,8 +93,7 @@ const Aspiration = () => {
                   Engineering Knowledge :{" "}
                 </span>
                 Apply knowledge of mathematics and science, with fundamentals of
-                Computer Science & Engineering to be able to solve complex
-                engineering problems related to CSE.
+                Computer Science & Engineering to be able to solve complex engineering problems related to IT.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
@@ -102,8 +101,8 @@ const Aspiration = () => {
                   Problem Analysis:{" "}
                 </span>
                 Identify, Formulate, review research literature and analyze
-                complex engineering problems related to CSE and reaching
-                substantiated conclusions using first principles of mathematics,
+                complex engineering problems related to IT and reaching substantiated
+                conclusions using first principles of mathematics,
                 natural sciences and engineering sciences.
               </li>
               <li>
@@ -112,10 +111,9 @@ const Aspiration = () => {
                   Design/Development of solutions:{" "}
                 </span>
                 Design solutions for complex engineering problems related to CSE
-                and design system components or processes that meet the
-                specified needs with appropriate consideration for the public
-                health and safety and the cultural societal and environmental
-                considerations.
+                and design system components or processes that meet the specified
+                needs with appropriate consideration for the public health and
+                safety and the cultural societal and environmental considerations.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
@@ -133,7 +131,7 @@ const Aspiration = () => {
                 </span>
                 Create, Select and apply appropriate techniques, resources and
                 modern engineering and IT tools including prediction and
-                modeling to computer science related complex engineering
+                modelling to Information Technology related complex engineering
                 activities with an understanding of the limitations.
               </li>
               <li>
@@ -143,16 +141,15 @@ const Aspiration = () => {
                 </span>
                 Apply Reasoning informed by the contextual knowledge to assess
                 societal, health, safety, legal and cultural issues and the
-                consequent responsibilities relevant to the CSE professional
-                engineering practice.
+                consequent responsibilities relevant to the IT professional engineering
+                practice.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   Environment and Sustainability:{" "}
                 </span>
-                Understand the impact of the CSE professional engineering
-                solutions in societal and environmental contexts and demonstrate
+                Understand the impact of the IT professional engineering solutions in societal and environmental contexts and demonstrate
                 the knowledge of, and need for sustainable development.
               </li>
               <li>
@@ -212,24 +209,21 @@ const Aspiration = () => {
             <ul className="list-disc pl-5 space-y-2">
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
-                  {" "}
                   Professional Skills:{" "}
                 </span>
-                Possess the ability to analyze, design, develop, and evaluate computer software and systems in areas related to web-based applications, data security, databases, algorithms, multimedia, networking, and data communication
+                Have abilities to, analyze, design, develop and evaluate computer software in areas related to web based applications, data security, databases, algorithms, multimedia, networking and data communication.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
-                  {" "}
                   Product Development Skills:{" "}
                 </span>
-                Demonstrate the ability to apply standard practices and strategies in software project development using open-ended programming environments to deliver innovative quality products for business and societal requirements.
+                Have abilities to apply standard practices and strategies in software project development using open ended programming environments to deliver innovative quality products for business and societal requirement.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
-                  {" "}
                   Entrepreneurship and Career:{" "}
                 </span>
-                Utilize computational platforms, programming, and logic development skills as IT professionals to pursue higher studies and entrepreneurial ventures.
+                Have ability to apply computational platforms, programming and logic development as computer professionals for higher studies and entrepreneurship.
               </li>
             </ul>
           </div>

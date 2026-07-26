@@ -5,43 +5,44 @@ const CareerOpportunity = () => {
   
   // Career paths and opportunities data
   const higherStudies = [
-    "Master of Technology in Electrical as well as Mechanical branch ",
-    "Master of Business Administration",
-    "Master of Science (Abroad) ",
-    "Post Graduate Diploma",
-    " Master of Philosophy",
-    " Doctorate"
+    "Master's Degree (M.Tech./M.E./MS)",
+    "Management Studies",
+    "Research Programs",
+    "International Higher Education Opportunities",
+    "Professional Certifications"
   ];
   
   const governmentSector = [
-    "Bharat Heavy Electricals Limited (BHEL)",
-    "Steel Authority of India (SAIL)",
-    "National Thermal Power Corporation (NTPC) ",
-    "Indian Space and Research Organization (ISRO",
-    " State Electricity Board (CSPDCL)"
+    "Public Sector Undertakings (PSUs)",
+    "Indian Railways",
+    "Defense Sector",
+    "Engineering Services Examination (ESE/IES)",
+    "State Government Departments",
+    "Research and Development Organizations",
+    "Atomic Energy Sector",
+    "Staff Selection Commission (SSC)",
+    "Teaching and Academic Careers"
   ];
   
   const privateSector = [
-    "Amazon",
-    "Apple",
-    "Cummins",
-    "Bendix",
-    "Caterpillar",
-    "Aliyance Mechatronics",
-    "Startup-Tonbo Imaging",
-    "Luna Bearings ",
-    "Schlumberger and Green Thumbs"
+    "Manufacturing and Automation",
+    "Automotive and Electric Vehicles",
+    "Robotics and Smart Manufacturing",
+    "Electronics and Embedded Systems",
+    "Information Technology and Industry 4.0"
   ];
   
   const jobTitles = [
-    "Computer System Analyst ",
-    "Researcher ",
-    "Robotics Test Engineer ",
-    "Application Engineer",
-    "Superviso",
-    "Professor ",
-    "Electrical Engineer",
-    "Mechanical Engineer",
+    "Mechatronics Engineer",
+    "Automation Engineer",
+    "Robotics Engineer",
+    "Control Systems Engineer",
+    "Embedded Systems Engineer",
+    "Instrumentation Engineer",
+    "Manufacturing Engineer",
+    "Production Engineer",
+    "Maintenance Engineer",
+    "Design Engineer"
   ];
   
   return (
@@ -60,7 +61,7 @@ const CareerOpportunity = () => {
       {/* Overview section */}
       <section>
         <p className="text-gray-700 leading-relaxed mb-6">
-        Mechatronics, also called mechatronics engineering, is an interdisciplinary branch of engineering that focuses on the integration of mechanical, electronic and electrical engineering systems, and also includes a combination of robotics, electronics, computer science, telecommunications, systems, control, and product.
+        Mechatronics Engineering is an interdisciplinary field that combines Mechanical engineering, Electronics, Electrical Engineering, Computer Science, and Control Systems to design and develop intelligent products and automated systems. With the rapid growth of Industry 4.0, automation, robotics, and smart manufacturing, mechatronics engineers are in high demand across various industries.
         </p>
       </section>
       
@@ -93,12 +94,12 @@ const CareerOpportunity = () => {
           {activeSection === "overview" && (
             <div className="space-y-6">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Future for Mechatronics Engineering
+                Future Scope
               </h3>
               
               <div className="bg-gradient-to-r from-gray-50 to-gray-50 p-5 rounded-xl border border-gray-100">
                 <p className="text-gray-700">
-                Mechatronics Engineering offers diverse career paths across education, government, and private sectors. Graduates can pursue advanced degrees, work in prestigious tech companies, or take on specialized technical roles that leverage their engineering skills.
+                The increasing adoption of automation, robotics, and intelligent systems worldwide ensures excellent career prospects for mechatronics engineers. Their multidisciplinary skill set enables them to work across diverse sectors and adapt to rapidly evolving technologies, making Mechatronics Engineering one of the most promising engineering disciplines of the future.
                 </p>
                 
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -126,7 +127,7 @@ const CareerOpportunity = () => {
           {activeSection === "higher-studies" && (
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Higher Studies Options
+                Higher Education
               </h3>
               
               <ul className="space-y-3">
@@ -138,11 +139,16 @@ const CareerOpportunity = () => {
               </ul>
               
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100">
-                <h4 className="font-medium text-gray-800 mb-2">Benefits of Advanced Degrees</h4>
+                <h4 className="font-medium text-gray-800 mb-2">Professional Certifications</h4>
                 <ul className="space-y-2 text-gray-700 pl-5 list-disc">
-                  <li>Specialization in cutting-edge technologies and research areas</li>
-                  <li>Higher salary potential and advanced career opportunities</li>
-                  <li>Access to academic and research positions</li>
+                  <li>PLC and SCADA Programming</li>
+                  <li>Industrial Robotics</li>
+                  <li>CAD/CAM/CAE</li>
+                  <li>Embedded Systems Design</li>
+                  <li>Industrial IoT</li>
+                  <li>Artificial Intelligence and Machine Learning</li>
+                  <li>Digital Manufacturing</li>
+                  <li>Six Sigma and Lean Manufacturing</li>
                 </ul>
               </div>
             </div>
@@ -156,11 +162,10 @@ const CareerOpportunity = () => {
               
               <ul className="space-y-3">
                 {governmentSector.map((org, index) => (
-                  <li key={index} className="bg-blue-50 rounded-lg p-3 text-gray-800">
+                  <li key={index} className="bg-green-50 rounded-lg p-3 text-gray-800">
                     {org}
                   </li>
                 ))}
-                <li className="bg-blue-50 rounded-lg p-3 text-gray-800">And many more...</li>
               </ul>
               
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100">
@@ -177,16 +182,15 @@ const CareerOpportunity = () => {
           {activeSection === "private-sector" && (
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Private Sector Companies
+                Industries Employing Mechatronics Engineers
               </h3>
               
               <ul className="space-y-3">
                 {privateSector.map((company, index) => (
-                  <li key={index} className="bg-blue-50 rounded-lg p-3 text-gray-800">
+                  <li key={index} className="bg-purple-50 rounded-lg p-3 text-gray-800">
                     {company}
                   </li>
                 ))}
-                <li className="bg-gray-50 rounded-lg p-3 text-gray-800">And many more...</li>
               </ul>
               
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100">
@@ -203,16 +207,15 @@ const CareerOpportunity = () => {
           {activeSection === "job-titles" && (
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Job Titles for Computer Science Engineers
+                Core Engineering Roles
               </h3>
               
               <ul className="space-y-3">
                 {jobTitles.map((title, index) => (
-                  <li key={index} className="bg-blue-50 rounded-lg p-3 text-gray-800">
+                  <li key={index} className="bg-rose-50 rounded-lg p-3 text-gray-800">
                     {title}
                   </li>
                 ))}
-                <li className="bg-gray-50 rounded-lg p-3 text-gray-800">And many more...</li>
               </ul>
               
              

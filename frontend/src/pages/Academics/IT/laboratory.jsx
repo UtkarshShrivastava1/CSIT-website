@@ -2,24 +2,17 @@ import React from "react";
 
 const LaboratoriesContent = () => {
   const labs = [
-    { id: 1, name: "Digital Electronics Lab" },
-    { id: 2, name: "COA & Microprocessor Lab" },
-    { id: 3, name: "Computer Networks Lab" },
-    { id: 4, name: "Software Lab (Programming in JAVA)" },
-    { id: 5, name: "Data Structures Lab" },
-    { id: 6, name: "Database Management System Lab" },
-    { id: 7, name: "Operating System (UNIX) Lab" },
-    { id: 8, name: "Virtual Lab (IoT Lab)" },
-    { id: 9, name: "Artificial Intelligence & Machine Learning Lab" },
-    { id: 10, name: "Software Engineering & Project Management Lab" },
-    { id: 11, name: "Principle of Communication System Lab" },
-    { id: 12, name: "	Computer Graphics & Data Visualization Lab" },
-    { id: 13, name: "	Mobile Application Development (Android) Lab" },
-    { id: 14, name: "	Web Application Development Lab" },
-    { id: 15, name: "	Cryptography & Network Security Lab" },
-    { id: 16, name: "	Cloud Computing Lab" },
-    { id: 17, name: "	Hadoop Lab" },
-    { id: 18, name: "	Simulation Lab" },
+    { id: 1, name: "Data Structure & Algorithms Lab" },
+    { id: 2, name: "Operating System Lab" },
+    { id: 3, name: "Software Laboratory (Sci Lab/ MATLAB)" },
+    { id: 4, name: "Computer Organization & Architecture Lab" },
+    { id: 5, name: "Object Oriented Programming Lab (Java)" },
+    { id: 6, name: "DBMS Lab" },
+    { id: 7, name: "Computer Network Lab" },
+    { id: 8, name: "Data Analytics with Python Laboratory" },
+    { id: 9, name: "Android Lab" },
+    { id: 10, name: "AI & ML Lab" },
+    { id: 11, name: "Software Engineering and Programming Lab" },
   ];
 
   return (

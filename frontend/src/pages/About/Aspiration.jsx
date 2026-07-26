@@ -67,7 +67,7 @@ const Aspiration = () => {
             <h3 className="text-xl font-medium text-[#0d173b] mb-2">
               Core Values
             </h3>
-            <p className="mb-4">
+            {/* <p className="mb-4">
               We focus on Continual Improvement in Scope with Rapid Technical
               Growth in the national and International markets. Professionals
               broad Vision, Global Perspectives and Environmental changes
@@ -80,7 +80,43 @@ const Aspiration = () => {
               Workshops and Group Discussions under Guidance of Eminent
               Personalities of varied respective spheres & fields.
             </p>
-            <p>We conduct Teachers Competency Mapping and Training.</p>
+            <p>We conduct Teachers Competency Mapping and Training.</p> */}
+
+
+            <ul className="list-disc pl-6 space-y-4 text-gray-700">
+    <li>
+      <span className="font-semibold">Academic Excellence:</span> CSIT
+      thrives for setting quality and highest standards of academic
+      excellence in teaching, learning, exposure to emerging technologies,
+      and research across various disciplines.
+    </li>
+
+    <li>
+      <span className="font-semibold">
+        Pursuit of Excellence in Research and Innovations:
+      </span>{" "}
+      CSIT lays emphasis on research and innovation and ensures continuous
+      engagement in scholarly activities in the pursuit of innovation,
+      creativity, and excellence.
+    </li>
+
+    <li>
+      <span className="font-semibold">Morality and Ethics:</span> CSIT
+      emphasizes ethical values, integrity, and professionalism with an
+      unwavering commitment to academic freedom, transparency, and
+      accountability.
+    </li>
+
+    <li>
+      <span className="font-semibold">
+        Social Commitment and Inclusiveness:
+      </span>{" "}
+      CSIT pledges to contribute to the development and upliftment of
+      society through outreach programmes, extension activities, and
+      academic endeavours, thereby facilitating principles of mutual
+      respect, equality, and diversity.
+    </li>
+  </ul>
           </div>
 
           {/* Quality Policy Section */}

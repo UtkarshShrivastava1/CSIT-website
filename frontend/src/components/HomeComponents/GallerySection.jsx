@@ -15,10 +15,10 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 
 // Import gallery images
-import GalleryImage1 from "../../assets/GallerySection/Gallery1.jpg";
-import GalleryImage2 from "../../assets/GallerySection/Gallery2.jpg";
-import GalleryImage3 from "../../assets/GallerySection/Gallery3.jpg";
-import GalleryImage4 from "../../assets/GallerySection/Gallery4.jpg";
+import GalleryImage1 from "../../assets/GallerySection/Gallery1.webp";
+import GalleryImage2 from "../../assets/GallerySection/Gallery2.webp";
+import GalleryImage3 from "../../assets/GallerySection/Gallery3.webp";
+import GalleryImage4 from "../../assets/GallerySection/Gallery4.webp";
 
 const GallerySection = () => {
   const [activeImage, setActiveImage] = useState(null);

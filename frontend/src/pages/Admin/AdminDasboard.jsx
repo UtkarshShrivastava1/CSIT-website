@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { LogOut, Menu, X, Shield, AlertCircle } from "lucide-react"
 import { MdPhotoLibrary } from "react-icons/md";
 import GalleryForm from './GalleryForm';
+import NotificationDashboard from './NotificationDashboard';
+import MediaDashboard from './MediaDashboard'; // 👈 New import for Media Coverage
 import { useNavigate } from 'react-router-dom';
 
 function AdminDashboard() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [username, setUsername] = useState('');
     const [lastLogin, setLastLogin] = useState('');
+    const [currentTab, setCurrentTab] = useState('gallery');
     const navigate = useNavigate();
     
     useEffect(() => {
@@ -49,8 +52,8 @@ function AdminDashboard() {
                             <Shield className="h-6 w-6 text-yellow-400" />
                         </div>
                         <div>
-                            <h1 className="text-2xl md:text-3xl font-serif font-bold">Admin Dashboard</h1>
-                            <p className="text-sm text-gray-300">Welcome back, {username}</p>
+                            <h1 className="text-2xl md:text-xl font-serif font-bold">Admin Dashboard</h1>
+                            <p className="text-xs text-gray-300">Welcome back, {username}</p>
                         </div>
                     </div>
                     
@@ -58,17 +61,17 @@ function AdminDashboard() {
                     <div className="hidden md:flex items-center space-x-6">
                         <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                             <Shield className="h-5 w-5 text-yellow-400" />
-                            <span className="text-sm font-medium">Admin Panel</span>
+                            <span className="text-xs font-medium">Admin Panel</span>
                         </div>
-                        <div className="text-sm text-gray-300 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                        <div className="text-xs text-gray-300 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                             Last login: {lastLogin}
                         </div>
                         <div 
                             onClick={handlelogout} 
                             className="flex items-center space-x-2 bg-red-500/20 hover:bg-red-500/30 px-4 py-2 rounded-lg cursor-pointer transition-all duration-300 group"
                         >
-                            <LogOut className="h-5 w-5 text-red-400 group-hover:text-red-300" />
-                            <span className="text-sm text-red-400 group-hover:text-red-300">Logout</span>
+                            <LogOut className="h-4 w-5 text-red-400 group-hover:text-red-300" />
+                            <span className="text-xs text-red-400 group-hover:text-red-300">Logout</span>
                         </div>
                     </div>
 
@@ -96,11 +99,52 @@ function AdminDashboard() {
                 {isMenuOpen && (
                     <aside className="md:hidden w-full bg-white shadow-lg">
                         <ul className="space-y-2 p-4">
+                            {/* Gallery Tab */}
                             <li
-                                className="font-serif cursor-pointer p-3 rounded-lg text-center capitalize text-lg text-white bg-gradient-to-r from-[#0d173b] to-[#1a2b5f] flex items-center justify-center gap-2 hover:from-[#1a2b5f] hover:to-[#0d173b] transition-all duration-300 shadow-lg"
+                                onClick={() => {
+                                    setCurrentTab('gallery');
+                                    setIsMenuOpen(false);
+                                }}
+                                className={`font-serif cursor-pointer p-3 rounded-lg text-center capitalize textt-sm flex items-center justify-center gap-2 transition-all duration-300 shadow-lg ${
+                                    currentTab === 'gallery' 
+                                        ? 'text-white bg-gradient-to-r from-[#0d173b] to-[#1a2b5f]' 
+                                        : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
+                                }`}
                             > 
-                                <MdPhotoLibrary className="text-lg text-yellow-400" />
+                                <MdPhotoLibrary className={`text-sm ${currentTab === 'gallery' ? 'text-yellow-400' : 'text-gray-500'}`} />
                                 Gallery Management
+                            </li>
+                            
+                            {/* Notification Tab */}
+                            <li
+                                onClick={() => {
+                                    setCurrentTab('notifications');
+                                    setIsMenuOpen(false);
+                                }}
+                                className={`font-serif cursor-pointer p-3 rounded-lg text-center capitalize textt-sm flex items-center justify-center gap-2 transition-all duration-300 shadow-lg ${
+                                    currentTab === 'notifications' 
+                                        ? 'text-white bg-gradient-to-r from-[#0d173b] to-[#1a2b5f]' 
+                                        : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
+                                }`}
+                            > 
+                                <AlertCircle className={`h-5 w-5 ${currentTab === 'notifications' ? 'text-yellow-400' : 'text-gray-500'}`} />
+                                Notification Panel
+                            </li>
+
+                            {/* 👉 NEW: Media Coverage Tab */}
+                            <li
+                                onClick={() => {
+                                    setCurrentTab('media');
+                                    setIsMenuOpen(false);
+                                }}
+                                className={`font-serif cursor-pointer p-3 rounded-lg text-center capitalize textt-sm flex items-center justify-center gap-2 transition-all duration-300 shadow-lg ${
+                                    currentTab === 'media' 
+                                        ? 'text-white bg-gradient-to-r from-[#0d173b] to-[#1a2b5f]' 
+                                        : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
+                                }`}
+                            > 
+                                <Shield className={`h-5 w-5 ${currentTab === 'media' ? 'text-yellow-400' : 'text-gray-500'}`} />
+                                Media Coverage
                             </li>
                         </ul>
                     </aside>
@@ -115,20 +159,54 @@ function AdminDashboard() {
                         </div>
                     </div>
                     <ul className="space-y-2 px-6">
+                        {/* Gallery Tab */}
                         <li
-                            className="font-serif cursor-pointer p-3 rounded-lg text-center capitalize text-lg text-white bg-gradient-to-r from-[#0d173b] to-[#1a2b5f] flex items-center justify-center gap-2 hover:from-[#1a2b5f] hover:to-[#0d173b] transition-all duration-300 shadow-lg"
+                            onClick={() => setCurrentTab('gallery')}
+                            className={`font-serif cursor-pointer p-3 rounded-lg text-center capitalize textt-sm flex items-center justify-center gap-2 transition-all duration-300 shadow-lg ${
+                                currentTab === 'gallery' 
+                                    ? 'text-white bg-gradient-to-r from-[#0d173b] to-[#1a2b5f]' 
+                                    : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
+                            }`}
                         > 
-                            <MdPhotoLibrary className="text-lg text-yellow-400" />
+                            <MdPhotoLibrary className={`textt-sm ${currentTab === 'gallery' ? 'text-yellow-400' : 'text-gray-500'}`} />
                             Gallery Management
+                        </li>
+                        
+                        {/* Notification Tab */}
+                        <li
+                            onClick={() => setCurrentTab('notifications')}
+                            className={`font-serif cursor-pointer p-3 rounded-lg text-center capitalize textt-sm flex items-center justify-center gap-2 transition-all duration-300 shadow-lg ${
+                                currentTab === 'notifications' 
+                                    ? 'text-white bg-gradient-to-r from-[#0d173b] to-[#1a2b5f]' 
+                                    : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
+                            }`}
+                        > 
+                            <AlertCircle className={`h-5 w-5 ${currentTab === 'notifications' ? 'text-yellow-400' : 'text-gray-500'}`} />
+                            Notification Panel
+                        </li>
+
+                        {/* 👉 NEW: Media Coverage Tab */}
+                        <li
+                            onClick={() => setCurrentTab('media')}
+                            className={`font-serif cursor-pointer p-3 rounded-lg text-center capitalize textt-sm flex items-center justify-center gap-2 transition-all duration-300 shadow-lg ${
+                                currentTab === 'media' 
+                                    ? 'text-white bg-gradient-to-r from-[#0d173b] to-[#1a2b5f]' 
+                                    : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
+                            }`}
+                        > 
+                            <Shield className={`h-5 w-5 ${currentTab === 'media' ? 'text-yellow-400' : 'text-gray-500'}`} />
+                            Media Coverage
                         </li>
                     </ul>
                 </aside>
 
-                {/* Content Area */}
+                {/* Content Area - Updated with Media Dashboard */}
                 <div className='w-full md:w-[calc(100%-16rem)] pt-8 overflow-hidden overflow-y-auto no-scrollbar'>
                     <div className="container mx-auto px-4">
                         <div className="bg-white rounded-xl shadow-lg p-8">
-                            <GalleryForm />
+                            {currentTab === 'gallery' && <GalleryForm />}
+                            {currentTab === 'notifications' && <NotificationDashboard />}
+                            {currentTab === 'media' && <MediaDashboard />} {/* 👈 Media Dashboard */}
                         </div>
                     </div>
                 </div>

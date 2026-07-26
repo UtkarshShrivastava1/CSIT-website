@@ -58,9 +58,9 @@ const AboutSection = () => {
         }}
       ></div>
 
-      <div className="container mx-auto px-4 max-w-7xl relative">
+      {/* <div className="container mx-auto px-4 max-w-7xl relative"> */}
         {/* Responsive Section Header */}
-        <div
+      <div
           className="text-center mb-8 md:mb-16"
           data-aos="fade-up"
           data-aos-delay="50"
@@ -80,18 +80,18 @@ const AboutSection = () => {
             data-aos="fade-up"
             data-aos-delay="150"
           ></div>
-        </div>
+        </div> 
 
         {/* Responsive Content Grid */}
-        <div className="grid md:grid-cols-2 gap-6 md:gap-12 xl:gap-16">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-12 xl:gap-16"> 
           {/* Left Column */}
           <div
             className="space-y-6 md:space-y-12"
             data-aos="fade-right"
             data-aos-duration="800"
-          >
+          > 
             {/* About Card - Mobile Optimized */}
-            <div
+          <div
               className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg md:shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 md:hover:-translate-y-2 group"
               data-aos="flip-left"
               data-aos-delay="50"
@@ -113,7 +113,7 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              {/* Stats Grid - Mobile Optimized */}
+             
               <div className="mt-6 md:mt-8 grid grid-cols-2 gap-3 md:gap-4">
                 {[
                   { value: "24+", label: "Years of Excellence" },
@@ -134,25 +134,25 @@ const AboutSection = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> 
 
             {/* Image Slider - Mobile Optimized */}
-            <div
+         <div
               data-aos="fade-up"
               data-aos-delay="150"
               className="transform transition-all duration-700 hover:scale-[1.01] md:hover:scale-[1.02]"
             >
               <AboutImageSlider />
             </div>
-          </div>
+          </div> 
 
           {/* Right Column - Mobile Optimized */}
-          <div
+       <div
             className="space-y-6 md:space-y-8"
             data-aos="fade-left"
             data-aos-duration="800"
           >
-            {/* Vision Card */}
+           
             <div
               className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg md:shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 md:hover:-translate-y-2 group"
               data-aos="flip-right"
@@ -175,7 +175,7 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Mission Card */}
+            
             <div
               className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg md:shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 md:hover:-translate-y-2 group"
               data-aos="flip-right"
@@ -215,7 +215,7 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Impact Stats */}
+           
             <div
               className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg md:shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 md:hover:-translate-y-2"
               data-aos="fade-up"
@@ -244,12 +244,12 @@ const AboutSection = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </div> 
         </div>
-      </div>
+    
 
       {/* Updated animations for better mobile performance */}
-      <style jsx>{`
+      <style>{`
         @keyframes fadeInRight {
           from {
             opacity: 0;

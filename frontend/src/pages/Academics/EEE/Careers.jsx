@@ -5,39 +5,37 @@ const CareerOpportunity = () => {
   
   // Career paths and opportunities data
   const higherStudies = [
-    "Master of Technology in Electrical and Electronics Engineering (M. Tech)",
-    "Master of Technology in Electrical Energy Systems",
-    "Master of Engineering in Applied Electronics",
-    " Master of Science in Electrical Engineering(MS in Abroad)",
-    " Master of Professional Engineering (Electrical) (In Abroad)"
+    "M. Tech./M.E. in Core EEE Specializations (Power Systems, Power Electronics & Drives, etc.)",
+    "Interdisciplinary M. Tech./M.S. Programs (AI & ML, Robotics, Data Science, IoT)",
+    "MBA Programs (Operations Management, Energy Management, Finance)",
+    "Research-Oriented Studies (M.S. by Research, Ph.D.)",
+    "Specialized Postgraduate Programs (Electric Vehicle Technology, VLSI)",
+    "Higher Studies Abroad (M.S. in Electrical Engineering, Power Engineering, etc.)"
   ];
   
-  const governmentSector = [
-    "Bharat Heavy Electricals Limited (BHEL)",
-    "Steel Authority of India (SAIL)",
-    " National Thermal Power Corporation (NTPC)",
-    " Indian Space and Research Organization (ISRO)  ",
-    "State Electricity Board (CSPDCL)"
+  const entranceExams = [
+    "GATE – For M.Tech./M.E. admissions",
+    "CAT – For MBA admissions",
+    "GRE – For international universities",
+    "TOEFL / IELTS – English proficiency tests"
   ];
   
-  const privateSector = [
-    "Jindal Steel and Power Station ",
-    "Tata Steel",
-    "Ambuja ",
-    "Vedanta ",
-    "Ultratech",
-  ];
-  
-  const jobTitles = [
-    "Control and instrumentation engineer",
-    "Electrical engineer ",
-    "Broadcast engineer",
-    "Manufacturing systems engineer ",
-    "Systems analysis  ",
-    " Electronics engineer ",
-    " IT consultant" ,
-    " Systems developer ",
-    " Network engineer",
+  const careerVerticals = [
+    { vertical: "Power Generation", roles: "Power Plant Engineer, Operation Engineer, Maintenance Engineer" },
+    { vertical: "Power Transmission & Distribution", roles: "Grid Engineer, Substation Engineer, Protection Engineer" },
+    { vertical: "Electrical Machines & Drives", roles: "Design Engineer, Testing Engineer, Motor & Drive Specialist" },
+    { vertical: "Power Electronics", roles: "Power Electronics Engineer, Converter Design Engineer, UPS Engineer" },
+    { vertical: "Renewable Energy", roles: "Solar Engineer, Wind Energy Engineer, Energy Analyst" },
+    { vertical: "Electric Vehicles (EV)", roles: "EV Design Engineer, Battery Management Engineer, Charging Infrastructure Engineer" },
+    { vertical: "Industrial Automation", roles: "Automation Engineer, PLC/SCADA Engineer, Control Engineer" },
+    { vertical: "Instrumentation & Control", roles: "Instrumentation Engineer, Process Control Engineer" },
+    { vertical: "Electronics & Embedded Systems", roles: "Embedded Engineer, Hardware Design Engineer, IoT Engineer" },
+    { vertical: "Smart Grid & Energy Management", roles: "Smart Grid Engineer, Energy Auditor, Energy Consultant" },
+    { vertical: "Research & Development", roles: "Research Engineer, Scientist, Project Associate" },
+    { vertical: "Semiconductor Industry", roles: "VLSI Engineer, Chip Design Engineer, Testing Engineer" },
+    { vertical: "Academics & Higher Education", roles: "Lecturer, Assistant Professor, Research Scholar" },
+    { vertical: "Building Services & Electrical Design", roles: "Electrical Design Engineer, MEP Engineer, Project Engineer" },
+    { vertical: "Defense & Aerospace", roles: "Electrical Officer, Avionics Engineer, Defense Scientist" }
   ];
   
   return (
@@ -46,7 +44,7 @@ const CareerOpportunity = () => {
         <div className="absolute inset-0 flex items-center px-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d173b]">
-            CareerOpportunity
+            Career Opportunity
             </h2>
             <p className="text-gray-500 text-sm mt-2">CSIT | Careers</p>
             <div className="h-0.5 w-14 bg-[#0d173b] mt-3 rounded"></div>
@@ -56,18 +54,16 @@ const CareerOpportunity = () => {
       {/* Overview section */}
       <section>
         <p className="text-gray-700 leading-relaxed mb-6">
-        Electrical & Electronics Engineering is a growing and one of the most sought disciplines in the field of engineering study. It comprises with the electrical engineering and electronics engineering. It is originated by the electrical engineering. By the technically modernization of the world and computerization in our work field, it is necessary to use and understand the circuits and computerized devices in electrical & electronic field.
+        EEE graduates have a wide range of opportunities for higher education in India and abroad.
         </p>
       </section>
       
       {/* Career paths navigation */}
       <div className="flex flex-wrap gap-2">
         {[
-          { id: "overview", name: "Overview" },
           { id: "higher-studies", name: "Higher Studies" },
-          { id: "govt-sector", name: "Government Sector" },
-          { id: "private-sector", name: "Private Sector" },
-          { id: "job-titles", name: "Job Titles" }
+          { id: "entrance-exams", name: "Entrance Exams" },
+          { id: "career-verticals", name: "Career Verticals" }
         ].map(section => (
           <button
             key={section.id}
@@ -86,39 +82,6 @@ const CareerOpportunity = () => {
       {/* Career content sections */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
         <div className="p-6">
-          {activeSection === "overview" && (
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Future for T | Electrical and Electronics Engineering
-              </h3>
-              
-              <div className="bg-gradient-to-r from-gray-50 to-gray-50 p-5 rounded-xl border border-gray-100">
-                <p className="text-gray-700">
-                  Computer T | Electrical and Electronics Engineering offers diverse career paths across education, government, and private sectors. Graduates can pursue advanced degrees, work in prestigious tech companies, or take on specialized technical roles that leverage their engineering skills.
-                </p>
-                
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="inline-flex px-3 py-1 rounded-full text-x font-medium bg-blue-50 text-gray-800">
-                    Higher Education
-                  </span>
-                  <span className="inline-flex px-3 py-1 rounded-full text-x font-medium  bg-blue-50 text-gray-800">
-                    Government Jobs
-                  </span>
-                  <span className="inline-flex px-3 py-1 rounded-full text-x font-medium  bg-blue-50 text-gray-800">
-                    Private Sector
-                  </span>
-                  <span className="inline-flex px-3 py-1 rounded-full text-x font-medium bg-gray-200 text-gray-800">
-                    Specialized Roles
-                  </span>
-                </div>
-              </div>
-              
-              <p className="text-gray-600 italic">
-                Select a category above to explore specific opportunities in each area.
-              </p>
-            </div>
-          )}
-          
           {activeSection === "higher-studies" && (
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
@@ -144,74 +107,45 @@ const CareerOpportunity = () => {
             </div>
           )}
           
-          {activeSection === "govt-sector" && (
+          {activeSection === "entrance-exams" && (
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Government Sector Opportunities
+                Major Entrance Examinations
               </h3>
               
               <ul className="space-y-3">
-                {governmentSector.map((org, index) => (
-                  <li key={index} className="bg-blue-50 rounded-lg p-3 text-gray-800">
-                    {org}
+                {entranceExams.map((exam, index) => (
+                  <li key={index} className="bg-green-50 rounded-lg p-3 text-gray-800">
+                    {exam}
                   </li>
                 ))}
-                <li className="bg-blue-50 rounded-lg p-3 text-gray-800">And many more...</li>
               </ul>
-              
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100">
-                <h4 className="font-medium text-gray-800 mb-2">Benefits of Government Jobs</h4>
-                <ul className="space-y-2 text-gray-700 pl-5 list-disc">
-                  <li>Job stability and security</li>
-                  <li>Work on national-level technological infrastructure and defense systems</li>
-                  <li>Excellent benefits and pension plans</li>
-                </ul>
-              </div>
             </div>
           )}
-          
-          {activeSection === "private-sector" && (
-            <div>
+
+          {activeSection === "career-verticals" && (
+            <div className="overflow-x-auto">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Private Sector Companies
+                Vertical Career Opportunities
               </h3>
-              
-              <ul className="space-y-3">
-                {privateSector.map((company, index) => (
-                  <li key={index} className="bg-blue-50 rounded-lg p-3 text-gray-800">
-                    {company}
-                  </li>
-                ))}
-                <li className="bg-gray-50 rounded-lg p-3 text-gray-800">And many more...</li>
-              </ul>
-              
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100">
-                <h4 className="font-medium text-gray-800 mb-2">Private Sector Advantages</h4>
-                <ul className="space-y-2 text-gray-700 pl-5 list-disc">
-                  <li>Competitive salary packages and performance bonuses</li>
-                  <li>Opportunity to work with cutting-edge technologies</li>
-                  <li>Career advancement and global exposure</li>
-                </ul>
-              </div>
-            </div>
-          )}
-          
-          {activeSection === "job-titles" && (
-            <div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Job Titles for Computer Science Engineers
-              </h3>
-              
-              <ul className="space-y-3">
-                {jobTitles.map((title, index) => (
-                  <li key={index} className="bg-blue-50 rounded-lg p-3 text-gray-800">
-                    {title}
-                  </li>
-                ))}
-                <li className="bg-gray-50 rounded-lg p-3 text-gray-800">And many more...</li>
-              </ul>
-              
-             
+              <table className="min-w-full border-collapse">
+                <thead>
+                  <tr className="bg-[#0d173b] text-white">
+                    <th className="py-2 px-4 text-left">S.N.</th>
+                    <th className="py-2 px-4 text-left">Career Vertical</th>
+                    <th className="py-2 px-4 text-left">Job Roles</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {careerVerticals.map((item, index) => (
+                    <tr key={index} className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}>
+                      <td className="py-2 px-4 border-t">{index + 1}</td>
+                      <td className="py-2 px-4 border-t">{item.vertical}</td>
+                      <td className="py-2 px-4 border-t">{item.roles}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </div>

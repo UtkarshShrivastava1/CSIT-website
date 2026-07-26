@@ -2,10 +2,11 @@ import React from "react";
 
 const GoverningBody = () => {
   const members = [
-    { id: 1, name: "Dr. Padmini Sharma", designation: "Associate Professor & HOD" },
-    { id: 2, name: "Er. Anand V. Bakshi", designation: "Assistant Professor" },
-    { id: 3, name: "Mr. Rohit Kumar Oberoy", designation: "Assistant Professor" },
-    { id: 4, name: "Er. Ashraf Jafri", designation: "Associate Professor" },
+    { id: 1, name: "Dr.PADMINI SHARMA", designation: "HOD & ASSOCIATE PROFESSOR", email: "padminisharma@csitdurg.in", experience: "22" },
+    { id: 2, name: "Er. ANAND V. BAKSHI", designation: "ASSISTANT PROFESSOR", email: "anandvbakshi@csitdurg.in", experience: "21" },
+    { id: 3, name: "Er. ROHIT OBEROY", designation: "ASSISTANT PROFESSOR", email: "rohitoberoy@csitdurg.in", experience: "9" },
+    { id: 4, name: "Er. ANISH VISHWAKARMA", designation: "ASSISTANT PROFESSOR", email: "anishvishwakarma@csitdurg.in", experience: "5" },
+    { id: 5, name: "Er. MATIREE VAISHNAV", designation: "ASSISTANT PROFESSOR", email: "maitreevaishnavi@csitdurg.in", experience: "3 Month" },
   ];
 
   return (
@@ -31,21 +32,27 @@ const GoverningBody = () => {
           <thead>
             <tr className="bg-[#0d173b] text-white text-left text-sm uppercase tracking-wider">
               <th className="px-6 py-3">S.No</th>
-              <th className="px-6 py-3">Name of Members</th>
+              <th className="px-6 py-3">NAME OF MEMBER</th>
               <th className="px-6 py-3">Designation</th>
+              <th className="px-6 py-3">EMAIL ID</th>
+              <th className="px-6 py-3">Experience</th>
             </tr>
           </thead>
           <tbody className="text-sm text-gray-800">
             {members.map((member, idx) => (
               <tr
                 key={member.id}
-                className={idx % 2 === 0 ? "bg-gray-100" : "bg-white"}
+                className={`${
+                  idx % 2 === 0 ? "bg-gray-100" : "bg-white"
+                } hover:bg-gray-200 transition-colors`}
               >
                 <td className="px-6 py-4 font-medium text-[#0d173b]">
                   {idx + 1}
                 </td>
                 <td className="px-6 py-4">{member.name}</td>
                 <td className="px-6 py-4">{member.designation}</td>
+                <td className="px-6 py-4">{member.email}</td>
+                <td className="px-6 py-4">{member.experience}</td>
               </tr>
             ))}
           </tbody>

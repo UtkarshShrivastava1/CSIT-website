@@ -8,10 +8,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // Import infrastructure images
-import Infrastructure1 from "../../assets/InfrastructureSection/Infrastructure1.jpg";
-import Infrastructure2 from "../../assets/InfrastructureSection/Infrastructure2.jpg";
-import Infrastructure3 from "../../assets/InfrastructureSection/Infrastructure3.jpg";
-import Infrastructure4 from "../../assets/InfrastructureSection/Infrastructure4.jpg";
+import Infrastructure1 from "../../assets/InfrastructureSection/Infrastructure1.webp";
+import Infrastructure2 from "../../assets/InfrastructureSection/Infrastructure2.webp";
+import Infrastructure3 from "../../assets/InfrastructureSection/Infrastructure3.webp";
+import Infrastructure4 from "../../assets/InfrastructureSection/Infrastructure4.webp";
 
 const InfrastructureSection = () => {
   // Define infrastructure image data
@@ -38,7 +38,7 @@ const InfrastructureSection = () => {
   ];
 
   return (
-    <section className="bg-gray-100 py-20">
+    <section className="bg-gray-100 py-1 ">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Section Heading */}
         <div className="text-center mb-12">

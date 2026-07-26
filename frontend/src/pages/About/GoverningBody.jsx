@@ -3,22 +3,20 @@ import React, { useState } from "react";
 const GoverningBody = () => {
   const [viewMode, setViewMode] = useState("table"); // "table" or "cards"
 
-  const members = [
-    ["1", "Er. Ajay Prakash Verma", "Chairman"],
-    ["2", "Mrs. Satrupa Deshmukh", "Member"],
-    ["3", "Mrs. Nandini Verma", "Member"],
-    ["4", "Mr. Rajesh Deshmukh", "Member"],
-    ["5", "Dr. Ravi Mishra, Principal, CSIT", "Member"],
-    ["6", "Mrs. Shakuntala Verma", "Member"],
-    ["7", "Nominee of DTE, Raipur", "Member"],
-    ["8", "Nominee of the CSVTU, Bhilai", "Member"],
-    ["9", "Nominee of the AICTE", "Member"],
-    [
-      "10",
-      "Dr. Santosh Kumar Sharma, Dean (Research, Development and IIPC)",
-      "Member",
-    ],
-  ];
+const members = [
+  ["1", "Mr. Ajay Prakash Verma", "Chairman"],
+  ["2", "Mrs. Satrupa Deshmukh", "Member"],
+  ["3", "Mrs. Nandini Verma", "Member"],
+  ["4", "Mr. Rajesh Deshmukh", "Member"],
+  ["5", "Mrs. Shakuntala Verma", "Member"],
+  ["6", "Dr. Ravi Mishra, Principal, CSIT", "Member-Secretary (Ex-Officio)"],
+  ["7", "Nominee of the AICTE", "Member"],
+  ["8", "Nominee of the DTE, Raipur", "Member"],
+  ["9", "Dr. R. N. Khare, Nominee of the CSVTU, Bhilai", "Member"],
+  ["10", "Dr. S. K. Singh, Nominee of the CSVTU, Bhilai", "Member"],
+  ["11", "Dr. Santosh Kumar Sharma", "Member"],
+  ["12", "Dr. Chandra Shekhar Sharma", "Member"],
+];
 
   return (
     <div className="bg-white shadow-lg rounded-md overflow-hidden">
@@ -35,13 +33,28 @@ const GoverningBody = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
               Governing Body
             </h2>
-            <p className="text-gray-200 text-xs sm:text-sm mt-2">
-              CSIT | Leadership & Oversight
+           <p className="text-gray-200 text-sm mt-2">
+              Chhatrapati Shivaji Institute of Technology
             </p>
             <div className="h-0.5 w-16 sm:w-20 bg-white mt-2 sm:mt-3 rounded"></div>
           </div>
         </div>
       </div>
+
+      <div className="mb-8 bg-gray-50 border border-gray-200 rounded-lg p-6">
+          <h3 className="text-xl font-semibold text-[#0d173b] mb-3">
+                    About the Governing Body
+                  </h3>
+
+                  <p className="text-gray-700 leading-relaxed">
+                    The Governing Body of CSIT provides strategic direction, policy
+                    guidance, and institutional oversight to ensure academic excellence,
+                    transparency, and continuous growth. It comprises distinguished
+                    members from academia, administration, industry, and regulatory
+                    bodies who contribute to the institution's vision and development.
+                  </p>
+                </div>
+
 
       {/* View Toggle Buttons (Mobile) */}
       <div className="block sm:hidden bg-gray-50 px-4 py-3 border-b">
@@ -102,7 +115,7 @@ const GoverningBody = () => {
                   <td className="px-3 sm:px-6 py-3 sm:py-4 font-medium text-[#0d173b] border-b border-gray-100">
                     <div className="flex items-center">
                       <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-2">
-                        <span className="text-xs font-bold text-[#0d173b]">
+                        <span className="text-xs font-bold text-white">
                           {no}
                         </span>
                       </div>
@@ -151,11 +164,13 @@ const GoverningBody = () => {
                       {name}
                     </h3>
                     <div className="mt-2">
-                      <span
-                        className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
-                          role === "Chairman"
+                     <span
+                        className={`inline-flex px-3 py-1 rounded-full text-xs font-medium ${
+                          role.includes("Chairman")
                             ? "bg-blue-100 text-blue-800"
-                            : "bg-gray-100 text-gray-800"
+                            : role.includes("Secretary")
+                            ? "bg-green-100 text-green-800"
+                            : "bg-gray-100 text-gray-700"
                         }`}
                       >
                         {role}

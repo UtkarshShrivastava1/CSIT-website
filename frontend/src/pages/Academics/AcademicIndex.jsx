@@ -10,15 +10,38 @@ import Eee from "./EEE/EEEIndex";
 import It from "./IT/ITIndex";
 import Mec from "./ME/MEIndex";
 import Mechatronics from "./MECHATRONICS/MechatronicsIndex";
+import ScienceHumanities from "./SH/Science&HumanitiesIndex";
+import Maths from "./maths/Maths";
 
 const sidebarLinks = [
-  { name: "Computer Science and Engineering", path: "computer-science-and-engineering" },
-  { name: "Artificial Intelligence & Data Science", path: "artificial-intelligence-and-data-science-engineering" },
-  { name: "Civil Engineering", path: "civil-engineering" },
-  { name: "Electrical and Electronics Engineering", path: "electrical-and-electronics-engineering" },
-  { name: "Mechatronics Engineering", path: "mechatronics" },
+  {
+    name: "Computer Science and Engineering",
+    path: "computer-science-and-engineering",
+  },
   { name: "Mechanical Engineering", path: "mechanical-engineering" },
-  { name: "Information Technology", path: "information-technology-engineering" },
+  {
+    name: "Electrical and Electronics Engineering",
+    path: "electrical-and-electronics-engineering",
+  },
+  {
+    name: "Information Technology",
+    path: "information-technology-engineering",
+  },
+  { name: "Mechatronics Engineering", path: "mechatronics" },
+
+  { name: "Civil Engineering", path: "civil-engineering" },
+  {
+    name: "Artificial Intelligence & Data Science",
+    path: "artificial-intelligence-and-data-science-engineering",
+  },
+  {
+    name: "Science & Humanities - Physics , Chemistry ,English ,Maths",
+    path: "science-and-humanities",
+  },
+  // {
+  //   name: "Maths",
+  //   path: "maths",
+  // },
 ];
 
 export default function AcademicPage() {
@@ -26,8 +49,8 @@ export default function AcademicPage() {
 
   // Determine active section based on current path
   const getActiveSection = () => {
-    const path = location.pathname.split('/').pop();
-    const activeLink = sidebarLinks.find(link => link.path === path);
+    const path = location.pathname.split("/").pop();
+    const activeLink = sidebarLinks.find((link) => link.path === path);
     return activeLink ? activeLink.name : "Computer Science and Engineering";
   };
 
@@ -44,8 +67,13 @@ export default function AcademicPage() {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-[#0d173b] to-[#1e305f] text-white w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h1 className="text-3xl md:text-4xl font-bold">Academic Departments</h1>
-          <p className="mt-3 text-base md:text-lg font-light">Explore our diverse range of engineering programs and discover your path to excellence</p>
+          <h1 className="text-3xl md:text-4xl font-bold">
+            Academic Departments
+          </h1>
+          <p className="mt-3 text-base md:text-lg font-light">
+            Explore our diverse range of engineering programs and discover your
+            path to excellence
+          </p>
           <div className="mt-4 h-0.5 w-16 bg-white"></div>
         </div>
       </div>
@@ -64,17 +92,44 @@ export default function AcademicPage() {
             </aside>
 
             {/* Main Content Area */}
-            <main className="flex-1 min-h-[calc(100vh-400px)] bg-white rounded-lg shadow-sm p-4 md:p-6">
+            <main className="flex-1 min-h-[calc(100vh-400px)] bg-white rounded-lg shadow-sm p-4 md:p-6 overflow-scroll">
               <Routes>
-                <Route path="computer-science-and-engineering" element={<Cse />} />
-                <Route path="artificial-intelligence-and-data-science-engineering" element={<Aids />} />
+                <Route
+                  path="computer-science-and-engineering"
+                  element={<Cse />}
+                />
+                <Route
+                  path="artificial-intelligence-and-data-science-engineering"
+                  element={<Aids />}
+                />
                 <Route path="civil-engineering" element={<Civil />} />
-                <Route path="electrical-and-electronics-engineering" element={<Eee />} />
+                <Route
+                  path="electrical-and-electronics-engineering"
+                  element={<Eee />}
+                />
                 <Route path="mechatronics" element={<Mechatronics />} />
                 <Route path="mechanical-engineering" element={<Mec />} />
-                <Route path="information-technology-engineering" element={<It />} />
-                <Route path="/" element={<Navigate to="computer-science-and-engineering" replace />} />
-                <Route path="*" element={<Navigate to="computer-science-and-engineering" replace />} />
+                <Route
+                  path="information-technology-engineering"
+                  element={<It />}
+                />
+                <Route
+                  path="science-and-humanities"
+                  element={<ScienceHumanities />}
+                />
+               {/* <Route path="maths" element={<Maths />} /> */}
+                <Route
+                  path="/"
+                  element={
+                    <Navigate to="computer-science-and-engineering" replace />
+                  }
+                />
+                <Route
+                  path="*"
+                  element={
+                    <Navigate to="computer-science-and-engineering" replace />
+                  }
+                />
               </Routes>
             </main>
           </div>

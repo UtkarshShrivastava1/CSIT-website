@@ -8,7 +8,7 @@ const gallerySchema = new mongoose.Schema({
   },
   category:{
     type:String,
-    enum:["Institute","Departments","Initiatives","T & P Cell","Student Affairs","Library","Facilities","Alumni","Media Coverage"],
+    enum:["Infrastructure","Departments","Initiatives","T & P Cell","Student Clubs","Facilities","R&D","Alumni","Media Coverage"],
     required:true,
   },
   createdAt: {

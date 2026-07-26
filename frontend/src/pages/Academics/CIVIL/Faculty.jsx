@@ -2,11 +2,12 @@ import React from "react";
 
 const GoverningBody = () => {
   const members = [
-    { id: 1, name: "Mr. Ritesh Kumar Kamble", designation: "In-Charge Head & Assistant Professor" },
-    { id: 2, name: "Ms. Divya Tamrakar", designation: "Assistant Professor" },
-    { id: 3, name: "Ms. Aastha Yadav", designation: "Assistant Professor" },
-    { id: 4, name: "Mr. Anmol Bhardwaj", designation: "Assistant Professor" },
-    { id: 5, name: "Mr. Shubham Chandrakar", designation: "Assistant Professor" },
+    { id: 1, name: "Mr. Anil Kumar", designation: "Head of Department", experience: "4 Years", specialization: "Structural Engg/ Concrete Technology", email: "hodcivil@csitdurg.in" },
+    { id: 2, name: "Ms. Divya Tamrakar", designation: "Assistant Professor", experience: "8 Years", specialization: "Structural Engineering", email: "divyatamrakar@csitdurg.in" },
+    { id: 3, name: "Mr. Anmol Bhardwaj", designation: "Assistant Professor", experience: "7 Years", specialization: "Transportation Engineering", email: "anmolbhardwaj@csitdurg.in" },
+    { id: 4, name: "Mr. Shubham Chandrakar", designation: "Assistant Professor", experience: "5 Years", specialization: "Geotechnical Engineering", email: "Shubhamchandrakar@csitdurg.in" },
+    { id: 5, name: "Ms. Aastha Yadav", designation: "Assistant Professor", experience: "3 Years", specialization: "Structural Engineering", email: "aasthayadav@csitdurg.in" },
+    { id: 6, name: "Ms. Akansha Ekka", designation: "Assistant Professor", experience: "7 Months", specialization: "Structural Engineering", email: "aakanshaekka@csitdurg.in" },
   ];
 
   return (
@@ -34,6 +35,9 @@ const GoverningBody = () => {
               <th className="px-6 py-3">S.No</th>
               <th className="px-6 py-3">Name of Members</th>
               <th className="px-6 py-3">Designation</th>
+              <th className="px-6 py-3">Experience</th>
+              <th className="px-6 py-3">Specialization/Area of Interest</th>
+              <th className="px-6 py-3">Mail ID</th>
             </tr>
           </thead>
           <tbody className="text-sm text-gray-800">
@@ -47,6 +51,13 @@ const GoverningBody = () => {
                 </td>
                 <td className="px-6 py-4">{member.name}</td>
                 <td className="px-6 py-4">{member.designation}</td>
+                <td className="px-6 py-4">{member.experience}</td>
+                <td className="px-6 py-4">{member.specialization}</td>
+                <td className="px-6 py-4">
+                  <a href={`mailto:${member.email}`} className="text-blue-600 hover:underline">
+                    {member.email}
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>

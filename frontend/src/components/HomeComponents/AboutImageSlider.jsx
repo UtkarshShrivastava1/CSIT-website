@@ -7,10 +7,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import campus1 from "../../assets/campus1.jpg";
-import campus2 from "../../assets/campus2.jpg";
-import campus3 from "../../assets/campus3.jpg";
-import campus4 from "../../assets/campus4.jpg";
+import campus1 from "../../assets/campus1.webp";
+import campus2 from "../../assets/campus2.webp";
+import campus3 from "../../assets/campus3.webp";
+import campus4 from "../../assets/campus4.webp";
 
 const AboutImageSlider = () => {
   return (

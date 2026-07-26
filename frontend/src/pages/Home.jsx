@@ -12,6 +12,7 @@ import CompaniesVisited from "../components/HomeComponents/CompaniesVisited";
 import PlacementStats from "../components/HomeComponents/PlacementStats";
 import Testimonials from "../components/HomeComponents/Testimonials";
 import Infrastructure from "../components/HomeComponents/InfrastructureSection";
+import NoticeEvents from "../pages/News_and_Events/News"
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
         <Hero />
       </section>
       <NewsTicker />
+      <NoticeEvents/>
       <AboutSection />
       <Infrastructure />
       <GallerySection />

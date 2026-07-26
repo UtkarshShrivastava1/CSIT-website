@@ -1,6 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import FromAcademic from "./FromAcademic";
+import FromAcademic from "./FromPrincipal"; 
 import FromAdministrator from "./FromAdministrator";
 import FromChairman from "./FromChairman";
 
@@ -14,14 +14,30 @@ export default function MessageIndex() {
       title: "Chairman",
       content: <FromChairman />,
     },
-    foracademic: {
-      title: "Academic",
-      content: <FromAcademic />,
-    },
-    foradministrator: {
+     foradministrator: {
       title: "Administrator",
       content: <FromAdministrator />,
     },
+    foracademic: {
+      title: "Principal",
+      content: <FromAcademic />,
+    },
+   
+  };
+
+  const keyContacts = [
+    { name: "Dr Ravi Mishra", role: "Principal", email: "principal@csitdurg.in" },
+    { name: "Dr Santosh Kumar Sharma", role: "Dean [Research & Development]", email: "santoshsharma@csitdurg.in" },
+    { name: "Prof Sanjay Kumar Singh", role: "Dean [Placement & Student Affairs]", email: "sanjaysingh@csitdurg.in" },
+    { name: "Mr Rajeev Nair", role: "Dean [Corporate Relation, Public Relation & Student Counselling]", email: "crm@csitdurg.in" },
+    { name: "Mr Rajesh Verma", role: "Registrar", email: "registrar@csitdurg.in" },
+    { name: "Mr Vijay Bhonsle", role: "Account Officer", email: "vijaybhonsle@csitdurg.in" },
+  ];
+
+  const getRoleColor = (role) => {
+    if (role.toLowerCase().includes('principal')) return 'bg-blue-100 text-blue-800';
+    if (role.toLowerCase().includes('dean')) return 'bg-green-100 text-green-800';
+    return 'bg-gray-100 text-gray-800';
   };
 
   return (
@@ -105,6 +121,30 @@ export default function MessageIndex() {
             </div>
           </div>
         </div>
+
+        {/* Key Contacts Section */}
+        <div className="mt-12">
+            <h2 className="text-2xl font-bold text-[#0d173b] mb-2">Key Contacts</h2>
+            <p className="text-gray-600 mb-6">Important contacts for administrative and academic queries.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {keyContacts.map((contact, index) => (
+                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                                <h3 className="font-semibold text-[#0d173b]">{contact.name}</h3>
+                                <p className="text-sm text-gray-600">{contact.role}</p>
+                            </div>
+                            <div className="mt-2 sm:mt-0">
+                                <a href={`mailto:${contact.email}`} className="text-sm text-blue-600 hover:underline">
+                                    {contact.email}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
       </div>
     </div>
   );

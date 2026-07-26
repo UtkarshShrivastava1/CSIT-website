@@ -7,6 +7,8 @@ const errorHandler = require("./middleware/errorHandler");
 const { authMiddleware } = require("./middleware/auth");
 require("colors");
 const enquiry = require("./routes/enquiryFormRoutes");
+const notificationRoutes = require("./routes/notificationRoutes");
+const mediaCoverageRoutes = require("./routes/mediaRoutes");
 const { testCloudinaryConfig } = require("./config/cloudinary");
 const app = express();
 
@@ -19,7 +21,7 @@ app.use(
   cors({
     origin: "*",
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "DELETE","PATCH", "OPTIONS"],
     allowedHeaders: [
       "Origin",
       "X-Requested-With",
@@ -34,6 +36,8 @@ app.use(
 // Routes
 app.use("/api/enquiry", enquiry);
 app.use("/api/gallery", require("./routes/galleryRoutes"));
+app.use("/api/notifications", require("./routes/notificationRoutes"));
+app.use("/api/media-coverage", mediaCoverageRoutes);
 // Admin Login Route
 app.post("/api/auth/admin-login", (req, res) => {
   try {
@@ -96,9 +100,11 @@ app.use(errorHandler);
 // MongoDB Connection & Server Start
 const PORT = process.env.PORT || 5000;
 const mongoURI =
-  process.env.NODE_ENV === "production"
+  process.env.NODE_ENV === "production" 
     ? process.env.MONGO_ATLAS_URI
     : process.env.MONGO_LOCAL_URI;
+
+    console.log(mongoURI)
 
 const mongooseOptions = {
   useNewUrlParser: true,

@@ -1,5 +1,5 @@
 import React from 'react';
-import rtiImage from '../../assets/RTI.jpg';
+import rtiImage from '../../assets/RTI.webp';
 
 const RTI = () => {
   return (

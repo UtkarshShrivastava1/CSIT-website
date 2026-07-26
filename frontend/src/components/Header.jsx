@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { User } from "lucide-react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/csitlogo.png";
-import Image1 from "../assets/Aicte-logo.png";
-import Image2 from "../assets/Institutions innovation council.png";
-import Image3 from "../assets/ISO_logo.png";
-import Image4 from "../assets/CSVTU.png";
-import Image5 from "../assets/dataquest.png";
+import Logo from "../assets/csitlogo.webp";
+import Image1 from "../assets/Aicte-logo.webp";
+import Image2 from "../assets/Institutions innovation council.webp";
+import Image3 from "../assets/ISO_logo.webp";
+import Image4 from "../assets/CSVTU.webp";
+import Image5 from "../assets/dataquest.webp";
+import NAAC from "../assets/NAAC_LOGO.webp"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +44,7 @@ const Header = () => {
                   className="w-12 h-12 rounded-full flex-shrink-0"
                 />
                 <div className="text-left min-w-0 flex-1">
-                  <h1 className="text-sm font-serif text-black leading-tight">
+                  <h1 className="text-xs font-serif text-black leading-tight">
                     Chhatrapati Shivaji Institute of Technology
                   </h1>
                   <p className="text-xs text-black opacity-80 leading-tight">
@@ -89,9 +90,14 @@ const Header = () => {
                   alt="CSVTU Logo"
                   className="h-8 w-8 rounded-md object-contain hover:scale-105 transition-transform flex-shrink-0"
                 />
-                <img
+                {/* <img
                   src={Image5}
                   alt="DataQuest Logo"
+                  className="h-8 w-8 rounded-md object-contain hover:scale-105 transition-transform flex-shrink-0"
+                /> */}
+                <img
+                  src={NAAC}
+                  alt="NAAC_Logo"
                   className="h-8 w-8 rounded-md object-contain hover:scale-105 transition-transform flex-shrink-0"
                 />
               </div>
@@ -112,7 +118,7 @@ const Header = () => {
                   className="w-16 h-16 rounded-full flex-shrink-0"
                 />
                 <div className="text-left min-w-0 flex-1">
-                  <h1 className="text-lg md:text-xl font-serif text-black leading-tight">
+                  <h1 className="text-sm md:text-xl font-serif text-black leading-tight">
                     Chhatrapati Shivaji Institute of Technology
                   </h1>
                   <p className="text-xs text-black opacity-80">
@@ -145,9 +151,14 @@ const Header = () => {
                     alt="CSVTU Logo"
                     className="h-10 w-10 rounded-md object-contain hover:scale-105 transition-transform"
                   />
-                  <img
+                  {/* <img
                     src={Image5}
                     alt="DataQuest Logo"
+                    className="h-10 w-10 rounded-md object-contain hover:scale-105 transition-transform"
+                  /> */}
+                  <img
+                    src={NAAC}
+                    alt="NAAC_Logo"
                     className="h-10 w-10 rounded-md object-contain hover:scale-105 transition-transform"
                   />
                 </div>
@@ -215,9 +226,14 @@ const Header = () => {
                     alt="CSVTU Logo"
                     className="h-16 w-16 md:h-18 md:w-18 rounded-md object-contain hover:scale-105 transition-transform"
                   />
-                  <img
+                  {/* <img
                     src={Image5}
                     alt="DataQuest Logo"
+                    className="h-16 w-16 md:h-18 md:w-18 rounded-md object-contain hover:scale-105 transition-transform"
+                  /> */}
+                  <img
+                    src={NAAC}
+                    alt="NAAC Logo"
                     className="h-16 w-16 md:h-18 md:w-18 rounded-md object-contain hover:scale-105 transition-transform"
                   />
                 </div>

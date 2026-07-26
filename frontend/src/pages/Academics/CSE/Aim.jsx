@@ -26,9 +26,7 @@ const Aspiration = () => {
               Our Vision
             </h3>
             <p>
-              To create academically strong and ethically sound engineers who
-              shall have potentials to cater to the emerging needs of industries
-              and technical advancements.
+             To create academically strong and ethically sound engineers who shall have potentials to cater to the emerging needs of industries and technical advancements.
             </p>
           </div>
 
@@ -39,17 +37,13 @@ const Aspiration = () => {
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               <li>
-                Provide excellent quality education to the students through
-                effective teaching-learning, Co-curricular and Extracurricular
-                activities.
+                	Provide excellent quality education to the students through effective teaching-learning, Co-curricular and Extracurricular activities.
               </li>
               <li>
-                Enhance strong relationship with industries to help learners to
-                remain in touch with latest technologies.
+               	Enhance strong relationship with industries to help learners to remain in touch with latest technologies.
               </li>
               <li>
-                Become a center of excellence with technical facilities for
-                academics and research.
+               	Become a center of excellence with technical facilities for academics and research.
               </li>
             </ul>
           </div>
@@ -61,12 +55,10 @@ const Aspiration = () => {
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               <li>
-                Graduates will be employable and achieve success in their chosen
-                areas of Computer Science and engineering.
+                	Graduates will be employable and achieve success in their chosen areas of Computer Science and engineering.
               </li>
               <li>
-                Graduates learn and adapt themselves to the constantly evolving
-                technology by pursuing higher studies or research.
+               Graduates learn and adapt themselves to the constantly evolving technology by pursuing higher studies or research.
               </li>
               <li>
                 Graduates shall be good leaders and managers and effectively

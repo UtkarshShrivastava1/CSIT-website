@@ -13,12 +13,12 @@ const Society = () => {
         </div>
         <div className="absolute inset-0 flex items-center px-6">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white">
-              About Society
-            </h2>
-            <p className="text-gray-200 text-sm mt-2">
-              CSIT | Shivnath Shikshan & Seva Samiti
-            </p>
+           <h2 className="text-2xl md:text-3xl font-bold text-white">
+                The Society
+              </h2>
+              <p className="text-gray-200 text-sm mt-2">
+                Shivnath Shikshan & Seva Samiti
+              </p>
             <div className="h-0.5 w-12 bg-white mt-3"></div>
           </div>
         </div>
@@ -30,19 +30,40 @@ const Society = () => {
           <div className="flex flex-col md:flex-row gap-8 mb-8">
             <div className="flex-1">
               <p className="mb-4">
-                CSIT pushes the frontiers of Modern Science and Engineering
-                through Teaching and Research. With this Perspective in Mind,
-                Eminent Academicians, Educationalists, Administrators, &
-                Enthusiastic people of Chhattisgarh have initiated the formation
-                of a Society under the aegis of Shivnath Shikshan & Seva Samiti,
-                registered under the Provision of statute 44 of M. P.
-                Vishwavidhyalaya Adhiniyam 1973 & CSIT was thus Established at
-                Durg with keeping in mind the overall development of students in
-                the field of Science and Technology, Social, Economical and
-                Educational Upgradation. We also focus on rural development with
-                respect to their technological aims, infrastructure and
-                environmental conservation and leadership Qualities.
-              </p>
+                          Rapid advancements in technology are creating unprecedented opportunities
+                          for innovation across every field of engineering. Today, opportunities
+                          to benefit society through engineering advancements are unparalleled in
+                          history.
+                          CSIT pushes the frontiers of modern science and engineering through
+                          teaching and research. With this perspective in mind, eminent
+                          academicians, educationalists, administrators, and enthusiastic people
+                          of Chhattisgarh initiated the formation of a society under the aegis of {" "}
+                          <strong>Shivnath Shikshan & Seva Samiti</strong>, registered under the
+                          provisions of Statute 44 of M.P. Vishwavidyalaya Adhiniyam 1973.
+                        </p>
+
+                        <p className="mb-6">
+                          CSIT was thus established at Durg with the following objectives:
+                        </p>
+
+             <div className="space-y-3">
+                      {[
+                        "The overall development of Chhattisgarh in the fields of education, economy, and social upliftment.",
+                        "Development of rural technology, infrastructure, and environmental conservation.",
+                        "Deliver world-class research-based education to students and broad-based training to leaders in academia, industry, and society.",
+                        "To expand the base of Engineering Knowledge through Original Research and by Developing Technology to serve the needs of Society.",
+                      ].map((item, index) => (
+                        <div
+                          key={index}
+                          className="flex items-start gap-3 p-4 border border-gray-200 rounded-lg"
+                        >
+                          <span className="text-[#0d173b] font-bold">
+                            {index + 1}.
+                          </span>
+                          <p className="text-gray-700">{item}</p>
+                        </div>
+                      ))}
+                    </div>
             </div>
             <div className="md:w-1/3 bg-gray-50 rounded-md border border-gray-200 flex-shrink-0">
               <div className="p-6 text-center h-full flex flex-col justify-center">

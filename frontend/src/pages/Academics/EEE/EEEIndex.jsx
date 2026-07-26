@@ -1,8 +1,10 @@
 import {
   Beaker,
   BookOpen,
+  BookUser,
   Briefcase,
   ChevronDown,
+  FileText,
   Target,
   Users,
 } from "lucide-react";
@@ -13,6 +15,31 @@ import Career from "./Careers.jsx";
 import CourseOutcome from "./CourseOutcome.jsx";
 import Faculty from "./Faculty.jsx";
 import LaboratoriesContent from "./laboratory.jsx";
+import QuestionPaper from "./QuestionPaper.jsx";
+
+const HodDeskContent = () => (
+  <div className="bg-white shadow-md rounded-md overflow-hidden">
+    <div className="h-40 bg-gray-100 relative">
+      <div className="absolute inset-0 flex items-center px-6">
+        <div>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0d173b]">
+            HOD’s Desk
+          </h2>
+          <p className="text-gray-500 text-sm mt-2">CSIT | HOD’s Desk</p>
+          <div className="h-0.5 w-12 bg-[#0d173b] mt-3"></div>
+        </div>
+      </div>
+    </div>
+    <div className="p-6 prose max-w-none text-gray-700">
+      <p>Welcome to the Department of Electrical & Electronics Engineering at CSIT Durg. Established in 2004, the department has been dedicated to providing quality technical education and developing competent engineers who can meet the challenges of the rapidly evolving technological world.</p>
+      <p>Our department strives to create a learning environment that nurtures academic excellence, innovation, professional ethics, and leadership qualities. We focus not only on building a strong theoretical foundation but also on enhancing practical skills through laboratories, industrial visits, expert lectures, workshops, internships, and project-based learning.</p>
+      <p>With the support of experienced faculty members and modern infrastructure, we encourage students to explore emerging technologies and develop problem-solving abilities required by industry and society. Along with academics, students are motivated to participate in technical events, research activities, cultural programs, and community engagement initiatives for their overall personality development.</p>
+      <p>Our commitment is to prepare graduates who are technically proficient, socially responsible, and capable of contributing effectively to the nation's growth and technological advancement.</p>
+      <p>I warmly welcome all aspiring engineers to the Department of Electrical & Electronics Engineering and wish them success in their academic and professional journey.</p>
+      <p className="font-bold">Dr. Padmini Sharma<br />Head of Department<br />Department of Electrical & Electronics Engineering<br />CSIT, Durg<br />22+ Years of Teaching Experience</p>
+    </div>
+  </div>
+);
 
 export default function ModernDepartmentPage() {
   const [activeTab, setActiveTab] = useState("aim");
@@ -20,10 +47,16 @@ export default function ModernDepartmentPage() {
 
   // Content data for tabs
   const tabContent = {
+   
     aim: {
       title: "Our Aim",
       icon: <Target className="text-indigo-500" />,
       content: <AimContent />,
+    },
+     hod: {
+      title: "HOD's Desk",
+      icon: <BookUser className="text-purple-500" />,
+      content: <HodDeskContent />,
     },
     laboratories: {
       title: "Laboratories",
@@ -44,6 +77,11 @@ export default function ModernDepartmentPage() {
       title: "Faculty Members",
       icon: <Users className="text-blue-500" />,
       content: <Faculty />,
+    },
+    question: {
+      title: "Question Paper [CT | University] ",
+      icon: <FileText className="text-blue-500" />,
+      content: <QuestionPaper />,
     },
   };
 
@@ -121,7 +159,7 @@ export default function ModernDepartmentPage() {
                     : "border-b-2 border-transparent text-gray-500 hover:bg-gray-300 hover:text-gray-700"
                 }`}
               >
-                <span className="text-sm lg:text-base">
+                <span className="text-sm lg:text-xs font-medium">
                   {tabContent[tab].title}
                 </span>
               </button>

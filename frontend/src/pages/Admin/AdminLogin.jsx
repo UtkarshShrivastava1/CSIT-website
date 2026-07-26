@@ -1,11 +1,8 @@
 import React from "react";
-// import axios from "axios";
-// import axios from 'axios';
 import { Eye, EyeOff, LogIn, User, Lock } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../../../services/api";
-import axios from "axios";
+import api from "../../services/api";
 import { trackCompleteRegistration } from "../../utils/fbPixel";
 
 function AdminLogin() {
@@ -47,8 +44,6 @@ function AdminLogin() {
         content_name: "Admin Dashboard Access",
         status: "success",
       });
-      // Redirect to admin dashboard
-      alert("Login successful");
       router("/admin/dashboard");
     } catch (err) {
       console.error("Login error:", err);

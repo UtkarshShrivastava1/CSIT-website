@@ -2,14 +2,14 @@ import React from "react";
 
 const GoverningBody = () => {
   const members = [
-    { id: 1, name: "Dr. Santosh Kr. Sharma", designation: "	Director" },
-    { id: 2, name: "Mr. Sanjay Kr. Singh", designation: "Associate Professor" },
-    { id: 3, name: "Mr. H.R. Chandrakar", designation: "Associate Professor" },
-    { id: 4, name: "Mr. Revendra Kr. Deshmukh", designation: "Assistant Professor" },
-    { id: 5, name: "Mr. Abhishek Kumar Gupta", designation: "Assistant Professor" },
-    { id: 6, name: "Mr. Priyank Shrivastava", designation: "Assistant Professor" },
-    { id: 7, name: "Mr. Pradeep Agrawal", designation: "In-Charge Head & Assistant Professor" },
-   
+    { id: 1, name: "Dr. Anand Kumbhare", designation: "Head & Associate Professor", email: "anandkumbhare@csitdurg.in" },
+    { id: 2, name: "Dr. Santosh Kr. Sharma", designation: "Dean( R& D) & Associate Professor", email: "santoshsharma@csitdurg.in" },
+    { id: 3, name: "Mr. Sanjay Kr. Singh", designation: "Dean( Student Affairs, TPO) & Associate Professor", email: "sanjaysingh@csitdurg.in" },
+    { id: 4, name: "Mr. H R Chandrakar", designation: "Associate Professor", email: "hrchandrakar@csitdurg.in" },
+    { id: 5, name: "Mr. Pradeep Kr. Agrawal", designation: "Assistant Professor", email: "pradeepagrawal@csitdurg.in" },
+    { id: 6, name: "Mr. Abhishek Kr. Gupta", designation: "Assistant Professor", email: "abhishekgupta@csitdurg.in" },
+    { id: 7, name: "Mr. Priyank Shrivastava", designation: "Assistant Professor", email: "priyankshrivastava@csitdurg.in" },
+    { id: 8, name: "Mr. Narendra Suryawamshi", designation: "Assistant Professor", email: "narendrasuryawanshi@csitdurg.in" },
   ];
 
   return (
@@ -37,19 +37,25 @@ const GoverningBody = () => {
               <th className="px-6 py-3">S.No</th>
               <th className="px-6 py-3">Name of Members</th>
               <th className="px-6 py-3">Designation</th>
+              <th className="px-6 py-3">Email</th>
             </tr>
           </thead>
           <tbody className="text-sm text-gray-800">
             {members.map((member, idx) => (
               <tr
                 key={member.id}
-                className={idx % 2 === 0 ? "bg-gray-100" : "bg-white"}
+                className="border-b border-gray-100 hover:bg-gray-50 transition"
               >
                 <td className="px-6 py-4 font-medium text-[#0d173b]">
                   {idx + 1}
                 </td>
                 <td className="px-6 py-4">{member.name}</td>
                 <td className="px-6 py-4">{member.designation}</td>
+                <td className="px-6 py-4">
+                  <a href={`mailto:${member.email}`} className="text-blue-600 hover:underline">
+                    {member.email}
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>

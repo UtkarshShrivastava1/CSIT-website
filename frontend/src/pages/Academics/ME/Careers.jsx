@@ -5,29 +5,40 @@ const CareerOpportunity = () => {
   
   // Career paths and opportunities data
   const higherStudies = [
-    "Master of Technology (M.Tech) ",
-    " Master of Business Administration",
-    " Master of Science ( Abroad) ",
+    "Master of Technology (M.Tech)",
+    "Master of Business Administration",
+    "Master of Science ( Abroad)",
     "Post Graduation Diploma",
-    " Research and Analysis",
+    "Research and Analysis",
     "Master of Philosophy (M.Phil)",
     "Doctor of Philosophy (Ph.D)",
   ];
   
   const governmentSector = [
-    "BHEL (Bharat Heavy Electricals Limited)",
-    "HPCL (Hindustan Petroleum Corporation Limited) ",
-    "DRDO (Defense Research & Development Organization)",
-    "NHPC (National Hydroelectric Power Corporation) ",
-    " IOCL (Indian Oil Corporation Limited)"
+    "Public Sector Undertakings (PSUs)",
+    "Indian Railways",
+    "Defense Sector",
+    "Engineering Services Examination (ESE/IES)",
+    "State Government Departments",
+    "Research and Development Organizations",
+    "Atomic Energy Sector",
+    "Staff Selection Commission (SSC)",
+    "Teaching and Academic Careers",
   ];
   
   const privateSector = [
-    "TATA Group",
-    "Thermax",
-    "Larsen & Toubro",
-    "The Godrej Group",
-    "Ashok Leyland",
+    "Design Engineering",
+    "Manufacturing & Production Engineering",
+    "Automobile Engineering",
+    "Thermal Engineering",
+    "Industrial Engineering",
+    "Maintenance Engineering",
+    "Robotics and Automation",
+    "Aerospace Engineering",
+    "Oil, Gas and Energy Sector",
+    "Quality Engineering",
+    "Research and Development (R&D)",
+    "Mechatronics and Smart Systems",
   ];
   
   const jobTitles = [
@@ -41,6 +52,7 @@ const CareerOpportunity = () => {
     "Nuclear Engineer ",
     "Professor/Lecturer ",
     "Manufacturing Engineer",
+    "And many more...",
   ];
   
   return (
@@ -49,7 +61,7 @@ const CareerOpportunity = () => {
         <div className="absolute inset-0 flex items-center px-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d173b]">
-            CareerOpportunity
+            Career Opportunities
             </h2>
             <p className="text-gray-500 text-sm mt-2">CSIT | Careers</p>
             <div className="h-0.5 w-14 bg-[#0d173b] mt-3 rounded"></div>
@@ -59,7 +71,7 @@ const CareerOpportunity = () => {
       {/* Overview section */}
       <section>
         <p className="text-gray-700 leading-relaxed mb-6">
-        Mechanical engineering is an engineering branch that combines engineering physics and mathematics principles with materials science, to design, analyze, manufacture, and maintain mechanical systems. It is one of the oldest and broadest of the engineering branches.
+        Mechanical Engineering is one of the broadest and most versatile engineering disciplines. It involves the design, manufacturing, operation, maintenance, and improvement of machines, mechanical systems, and industrial processes. Mechanical engineers are employed in almost every sector of industry, making it one of the most sought-after engineering branches.
         </p>
       </section>
       
@@ -92,12 +104,14 @@ const CareerOpportunity = () => {
           {activeSection === "overview" && (
             <div className="space-y-6">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Future for Mechanical Engineering
+                Overview
               </h3>
               
               <div className="bg-gradient-to-r from-gray-50 to-gray-50 p-5 rounded-xl border border-gray-100">
                 <p className="text-gray-700">
                 Mechanical Engineering offers diverse career paths across education, government, and private sectors. Graduates can pursue advanced degrees, work in prestigious tech companies, or take on specialized technical roles that leverage their engineering skills.
+                <br /><br />
+                <span className="font-semibold">Future Scope:</span> With the advancement of automation, renewable energy, electric vehicles, smart manufacturing, and sustainable technologies, Mechanical Engineering continues to offer diverse and rewarding career opportunities. Its broad foundation enables graduates to work in traditional industries as well as emerging technology sectors, making it one of the most versatile engineering disciplines.
                 </p>
                 
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -150,16 +164,15 @@ const CareerOpportunity = () => {
           {activeSection === "govt-sector" && (
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Government Sector Opportunities
+                Government Sector
               </h3>
-              
+              <p className="text-gray-700 mb-4">Mechanical Engineering graduates have a wide range of career opportunities in government organizations, public sector undertakings (PSUs), defense services, railways, and research institutions.</p>
               <ul className="space-y-3">
                 {governmentSector.map((org, index) => (
                   <li key={index} className="bg-blue-50 rounded-lg p-3 text-gray-800">
                     {org}
                   </li>
                 ))}
-                <li className="bg-blue-50 rounded-lg p-3 text-gray-800">And many more...</li>
               </ul>
               
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100">
@@ -176,16 +189,15 @@ const CareerOpportunity = () => {
           {activeSection === "private-sector" && (
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Private Sector Companies
+                Private Sector
               </h3>
-              
+              <p className="text-gray-700 mb-4">Mechanical Engineering offers opportunities across diverse industrial sectors. The major career verticals are:</p>
               <ul className="space-y-3">
                 {privateSector.map((company, index) => (
                   <li key={index} className="bg-blue-50 rounded-lg p-3 text-gray-800">
                     {company}
                   </li>
                 ))}
-                <li className="bg-gray-50 rounded-lg p-3 text-gray-800">And many more...</li>
               </ul>
               
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100">
@@ -202,7 +214,7 @@ const CareerOpportunity = () => {
           {activeSection === "job-titles" && (
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Job Titles for Computer Science Engineers
+                Job Titles
               </h3>
               
               <ul className="space-y-3">
@@ -211,7 +223,6 @@ const CareerOpportunity = () => {
                     {title}
                   </li>
                 ))}
-                <li className="bg-gray-50 rounded-lg p-3 text-gray-800">And many more...</li>
               </ul>
               
              

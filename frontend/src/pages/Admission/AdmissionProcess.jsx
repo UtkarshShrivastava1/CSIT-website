@@ -1,9 +1,23 @@
 import React from "react";
 
 const AdmissionProcess = () => {
+  const documentsList = [
+    { name: "10th Marksheet", category: "Academic" },
+    { name: "12th Marksheet", category: "Academic" },
+    { name: "PET/JEE Score card", category: "Exam" },
+    { name: "Diploma Marksheet (For Lateral entry)", category: "Academic" },
+    { name: "Domicile certificate", category: "Identity" },
+    { name: "Transfer & Character certificate", category: "Identity" },
+    { name: "Gap certificate (if required)", category: "Identity" },
+    { name: "5 Passport size photos", category: "Identity" },
+    { name: "Caste certificate (if required)", category: "Identity" },
+    { name: "Migration Certificate", category: "Identity" },
+    { name: "Aadhar Card", category: "Identity" },
+  ];
+
   return (
-    <div className="bg-white shadow-xl rounded-xl overflow-hidden">
-      {/* Header with animated gradient */}
+    <div className="bg-white shadow-xl rounded-lg overflow-hidden">
+      {/* Header */}
       <div className="h-44 bg-gradient-to-r from-[#0d173b] to-[#1e305f] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full transform rotate-12 scale-150 translate-y-10">
@@ -24,232 +38,208 @@ const AdmissionProcess = () => {
         </div>
       </div>
 
-      {/* Content Section */}
-      <div className="p-8 md:p-10 space-y-10 text-gray-800 leading-relaxed bg-gradient-to-b from-white to-gray-50">
-        {/* Admission Procedure */}
-        <div className="space-y-4 bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#0d173b]">
-          <h3 className="text-xl font-semibold text-[#0d173b] flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mr-2 text-[#1e305f]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            Admission Procedure
+      {/* Content */}
+      <div className="p-6 md:p-8 space-y-6 bg-gradient-to-b from-white to-gray-50">
+        {/* Admission Procedure B.Tech */}
+        <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#0d173b]">
+          <h3 className="text-xl font-semibold text-[#0d173b] flex items-center gap-2 mb-3">
+            <span className="text-2xl">📋</span>
+            Admission Procedure B.Tech
           </h3>
-          <div className="h-0.5 w-12 bg-[#0d173b] opacity-40 mb-2"></div>
-          <p className="text-sm">
-            Admission through{" "}
-            <span className="font-medium text-[#1e305f]">
-              Centralized Counseling
-            </span>{" "}
-            by DTE, CG, Raipur.
+          <div className="h-0.5 w-12 bg-[#0d173b] opacity-40 mb-4"></div>
+
+          <div className="space-y-4">
+            {/* Entrance Examination */}
+            <div>
+              <h4 className="font-semibold text-[#1e305f]">A. Entrance Examination</h4>
+              <p className="text-sm text-gray-700 mt-1">
+                You must qualify in one of the accepted entrance exams:
+              </p>
+              <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-gray-700">
+                <li>
+                  <span className="font-medium">CG-PET:</span> The state level
+                  Pre-Engineering Test conducted by the CG VYAPAM (Old name).
+                </li>
+                <li>
+                  <span className="font-medium">JEE Mains:</span> Accepted across
+                  major institutions in Chhattisgarh.
+                </li>
+              </ul>
+            </div>
+
+            {/* Eligibility Criteria */}
+            <div>
+              <h4 className="font-semibold text-[#1e305f]">B. Eligibility Criteria</h4>
+              <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-gray-700">
+                <li>
+                  <span className="font-medium">Education Qualification:</span> Pass
+                  Class 12th with Physics, Chemistry & Mathematics.
+                </li>
+                <li>
+                  <span className="font-medium">Minimum Marks:</span> General
+                  candidates require <strong>45%</strong> or above, while reserved
+                  categories (SC/ST/OBC/PWD) require <strong>40%</strong> or more in
+                  aggregate in PCM subjects.
+                </li>
+              </ul>
+            </div>
+
+            {/* State Centralized Counselling */}
+            <div>
+              <h4 className="font-semibold text-[#1e305f]">
+                C. State Centralized Counselling (CGDTE)
+              </h4>
+              <p className="text-sm text-gray-700 mt-1">
+                Admissions are administrated through central online counselling
+                managed by the Directorate of Technical Education (CG DTE).
+              </p>
+              <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-gray-700">
+                <li>
+                  <span className="font-medium">Registration:</span> Register on the
+                  official CG DTE counselling portal using your exam roll number.
+                </li>
+                <li>
+                  <span className="font-medium">Choice Filling:</span> Select your
+                  preferred engineering college and branches based on your merit
+                  rank.
+                </li>
+                <li>
+                  <span className="font-medium">Seat Allotment:</span> Seats are
+                  allotted through consecutive rounds.
+                </li>
+                <li>
+                  <span className="font-medium">Document Verification:</span> If a
+                  seat is allotted, you must verify the required documents
+                  (original and copy both) and pay the semester fees to freeze your
+                  seat.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Admission Procedure B.Tech Lateral Entry */}
+        <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#1e305f]">
+          <h3 className="text-xl font-semibold text-[#1e305f] flex items-center gap-2 mb-3">
+            <span className="text-2xl">↗️</span>
+            Admission Procedure B.Tech (Lateral Entry)
+          </h3>
+          <div className="h-0.5 w-12 bg-[#1e305f] opacity-40 mb-4"></div>
+
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-[#0d173b]">A. Entrance Examination</h4>
+              <p className="text-sm text-gray-700 mt-1">
+                No entrance exam is compulsory for B.Tech lateral entry.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-[#0d173b]">B. Eligibility Criteria</h4>
+              <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-gray-700">
+                <li>
+                  <span className="font-medium">Education Qualification:</span> Should
+                  have completed Diploma of Engineering.
+                </li>
+                <li>
+                  <span className="font-medium">BSc graduates</span> are also eligible
+                  but with PCM in 12th boards.
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-[#0d173b]">
+                C. State Centralized Counselling (CGDTE)
+              </h4>
+              <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-gray-700">
+                <li>
+                  <span className="font-medium">Registration:</span> Register on the
+                  official CG DTE counselling portal.
+                </li>
+                <li>
+                  <span className="font-medium">Choice Filling:</span> Select your
+                  preferred college and branches.
+                </li>
+                <li>
+                  <span className="font-medium">Seat Allotment:</span> Seats are
+                  allotted through consecutive rounds.
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-[#0d173b]">D. Document Verification</h4>
+              <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-gray-700">
+                <li>Verify the required documents (original and copy both).</li>
+                <li>Pay the remaining fees to freeze your seat.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* ✅ Documents Required Section - NEW */}
+        <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-emerald-600">
+          <h3 className="text-xl font-semibold text-[#0d173b] flex items-center gap-2 mb-3">
+            <span className="text-2xl">📄</span>
+            List of Required Documents
+          </h3>
+          <div className="h-0.5 w-12 bg-[#0d173b] opacity-40 mb-4"></div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {documentsList.map((doc, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100 hover:border-[#0d173b] transition-colors"
+              >
+                <div className="h-6 w-6 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                  <span className="text-xs font-bold text-[#0d173b]">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <span className="text-sm text-gray-700">{doc.name}</span>
+                {doc.category === "Academic" && (
+                  <span className="ml-auto text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">
+                    Academic
+                  </span>
+                )}
+                {doc.category === "Identity" && (
+                  <span className="ml-auto text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
+                    Identity
+                  </span>
+                )}
+                {doc.category === "Exam" && (
+                  <span className="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">
+                    Exam
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="bg-gradient-to-r from-[#0d173b] to-[#1e305f] p-6 rounded-lg text-center">
+          <p className="text-white text-lg font-medium">
+            Haven't appeared in any entrance exam and wants to pursue B.Tech?
           </p>
-          <p className="text-sm">
-            For complete counseling details visit:{" "}
+          <p className="text-white text-2xl font-bold mt-2">📞 8966000102</p>
+        </div>
+
+        {/* Helpdesk Note */}
+        <div className="bg-white p-4 rounded-lg border border-gray-200">
+          <p className="text-sm text-gray-600">
+            <span className="font-medium text-[#0d173b]">Note:</span> For complete
+            counseling details visit:{" "}
             <a
               href="https://www.cgdteraipur.cgstate.gov.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 underline hover:text-[#1e305f] transition-colors"
+              className="text-blue-600 hover:underline"
             >
               www.cgdteraipur.cgstate.gov.in
             </a>
           </p>
-        </div>
-
-        {/* Documents Required */}
-        <div className="space-y-4 bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#0d173b]">
-          <h3 className="text-xl font-semibold text-[#0d173b] flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mr-2 text-[#1e305f]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            Documents Required
-          </h3>
-          <div className="h-0.5 w-12 bg-[#0d173b] opacity-40 mb-2"></div>
-          <p className="text-sm">
-            Please bring the following documents along with{" "}
-            <span className="font-medium text-[#1e305f]">
-              3 self-attested photocopies
-            </span>{" "}
-            and original copies for verification:
-          </p>
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <ul className="list-none grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2 text-sm text-gray-700">
-              {[
-                "Allotment Letter (DTE, Raipur)",
-                "Entrance Exam Score Card – 2023",
-                "6 Passport Size Photographs",
-                "Class 10th Marksheet",
-                "Class 12th Marksheet",
-                "Diploma Marksheet (If Applicable)",
-                "Domicile Certificate (Niwas Praman Patra)",
-                "Transfer Certificate",
-                "Character Certificate",
-                "Migration Certificate (Except CG Board)",
-                "Gap Certificate (If Applicable)",
-                "Caste Certificate (If Applicable)",
-                "Aadhar Card (Photocopy)",
-              ].map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <div className="flex-shrink-0 h-3 w-3 rounded-full text-white bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-2 mt-0.5">
-                    <div className="h-1 w-1 rounded-full "></div>
-                  </div>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Bank Details */}
-        <div className="space-y-4 bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#0d173b]">
-          <h3 className="text-xl font-semibold text-[#0d173b] flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mr-2 text-[#1e305f]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-              />
-            </svg>
-            Fee Payment Details
-          </h3>
-          <div className="h-0.5 w-12 bg-[#0d173b] opacity-40 mb-2"></div>
-          <p className="text-sm">
-            Fee can be deposited via Cheque / DD / Online Transfer using the
-            following bank details:
-          </p>
-          <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-6 rounded-lg shadow-inner border border-gray-100">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 text-sm">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-3 mt-0.5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-3 w-3 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <span className="font-medium text-[#1e305f] block mb-1">
-                    Account Name:
-                  </span>
-                  <span>
-                    Director, Chhatrapati Shivaji Institute of Technology, Durg
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-3 mt-0.5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-3 w-3 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <span className="font-medium text-[#1e305f] block mb-1">
-                    Bank & Branch:
-                  </span>
-                  <span>Axis Bank, Chandkhuri, Durg</span>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-3 mt-0.5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-3 w-3 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <span className="font-medium text-[#1e305f] block mb-1">
-                    Account No.:
-                  </span>
-                  <span>590010100009676</span>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-3 mt-0.5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-3 w-3 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <span className="font-medium text-[#1e305f] block mb-1">
-                    IFS Code:
-                  </span>
-                  <span>UTIB0001666</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

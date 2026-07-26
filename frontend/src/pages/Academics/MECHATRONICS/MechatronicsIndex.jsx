@@ -3,6 +3,7 @@ import {
   BookOpen,
   Briefcase,
   ChevronDown,
+  FileText,
   Target,
   Users,
 } from "lucide-react";
@@ -13,6 +14,8 @@ import Career from "./Careers.jsx";
 import CourseOutcome from "./CourseOutcome.jsx";
 import Faculty from "./Faculty.jsx";
 import LaboratoriesContent from "./laboratory.jsx";
+import QuestionPaper from "./QuestionPaper.jsx";
+
 
 export default function ModernDepartmentPage() {
   const [activeTab, setActiveTab] = useState("aim");
@@ -44,6 +47,11 @@ export default function ModernDepartmentPage() {
       title: "Faculty Members",
       icon: <Users className="text-blue-500" />,
       content: <Faculty />,
+    },
+    question: {
+      title: "Question Paper [CT | University] ",
+      icon: <FileText className="text-blue-500" />,
+      content: <QuestionPaper />,
     },
   };
 
@@ -121,7 +129,7 @@ export default function ModernDepartmentPage() {
                     : "border-b-2 border-transparent text-gray-500 hover:bg-gray-300 hover:text-gray-700"
                 }`}
               >
-                <span className="text-sm lg:text-base">
+                <span className="text-sm lg:text-xs">
                   {tabContent[tab].title}
                 </span>
               </button>

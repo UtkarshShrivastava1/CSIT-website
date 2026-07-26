@@ -1,10 +1,10 @@
-import { useState } from "react";
-import thred   from "../../../assets/Civil/civil3rdsem.pdf";
-import fourth  from "../../../assets/Civil/civil4thsem.pdf";
-import fifth   from "../../../assets/Civil/civil5thsem.pdf";
-import sixth   from "../../../assets/Civil/civil6thsem.pdf";
-import seventh from "../../../assets/Civil/civil7thsem.pdf";
-import eighth  from "../../../assets/Civil/civil8thsem.pdf";
+import React from 'react';
+const thred  = "https://drive.google.com/file/d/1yFp7Y9gWUILirZzoiyOcURBdk-_2vkvV/view?usp=sharing";
+const fourth  = "https://drive.google.com/file/d/1_JMWwp5FzE51Bt4ZBZOMohbNIZF65QSc/view?usp=sharing";
+const fifth   = "https://drive.google.com/file/d/1LEL4Xyk4ddAg5E2RspKclbOaDAB0WeOA/view?usp=sharing";
+const sixth   = "https://drive.google.com/file/d/1TuZhn85Zm11ILjcGlHhM-yJ0rkRucTak/view?usp=sharing";
+const seventh = "https://drive.google.com/file/d/1ZrHrjwIecuWZQ6uhsiy__Ez8o5mv0Bx2/view?usp=sharing";
+const eighth  = "https://drive.google.com/file/d/1tpF91po7mjLELl2cE69DjEPERDEhMYKz/view?usp=sharing";
 
 const CSECourseOutcomes = () => {
   // Data for semesters with syllabus paths

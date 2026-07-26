@@ -1,62 +1,61 @@
 import React from "react";
 
 const CoursesOffered = () => {
-  // Add mobile cards view and hide table on mobile
   const coursesData = [
     {
       no: "1",
-      course: "B.Tech. in Mechanical Engineering",
-      estd: "1999",
-      seats: "60",
-      icon: "⚙️",
-    },
-    {
-      no: "2",
-      course: "B.Tech. in Computer Science & Engineering",
+      course: "B.Tech. in Computer Science Engineering",
       estd: "1999",
       seats: "90",
       icon: "💻",
     },
     {
-      no: "3",
-      course: "B.Tech. in Information Technology",
-      estd: "2008",
-      seats: "45",
-      icon: "🌐",
-    },
-    {
-      no: "4",
-      course: "B.Tech. in Mechatronics Engineering",
-      estd: "2009",
-      seats: "30",
-      icon: "🤖",
-    },
-    {
-      no: "5",
-      course: "B.Tech. in Civil Engineering",
-      estd: "2017",
-      seats: "45",
-      icon: "🏗️",
-    },
-    {
-      no: "6",
+      no: "2",
       course: "B.Tech. in Artificial Intelligence & Data Science",
       estd: "2021",
       seats: "60",
       icon: "🧠",
     },
     {
-      no: "7",
+      no: "3",
+      course: "B.Tech. in Civil Engineering",
+      estd: "2017",
+      seats: "45",
+      icon: "🏗️",
+    },
+    {
+      no: "4",
+      course: "B.Tech. in Mechanical Engineering",
+      estd: "1999",
+      seats: "60",
+      icon: "⚙️",
+    },
+    {
+      no: "5",
       course: "B.Tech. in Electrical & Electronics Engineering",
       estd: "2002",
       seats: "30",
       icon: "⚡",
     },
+    {
+      no: "6",
+      course: "B.Tech. in Information Technology",
+      estd: "2008",
+      seats: "45",
+      icon: "🌐",
+    },
+    {
+      no: "7",
+      course: "B.Tech. in Mechatronics Engineering",
+      estd: "2009",
+      seats: "30",
+      icon: "🤖",
+    },
   ];
 
   return (
     <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-      {/* Header with gradient background */}
+      {/* Header */}
       <div className="h-44 bg-gradient-to-r from-[#0d173b] to-[#1e305f] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full transform rotate-12 scale-150 translate-y-10">
@@ -77,7 +76,6 @@ const CoursesOffered = () => {
         </div>
       </div>
 
-      {/* Table/Card Container */}
       <div className="p-6 md:p-8">
         {/* Mobile View - Cards */}
         <div className="md:hidden space-y-4">
@@ -125,7 +123,7 @@ const CoursesOffered = () => {
           ))}
         </div>
 
-        {/* Desktop View - Existing Table */}
+        {/* Desktop View - Table */}
         <div className="hidden md:block">
           <div className="rounded-lg overflow-hidden shadow-md border border-gray-200">
             <table className="min-w-full">
@@ -133,62 +131,12 @@ const CoursesOffered = () => {
                 <tr className="bg-[#0d173b] text-white text-left text-sm uppercase tracking-wider">
                   <th className="px-6 py-4 font-semibold">S.No</th>
                   <th className="px-6 py-4 font-semibold">Courses</th>
-                  <th className="px-6 py-4 font-semibold">Estd</th>
+                  <th className="px-6 py-4 font-semibold">Year Estd.</th>
                   <th className="px-6 py-4 font-semibold">Seats</th>
                 </tr>
               </thead>
               <tbody className="text-sm text-gray-800">
-                {[
-                  {
-                    no: "1",
-                    course: "B.Tech. in Mechanical Engineering",
-                    estd: "1999",
-                    seats: "60",
-                    icon: "⚙️",
-                  },
-                  {
-                    no: "2",
-                    course: "B.Tech. in Computer Science & Engineering",
-                    estd: "1999",
-                    seats: "90",
-                    icon: "💻",
-                  },
-                  {
-                    no: "3",
-                    course: "B.Tech. in Information Technology",
-                    estd: "2008",
-                    seats: "45",
-                    icon: "🌐",
-                  },
-                  {
-                    no: "4",
-                    course: "B.Tech. in Mechatronics Engineering",
-                    estd: "2009",
-                    seats: "30",
-                    icon: "🤖",
-                  },
-                  {
-                    no: "5",
-                    course: "B.Tech. in Civil Engineering",
-                    estd: "2017",
-                    seats: "45",
-                    icon: "🏗️",
-                  },
-                  {
-                    no: "6",
-                    course: "B.Tech. in Artificial Intelligence & Data Science",
-                    estd: "2021",
-                    seats: "60",
-                    icon: "🧠",
-                  },
-                  {
-                    no: "7",
-                    course: "B.Tech. in Electrical & Electronics Engineering",
-                    estd: "2002",
-                    seats: "30",
-                    icon: "⚡",
-                  },
-                ].map((item, idx) => (
+                {coursesData.map((item, idx) => (
                   <tr
                     key={idx}
                     className={`${
@@ -197,7 +145,7 @@ const CoursesOffered = () => {
                   >
                     <td className="px-6 py-4 font-medium text-[#0d173b] border-b border-gray-100">
                       <div className="flex items-center">
-                        <div className="h-6 w-6   rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-2">
+                        <div className="h-6 w-6 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-2">
                           <span className="text-xs font-bold text-white">
                             {item.no}
                           </span>
@@ -211,7 +159,7 @@ const CoursesOffered = () => {
                       </div>
                     </td>
                     <td className="px-6 py-4 border-b border-gray-100">
-                      <span className="bg-[#0d173b] bg-opacity-3 text-white px-3 py-1 rounded-full text-xs font-medium">
+                      <span className="bg-[#0d173b] text-white px-3 py-1 rounded-full text-xs font-medium">
                         {item.estd}
                       </span>
                     </td>
@@ -241,7 +189,7 @@ const CoursesOffered = () => {
           </div>
         </div>
 
-        {/* Quick Facts Section - Show on both views */}
+        {/* Quick Facts */}
         <div className="mt-6 bg-white p-4 rounded-lg shadow-sm border border-gray-200">
           <div className="text-sm text-gray-600">
             <p className="font-medium text-[#0d173b] mb-2">Quick Facts:</p>

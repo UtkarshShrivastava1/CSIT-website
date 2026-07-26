@@ -7,25 +7,55 @@ import Gallery from './Gallery';
 import Grievances from './Grievances';
 import RTI from './RTI';
 import Feedback from './Feedback';
-import IQAC from './IQAC';
+// import IQAC from './IQAC';
 import Calendar from './Calendar';
 import StudentAffairsIndex from './Student affairs/StudentAffairsIndex';
 import RnD from './RnD';
 import Achievement from './Achievement';
+import Library from './Library';
+import Gymnasium from './Gymnasium';
+import MedicalFacilities from './MedicalFacilities';
 import Celebration from './Celebration';
+import GuestRoom from './GuestRoom';
+import SecurityServices from './SecurityServices';
+import EstateOffice from './EstateOffice';
+import Sports from './Sports';
+import Anti_Raging from './Anti_Raging';
+import ProfessionalBodiesPage from './ProfessionalBodies';
+import Canteen from './Canteen';
+import ComputerCentre from './ComputerCentre';
+import ConferenceHalls from './ConferenceHalls';
+import HostelAndOthers from './HostelAndOthers';
+import CentralWorkshop from './CentralWorkshop';
+import StaffQuarters from './StaffQuarters';
+
 
 const sidebarLinks = [
-  { name: 'Student Affairs', path: 'student-affairs' },
-  { name: 'R&D', path: 'research-and-development' },
   { name: 'Calendar', path: 'calendar' },
   { name: 'Feedback', path: 'feedback' },
   { name: 'Gallery', path: 'gallery' },
   { name: 'Grievances', path: 'grievances' },
-  { name: 'IQAC', path: 'iqac' },
-  { name: 'RTI', path: 'rti' },
-  { name: 'Achievement', path: 'achievement' },
-    { name: 'Celebration', path: 'celebration' },
-    // { name: 'Facillities', path: '/campus/facilities' },
+  {
+    name: 'Facilities',
+    path: 'facilities',
+    subLinks: [
+      { name: 'Library', path: 'library' },
+      { name: 'Computer Centre', path: 'computer-centre' },
+      { name: 'Central Workshop', path: 'workshop' },
+      { name: 'Hostel', path: 'hostel' },
+      { name: 'Medical Facilities', path: 'medical-facilities' },
+      { name: 'Guest Room', path: 'guest-room' },
+      { name: 'Conference & Seminar Halls', path: 'conference-halls' },
+      { name: 'Security Services', path: 'security-services' },
+      { name: 'Gymnasium', path: 'gymnasium' },
+      { name: 'Canteen & Mess', path: 'canteen' },
+      { name: 'Staff Quarters', path: 'staff-quarters' },
+    ],
+  },
+  {name : 'Achivements' , path : 'achievements'},
+  { name: 'Professional Bodies', path: 'professional-bodies' },
+  { name: 'Sports', path: 'sports' },
+  { name: 'Anti-Ragging', path: 'anti-ragging' },
 ];
 
 export default function MorePage() {
@@ -33,9 +63,18 @@ export default function MorePage() {
   
   // Determine active section based on current path
   const getActiveSection = () => {
-    const path = location.pathname.split('/').pop();
-    const activeLink = sidebarLinks.find(link => link.path === path);
-    return activeLink ? activeLink.name : 'Student Affairs';
+    const pathSegments = location.pathname.split('/');
+    const currentPath = pathSegments[pathSegments.length - 1];
+
+    for (const link of sidebarLinks) {
+      if (link.path === currentPath) return link.name;
+      if (link.subLinks) {
+        for (const subLink of link.subLinks) {
+          if (subLink.path === currentPath) return link.name;
+        }
+      }
+    }
+    return 'Calendar'; // Default active section
   };
   
   return (
@@ -75,18 +114,28 @@ export default function MorePage() {
             {/* Main Content Area */}
             <main className="flex-1 min-h-[calc(100vh-400px)] bg-white rounded-lg shadow-sm p-4 md:p-6">
               <Routes>
-                <Route path="student-affairs" element={<StudentAffairsIndex />} />
-                <Route path="research-and-development" element={<RnD/>} />
                 <Route path="calendar" element={<Calendar />} />
                 <Route path="feedback" element={<Feedback />} />
                 <Route path="gallery" element={<Gallery />} />
                 <Route path="grievances" element={<Grievances />} />
-                <Route path="iqac" element={<IQAC />} />
-                <Route path="rti" element={<RTI />} />
-                <Route path="achievement" element={<Achievement />} />
-                <Route path="celebration" element={<Celebration />} />
-                <Route index element={<Navigate to="student-affairs" replace />} />
-                <Route path="*" element={<Navigate to="student-affairs" replace />} />
+                <Route path="library" element={<Library />} />
+                <Route path="computer-centre" element={<ComputerCentre />} />
+                <Route path="workshop" element={<CentralWorkshop />} />
+                <Route path="hostel" element={<HostelAndOthers />} />
+                <Route path="gymnasium" element={<Gymnasium />} />
+                <Route path="medical-facilities" element={<MedicalFacilities />} />
+                <Route path="guest-room" element={<GuestRoom />} />
+                <Route path="conference-halls" element={<ConferenceHalls />} />
+                <Route path="security-services" element={<SecurityServices />} />
+                <Route path="staff-quarters" element={<StaffQuarters />} />
+                <Route path="sports" element={<Sports />} />
+                <Route path="canteen" element={<Canteen />} />
+                <Route path="anti-ragging" element={<Anti_Raging />} />
+                <Route path="achievements" element={<Achievement />} />
+                <Route path="professional-bodies" element={<ProfessionalBodiesPage />} />
+                <Route index element={<Navigate to="calendar" replace />} />
+                <Route path="facilities" element={<Navigate to="library" replace />} />
+                <Route path="*" element={<Navigate to="calendar" replace />} />
               </Routes>
             </main>
           </div>

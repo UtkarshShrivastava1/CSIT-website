@@ -5,39 +5,59 @@ const CareerOpportunity = () => {
   
   // Career paths and opportunities data
   const higherStudies = [
-    "M. Tech in Structural Engineering",
-    " M. Tech in Geotechnical Engineering ",
-    "M.Tech in Infrastructure Engineering and Construction Management  ",
-    "Master of Philosophy in Civil Engineering",
-    "Post Graduate Diploma in Construction Management and many more..."
+    "Structural Engineering",
+    "Geotechnical Engineering",
+    "Transportation Engineering",
+    "Environmental Engineering",
+    "Construction Engineering and Management",
+    "Water Resources Engineering",
+    "Urban and Regional Planning",
+    "Earthquake Engineering",
+    "Remote Sensing and GIS",
+    "Post Graduate Diploma in Construction Management and many more....."
   ];
   
   const governmentSector = [
-    "Municipal Corporation",
-    " Metro Rail ",
-    "Central Public Works Department ",
-    " National Highway Authority of India",
-    "Indian Air Force  (DRDO)"
+    "Staff Selection Commission (AE/JE)",
+    "Central Public Works Department (CPWD)",
+    "National Highways Authority of India (NHAI)",
+    "Indian Railways",
+    "Border Roads Organization (BRO)",
+    "Military Engineer Services (MES)",
+    "Central Water Commission (CWC)",
+    "Airport Authority of India (AAI)",
+    "State Public Service Commissions (PSC – AE/JE)",
+    "Public Works Department (State PWD)",
+    "State Irrigation Departments",
+    "Public Health Engineering Department (PHED)",
+    "Municipal Corporations",
+    "Urban Development Authorities",
+    "And many more…."
   ];
   
   const privateSector = [
-    "Larsen and Toubro",
-    "Tata Group",
-    "Lanco Infratech",
-    "Hindustan Construction Company  ",
-    "Gammon",
-    
+    "Construction and Contracting",
+    "Infrastructure Development",
+    "Project Management and Consultancy (PMC)",
+    "Design and Engineering Consultancy",
+    "Surveying and Geospatial Services",
+    "Urban Infrastructure and Utilities",
+    "Industrial and Manufacturing Infrastructure",
+    "Construction Materials and Products",
+    "Building Information Modeling (BIM) and Digital Engineering",
+    "Specialized Construction Services",
+    "And Any More…….."
   ];
   
   const jobTitles = [
-    "Commissioning engineer",
-    " Civil engineer",
-    "Project engineer",
-    " Geotechnical engineer   ",
-    " Fire engineer ",
-    "  Professor ",
-    " Structural engineer",
-  
+    "Civil Engineer",
+    "Site Engineer",
+    "Construction Engineer",
+    "Project Engineer",
+    "Project Manager",
+    "Design Engineer",
+    "Planning Engineer",
+    "And many more…."
   ];
   
   return (
@@ -46,7 +66,7 @@ const CareerOpportunity = () => {
         <div className="absolute inset-0 flex items-center px-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0d173b]">
-            CareerOpportunity
+            Career Opportunities
             </h2>
             <p className="text-gray-500 text-sm mt-2">CSIT | Careers</p>
             <div className="h-0.5 w-14 bg-[#0d173b] mt-3 rounded"></div>
@@ -107,7 +127,7 @@ const CareerOpportunity = () => {
                   <span className="inline-flex px-3 py-1 rounded-full text-x font-medium  bg-blue-50 text-gray-800">
                     Private Sector
                   </span>
-                  <span className="inline-flex px-3 py-1 rounded-full text-x font-medium bg-gray-200 text-gray-800">
+                  <span className="inline-flex px-3 py-1 rounded-full text-x font-medium bg-blue-50 text-gray-800">
                     Specialized Roles
                   </span>
                 </div>
@@ -122,7 +142,7 @@ const CareerOpportunity = () => {
           {activeSection === "higher-studies" && (
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Higher Studies Options
+                Higher Studies
               </h3>
               
               <ul className="space-y-3">
@@ -147,7 +167,7 @@ const CareerOpportunity = () => {
           {activeSection === "govt-sector" && (
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Government Sector Opportunities
+                Government Sector
               </h3>
               
               <ul className="space-y-3">
@@ -156,7 +176,6 @@ const CareerOpportunity = () => {
                     {org}
                   </li>
                 ))}
-                <li className="bg-blue-50 rounded-lg p-3 text-gray-800">And many more...</li>
               </ul>
               
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100">
@@ -182,7 +201,6 @@ const CareerOpportunity = () => {
                     {company}
                   </li>
                 ))}
-                <li className="bg-gray-50 rounded-lg p-3 text-gray-800">And many more...</li>
               </ul>
               
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100">
@@ -199,7 +217,7 @@ const CareerOpportunity = () => {
           {activeSection === "job-titles" && (
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Job Titles for Computer Science Engineers
+                Job Titles for Civil Engineers
               </h3>
               
               <ul className="space-y-3">
@@ -208,7 +226,6 @@ const CareerOpportunity = () => {
                     {title}
                   </li>
                 ))}
-                <li className="bg-gray-50 rounded-lg p-3 text-gray-800">And many more...</li>
               </ul>
               
              

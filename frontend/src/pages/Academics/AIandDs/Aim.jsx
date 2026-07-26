@@ -20,6 +20,29 @@ const Aspiration = () => {
 
       <div className="p-6">
         <div className="prose max-w-none text-gray-700">
+          {/* HOD's Desk Section */}
+          <div className="mb-8">
+            <h3 className="text-xl font-medium text-[#0d173b] mb-2">
+              From the HOD's Desk – Department of Artificial Intelligence & Data Science
+            </h3>
+            <p>
+              The Department of Artificial Intelligence & Data Science (AI&DS) at CSIT, Durg is committed to preparing students for the data-driven future by providing quality education in Artificial Intelligence, Machine Learning, Data Science, and related emerging technologies. The department aims to develop professionals who can leverage data and intelligent systems to solve complex real-world problems.
+            </p>
+            <p>
+              With a curriculum aligned to industry needs and modern technological trends, students gain hands-on experience in data analytics, machine learning, deep learning, data visualization, cloud computing, and intelligent systems through well-equipped laboratories and project-based learning. Our faculty members serve as mentors and guides, fostering technical excellence, innovation, research aptitude, and professional growth among students.
+            </p>
+            <p>
+              The department actively promotes experiential learning through workshops, hackathons, internships, industry collaborations, and expert talks. These initiatives help students acquire practical skills, enhance their problem-solving abilities, and stay abreast of advancements in AI and Data Science.
+            </p>
+            <p>
+              Our mission is to nurture skilled, ethical, and innovative professionals who can contribute meaningfully to technological advancement and address the challenges of an increasingly intelligent and data-centric world.
+            </p>
+            <p className="font-semibold">
+              Kranti Kumar Jain<br />
+              <span className="font-normal">Head of Department</span><br />
+              <span className="font-normal">Department of Artificial Intelligence & Data Science</span>
+            </p>
+          </div>
           {/* Vision Section */}
           <div className="mb-8">
             <h3 className="text-xl font-medium text-[#0d173b] mb-2">
@@ -81,116 +104,86 @@ const Aspiration = () => {
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
-                  Engineering Knowledge :{" "}
+                  Engineering Knowledge:{" "}
                 </span>
-                Apply knowledge of mathematics and science, with fundamentals of
-                Computer Science & Engineering to be able to solve complex
-                engineering problems related to CSE.
+                Apply knowledge of mathematics and science, with fundamentals of Computer Science & Engineering to be able to solve complex engineering problems related to AI & DS.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   Problem Analysis:{" "}
                 </span>
-                Identify, Formulate, review research literature and analyze
-                complex engineering problems related to CSE and reaching
-                substantiated conclusions using first principles of mathematics,
-                natural sciences and engineering sciences.
+                Identify, Formulate, review research literature and analyze complex engineering problems related to AI & DS.and reaching substantiated conclusions using first principles of mathematics, natural sciences and engineering sciences.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   Design/Development of solutions:{" "}
                 </span>
-                Design solutions for complex engineering problems related to CSE
-                and design system components or processes that meet the
-                specified needs with appropriate consideration for the public
-                health and safety and the cultural societal and environmental
-                considerations.
+                Design solutions for complex engineering problems related to AI & DS. and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety and the cultural societal and environmental considerations.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   Conduct Investigations of Complex problems:{" "}
                 </span>
-                Use researchbased knowledge and research methods including
-                design of experiments, analysis and interpretation of data, and
-                synthesis of the information to provide valid conclusions.
+                Use research based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   Modern Tool Usage:{" "}
                 </span>
-                Create, Select and apply appropriate techniques, resources and
-                modern engineering and IT tools including prediction and
-                modeling to computer science related complex engineering
-                activities with an understanding of the limitations.
+                Create, Select and apply appropriate techniques, resources and modern engineering and IT tools including prediction and modelling to AI & DS.related complex engineering activities with an understanding of the limitations.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   The Engineer and Society:{" "}
                 </span>
-                Apply Reasoning informed by the contextual knowledge to assess
-                societal, health, safety, legal and cultural issues and the
-                consequent responsibilities relevant to the CSE professional
-                engineering practice.
+                Apply Reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the AI & DS. professional engineering practice.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   Environment and Sustainability:{" "}
                 </span>
-                Understand the impact of the CSE professional engineering
-                solutions in societal and environmental contexts and demonstrate
-                the knowledge of, and need for sustainable development.
+                Understand the impact of the AI & DS. professional engineering solutions in societal and environmental contexts and demonstrate the knowledge of, and need for sustainable development.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   Ethics:{" "}
                 </span>
-                Apply Ethical Principles and commit to professional ethics and
-                responsibilities and norms of the engineering practice.
+                Apply Ethical Principles and commit to professional ethics and responsibilities and norms of the engineering practice.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   Individual and Team Work:{" "}
                 </span>
-                Function effectively as an individual and as a member or leader
-                in diverse teams and in multidisciplinary Settings.
+                Function effectively as an individual and as a member or leader in diverse teams and in multidisciplinary Settings.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   Communication:{" "}
                 </span>
-                Communicate effectively on complex engineering activities with
-                the engineering community and with society at large such as able
-                to comprehend and with write effective reports and design
-                documentation, make effective presentations and give and receive
-                clear instructions.
+                Communicate effectively on complex engineering activities with the engineering community and with society at large such as able to comprehend and with write effective reports and design documentation, make effective presentations and give and receive clear instructions.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   Project Management and Finance:{" "}
                 </span>
-                Demonstrate knowledge and understanding of the engineering
-                management principles and apply these to ones own work, as a
-                member and leader in a team, to manage projects and in multi
-                disciplinary environments.
+                Demonstrate knowledge and understanding of the engineering management principles and apply these to one's own work, as a member and leader in a team, to manage projects and in multi disciplinary environments.
               </li>
               <li>
                 <span className="text-x1 font-bold text-[#0d173b]">
                   {" "}
                   Life-Long Learning:{" "}
                 </span>
-                Recognize the need for and have the preparation and ability to
-                engage in independent and life-long learning the broadest
-                context of technological change.
+                Recognize the need for and have the preparation and ability to engage in independent and life-long learning the broadest context of technological change.
               </li>
             </ul>
           </div>
@@ -202,14 +195,19 @@ const Aspiration = () => {
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               <li>
-                
-              Students will be proficient in data analysis, interpretation, and application of machine learning and artificial intelligence techniques to solve complex real-world problems.
+               <span className="text-x1 font-bold text-[#0d173b]">Professional Skills: </span> 
+               Have abilities to, analyze, design, develop and evaluate computer software in areas related to web based applications, data security, databases, algorithms, multimedia, networking and data communication.
               </li>
               <li>
-              Students will evaluate and optimize the performance of AI and data science models, applying different computational techniques for enhanced outcomes.
+                <span className="text-x1 font-bold text-[#0d173b]">
+                  Product Development Skills: 
+                </span>
+                Have abilities to apply standard practices and strategies in software project development using open ended programming environments to deliver innovative quality products for business and societal requirement.
               </li>
               <li>
-              Students will be well-prepared to excel in national and international competitive examinations, pursue higher studies, and secure employment in leading AI and data science roles.
+                <span className="text-x1 font-bold text-[#0d173b]">
+                Entrepreneurship and Career: </span>
+                Have ability to apply computational platforms, programming and logic development as computer professionals for higher studies and entrepreneurship.
               </li>
             </ul>
           </div>

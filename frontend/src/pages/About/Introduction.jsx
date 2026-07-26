@@ -14,10 +14,10 @@ export default function IntroductionPage() {
         <div className="absolute inset-0 flex items-center px-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-white">
-              About Us
+              About CSIT
             </h2>
-            <p className="text-gray-200 text-sm mt-2">
-              Established in 1999 | ISO 9001-2015 Certified
+            <p className="text-gray-200 text-sm md:mt-6">
+             Engineering Excellence Since 1999
             </p>
             <div className="h-0.5 w-12 bg-white mt-3"></div>
           </div>
@@ -31,26 +31,61 @@ export default function IntroductionPage() {
             <div className="flex-1">
               <p className="mb-4">
                 <span className="text-lg font-medium text-[#0d173b]">
-                  Global Competitive Spirit
+                  Global Competitiveness
                 </span>{" "}
-                is the trademark of all the technical institutes of the world,
-                as globalisation has indeed arrived on the wings of Science and
-                Technology and is here to stay. CSIT is the{" "}
-                <strong className="text-[#0d173b]">
-                  Best Engineering College in Chhattisgarh
-                </strong>
-                , an <strong>AICTE recognised ISO 9001-2015 Certified</strong>{" "}
-                institute. It is affiliated to{" "}
-                <strong>
-                  Chhattisgarh Swami Vivekanand Technical University, Bhilai
-                </strong>{" "}
-                and was founded in the <strong>Year 1999</strong>.
+               has become the hallmark of leading technical institutions. In today's rapidly evolving world, driven by science, technology, and innovation, engineers must possess strong technical knowledge, practical skills, creativity, and a global outlook.
+              </p>
+
+              <p className="mb-4">
+            <strong>
+            Chhatrapati Shivaji Institute of Technology (CSIT), Durg { " "}
+              </strong>              
+            is one of the premier engineering institutions in Chhattisgarh. Established in <strong>1999,</strong>  the institute is <stronng>AICTE approved, ISO 9001:2015 Certified,  </stronng>  and affiliated with 
+            <strong>
+            {" "} Chhattisgarh Swami Vivekanand Technical University (CSVTU), Bhilai.
+            </strong>
               </p>
               <p className="mb-4">
-                Since its inception, the college has progressed in leaps and
-                bounds and is undergoing a continuous process of improvement in
-                all aspects of curricular and extracurricular activities.
+                For more than two decades, CSIT has consistently progressed through academic excellence, industry-oriented education, research, innovation, and holistic student development. The institute continues to strengthen its academic ecosystem by integrating modern technologies, experiential learning, and professional skill development.
+                </p>
+ 
+            <div className="mt-8 bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <h3 className="text-2xl font-semibold text-[#0d173b] mb-4">
+                Location
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                The institute is situated on Durg–Balod, Dallirajhara Road at
+                Shivaji Nagar near Kolihapuri, District Durg, Chhattisgarh. It
+                is approximately 4 km from the Collectorate and 6 km from Durg
+                Railway Station. The serene surroundings offer a peaceful
+                academic atmosphere away from city congestion, while still
+                remaining easily accessible.
               </p>
+              <div className="text-gray-700 leading-relaxed mb-4">
+                <p className="font-medium mb-2">The campus is well connected by:</p>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>
+                    <strong>Air:</strong> Swami Vivekananda Airport, about 45 km
+                    away
+                  </li>
+                  <li>
+                    <strong>Rail:</strong> Durg Junction railway station, about
+                    6 km away
+                  </li>
+                  <li>
+                    <strong>Road:</strong> Durg Bus Stand, about 4 km from the
+                    institute.
+                  </li>
+                </ul>
+              </div>
+              <p className="text-gray-700 leading-relaxed">
+                This balance of connectivity and calm surroundings makes it an
+                ideal setting for focused learning.
+              </p>
+            </div>
+        </div>
+      </div>
+
             </div>
             <div className="md:w-1/3 bg-gray-50 rounded-md border border-gray-200 flex-shrink-0">
               <div className="p-6 text-center h-full flex flex-col justify-center">
@@ -63,34 +98,24 @@ export default function IntroductionPage() {
             </div>
           </div>
 
-          {/* Key Features Section */}
-          <div className="grid md:grid-cols-3 gap-4 my-8">
-            {[
-              "Excellence in Education",
-              "Modern Infrastructure",
-              "Industry Connections",
-            ].map((title, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-md p-4 shadow-sm hover:shadow transition-shadow duration-200"
-              >
-                <div className="flex items-center mb-2">
-                  <div className="w-2 h-2 bg-[#0d173b] rounded-full mr-2"></div>
-                  <h3 className="font-medium text-[#0d173b]">{title}</h3>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  {index === 0 &&
-                    "Providing high-quality technical education since 1999 with experienced faculty"}
-                  {index === 1 &&
-                    "State-of-the-art facilities with advanced laboratories and learning resources"}
-                  {index === 2 &&
-                    "Strong ties with industry partners for internships and placement opportunities"}
-                </p>
-              </div>
-            ))}
-          </div>
+         <div className="mt-10 bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <h3 className="text-2xl font-semibold text-[#0d173b] mb-4">
+                Our Philosophy
+              </h3>
 
-          <p className="mb-4">
+              <p className="text-gray-700 leading-relaxed">
+                CSIT believes that education should bridge the gap between knowledge
+                and its practical application. The institute nurtures competent
+                professionals who combine technical expertise with ethical values,
+                innovation, leadership, and social responsibility.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                A student-centric learning environment, experienced faculty, and continuous interaction with industry create an atmosphere where students are encouraged to think critically, solve real-world problems, and become future-ready engineers.
+              </p>
+            </div>
+
+
+          {/* <p className="mb-4">
             Unique in its structure, methods and goals, the college is strongly
             rooted in a philosophy of training and research that emphasizes the
             intimate relationship between knowledge and its application and
@@ -102,7 +127,7 @@ export default function IntroductionPage() {
             pursuits.
           </p>
 
-          {/* Quote section */}
+          {/* Quote section 
           <div className="my-6 border-l-4 border-[#0d173b] pl-4 py-1">
             <blockquote className="text-gray-600 italic text-base">
               To operate successfully in the world by facing Global Competition,
@@ -120,7 +145,38 @@ export default function IntroductionPage() {
             perspective/outlook & ability for Real Time Management of a Dynamic
             Scenario with increasing diversity. Our faculty employs creative
             methods to make studying an exciting experience.
-          </p>
+          </p> */}
+
+       <div className="mt-10">
+  <h3 className="text-2xl font-semibold text-[#0d173b] mb-3">
+    Preparing Engineers for Tomorrow
+  </h3>
+
+  <p className="text-gray-600 mb-6">
+    The engineering profession is evolving rapidly with advancements in
+    Artificial Intelligence, Automation, Industry 4.0, Data Science,
+    Robotics, Sustainable Technologies, and Digital Transformation.
+  </p>
+
+  <div className="grid md:grid-cols-2 gap-3">
+    {[
+      "Develop strong technical and analytical skills",
+      "Build innovation and problem-solving capabilities",
+      "Gain hands-on industry exposure",
+      "Learn through projects, internships, and research",
+      "Develop leadership and entrepreneurial abilities",
+      "Compete confidently in the global engineering landscape",
+    ].map((item, index) => (
+      <div
+        key={index}
+        className="flex items-start gap-3 p-4 border rounded-lg"
+      >
+        <span className="text-green-600 text-lg">✓</span>
+        <span className="text-gray-700">{item}</span>
+      </div>
+    ))}
+  </div>
+</div>
 
           {/* Statistics section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
@@ -142,8 +198,25 @@ export default function IntroductionPage() {
             ))}
           </div>
 
+
+          <div className="mt-12 border-l-4 border-[#0d173b] bg-gray-50 p-6 rounded-r-lg">
+  <h3 className="text-2xl font-semibold text-[#0d173b] mb-3">
+    Our Commitment
+  </h3>
+
+  <p className="text-gray-700 leading-relaxed">
+    At CSIT, we are committed to creating future-ready engineers who
+    possess technical competence, innovative thinking, ethical values,
+    and the confidence to excel in a globally competitive environment.
+  </p>
+
+  <p className="mt-4 font-semibold text-[#0d173b]">
+    CSIT – Engineering Excellence, Innovation & Career Success.
+  </p>
+</div>
+
           {/* Programs Section */}
-          <div className="my-8">
+          {/* <div className="my-8">
             <h3 className="text-xl font-medium text-[#0d173b] mb-4">
               Our Programs
             </h3>
@@ -163,9 +236,8 @@ export default function IntroductionPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
-      </div>
-    </div>
+    
   );
 }

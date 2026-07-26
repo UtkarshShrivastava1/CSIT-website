@@ -1,9 +1,9 @@
 import React from "react";
-import IPRFilled from "../../assets/R&D/IPR_final.pdf";
-import PaperCivil from "../../assets/R&D/PAPER PUBLICATION CIVIL.pdf";
-import PaperEEE from "../../assets/R&D/PAPER PUBLICATION EEE.pdf";
-import PaperME from "../../assets/R&D/PAPER PUBLICATION ME.pdf";
-import ProjectGrants from "../../assets/R&D/PROJECT GRANTS.pdf";
+const IPRFilled = "https://drive.google.com/file/d/1OGUCku_SQJCvb-yXBC9aV33sj5_1IN-F/view?usp=sharing";
+const PaperCivil = "https://drive.google.com/file/d/13ayr4wRHaVyKVf3zNPfheQL9gw2HjhgI/view?usp=sharing";
+const PaperEEE = "https://drive.google.com/file/d/1CZvQsgKZnemk5e7l_wdMTYmmaMQT6xcD/view?usp=sharing";
+const PaperME = "https://drive.google.com/file/d/1g0NYBP_05RhJW01NXExT8Vizqzfftomm/view?usp=sharing";
+const ProjectGrants = "https://drive.google.com/file/d/1TZ5VxSNqro5qgG_YKhvq2Q0cdOlyw8lv/view?usp=sharing";
 
 const RnD = () => {
   const documents = [
