@@ -368,7 +368,11 @@ export default function NoticeBoard() {
     };
   }, [notifications]);
 
-  if (loading) return <LoadingSkeleton />;
+  // if (loading) return <LoadingSkeleton />;
+  if (loading) return null;
+
+  const hasNotices = grouped.notice.length > 0 || grouped.event.length > 0;
+  if (!hasNotices) return null;
 
   return (
     <section className="bg-gradient-to-b from-gray-50 to-white py-12 px-4 sm:px-6 lg:px-8 border-y border-gray-200/60">
